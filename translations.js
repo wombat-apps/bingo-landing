@@ -10,7 +10,7 @@ const translations = {
     advantage1_title: "Customize your game",
     advantage1_desc: "Choose between 90 or 75 balls mode, the speed and different voices or languages",
     advantage2_title: "Printables or cards app",
-    advantage2_desc: "Print the cards or download our cards app to play with your own device. Supports up to 10 cards per game",
+    advantage2_desc: "Print the cards or download our cards app to play with your own device. Play with as many cards as you want!",
     advantage3_title: "Scan the card and check",
     advantage3_desc: "Every card has a unique QR code for instant verification. Scan any card to instantly check if it's a winning BINGO",
     advantage4_title: "External screen support",
@@ -93,7 +93,35 @@ const translations = {
     privacy_contact_title: "Contact Us",
     privacy_contact_content: "If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.",
     contact_email: "Email:",
-    contact_website: "Website:"
+    contact_website: "Website:",
+    
+    // FAQ Section
+    faq_title: "Frequently Asked Questions",
+    faq_subtitle: "Find answers to common questions about our Bingo apps",
+    
+    faq_q1: "How do I play Bingo with friends and family?",
+    faq_a1: "Download the main Bingo!! app on one device to act as the caller. Everyone else can either use printed cards or download the Bingo Cards!! app to get digital cards on their phones or tablets.",
+    
+    faq_q2: "What's the difference between 75-ball and 90-ball Bingo?",
+    faq_a2: "75-ball Bingo uses numbers 1-75 with 5x5 cards, while 90-ball Bingo uses numbers 1-90 with 9x3 cards. You can choose either mode in the app settings to match your preference.",
+    
+    faq_q3: "Can I customize the voices and language?",
+    faq_a3: "Yes! The app supports English, Spanish, and French with different voice options. You can also record your own custom voice and rhymes for a personalized experience.",
+    
+    faq_q4: "How does the QR code verification work?",
+    faq_a4: "Each bingo card has a unique QR code. Simply scan the code with the main app's camera to instantly verify if the card has a winning BINGO pattern.",
+    
+    faq_q5: "Can I display the game on a TV or larger screen?",
+    faq_a5: "Absolutely! You can cast the bingo board to an external screen using AirPlay (for Apple devices) or connect via cable to display on any TV or monitor.",
+    
+    faq_q6: "How many cards can each player have?",
+    faq_a6: "Each player can play with as many bingo cards as they want simultaneously, whether using printed cards or the digital Bingo Cards!! app. There are no limits!",
+    
+    faq_q7: "Is the app suitable for all ages?",
+    faq_a7: "Yes! Our Bingo apps are family-friendly and perfect for players of all ages. The engaging voices and animations make it fun for everyone.",
+    
+    faq_q8: "Do I need an internet connection to play?",
+    faq_a8: "No, once downloaded, you can play Bingo offline with family and friends in the same location. No internet connection required during gameplay."
   },
   
   es: {
@@ -107,7 +135,7 @@ const translations = {
     advantage1_title: "Personaliza tu juego",
     advantage1_desc: "Elige entre el modo de 90 o 75 bolas, la velocidad y diferentes voces o idiomas",
     advantage2_title: "Cartones imprimibles o app",
-    advantage2_desc: "Imprime los cartones o descarga nuestra app de cartones para jugar con tu propio dispositivo. Soporta hasta 10 cartones por juego",
+    advantage2_desc: "Imprime los cartones o descarga nuestra app de cartones para jugar con tu propio dispositivo. ¡Juega con tantos cartones como quieras!",
     advantage3_title: "Escanea y verifica el cartón",
     advantage3_desc: "Cada cartón tiene un código QR único para verificación instantánea. Escanea cualquier cartón para verificar al instante si es un BINGO ganador",
     advantage4_title: "Soporte de pantalla externa",
@@ -190,7 +218,35 @@ const translations = {
     privacy_contact_title: "Contáctanos",
     privacy_contact_content: "Si tiene alguna pregunta o sugerencia sobre nuestra Política de Privacidad, no dude en contactarnos.",
     contact_email: "Correo electrónico:",
-    contact_website: "Sitio web:"
+    contact_website: "Sitio web:",
+    
+    // FAQ Section
+    faq_title: "Preguntas Frecuentes",
+    faq_subtitle: "Encuentra respuestas a preguntas comunes sobre nuestras apps de Bingo",
+    
+    faq_q1: "¿Cómo juego Bingo con amigos y familia?",
+    faq_a1: "Descarga la app principal Bingo!! en un dispositivo para actuar como locutor. Todos los demás pueden usar cartones impresos o descargar la app Cartones de Bingo!! para obtener cartones digitales en sus teléfonos o tablets.",
+    
+    faq_q2: "¿Cuál es la diferencia entre Bingo de 75 y 90 bolas?",
+    faq_a2: "El Bingo de 75 bolas usa números del 1-75 con cartones de 5x5, mientras que el Bingo de 90 bolas usa números del 1-90 con cartones de 9x3. Puedes elegir cualquier modo en la configuración de la app.",
+    
+    faq_q3: "¿Puedo personalizar las voces y el idioma?",
+    faq_a3: "¡Sí! La app soporta español, inglés y francés con diferentes opciones de voz. También puedes grabar tu propia voz personalizada y rimas para una experiencia única.",
+    
+    faq_q4: "¿Cómo funciona la verificación por código QR?",
+    faq_a4: "Cada cartón de bingo tiene un código QR único. Simplemente escanea el código con la cámara de la app principal para verificar instantáneamente si el cartón tiene un patrón BINGO ganador.",
+    
+    faq_q5: "¿Puedo mostrar el juego en una TV o pantalla más grande?",
+    faq_a5: "¡Por supuesto! Puedes transmitir el tablero de bingo a una pantalla externa usando AirPlay (para dispositivos Apple) o conectar por cable para mostrar en cualquier TV o monitor.",
+    
+    faq_q6: "¿Cuántos cartones puede tener cada jugador?",
+    faq_a6: "Cada jugador puede jugar con tantos cartones de bingo como quiera simultáneamente, ya sea usando cartones impresos o la app digital Cartones de Bingo!! ¡No hay límites!",
+    
+    faq_q7: "¿Es la app adecuada para todas las edades?",
+    faq_a7: "¡Sí! Nuestras apps de Bingo son familiares y perfectas para jugadores de todas las edades. Las voces atractivas y animaciones lo hacen divertido para todos.",
+    
+    faq_q8: "¿Necesito conexión a internet para jugar?",
+    faq_a8: "No, una vez descargada, puedes jugar Bingo sin conexión con familia y amigos en la misma ubicación. No se requiere conexión a internet durante el juego."
   },
   
   fr: {
@@ -204,7 +260,7 @@ const translations = {
     advantage1_title: "Personnalisez votre jeu",
     advantage1_desc: "Choisissez entre le mode 90 ou 75 boules, la vitesse et différentes voix ou langues",
     advantage2_title: "Cartons imprimables ou app",
-    advantage2_desc: "Imprimez les cartons ou téléchargez notre app de cartons pour jouer avec votre propre appareil. Supporte jusqu'à 10 cartons par jeu",
+    advantage2_desc: "Imprimez les cartons ou téléchargez notre app de cartons pour jouer avec votre propre appareil. Jouez avec autant de cartons que vous voulez !",
     advantage3_title: "Scannez et vérifiez le carton",
     advantage3_desc: "Chaque carton a un code QR unique pour vérification instantanée. Scannez n'importe quel carton pour vérifier instantanément si c'est un BINGO gagnant",
     advantage4_title: "Support écran externe",
@@ -287,6 +343,34 @@ const translations = {
     privacy_contact_title: "Nous Contacter",
     privacy_contact_content: "Si vous avez des questions ou suggestions concernant notre Politique de Confidentialité, n'hésitez pas à nous contacter.",
     contact_email: "Email :",
-    contact_website: "Site web :"
+    contact_website: "Site web :",
+    
+    // FAQ Section
+    faq_title: "Questions Fréquemment Posées",
+    faq_subtitle: "Trouvez des réponses aux questions courantes sur nos apps Bingo",
+    
+    faq_q1: "Comment jouer au Bingo avec mes amis et ma famille ?",
+    faq_a1: "Téléchargez l'app principale Bingo!! sur un appareil pour agir comme annonceur. Tous les autres peuvent utiliser des cartons imprimés ou télécharger l'app Cartons de Bingo!! pour obtenir des cartons numériques sur leurs téléphones ou tablettes.",
+    
+    faq_q2: "Quelle est la différence entre le Bingo à 75 et 90 boules ?",
+    faq_a2: "Le Bingo à 75 boules utilise les numéros 1-75 avec des cartons 5x5, tandis que le Bingo à 90 boules utilise les numéros 1-90 avec des cartons 9x3. Vous pouvez choisir n'importe quel mode dans les paramètres de l'app.",
+    
+    faq_q3: "Puis-je personnaliser les voix et la langue ?",
+    faq_a3: "Oui ! L'app supporte le français, l'anglais et l'espagnol avec différentes options de voix. Vous pouvez aussi enregistrer votre propre voix personnalisée et rimes pour une expérience unique.",
+    
+    faq_q4: "Comment fonctionne la vérification par code QR ?",
+    faq_a4: "Chaque carton de bingo a un code QR unique. Scannez simplement le code avec l'appareil photo de l'app principale pour vérifier instantanément si le carton a un motif BINGO gagnant.",
+    
+    faq_q5: "Puis-je afficher le jeu sur une TV ou un écran plus grand ?",
+    faq_a5: "Absolument ! Vous pouvez diffuser le plateau de bingo sur un écran externe en utilisant AirPlay (pour les appareils Apple) ou connecter par câble pour afficher sur n'importe quel TV ou moniteur.",
+    
+    faq_q6: "Combien de cartons chaque joueur peut-il avoir ?",
+    faq_a6: "Chaque joueur peut jouer avec autant de cartons de bingo qu'il le souhaite simultanément, que ce soit en utilisant des cartons imprimés ou l'app numérique Cartons de Bingo!! Il n'y a pas de limites !",
+    
+    faq_q7: "L'app convient-elle à tous les âges ?",
+    faq_a7: "Oui ! Nos apps Bingo sont familiales et parfaites pour les joueurs de tous âges. Les voix engageantes et animations le rendent amusant pour tout le monde.",
+    
+    faq_q8: "Ai-je besoin d'une connexion internet pour jouer ?",
+    faq_a8: "Non, une fois téléchargée, vous pouvez jouer au Bingo hors ligne avec la famille et les amis au même endroit. Aucune connexion internet requise pendant le jeu."
   }
 };
