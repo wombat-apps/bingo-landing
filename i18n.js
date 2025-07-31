@@ -76,17 +76,21 @@ class I18n {
   }
 
   updateLanguageSelector() {
-    const buttons = document.querySelectorAll('.lang-btn');
+    const buttons = document.querySelectorAll('.lang-btn, .language-btn');
     buttons.forEach(btn => {
       const lang = btn.getAttribute('data-lang');
       if (lang === this.currentLanguage) {
         btn.classList.add('bg-bingo-purple', 'text-white');
-        btn.classList.remove('hover:bg-gray-100');
+        btn.classList.remove('hover:bg-gray-100', 'text-gray-600', 'hover:text-bingo-purple');
       } else {
         btn.classList.remove('bg-bingo-purple', 'text-white');
-        btn.classList.add('hover:bg-gray-100');
+        btn.classList.add('hover:bg-gray-100', 'text-gray-600', 'hover:text-bingo-purple');
       }
     });
+  }
+
+  getCurrentLanguage() {
+    return this.currentLanguage;
   }
 }
 
