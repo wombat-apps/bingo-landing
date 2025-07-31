@@ -64,6 +64,68 @@
         </div>
     </header>
 
+    <!-- Both Apps Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6" data-i18n="apps_title">
+                    Get both apps
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed" data-i18n="apps_subtitle">
+                    Download the complete Bingo experience: the caller app and the cards app
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Main Bingo App -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 text-center">
+                    <img src="images/app-screenshot-iphone.png" 
+                         alt="Bingo App Screenshot" 
+                         class="w-64 h-auto mx-auto mb-8 rounded-2xl">
+                    <h3 class="text-3xl font-bold mb-6 text-gray-800" data-i18n="main_app_title">Bingo!!</h3>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed" data-i18n="main_app_desc">
+                        The best bingo caller machine with voices, animations and customization
+                    </p>
+                    <div class="flex flex-col space-y-4 items-center">
+                        <a href="https://apps.apple.com/app/apple-store/id1505191957?ct=landing" class="block transform hover:scale-105 transition-transform">
+                            <img src="images/download-app-store.png" 
+                                 alt="Download Bingo App on App Store" 
+                                 class="h-16 w-auto">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.wombat.bingoapp" class="block transform hover:scale-105 transition-transform">
+                            <img src="images/download-google-play.png" 
+                                 alt="Get Bingo App on Google Play" 
+                                 class="h-16 w-auto">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bingo Cards App -->
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 text-center">
+                    <img src="images/bingo-cards-app.png" 
+                         alt="Bingo Cards App" 
+                         class="w-64 h-auto mx-auto mb-8 rounded-2xl">
+                    <h3 class="text-3xl font-bold mb-6 text-gray-800" data-i18n="cards_app_title">Bingo Cards!!</h3>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed" data-i18n="cards_app_desc">
+                        Get digital bingo cards on your device with our companion app
+                    </p>
+                    <div class="flex flex-col space-y-4 items-center">
+                        <a href="https://apps.apple.com/app/id1510582506?ct=landing" class="block transform hover:scale-105 transition-transform">
+                            <img src="images/download-app-store.png" 
+                                 alt="Download Bingo Cards App on App Store" 
+                                 class="h-16 w-auto">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.wombat.bingocards" class="block transform hover:scale-105 transition-transform">
+                            <img src="images/download-google-play.png" 
+                                 alt="Get Bingo Cards App on Google Play" 
+                                 class="h-16 w-auto">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Advantages Section -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-4">
@@ -187,41 +249,6 @@
         </div>
     </section>
 
-    <!-- Cards Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6" data-i18n="cards_title">
-                    Get your cards
-                </h2>
-            </div>
-            
-            <div class="flex justify-center">
-                <!-- Bingo Cards App -->
-                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 text-center max-w-md">
-                    <img src="images/bingo-cards-app.png" 
-                         alt="Bingo Cards App" 
-                         class="w-64 h-auto mx-auto mb-8 rounded-2xl shadow-lg">
-                    <h3 class="text-3xl font-bold mb-6 text-gray-800" data-i18n="cards_app_title">Bingo Cards!!</h3>
-                    <p class="text-xl text-gray-600 mb-8 leading-relaxed" data-i18n="cards_app_desc">
-                        Get digital bingo cards on your device with our companion app
-                    </p>
-                    <div class="flex flex-col space-y-4 items-center">
-                        <a href="https://apps.apple.com/app/id1510582506?ct=landing" class="block transform hover:scale-105 transition-transform">
-                            <img src="images/download-app-store.png" 
-                                 alt="Download Bingo Cards App on App Store" 
-                                 class="h-16 w-auto">
-                        </a>
-                        <a href="https://play.google.com/store/apps/details?id=com.wombat.bingocards" class="block transform hover:scale-105 transition-transform">
-                            <img src="images/download-google-play.png" 
-                                 alt="Get Bingo Cards App on Google Play" 
-                                 class="h-16 w-auto">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Record Feature -->
     <section class="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
@@ -347,6 +374,11 @@
                  alt="Bingo!! Logo" 
                  class="h-16 mx-auto mb-6 opacity-80">
             <p class="text-lg text-gray-300 mb-4" data-i18n="footer_rights">© 2024 Wombat Apps. All rights reserved.</p>
+            <div class="mb-4">
+                <a href="terms.html" class="text-gray-400 hover:text-white transition-colors underline">
+                    Terms and Conditions
+                </a>
+            </div>
             <p class="text-gray-400" data-i18n="footer_tagline">Best Bingo caller machine!</p>
         </div>
     </footer>

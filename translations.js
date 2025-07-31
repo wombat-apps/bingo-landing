@@ -30,6 +30,12 @@ const translations = {
     qr_step3_title: "3. Play automatically",
     qr_step3_desc: "Start playing with automatic number marking",
     
+    // Both Apps Section
+    apps_title: "Get both apps",
+    apps_subtitle: "Download the complete Bingo experience: the caller app and the cards app",
+    main_app_title: "Bingo!!",
+    main_app_desc: "The best bingo caller machine with voices, animations and customization",
+    
     // Cards Section
     cards_title: "Get your cards",
     cards_app_title: "Bingo Cards!!",
@@ -92,6 +98,12 @@ const translations = {
     qr_step3_title: "3. Jugar automáticamente",
     qr_step3_desc: "Comienza a jugar con marcado automático de números",
     
+    // Both Apps Section
+    apps_title: "Obtén ambas apps",
+    apps_subtitle: "Descarga la experiencia completa de Bingo: la app cantora y la app de cartones",
+    main_app_title: "¡¡Bingo!!",
+    main_app_desc: "La mejor máquina cantora de bingo con voces, animaciones y personalización",
+    
     // Cards Section
     cards_title: "Consigue tus cartones",
     cards_app_title: "¡¡Cartones de Bingo!!",
@@ -153,6 +165,12 @@ const translations = {
     qr_step2_desc: "Votre carton de bingo apparaît automatiquement dans l'app",
     qr_step3_title: "3. Jouer automatiquement",
     qr_step3_desc: "Commencez à jouer avec marquage automatique des numéros",
+    
+    // Both Apps Section
+    apps_title: "Obtenez les deux apps",
+    apps_subtitle: "Téléchargez l'expérience Bingo complète : l'app animatrice et l'app de cartons",
+    main_app_title: "Bingo !!",
+    main_app_desc: "La meilleure machine à bingo avec voix, animations et personnalisation",
     
     // Cards Section
     cards_title: "Obtenez vos cartons",
