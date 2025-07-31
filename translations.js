@@ -98,8 +98,8 @@ const translations = {
   
   es: {
     // Header
-    title: "Bingo!! - ¡La mejor máquina cantora de Bingo!",
-    headline: "¡La mejor máquina cantora de Bingo!",
+    title: "Bingo!! - ¡El mejor Bingo digital!",
+    headline: "¡El mejor Bingo digital!",
     subtitle: "¡Juega al Bingo con tu familia o amigos!",
     
     // Advantages Section
@@ -119,24 +119,24 @@ const translations = {
     
     // QR Tutorial Section
     qr_title: "Cómo funciona el código QR",
-    qr_subtitle: "Escanea códigos QR en tus cartones de bingo para gestión digital instantánea y juego automático",
+    qr_subtitle: "Escanea códigos QR en tus cartones de bingo para verificación instantánea",
     qr_step1_title: "1. Escanear código QR",
     qr_step1_desc: "Apunta tu cámara al código QR de tu cartón de bingo",
     qr_step2_title: "2. Aparece el cartón",
     qr_step2_desc: "Tu cartón de bingo aparece automáticamente en la app",
-    qr_step3_title: "3. Jugar automáticamente",
-    qr_step3_desc: "Comienza a jugar con marcado automático de números",
+    qr_step3_title: "3. Verificación automática",
+    qr_step3_desc: "La app verifica automáticamente si tienes BINGO",
     
     // Both Apps Section
     apps_title: "Obtén ambas apps",
-    apps_subtitle: "Descarga la experiencia completa de Bingo: la app cantora y la app de cartones",
-    main_app_title: "¡¡Bingo!!",
-    main_app_desc: "La mejor máquina cantora de bingo con voces, animaciones y personalización",
+    apps_subtitle: "Descarga la experiencia completa de Bingo: la app digital y la app de cartones",
+    main_app_title: "Bingo!!",
+    main_app_desc: "El mejor bingo digital con voces, animaciones y personalización",
     
     // Cards Section
     cards_title: "Consigue tus cartones",
-    cards_app_title: "¡¡Cartones de Bingo!!",
-    cards_app_desc: "Obtén cartones de bingo digitales en tu dispositivo con nuestra app complementaria",
+    cards_app_title: "Cartones de Bingo!!",
+    cards_app_desc: "Obtén cartones de bingo digitales en tu dispositivo con nuestra app",
     
     
     // Team Section
@@ -149,7 +149,7 @@ const translations = {
     
     // Footer
     footer_rights: "© 2024 Wombat Apps. Todos los derechos reservados.",
-    footer_tagline: "¡La mejor máquina cantora de Bingo!",
+    footer_tagline: "¡El mejor Bingo digital!",
     
     // Missing translations
     guaranteed_fun: "¡Diversión garantizada!",
