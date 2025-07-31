@@ -10,9 +10,9 @@ const translations = {
     advantage1_title: "Customize your game",
     advantage1_desc: "Choose between 90 or 75 balls mode, the speed and different voices or languages",
     advantage2_title: "Printables or cards app",
-    advantage2_desc: "Print the cards or download our cards app to play with your own device",
+    advantage2_desc: "Print the cards or download our cards app to play with your own device. Supports up to 10 cards per game",
     advantage3_title: "Scan the card and check",
-    advantage3_desc: "Every card has a QR code so you can scan it and check if grandma has got Bingo",
+    advantage3_desc: "Every card has a unique QR code for instant verification. Scan any card to instantly check if it's a winning BINGO"
     advantage4_title: "External screen support",
     advantage4_desc: "You can view the board on television if you have the Airplay connection or even by cable",
     advantage5_title: "Real voices",
@@ -41,18 +41,6 @@ const translations = {
     cards_app_title: "Bingo Cards!!",
     cards_app_desc: "Get digital bingo cards on your device with our companion app",
     
-    // Record Feature
-    record_title: "Record your voice",
-    record_desc: "Record the numbers and rhymes you want with your own voice. You can save the recordings and surprise the players.",
-    
-    // How to Play Section
-    howto_title: "How to play",
-    howto_step1_title: "1. Setup",
-    howto_step1_desc: "Configure your game settings and prepare your cards",
-    howto_step2_title: "2. Call numbers",
-    howto_step2_desc: "Start the game and let the app call numbers automatically",
-    howto_step3_title: "3. Win!",
-    howto_step3_desc: "Mark your numbers and celebrate when you get BINGO!",
     
     // Team Section
     team_title: "Meet our team",
@@ -78,9 +66,9 @@ const translations = {
     advantage1_title: "Personaliza tu juego",
     advantage1_desc: "Elige entre el modo de 90 o 75 bolas, la velocidad y diferentes voces o idiomas",
     advantage2_title: "Cartones imprimibles o app",
-    advantage2_desc: "Imprime los cartones o descarga nuestra app de cartones para jugar con tu propio dispositivo",
+    advantage2_desc: "Imprime los cartones o descarga nuestra app de cartones para jugar con tu propio dispositivo. Soporta hasta 10 cartones por juego",
     advantage3_title: "Escanea y verifica el cartón",
-    advantage3_desc: "Cada cartón tiene un código QR para que puedas escanearlo y verificar si la abuela ha cantado Bingo",
+    advantage3_desc: "Cada cartón tiene un código QR único para verificación instantánea. Escanea cualquier cartón para verificar al instante si es un BINGO ganador"
     advantage4_title: "Soporte de pantalla externa",
     advantage4_desc: "Puedes ver el tablero en televisión si tienes conexión Airplay o incluso por cable",
     advantage5_title: "Voces reales",
@@ -109,18 +97,6 @@ const translations = {
     cards_app_title: "¡¡Cartones de Bingo!!",
     cards_app_desc: "Obtén cartones de bingo digitales en tu dispositivo con nuestra app complementaria",
     
-    // Record Feature
-    record_title: "Graba tu voz",
-    record_desc: "Graba los números y rimas que quieras con tu propia voz. Puedes guardar las grabaciones y sorprender a los jugadores.",
-    
-    // How to Play Section
-    howto_title: "Cómo jugar",
-    howto_step1_title: "1. Configuración",
-    howto_step1_desc: "Configura los ajustes del juego y prepara tus cartones",
-    howto_step2_title: "2. Cantar números",
-    howto_step2_desc: "Inicia el juego y deja que la app cante los números automáticamente",
-    howto_step3_title: "3. ¡Ganar!",
-    howto_step3_desc: "Marca tus números y celebra cuando consigas ¡BINGO!",
     
     // Team Section
     team_title: "Conoce nuestro equipo",
@@ -146,9 +122,9 @@ const translations = {
     advantage1_title: "Personnalisez votre jeu",
     advantage1_desc: "Choisissez entre le mode 90 ou 75 boules, la vitesse et différentes voix ou langues",
     advantage2_title: "Cartons imprimables ou app",
-    advantage2_desc: "Imprimez les cartons ou téléchargez notre app de cartons pour jouer avec votre propre appareil",
+    advantage2_desc: "Imprimez les cartons ou téléchargez notre app de cartons pour jouer avec votre propre appareil. Supporte jusqu'à 10 cartons par jeu",
     advantage3_title: "Scannez et vérifiez le carton",
-    advantage3_desc: "Chaque carton a un code QR pour que vous puissiez le scanner et vérifier si grand-mère a fait Bingo",
+    advantage3_desc: "Chaque carton a un code QR unique pour vérification instantanée. Scannez n'importe quel carton pour vérifier instantanément si c'est un BINGO gagnant"
     advantage4_title: "Support écran externe",
     advantage4_desc: "Vous pouvez voir le plateau à la télévision si vous avez une connexion Airplay ou même par câble",
     advantage5_title: "Vraies voix",
@@ -177,18 +153,6 @@ const translations = {
     cards_app_title: "Cartons de Bingo !!",
     cards_app_desc: "Obtenez des cartons de bingo numériques sur votre appareil avec notre app complémentaire",
     
-    // Record Feature
-    record_title: "Enregistrez votre voix",
-    record_desc: "Enregistrez les numéros et rimes que vous voulez avec votre propre voix. Vous pouvez sauvegarder les enregistrements et surprendre les joueurs.",
-    
-    // How to Play Section
-    howto_title: "Comment jouer",
-    howto_step1_title: "1. Configuration",
-    howto_step1_desc: "Configurez les paramètres du jeu et préparez vos cartons",
-    howto_step2_title: "2. Appeler les numéros",
-    howto_step2_desc: "Démarrez le jeu et laissez l'app appeler les numéros automatiquement",
-    howto_step3_title: "3. Gagner !",
-    howto_step3_desc: "Marquez vos numéros et célébrez quand vous obtenez BINGO !",
     
     // Team Section
     team_title: "Rencontrez notre équipe",
