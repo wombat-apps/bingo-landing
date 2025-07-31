@@ -3,7 +3,7 @@ const translations = {
     // Header
     title: "Bingo!! - Best Bingo caller machine",
     headline: "Best Bingo caller machine!",
-    subtitle: "Play Bingo with your family or friends!!",
+    subtitle: "Create unforgettable bingo nights at home with family and friends!",
     
     // Advantages Section
     advantages_title: "6 advantages",
@@ -32,7 +32,7 @@ const translations = {
     
     // Both Apps Section
     apps_title: "Get both apps",
-    apps_subtitle: "Download the complete Bingo experience: the caller app and the cards app",
+    apps_subtitle: "Everything you need for the perfect home bingo experience",
     main_app_title: "Bingo!!",
     main_app_desc: "The best bingo caller machine with voices, animations and customization",
     
@@ -100,7 +100,7 @@ const translations = {
     // Header
     title: "Bingo!! - ¡El mejor Bingo digital!",
     headline: "¡El mejor Bingo digital!",
-    subtitle: "¡Juega al Bingo con tu familia o amigos!",
+    subtitle: "¡Disfruta las mejores noches de bingo en casa con tu familia y amigos!",
     
     // Advantages Section
     advantages_title: "6 ventajas",
@@ -129,7 +129,7 @@ const translations = {
     
     // Both Apps Section
     apps_title: "Obtén ambas apps",
-    apps_subtitle: "Descarga la experiencia completa de Bingo: la app digital y la app de cartones",
+    apps_subtitle: "Todo lo que necesitas para disfrutar el bingo en casa",
     main_app_title: "Bingo!!",
     main_app_desc: "El mejor bingo digital con voces, animaciones y personalización",
     
@@ -197,7 +197,7 @@ const translations = {
     // Header
     title: "Bingo!! - La meilleure machine à Bingo !",
     headline: "La meilleure machine à Bingo !",
-    subtitle: "Jouez au Bingo avec votre famille ou vos amis !",
+    subtitle: "Vivez des soirées bingo mémorables à la maison en famille et entre amis!",
     
     // Advantages Section
     advantages_title: "6 avantages",
@@ -226,7 +226,7 @@ const translations = {
     
     // Both Apps Section
     apps_title: "Obtenez les deux apps",
-    apps_subtitle: "Téléchargez l'expérience Bingo complète : l'app animatrice et l'app de cartons",
+    apps_subtitle: "Tout ce qu'il faut pour profiter du bingo à la maison",
     main_app_title: "Bingo !!",
     main_app_desc: "La meilleure machine à bingo avec voix, animations et personnalisation",
     
