@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:wombat-apps.com)",
+      "Bash(curl:*)",
+      "Bash(mv:*)"
+    ],
+    "deny": []
+  }
+}

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo!! - Best Bingo caller machine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bingo-purple': '#822ad2',
+                        'bingo-blue': '#557cbf',
+                        'bingo-pink': '#e91e63'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white font-sans">
+    <!-- Header Section -->
+    <header class="bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 min-h-screen flex items-center">
+        <div class="container mx-auto px-4 py-16">
+            <div class="text-center mb-16">
+                <img src="images/bingo-logo.png" alt="Bingo!! Logo" class="h-24 mx-auto mb-8">
+                <h1 class="text-5xl md:text-7xl font-black text-gray-800 mb-6 leading-tight">
+                    Best Bingo caller<br>machine!
+                </h1>
+                <p class="text-2xl md:text-3xl text-gray-600 font-medium">
+                    Play Bingo with your family or friends!!
+                </p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
+                <!-- iPhone Mockup -->
+                <div class="relative">
+                    <img src="images/app-screenshot-iphone.png" 
+                         alt="Bingo App Screenshot" 
+                         class="w-80 h-auto max-w-full">
+                </div>
+                
+                <!-- Download Buttons -->
+                <div class="flex flex-col space-y-6 items-center">
+                    <a href="https://apps.apple.com/app/apple-store/id1505191957?ct=landing" class="block transform hover:scale-105 transition-transform">
+                        <img src="images/download-app-store.png" 
+                             alt="Download on App Store" 
+                             class="h-16 w-auto">
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.wombat.bingoapp" class="block transform hover:scale-105 transition-transform">
+                        <img src="images/download-google-play.png" 
+                             alt="Get it on Google Play" 
+                             class="h-16 w-auto">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Advantages Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
+                6 advantages
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+                <!-- Advantage 1 -->
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-bingo-purple to-bingo-pink rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Customize your game</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Choose between 90 or 75 balls mode, the speed and different voices or languages</p>
+                </div>
+
+                <!-- Advantage 2 -->
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-bingo-blue to-bingo-purple rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Printables or cards app</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Print the cards or download our cards app to play with your own device</p>
+                </div>
+
+                <!-- Advantage 3 -->
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-bingo-pink to-bingo-blue rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9.5 6.5v3h-3v-3h3M11 5H5v6h6V5zm-1.5 9.5v3h-3v-3h3M11 13H5v6h6v-6zm6.5-6.5v3h-3v-3h3M19 5h-6v6h6V5zm-6.5 9.5v3h-3v-3h3M13 13h-6v6h6v-6zm6.5 0v3h-3v-3h3M19 13h-6v6h6v-6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Scan the card and check</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Every card has a QR code so you can scan it and check if grandma has got Bingo</p>
+                </div>
+
+                <!-- Advantage 4 -->
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-bingo-purple to-bingo-pink rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zm-2-9H8v2h11V9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">External screen support</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">You can view the board on television if you have the Airplay connection or even by cable</p>
+                </div>
+
+                <!-- Advantage 5 -->
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-bingo-blue to-bingo-purple rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Real voices</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Our friend Adam makes jokes and rhymes so you will laugh a lot with your family or friends</p>
+                </div>
+
+                <!-- Advantage 6 -->
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-bingo-pink to-bingo-blue rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Create your own rhymes</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">If you prefer your own voice, record the numbers and the rhymes… it's going to be funny!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QR Code Tutorial Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                    How QR code works
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Scan QR codes on your bingo cards for instant digital card management and automatic gameplay
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <div class="bg-white rounded-2xl shadow-lg p-8 mb-6">
+                        <img src="images/qr-tutorial-step-1.png" 
+                             alt="QR Code Tutorial Step 1" 
+                             class="w-full h-auto rounded-lg">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">1. Scan QR code</h3>
+                    <p class="text-gray-600 text-lg">Point your camera at the QR code on your bingo card</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-white rounded-2xl shadow-lg p-8 mb-6">
+                        <img src="images/qr-tutorial-step-2.png" 
+                             alt="QR Code Tutorial Step 2" 
+                             class="w-full h-auto rounded-lg">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">2. Card appears</h3>
+                    <p class="text-gray-600 text-lg">Your bingo card automatically appears in the app</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-white rounded-2xl shadow-lg p-8 mb-6">
+                        <img src="images/qr-tutorial-step-3.png" 
+                             alt="QR Code Tutorial Step 3" 
+                             class="w-full h-auto rounded-lg">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">3. Play automatically</h3>
+                    <p class="text-gray-600 text-lg">Start playing with automatic number marking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                    Get your cards
+                </h2>
+            </div>
+            
+            <div class="flex justify-center">
+                <!-- Bingo Cards App -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 text-center max-w-md">
+                    <img src="images/bingo-cards-app.png" 
+                         alt="Bingo Cards App" 
+                         class="w-64 h-auto mx-auto mb-8 rounded-2xl shadow-lg">
+                    <h3 class="text-3xl font-bold mb-6 text-gray-800">Bingo Cards!!</h3>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Get digital bingo cards on your device with our companion app
+                    </p>
+                    <div class="flex flex-col space-y-4 items-center">
+                        <a href="https://apps.apple.com/app/id1510582506?ct=landing" class="block transform hover:scale-105 transition-transform">
+                            <img src="images/download-app-store.png" 
+                                 alt="Download Bingo Cards App on App Store" 
+                                 class="h-16 w-auto">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.wombat.bingocards" class="block transform hover:scale-105 transition-transform">
+                            <img src="images/download-google-play.png" 
+                                 alt="Get Bingo Cards App on Google Play" 
+                                 class="h-16 w-auto">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Record Feature -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <div class="lg:w-1/2">
+                    <img src="images/voice-recording-feature.png" 
+                         alt="Record Your Voice Feature" 
+                         class="w-full h-auto max-w-md mx-auto lg:mx-0">
+                </div>
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                        Record your voice
+                    </h2>
+                    <p class="text-xl text-gray-600 leading-relaxed mb-8">
+                        Record the numbers and rhymes you want with your own voice. 
+                        You can save the recordings and surprise the players.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                    How to play
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <div class="bg-gray-50 rounded-2xl p-8 mb-6">
+                        <img src="images/how-to-play-step-1.png" 
+                             alt="How to Play Step 1" 
+                             class="w-full h-auto rounded-lg">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">1. Setup</h3>
+                    <p class="text-gray-600 text-lg">Configure your game settings and prepare your cards</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-gray-50 rounded-2xl p-8 mb-6">
+                        <img src="images/how-to-play-step-2.png" 
+                             alt="How to Play Step 2" 
+                             class="w-full h-auto rounded-lg">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">2. Call numbers</h3>
+                    <p class="text-gray-600 text-lg">Start the game and let the app call numbers automatically</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-gray-50 rounded-2xl p-8 mb-6">
+                        <img src="images/how-to-play-step-3.png" 
+                             alt="How to Play Step 3" 
+                             class="w-full h-auto rounded-lg">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">3. Win!</h3>
+                    <p class="text-gray-600 text-lg">Mark your numbers and celebrate when you get BINGO!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                    Meet our team
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    The talented developers and designers behind your favorite bingo app
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12 max-w-4xl mx-auto">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-3xl p-8 text-center shadow-lg">
+                    <img src="images/team-alvaro-murillo.png" 
+                         alt="Álvaro Murillo" 
+                         class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Álvaro Murillo</h3>
+                    <p class="text-bingo-purple font-semibold mb-4">iOS Developer</p>
+                    <a href="#" class="text-bingo-blue hover:text-bingo-purple transition-colors font-medium">
+                        LinkedIn Profile →
+                    </a>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-3xl p-8 text-center shadow-lg">
+                    <img src="images/team-jose-balanaza.png" 
+                         alt="José Balanaza" 
+                         class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">José Balanaza</h3>
+                    <p class="text-bingo-purple font-semibold mb-4">Android Developer</p>
+                    <a href="#" class="text-bingo-blue hover:text-bingo-purple transition-colors font-medium">
+                        LinkedIn Profile →
+                    </a>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-3xl p-8 text-center shadow-lg">
+                    <img src="images/team-laura-abajo.png" 
+                         alt="Laura Abajo" 
+                         class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Laura Abajo</h3>
+                    <p class="text-bingo-purple font-semibold mb-4">UX/UI Designer</p>
+                    <a href="#" class="text-bingo-blue hover:text-bingo-purple transition-colors font-medium">
+                        LinkedIn Profile →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <img src="images/bingo-logo.png" 
+                 alt="Bingo!! Logo" 
+                 class="h-16 mx-auto mb-6 opacity-80">
+            <p class="text-lg text-gray-300 mb-4">© 2024 Wombat Apps. All rights reserved.</p>
+            <p class="text-gray-400">Best Bingo caller machine!</p>
+        </div>
+    </footer>
+</body>
+</html>
