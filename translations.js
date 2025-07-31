@@ -12,7 +12,7 @@ const translations = {
     advantage2_title: "Printables or cards app",
     advantage2_desc: "Print the cards or download our cards app to play with your own device. Supports up to 10 cards per game",
     advantage3_title: "Scan the card and check",
-    advantage3_desc: "Every card has a unique QR code for instant verification. Scan any card to instantly check if it's a winning BINGO"
+    advantage3_desc: "Every card has a unique QR code for instant verification. Scan any card to instantly check if it's a winning BINGO",
     advantage4_title: "External screen support",
     advantage4_desc: "You can view the board on television if you have the Airplay connection or even by cable",
     advantage5_title: "Real voices",
@@ -109,7 +109,7 @@ const translations = {
     advantage2_title: "Cartones imprimibles o app",
     advantage2_desc: "Imprime los cartones o descarga nuestra app de cartones para jugar con tu propio dispositivo. Soporta hasta 10 cartones por juego",
     advantage3_title: "Escanea y verifica el cartón",
-    advantage3_desc: "Cada cartón tiene un código QR único para verificación instantánea. Escanea cualquier cartón para verificar al instante si es un BINGO ganador"
+    advantage3_desc: "Cada cartón tiene un código QR único para verificación instantánea. Escanea cualquier cartón para verificar al instante si es un BINGO ganador",
     advantage4_title: "Soporte de pantalla externa",
     advantage4_desc: "Puedes ver el tablero en televisión si tienes conexión Airplay o incluso por cable",
     advantage5_title: "Voces reales",
@@ -206,7 +206,7 @@ const translations = {
     advantage2_title: "Cartons imprimables ou app",
     advantage2_desc: "Imprimez les cartons ou téléchargez notre app de cartons pour jouer avec votre propre appareil. Supporte jusqu'à 10 cartons par jeu",
     advantage3_title: "Scannez et vérifiez le carton",
-    advantage3_desc: "Chaque carton a un code QR unique pour vérification instantanée. Scannez n'importe quel carton pour vérifier instantanément si c'est un BINGO gagnant"
+    advantage3_desc: "Chaque carton a un code QR unique pour vérification instantanée. Scannez n'importe quel carton pour vérifier instantanément si c'est un BINGO gagnant",
     advantage4_title: "Support écran externe",
     advantage4_desc: "Vous pouvez voir le plateau à la télévision si vous avez une connexion Airplay ou même par câble",
     advantage5_title: "Vraies voix",

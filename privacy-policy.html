@@ -34,14 +34,6 @@
                     <img src="images/bingo-logo.png" alt="Bingo!! Logo" class="h-16 mx-auto">
                 </a>
                 
-                <!-- Language Selector -->
-                <div class="mb-8">
-                    <div class="language-selector inline-flex bg-white rounded-lg shadow-sm border border-gray-200 p-1">
-                        <button class="language-btn px-4 py-2 rounded-md text-sm font-medium transition-colors" data-lang="en">English</button>
-                        <button class="language-btn px-4 py-2 rounded-md text-sm font-medium transition-colors" data-lang="es">Español</button>
-                        <button class="language-btn px-4 py-2 rounded-md text-sm font-medium transition-colors" data-lang="fr">Français</button>
-                    </div>
-                </div>
                 
                 <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4" data-i18n="privacy_policy_title">
                     Privacy Policy
@@ -156,21 +148,7 @@
     <script>
         // Initialize i18n when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            const i18n = new I18n();
-            
-            // Add language selector functionality for custom buttons
-            const languageButtons = document.querySelectorAll('.language-btn');
-            languageButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const lang = button.getAttribute('data-lang');
-                    i18n.changeLanguage(lang);
-                });
-            });
-            
-            // Initial styling update
-            setTimeout(() => {
-                i18n.updateLanguageSelector();
-            }, 100);
+            window.i18n = new I18n();
         });
     </script>
 </body>
