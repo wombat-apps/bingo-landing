@@ -41,10 +41,34 @@ class I18n {
       const key = element.getAttribute('data-i18n');
       if (element.tagName === 'IMG') {
         element.alt = this.t(key);
+        // Handle store badges
+        if (element.classList.contains('app-store-badge')) {
+          this.updateAppStoreBadge(element);
+        } else if (element.classList.contains('google-play-badge')) {
+          this.updateGooglePlayBadge(element);
+        }
       } else {
         element.textContent = this.t(key);
       }
     });
+  }
+
+  updateAppStoreBadge(element) {
+    const badgeUrls = {
+      'en': 'https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1570838400',
+      'es': 'https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/es-es?size=250x83&amp;releaseDate=1570838400',
+      'fr': 'https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/fr-fr?size=250x83&amp;releaseDate=1570838400'
+    };
+    element.src = badgeUrls[this.currentLanguage] || badgeUrls['en'];
+  }
+
+  updateGooglePlayBadge(element) {
+    const badgeUrls = {
+      'en': 'https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png',
+      'es': 'https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png', 
+      'fr': 'https://play.google.com/intl/en_us/badges/static/images/badges/fr_badge_web_generic.png'
+    };
+    element.src = badgeUrls[this.currentLanguage] || badgeUrls['en'];
   }
 
   createLanguageSelector() {
