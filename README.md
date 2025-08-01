@@ -42,6 +42,6 @@ This landing page is a static website built with:
 ## The Team
 
 *   **Álvaro Murillo:** iOS Developer
-*   **José Balanaza:** Android Developer
+*   **José Balanza:** Android Developer
 *   **Laura Abajo:** UX/UI Designer
 
