@@ -50,6 +50,14 @@ const translations = {
     team_designer: "UX/UI Designer",
     team_linkedin: "LinkedIn Profile →",
     
+    // Navigation
+    nav_apps: "Apps",
+    nav_advantages: "Advantages", 
+    nav_qr: "QR Tutorial",
+    nav_reviews: "Reviews",
+    nav_faq: "FAQ",
+    nav_team: "Team",
+    
     // Footer
     footer_rights: "© 2024 Wombat Apps. All rights reserved.",
     footer_tagline: "Best Bingo caller machine!",
@@ -94,6 +102,31 @@ const translations = {
     privacy_contact_content: "If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.",
     contact_email: "Email:",
     contact_website: "Website:",
+    
+    // Reviews Section
+    reviews_title: "What our users say",
+    reviews_subtitle: "Real reviews from satisfied Bingo players around the world",
+    
+    // New App Store Reviews
+    review1_text: "Excellent app! 3 different viewing modes, shows all numbers drawn, last 4 numbers called are highlighted in case of a late call and shows current number enlarged. Can record your own number call-outs and change the frequency of calls. Hours of fun",
+    review1_author: "RBukes",
+    review1_source: "App Store",
+    
+    review2_text: "Great game! We connected it to the TV and it looked great! It generates cards with QR codes to easily check lines and bingos. Great family bingo afternoon! Highly recommended!",
+    review2_author: "LyJ!",
+    review2_source: "App Store",
+    
+    review3_text: "Excellent bingo app. Does everything you need apart from tell you how many numbers have been called",
+    review3_author: "Koolkevin7",
+    review3_source: "App Store",
+    
+    review4_text: "Amazing, very well made with an impeccable design.",
+    review4_author: "Alberto BG",
+    review4_source: "App Store",
+    
+    review5_text: "With the new option for 2 second call time, the app is now our favorite",
+    review5_author: "dmaa670",
+    review5_source: "App Store",
     
     // FAQ Section
     faq_title: "Frequently Asked Questions",
@@ -175,6 +208,14 @@ const translations = {
     team_designer: "Diseñador UX/UI",
     team_linkedin: "Perfil de LinkedIn →",
     
+    // Navigation
+    nav_apps: "Apps",
+    nav_advantages: "Ventajas", 
+    nav_qr: "Tutorial QR",
+    nav_reviews: "Reseñas",
+    nav_faq: "Preguntas",
+    nav_team: "Equipo",
+    
     // Footer
     footer_rights: "© 2024 Wombat Apps. Todos los derechos reservados.",
     footer_tagline: "¡El mejor Bingo digital!",
@@ -219,6 +260,31 @@ const translations = {
     privacy_contact_content: "Si tiene alguna pregunta o sugerencia sobre nuestra Política de Privacidad, no dude en contactarnos.",
     contact_email: "Correo electrónico:",
     contact_website: "Sitio web:",
+    
+    // Reviews Section
+    reviews_title: "Lo que dicen nuestros usuarios",
+    reviews_subtitle: "Reseñas reales de jugadores de Bingo satisfechos de todo el mundo",
+    
+    // New App Store Reviews
+    review1_text: "¡Excelente app! 3 modos de vista diferentes, muestra todos los números cantados, los últimos 4 números están resaltados en caso de llamada tardía y muestra el número actual ampliado. Puedes grabar tus propias llamadas de números y cambiar la frecuencia. Horas de diversión",
+    review1_author: "RBukes",
+    review1_source: "App Store",
+    
+    review2_text: "¡Un juego genial! Lo hemos conectado con la tele y se veía muy bien! Genera cartones con QR para poder comprobar las líneas y bingos fácilmente. ¡Muy buena tarde de bingo en familia! ¡Muy recomendable!",
+    review2_author: "LyJ!",
+    review2_source: "App Store",
+    
+    review3_text: "Excelente app de bingo. Hace todo lo que necesitas excepto decirte cuántos números han sido cantados",
+    review3_author: "Koolkevin7",
+    review3_source: "App Store",
+    
+    review4_text: "Mola tela, muy bien hecha y un diseño impecable.",
+    review4_author: "Alberto BG",
+    review4_source: "App Store",
+    
+    review5_text: "Con la nueva opción de 2 segundos de tiempo de llamada, la app ahora es nuestra favorita",
+    review5_author: "dmaa670",
+    review5_source: "App Store",
     
     // FAQ Section
     faq_title: "Preguntas Frecuentes",
@@ -300,6 +366,14 @@ const translations = {
     team_designer: "Designer UX/UI",
     team_linkedin: "Profil LinkedIn →",
     
+    // Navigation
+    nav_apps: "Apps",
+    nav_advantages: "Avantages", 
+    nav_qr: "Tutoriel QR",
+    nav_reviews: "Avis",
+    nav_faq: "FAQ",
+    nav_team: "Équipe",
+    
     // Footer
     footer_rights: "© 2024 Wombat Apps. Tous droits réservés.",
     footer_tagline: "La meilleure machine à Bingo !",
@@ -344,6 +418,31 @@ const translations = {
     privacy_contact_content: "Si vous avez des questions ou suggestions concernant notre Politique de Confidentialité, n'hésitez pas à nous contacter.",
     contact_email: "Email :",
     contact_website: "Site web :",
+    
+    // Reviews Section
+    reviews_title: "Ce que disent nos utilisateurs",
+    reviews_subtitle: "Vraies critiques de joueurs de Bingo satisfaits du monde entier",
+    
+    // New App Store Reviews
+    review1_text: "Excellente app ! 3 modes de vue différents, affiche tous les numéros tirés, les 4 derniers numéros appelés sont surlignés en cas d'appel tardif et affiche le numéro actuel agrandi. Peut enregistrer vos propres appels de numéros et changer la fréquence. Des heures de plaisir",
+    review1_author: "RBukes",
+    review1_source: "App Store",
+    
+    review2_text: "Excellent jeu ! Nous l'avons connecté à la télé et c'était superbe ! Il génère des cartons avec codes QR pour vérifier facilement les lignes et bingos. Excellent après-midi bingo en famille ! Très recommandé !",
+    review2_author: "LyJ!",
+    review2_source: "App Store",
+    
+    review3_text: "Excellente app de bingo. Fait tout ce dont vous avez besoin sauf vous dire combien de numéros ont été appelés",
+    review3_author: "Koolkevin7",
+    review3_source: "App Store",
+    
+    review4_text: "Fantastique, très bien réalisée avec un design impeccable.",
+    review4_author: "Alberto BG",
+    review4_source: "App Store",
+    
+    review5_text: "Avec la nouvelle option de 2 secondes de temps d'appel, l'app est maintenant notre préférée",
+    review5_author: "dmaa670",
+    review5_source: "App Store",
     
     // FAQ Section
     faq_title: "Questions Fréquemment Posées",

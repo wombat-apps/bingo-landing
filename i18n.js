@@ -72,20 +72,23 @@ class I18n {
   }
 
   createLanguageSelector() {
-    const header = document.querySelector('header .container');
+    // Check if language selector already exists
+    if (document.querySelector('.language-selector')) return;
+    
+    const header = document.querySelector('header');
     if (!header) return;
 
     const languageSelector = document.createElement('div');
-    languageSelector.className = 'language-selector fixed top-4 right-4 z-50';
+    languageSelector.className = 'language-selector absolute top-4 right-4 z-20';
     languageSelector.innerHTML = `
-      <div class="bg-white rounded-lg shadow-lg p-2 flex space-x-2">
-        <button class="lang-btn px-3 py-1 rounded text-sm font-medium hover:bg-gray-100 transition-colors" data-lang="en">EN</button>
-        <button class="lang-btn px-3 py-1 rounded text-sm font-medium hover:bg-gray-100 transition-colors" data-lang="es">ES</button>
-        <button class="lang-btn px-3 py-1 rounded text-sm font-medium hover:bg-gray-100 transition-colors" data-lang="fr">FR</button>
+      <div class="bg-white/20 backdrop-blur-sm rounded-lg p-1 flex space-x-1 border border-white/30">
+        <button class="lang-btn px-2 py-1 rounded text-xs font-medium text-white/90 hover:bg-white/30 hover:text-white transition-colors" data-lang="en">EN</button>
+        <button class="lang-btn px-2 py-1 rounded text-xs font-medium text-white/90 hover:bg-white/30 hover:text-white transition-colors" data-lang="es">ES</button>
+        <button class="lang-btn px-2 py-1 rounded text-xs font-medium text-white/90 hover:bg-white/30 hover:text-white transition-colors" data-lang="fr">FR</button>
       </div>
     `;
 
-    document.body.appendChild(languageSelector);
+    header.appendChild(languageSelector);
 
     // Add event listeners
     const buttons = languageSelector.querySelectorAll('.lang-btn');
@@ -104,11 +107,11 @@ class I18n {
     buttons.forEach(btn => {
       const lang = btn.getAttribute('data-lang');
       if (lang === this.currentLanguage) {
-        btn.classList.add('bg-bingo-purple', 'text-white');
-        btn.classList.remove('hover:bg-gray-100', 'text-gray-600', 'hover:text-bingo-purple');
+        btn.classList.add('bg-white/40', 'text-white', 'font-semibold');
+        btn.classList.remove('hover:bg-white/30', 'hover:text-white', 'text-white/90');
       } else {
-        btn.classList.remove('bg-bingo-purple', 'text-white');
-        btn.classList.add('hover:bg-gray-100', 'text-gray-600', 'hover:text-bingo-purple');
+        btn.classList.remove('bg-white/40', 'text-white', 'font-semibold');
+        btn.classList.add('hover:bg-white/30', 'hover:text-white', 'text-white/90');
       }
     });
   }
