@@ -17,7 +17,19 @@ const STORAGE_KEY = 'bingo-language';
 let currentLanguage = DEFAULT_LANGUAGE;
 
 /**
- * Get the stored language from localStorage
+ * Get the browser's preferred language
+ * @returns {Language | null}
+ */
+function getBrowserLanguage() {
+  const browserLang = navigator.language?.split('-')[0];
+  if (browserLang && SUPPORTED_LANGUAGES.includes(/** @type {Language} */ (browserLang))) {
+    return /** @type {Language} */ (browserLang);
+  }
+  return null;
+}
+
+/**
+ * Get the stored language from localStorage, falling back to browser language
  * @returns {Language}
  */
 function getStoredLanguage() {
@@ -29,7 +41,9 @@ function getStoredLanguage() {
   } catch (error) {
     console.warn('localStorage not available:', error);
   }
-  return DEFAULT_LANGUAGE;
+
+  // Fallback to browser language detection
+  return getBrowserLanguage() || DEFAULT_LANGUAGE;
 }
 
 /**
@@ -202,13 +216,13 @@ function initializeFAQ() {
       content.setAttribute('aria-labelledby', `faq-btn-${index + 1}`);
     }
 
-    button.addEventListener('click', function () {
-      const faqContent = this.parentElement?.querySelector('.faq-content');
-      const faqIcon = this.querySelector('.faq-icon svg');
+    button.addEventListener('click', () => {
+      const faqContent = button.parentElement?.querySelector('.faq-content');
+      const faqIcon = button.querySelector('.faq-icon svg');
       const isOpen = !faqContent?.classList.contains('hidden');
 
       // Update ARIA
-      this.setAttribute('aria-expanded', String(!isOpen));
+      button.setAttribute('aria-expanded', String(!isOpen));
 
       // Toggle content visibility
       if (isOpen) {
@@ -260,7 +274,7 @@ function initializeReviewsCarousel() {
   function updateCarousel() {
     const settings = getCarouselSettings();
     const translateX = -(currentSlide * (100 / settings.reviewsPerSlide));
-    carousel.style.transform = `translateX(${translateX}%)`;
+    if (carousel) carousel.style.transform = `translateX(${translateX}%)`;
 
     dots.forEach((dot, index) => {
       if (index < settings.totalSlides) {
@@ -330,10 +344,10 @@ function initializeSmoothScrolling() {
   const navLinks = document.querySelectorAll('.nav-link');
 
   navLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
+    link.addEventListener('click', (e) => {
       e.preventDefault();
 
-      const href = this.getAttribute('href');
+      const href = link.getAttribute('href');
       if (!href) return;
 
       const targetId = href.substring(1);
@@ -349,7 +363,7 @@ function initializeSmoothScrolling() {
           behavior: 'smooth'
         });
 
-        updateActiveNavLink(/** @type {HTMLElement} */ (this));
+        updateActiveNavLink(/** @type {HTMLElement} */ (link));
       }
     });
   });
