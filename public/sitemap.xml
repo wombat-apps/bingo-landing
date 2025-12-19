@@ -1,13 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <!-- English (default) -->
     <url>
         <loc>https://wombat-apps.com/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/"/>
         <lastmod>2025-12-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
+
+    <!-- Spanish -->
+    <url>
+        <loc>https://wombat-apps.com/es/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/"/>
+        <lastmod>2025-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- French -->
+    <url>
+        <loc>https://wombat-apps.com/fr/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/"/>
+        <lastmod>2025-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Privacy Policy - English -->
     <url>
         <loc>https://wombat-apps.com/privacy-policy.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/privacy-policy.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/privacy-policy.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/privacy-policy.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/privacy-policy.html"/>
+        <lastmod>2025-12-19</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- Privacy Policy - Spanish -->
+    <url>
+        <loc>https://wombat-apps.com/es/privacy-policy.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/privacy-policy.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/privacy-policy.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/privacy-policy.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/privacy-policy.html"/>
+        <lastmod>2025-12-19</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- Privacy Policy - French -->
+    <url>
+        <loc>https://wombat-apps.com/fr/privacy-policy.html</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/privacy-policy.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/privacy-policy.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/privacy-policy.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/privacy-policy.html"/>
         <lastmod>2025-12-19</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>

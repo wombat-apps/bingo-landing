@@ -42,6 +42,13 @@ export const GOOGLE_PLAY_BADGE_URLS = {
  */
 export const translations = {
   en: {
+    // SEO Meta Tags
+    meta_title: "Bingo!! - Best Bingo Caller App for iOS & Android",
+    meta_description: "Bingo!! is the best bingo caller app for iOS and Android. Play bingo anywhere with automatic number calling, QR card verification, and beautiful cards.",
+    meta_keywords: "bingo app, bingo caller, bingo game, bingo cards, bingo machine, play bingo, bingo iOS, bingo Android",
+    og_title: "Bingo!! - Best Bingo Caller App",
+    og_description: "Play bingo anywhere with automatic number calling, QR card verification, and beautiful cards. Available on iOS and Android.",
+
     // Header
     title: "Bingo!! - Best Bingo caller machine",
     headline: "Best Bingo caller machine!",
@@ -206,6 +213,13 @@ export const translations = {
   },
 
   es: {
+    // SEO Meta Tags
+    meta_title: "Bingo!! - La Mejor App de Bingo para iOS y Android",
+    meta_description: "Bingo!! es la mejor app de bingo para iOS y Android. Juega al bingo en cualquier lugar con canto automático, verificación QR y hermosos cartones.",
+    meta_keywords: "app de bingo, cantar bingo, juego de bingo, cartones de bingo, máquina de bingo, jugar bingo, bingo iOS, bingo Android",
+    og_title: "Bingo!! - La Mejor App de Bingo",
+    og_description: "Juega al bingo en cualquier lugar con canto automático de números, verificación QR y hermosos cartones. Disponible en iOS y Android.",
+
     // Header
     title: "Bingo!! - ¡El mejor Bingo digital!",
     headline: "¡El mejor Bingo digital!",
@@ -370,6 +384,13 @@ export const translations = {
   },
 
   fr: {
+    // SEO Meta Tags
+    meta_title: "Bingo!! - La Meilleure App de Bingo pour iOS et Android",
+    meta_description: "Bingo!! est la meilleure app de bingo pour iOS et Android. Jouez au bingo partout avec appel automatique, vérification QR et de beaux cartons.",
+    meta_keywords: "app bingo, appeler bingo, jeu de bingo, cartons de bingo, machine à bingo, jouer bingo, bingo iOS, bingo Android",
+    og_title: "Bingo!! - La Meilleure App de Bingo",
+    og_description: "Jouez au bingo partout avec appel automatique des numéros, vérification QR et de beaux cartons. Disponible sur iOS et Android.",
+
     // Header
     title: "Bingo!! - La meilleure machine à Bingo !",
     headline: "La meilleure machine à Bingo !",

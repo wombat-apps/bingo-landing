@@ -53,6 +53,33 @@ function debounce(fn, delay) {
 }
 
 /**
+ * Get the language from the current URL path
+ * @returns {Language | null}
+ */
+function getLanguageFromURL() {
+  const path = window.location.pathname;
+  // Match /es/ or /fr/ at the start of the path
+  const match = path.match(/^\/([a-z]{2})\//);
+  if (match) {
+    const lang = match[1];
+    if (SUPPORTED_LANGUAGES.includes(/** @type {Language} */ (lang))) {
+      return /** @type {Language} */ (lang);
+    }
+  }
+  // Root path means default language (English)
+  return null;
+}
+
+/**
+ * Check if we're on the root path (not in a language subdirectory)
+ * @returns {boolean}
+ */
+function isRootPath() {
+  const path = window.location.pathname;
+  return path === '/' || path === '/index.html' || path === '';
+}
+
+/**
  * Get the browser's preferred language
  * @returns {Language | null}
  */
@@ -65,10 +92,63 @@ function getBrowserLanguage() {
 }
 
 /**
- * Get the stored language from localStorage, falling back to browser language
+ * Redirect to the appropriate language version if needed
+ * Only redirects from root path when:
+ * 1. User hasn't manually chosen a language (no localStorage)
+ * 2. Browser language is es or fr
+ * 3. Not already on a language-specific path
+ * 4. Not bypassed with ?noredirect query param
+ */
+function handleLanguageRedirect() {
+  // Skip redirect if ?noredirect is present (for testing)
+  if (window.location.search.includes('noredirect')) {
+    return;
+  }
+
+  // Only redirect from root path
+  if (!isRootPath()) {
+    return;
+  }
+
+  // Check if user has manually chosen a language
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      // User has a preference, don't auto-redirect
+      return;
+    }
+  } catch {
+    // localStorage not available, continue with redirect logic
+  }
+
+  // Get browser language
+  const browserLang = getBrowserLanguage();
+
+  // Only redirect for non-default languages (es, fr)
+  if (browserLang && browserLang !== DEFAULT_LANGUAGE) {
+    // Construct the redirect URL
+    const currentPath = window.location.pathname;
+    const newPath = `/${browserLang}${currentPath === '/' ? '/' : currentPath}`;
+    const newUrl = `${window.location.origin}${newPath}${window.location.search}${window.location.hash}`;
+
+    // Use replace to avoid back button loop
+    window.location.replace(newUrl);
+  }
+}
+
+/**
+ * Get the stored language from localStorage, URL, or browser preference
+ * Priority: URL path > localStorage > browser language > default
  * @returns {Language}
  */
 function getStoredLanguage() {
+  // First, check URL path (highest priority for SEO localized pages)
+  const urlLang = getLanguageFromURL();
+  if (urlLang) {
+    return urlLang;
+  }
+
+  // Then check localStorage
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored && SUPPORTED_LANGUAGES.includes(/** @type {Language} */ (stored))) {
@@ -167,17 +247,30 @@ function updateLanguageSelector() {
   buttons.forEach(btn => {
     const lang = btn.getAttribute('data-lang');
     if (lang === currentLanguage) {
-      btn.classList.add('bg-white/40', 'text-white', 'font-semibold');
-      btn.classList.remove('hover:bg-white/30', 'hover:text-white', 'text-white/90');
+      btn.classList.add('bg-gray-500', 'text-white', 'font-semibold');
+      btn.classList.remove('hover:bg-gray-600', 'hover:text-white', 'text-gray-300');
     } else {
-      btn.classList.remove('bg-white/40', 'text-white', 'font-semibold');
-      btn.classList.add('hover:bg-white/30', 'hover:text-white', 'text-white/90');
+      btn.classList.remove('bg-gray-500', 'text-white', 'font-semibold');
+      btn.classList.add('hover:bg-gray-600', 'hover:text-white', 'text-gray-300');
     }
   });
 }
 
 /**
- * Change the current language
+ * Get the current page name from the URL path
+ * @returns {string}
+ */
+function getCurrentPageName() {
+  const path = window.location.pathname;
+  // Remove language prefix if present
+  const cleanPath = path.replace(/^\/(?:es|fr)\//, '/');
+  // Get the page name (e.g., 'privacy-policy.html' or '' for index)
+  const match = cleanPath.match(/\/([^/]*\.html)?$/);
+  return match ? (match[1] || '') : '';
+}
+
+/**
+ * Change the current language - navigates to the localized URL
  * @param {string} lang
  */
 export function changeLanguage(lang) {
@@ -186,36 +279,49 @@ export function changeLanguage(lang) {
     return;
   }
 
-  currentLanguage = /** @type {Language} */ (lang);
-  setStoredLanguage(currentLanguage);
-  updateContent();
-  updateLanguageSelector();
+  // Store the preference
+  setStoredLanguage(/** @type {Language} */ (lang));
+
+  // Navigate to the appropriate URL
+  const pageName = getCurrentPageName();
+  let newPath;
+
+  if (lang === DEFAULT_LANGUAGE) {
+    // English: root path
+    newPath = pageName ? `/${pageName}` : '/';
+  } else {
+    // Other languages: /es/ or /fr/
+    newPath = pageName ? `/${lang}/${pageName}` : `/${lang}/`;
+  }
+
+  // Navigate to the new URL
+  window.location.href = newPath;
 }
 
 /**
- * Create language selector and append to header
+ * Create language selector and append to footer
  */
 function createLanguageSelector() {
   // Check if language selector already exists
   if (document.querySelector('.language-selector')) return;
 
-  const header = document.querySelector('header');
-  if (!header) return;
+  const footer = document.querySelector('footer .container');
+  if (!footer) return;
 
   const languageSelector = document.createElement('div');
-  languageSelector.className = 'language-selector absolute top-4 right-4 z-20';
+  languageSelector.className = 'language-selector mt-6';
   languageSelector.setAttribute('role', 'navigation');
   languageSelector.setAttribute('aria-label', t('toggle_menu'));
 
   languageSelector.innerHTML = `
-    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-1 flex space-x-1 border border-white/30">
-      <button class="lang-btn px-2 py-1 rounded text-xs font-medium text-white/90 hover:bg-white/30 hover:text-white transition-colors" data-lang="en" aria-label="English">EN</button>
-      <button class="lang-btn px-2 py-1 rounded text-xs font-medium text-white/90 hover:bg-white/30 hover:text-white transition-colors" data-lang="es" aria-label="Español">ES</button>
-      <button class="lang-btn px-2 py-1 rounded text-xs font-medium text-white/90 hover:bg-white/30 hover:text-white transition-colors" data-lang="fr" aria-label="Français">FR</button>
+    <div class="inline-flex bg-gray-700 rounded-lg p-1 space-x-1">
+      <button class="lang-btn px-3 py-1 rounded text-sm font-medium text-gray-300 hover:bg-gray-600 hover:text-white transition-colors" data-lang="en" aria-label="English">EN</button>
+      <button class="lang-btn px-3 py-1 rounded text-sm font-medium text-gray-300 hover:bg-gray-600 hover:text-white transition-colors" data-lang="es" aria-label="Español">ES</button>
+      <button class="lang-btn px-3 py-1 rounded text-sm font-medium text-gray-300 hover:bg-gray-600 hover:text-white transition-colors" data-lang="fr" aria-label="Français">FR</button>
     </div>
   `;
 
-  header.appendChild(languageSelector);
+  footer.appendChild(languageSelector);
 
   // Add event listeners using event delegation
   languageSelector.addEventListener('click', (e) => {
@@ -596,6 +702,10 @@ function initializeMobileMenu() {
  * Initialize all i18n functionality
  */
 export function initI18n() {
+  // Handle automatic language redirect (only on root path)
+  handleLanguageRedirect();
+
+  // Set current language based on URL, localStorage, or browser preference
   currentLanguage = getStoredLanguage();
   updateContent();
   createLanguageSelector();
