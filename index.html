@@ -11,6 +11,8 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Wombat Apps">
     <meta name="theme-color" content="#822ad2">
+    <link rel="icon" type="image/png" href="/images/bingo-logo.png">
+    <link rel="apple-touch-icon" href="/images/bingo-logo.png">
     <link rel="canonical" href="https://wombat-apps.com/">
 
     <!-- Open Graph -->
@@ -40,26 +42,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'bingo-purple': '#822ad2',
-                        'bingo-blue': '#557cbf',
-                        'bingo-pink': '#e91e63'
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Tailwind CSS v4 via Vite -->
+    <link rel="stylesheet" href="/src/styles/main.css">
+
+    <!-- Google Fonts with display=swap for better performance -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="translations.js"></script>
-    <script src="i18n.js"></script>
+
+    <!-- ES Module JavaScript -->
+    <script type="module" src="/src/js/main.js"></script>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -164,6 +154,11 @@
     </script>
 </head>
 <body class="bg-white font-sans">
+    <!-- Skip to main content link (Accessibility) -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-bingo-purple focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold" data-i18n="skip_to_content">
+        Skip to main content
+    </a>
+
     <!-- Header Section -->
     <header class="bg-gradient-to-br from-bingo-purple via-bingo-blue to-bingo-pink min-h-screen flex items-center relative overflow-hidden">
         <!-- Animated background elements -->
@@ -240,9 +235,12 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <!-- Mobile menu button -->
-                <button id="mobileMenuBtn" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-bingo-purple hover:border-bingo-purple">
-                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <title>Menu</title>
+                <button id="mobileMenuBtn"
+                        class="md:hidden flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-bingo-purple hover:border-bingo-purple"
+                        aria-label="Toggle navigation menu"
+                        aria-expanded="false"
+                        aria-controls="mobileMenu">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
                     </svg>
                 </button>
@@ -321,6 +319,7 @@
     </nav>
 
     <!-- Both Apps Section -->
+    <main id="main">
     <section id="apps" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -486,28 +485,34 @@
             <div class="grid md:grid-cols-3 gap-12">
                 <div class="text-center">
                     <div class="bg-white rounded-2xl shadow-lg p-8 mb-6">
-                        <img src="images/qr-tutorial-step-1.png" 
-                             alt="QR Code Tutorial Step 1" 
+                        <img src="images/qr-tutorial-step-1.png"
+                             alt="QR Code Tutorial Step 1"
+                             loading="lazy"
+                             decoding="async"
                              class="w-full h-auto rounded-lg">
                     </div>
                     <h3 class="text-2xl font-bold mb-4 text-gray-800" data-i18n="qr_step1_title">1. Scan QR code</h3>
                     <p class="text-gray-600 text-lg" data-i18n="qr_step1_desc">Point your camera at the QR code on your bingo card</p>
                 </div>
-                
+
                 <div class="text-center">
                     <div class="bg-white rounded-2xl shadow-lg p-8 mb-6">
-                        <img src="images/qr-tutorial-step-2.png" 
-                             alt="QR Code Tutorial Step 2" 
+                        <img src="images/qr-tutorial-step-2.png"
+                             alt="QR Code Tutorial Step 2"
+                             loading="lazy"
+                             decoding="async"
                              class="w-full h-auto rounded-lg">
                     </div>
                     <h3 class="text-2xl font-bold mb-4 text-gray-800" data-i18n="qr_step2_title">2. Card appears</h3>
                     <p class="text-gray-600 text-lg" data-i18n="qr_step2_desc">Your bingo card automatically appears in the app</p>
                 </div>
-                
+
                 <div class="text-center">
                     <div class="bg-white rounded-2xl shadow-lg p-8 mb-6">
-                        <img src="images/qr-tutorial-step-3.png" 
-                             alt="QR Code Tutorial Step 3" 
+                        <img src="images/qr-tutorial-step-3.png"
+                             alt="QR Code Tutorial Step 3"
+                             loading="lazy"
+                             decoding="async"
                              class="w-full h-auto rounded-lg">
                     </div>
                     <h3 class="text-2xl font-bold mb-4 text-gray-800" data-i18n="qr_step3_title">3. Play automatically</h3>
@@ -948,49 +953,56 @@
                 <div class="bg-white rounded-3xl p-8 text-center shadow-lg">
                     <picture>
                         <source srcset="images/team-alvaro-murillo.webp" type="image/webp">
-                        <img src="images/team-alvaro-murillo.png" 
-                             alt="Álvaro Murillo" 
+                        <img src="images/team-alvaro-murillo.png"
+                             alt="Álvaro Murillo"
+                             loading="lazy"
+                             decoding="async"
                              class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
                     </picture>
                     <h3 class="text-2xl font-bold mb-2 text-gray-800">Álvaro Murillo</h3>
                     <p class="text-bingo-purple font-semibold mb-4" data-i18n="team_ios">iOS Developer</p>
-                    <a href="https://es.linkedin.com/in/alvaromurillop/" class="text-bingo-blue hover:text-bingo-purple transition-colors font-medium" data-i18n="team_linkedin">
+                    <a href="https://es.linkedin.com/in/alvaromurillop/" class="text-bingo-blue hover:text-bingo-purple transition-colors font-medium" target="_blank" rel="noopener noreferrer" data-i18n="team_linkedin">
                         LinkedIn Profile →
                     </a>
                 </div>
-                
+
                 <!-- Team Member 2 -->
                 <div class="bg-white rounded-3xl p-8 text-center shadow-lg">
                     <picture>
                         <source srcset="images/team-jose-balanza.webp" type="image/webp">
-                        <img src="images/team-jose-balanza.png" 
-                             alt="José Balanza" 
+                        <img src="images/team-jose-balanza.png"
+                             alt="José Balanza"
+                             loading="lazy"
+                             decoding="async"
                              class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
                     </picture>
                     <h3 class="text-2xl font-bold mb-2 text-gray-800">José Balanza</h3>
                     <p class="text-bingo-purple font-semibold mb-4" data-i18n="team_android">Android Developer</p>
-                    <a href="https://es.linkedin.com/in/jose-luis-balanza-b9246950/" class="text-bingo-blue hover:text-bingo-purple transition-colors font-medium" data-i18n="team_linkedin">
+                    <a href="https://es.linkedin.com/in/jose-luis-balanza-b9246950/" class="text-bingo-blue hover:text-bingo-purple transition-colors font-medium" target="_blank" rel="noopener noreferrer" data-i18n="team_linkedin">
                         LinkedIn Profile →
                     </a>
                 </div>
-                
+
                 <!-- Team Member 3 -->
                 <div class="bg-white rounded-3xl p-8 text-center shadow-lg">
                     <picture>
                         <source srcset="images/team-laura-abajo.webp" type="image/webp">
-                        <img src="images/team-laura-abajo.png" 
-                             alt="Laura Abajo" 
+                        <img src="images/team-laura-abajo.png"
+                             alt="Laura Abajo"
+                             loading="lazy"
+                             decoding="async"
                              class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
                     </picture>
                     <h3 class="text-2xl font-bold mb-2 text-gray-800">Laura Abajo</h3>
                     <p class="text-bingo-purple font-semibold mb-4" data-i18n="team_designer">UX/UI Designer</p>
-                    <a href="https://es.linkedin.com/in/lauraabajo" class="text-bingo-blue hover:text-bingo-purple transition-colors font-medium" data-i18n="team_linkedin">
+                    <a href="https://es.linkedin.com/in/lauraabajo" class="text-bingo-blue hover:text-bingo-purple transition-colors font-medium" target="_blank" rel="noopener noreferrer" data-i18n="team_linkedin">
                         LinkedIn Profile →
                     </a>
                 </div>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
@@ -1007,235 +1019,5 @@
             <p class="text-gray-400" data-i18n="footer_tagline">Best Bingo caller machine!</p>
         </div>
     </footer>
-
-    <script>
-        // Initialize i18n when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            window.i18n = new I18n();
-            
-            // Initialize FAQ accordion functionality
-            initializeFAQ();
-            
-            // Initialize Reviews Carousel
-            initializeReviewsCarousel();
-            
-            // Initialize smooth scrolling navigation
-            initializeSmoothScrolling();
-            
-            // Initialize mobile menu
-            initializeMobileMenu();
-        });
-        
-        function initializeFAQ() {
-            const faqButtons = document.querySelectorAll('.faq-button');
-            
-            faqButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const faqContent = this.parentElement.querySelector('.faq-content');
-                    const faqIcon = this.querySelector('.faq-icon svg');
-                    const isOpen = !faqContent.classList.contains('hidden');
-                    
-                    // Toggle content visibility
-                    if (isOpen) {
-                        faqContent.classList.add('hidden');
-                        faqIcon.style.transform = 'rotate(0deg)';
-                    } else {
-                        faqContent.classList.remove('hidden');
-                        faqIcon.style.transform = 'rotate(180deg)';
-                    }
-                });
-            });
-        }
-        
-        function initializeReviewsCarousel() {
-            const carousel = document.getElementById('reviewsCarousel');
-            const prevButton = document.getElementById('prevReview');
-            const nextButton = document.getElementById('nextReview');
-            const dots = document.querySelectorAll('.carousel-dot');
-            
-            let currentSlide = 0;
-            const totalReviews = 5;
-            
-            // Function to calculate how many reviews to show and total slides based on screen size
-            function getCarouselSettings() {
-                if (window.innerWidth >= 1024) {
-                    return { reviewsPerSlide: 3, totalSlides: Math.ceil(totalReviews / 3) }; // lg: show 3, need 2 slides
-                }
-                if (window.innerWidth >= 768) {
-                    return { reviewsPerSlide: 2, totalSlides: Math.ceil(totalReviews / 2) }; // md: show 2, need 3 slides
-                }
-                return { reviewsPerSlide: 1, totalSlides: totalReviews }; // mobile: show 1, need 5 slides
-            }
-            
-            // Function to update carousel position
-            function updateCarousel() {
-                const settings = getCarouselSettings();
-                const translateX = -(currentSlide * (100 / settings.reviewsPerSlide));
-                carousel.style.transform = `translateX(${translateX}%)`;
-                
-                // Update dots visibility and active state
-                dots.forEach((dot, index) => {
-                    if (index < settings.totalSlides) {
-                        dot.style.display = 'block';
-                        if (index === currentSlide) {
-                            dot.classList.remove('bg-gray-300');
-                            dot.classList.add('bg-bingo-purple');
-                        } else {
-                            dot.classList.remove('bg-bingo-purple');
-                            dot.classList.add('bg-gray-300');
-                        }
-                    } else {
-                        dot.style.display = 'none';
-                    }
-                });
-            }
-            
-            // Next button functionality
-            nextButton.addEventListener('click', function() {
-                const settings = getCarouselSettings();
-                currentSlide = (currentSlide + 1) % settings.totalSlides;
-                updateCarousel();
-            });
-            
-            // Previous button functionality
-            prevButton.addEventListener('click', function() {
-                const settings = getCarouselSettings();
-                currentSlide = (currentSlide - 1 + settings.totalSlides) % settings.totalSlides;
-                updateCarousel();
-            });
-            
-            // Dots functionality
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', function() {
-                    const settings = getCarouselSettings();
-                    if (index < settings.totalSlides) {
-                        currentSlide = index;
-                        updateCarousel();
-                    }
-                });
-            });
-            
-            // Auto-play carousel
-            let autoPlayInterval = setInterval(() => {
-                const settings = getCarouselSettings();
-                currentSlide = (currentSlide + 1) % settings.totalSlides;
-                updateCarousel();
-            }, 5000); // Change slide every 5 seconds
-            
-            // Handle window resize
-            window.addEventListener('resize', function() {
-                // Reset to first slide when screen size changes
-                currentSlide = 0;
-                updateCarousel();
-                
-                // Restart auto-play with new settings
-                clearInterval(autoPlayInterval);
-                autoPlayInterval = setInterval(() => {
-                    const settings = getCarouselSettings();
-                    currentSlide = (currentSlide + 1) % settings.totalSlides;
-                    updateCarousel();
-                }, 5000);
-            });
-            
-            // Initial setup
-            updateCarousel();
-        }
-        
-        function initializeSmoothScrolling() {
-            // Get all navigation links
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Get the target section ID from href
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
-                    
-                    if (targetSection) {
-                        // Calculate offset to account for the sticky navigation
-                        const navHeight = document.querySelector('nav').offsetHeight;
-                        const targetPosition = targetSection.offsetTop - navHeight - 20; // 20px extra padding
-                        
-                        // Smooth scroll to target
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Update active state
-                        updateActiveNavLink(this);
-                    }
-                });
-            });
-            
-            // Update active navigation state on scroll
-            window.addEventListener('scroll', function() {
-                updateActiveNavLinkOnScroll();
-            });
-        }
-        
-        function updateActiveNavLink(activeLink) {
-            // Remove active class from all nav links
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.classList.remove('text-bingo-purple', 'bg-purple-50');
-                link.classList.add('text-gray-700');
-            });
-            
-            // Add active class to clicked link
-            activeLink.classList.remove('text-gray-700');
-            activeLink.classList.add('text-bingo-purple', 'bg-purple-50');
-        }
-        
-        function updateActiveNavLinkOnScroll() {
-            const sections = ['apps', 'advantages', 'qr-tutorial', 'reviews', 'faq', 'team'];
-            const navHeight = document.querySelector('nav').offsetHeight;
-            const scrollPosition = window.scrollY + navHeight + 100; // 100px offset for better UX
-            
-            let activeSection = '';
-            
-            // Find which section is currently in view
-            sections.forEach(sectionId => {
-                const section = document.getElementById(sectionId);
-                if (section) {
-                    const sectionTop = section.offsetTop;
-                    const sectionBottom = sectionTop + section.offsetHeight;
-                    
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                        activeSection = sectionId;
-                    }
-                }
-            });
-            
-            // Update navigation active state
-            if (activeSection) {
-                const activeLink = document.querySelector(`.nav-link[href="#${activeSection}"]`);
-                if (activeLink) {
-                    updateActiveNavLink(activeLink);
-                }
-            }
-        }
-        
-        function initializeMobileMenu() {
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            
-            if (mobileMenuBtn && mobileMenu) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                });
-                
-                // Close mobile menu when clicking on a nav link
-                const mobileNavLinks = mobileMenu.querySelectorAll('.nav-link');
-                mobileNavLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        mobileMenu.classList.add('hidden');
-                    });
-                });
-            }
-        }
-    </script>
 </body>
 </html>
