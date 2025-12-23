@@ -1,9 +1,27 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "allow": [
       "WebFetch(domain:wombat-apps.com)",
       "Bash(curl:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(reviews-tool search:*)",
+      "Bash(reviews-tool:*)",
+      "mcp__app-store-reviews__fetchAppStoreReviews",
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm ls:*)",
+      "Bash(timeout 5 npm run dev:*)",
+      "Bash(grep:*)",
+      "Bash(node:*)",
+      "Bash(git -C /Volumes/Developer/bingo-landing diff --stat)",
+      "Bash(npm install:*)",
+      "Bash(npm run typecheck:*)",
+      "Bash(npm run lint:*)",
+      "Bash(npm outdated:*)",
+      "Bash(npm view:*)",
+      "Bash(git -C /Volumes/Developer/bingo-landing show f956e5e --stat)"
     ],
     "deny": []
   }
