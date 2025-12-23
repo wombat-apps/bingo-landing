@@ -1,0 +1,491 @@
+/**
+ * Translations for the main landing page (LandingPage.astro)
+ * Includes: SEO, hero, advantages, apps section, QR tutorial, reviews, FAQ, team
+ */
+
+export const landing = {
+  en: {
+    // SEO Meta Tags
+    meta_title: "Bingo!! - Best Bingo Caller App for iOS & Android",
+    meta_description: "Bingo!! is the best bingo caller app for iOS and Android. Play bingo anywhere with automatic number calling, QR card verification, and beautiful cards.",
+    meta_keywords: "bingo app, bingo caller, bingo game, bingo cards, bingo machine, play bingo, bingo iOS, bingo Android",
+    og_title: "Bingo!! - Best Bingo Caller App",
+    og_description: "Play bingo anywhere with automatic number calling, QR card verification, and beautiful cards. Available on iOS and Android.",
+
+    // Header
+    title: "Bingo!! - Best Bingo caller machine",
+    headline: "Best Bingo caller machine!",
+    subtitle: "Create unforgettable bingo nights at home with family and friends!",
+
+    // Advantages Section
+    advantages_title: "6 advantages",
+    advantage1_title: "Customize your game",
+    advantage1_desc: "Choose between 90 or 75 balls mode, the speed and different voices or languages",
+    advantage2_title: "Printables or cards app",
+    advantage2_desc: "Print the cards or download our cards app to play with your own device. Play with as many cards as you want!",
+    advantage3_title: "Scan the card and check",
+    advantage3_desc: "Every card has a unique QR code for instant verification. Scan any card to instantly check if it's a winning BINGO",
+    advantage4_title: "External screen support",
+    advantage4_desc: "You can view the board on television if you have the Airplay connection or even by cable",
+    advantage5_title: "Real voices",
+    advantage5_desc: "Our friend Adam makes jokes and rhymes so you will laugh a lot with your family or friends",
+    advantage6_title: "Create your own rhymes",
+    advantage6_desc: "If you prefer your own voice, record the numbers and the rhymes… it's going to be funny!",
+
+    // QR Tutorial Section
+    qr_title: "How QR code works",
+    qr_subtitle: "Scan QR codes on your bingo cards for instant digital card management and automatic gameplay",
+    qr_step1_title: "1. Scan QR code",
+    qr_step1_desc: "Point your camera at the QR code on your bingo card",
+    qr_step2_title: "2. Card appears",
+    qr_step2_desc: "Your bingo card automatically appears in the app",
+    qr_step3_title: "3. Play automatically",
+    qr_step3_desc: "Start playing with automatic number marking",
+
+    // Both Apps Section
+    apps_title: "Get both apps",
+    apps_subtitle: "Everything you need for the perfect home bingo experience",
+    main_app_title: "Bingo!!",
+    main_app_desc: "The best bingo caller machine with voices, animations and customization",
+
+    // Cards Section
+    cards_title: "Get your cards",
+    cards_app_title: "Bingo Cards!!",
+    cards_app_desc: "Get digital bingo cards on your device with our companion app",
+
+    // Team Section
+    team_title: "Meet our team",
+    team_subtitle: "The talented developers and designers behind your favorite bingo app",
+    team_ios: "iOS Developer",
+    team_android: "Android Developer",
+    team_designer: "UX/UI Designer",
+    team_linkedin: "LinkedIn Profile →",
+
+    // Reviews Section
+    reviews_title: "What our users say",
+    reviews_subtitle: "Real reviews from satisfied Bingo players around the world",
+    review1_text: "Excellent app! 3 different viewing modes, shows all numbers drawn, last 4 numbers called are highlighted in case of a late call and shows current number enlarged. Can record your own number call-outs and change the frequency of calls. Hours of fun",
+    review1_author: "RBukes",
+    review1_source: "App Store",
+    review2_text: "Great game! We connected it to the TV and it looked great! It generates cards with QR codes to easily check lines and bingos. Great family bingo afternoon! Highly recommended!",
+    review2_author: "LyJ!",
+    review2_source: "App Store",
+    review3_text: "Excellent bingo app. Does everything you need apart from tell you how many numbers have been called",
+    review3_author: "Koolkevin7",
+    review3_source: "App Store",
+    review4_text: "Amazing, very well made with an impeccable design.",
+    review4_author: "Alberto BG",
+    review4_source: "App Store",
+    review5_text: "With the new option for 2 second call time, the app is now our favorite",
+    review5_author: "dmaa670",
+    review5_source: "App Store",
+
+    // FAQ Section
+    faq_title: "Frequently Asked Questions",
+    faq_subtitle: "Find answers to common questions about our Bingo apps",
+    faq_q1: "How do I play Bingo with friends and family?",
+    faq_a1: "Download the main Bingo!! app on one device to act as the caller. Everyone else can either use printed cards or download the Bingo Cards!! app to get digital cards on their phones or tablets.",
+    faq_q2: "What's the difference between 75-ball and 90-ball Bingo?",
+    faq_a2: "75-ball Bingo uses numbers 1-75 with 5x5 cards, while 90-ball Bingo uses numbers 1-90 with 9x3 cards. You can choose either mode in the app settings to match your preference.",
+    faq_q3: "Can I customize the voices and language?",
+    faq_a3: "Yes! The app supports English, Spanish, and French with different voice options. You can also record your own custom voice and rhymes for a personalized experience.",
+    faq_q4: "How does the QR code verification work?",
+    faq_a4: "Each bingo card has a unique QR code. Simply scan the code with the main app's camera to instantly verify if the card has a winning BINGO pattern.",
+    faq_q5: "Can I display the game on a TV or larger screen?",
+    faq_a5: "Absolutely! You can cast the bingo board to an external screen using AirPlay (for Apple devices) or connect via cable to display on any TV or monitor.",
+    faq_q6: "How many cards can each player have?",
+    faq_a6: "Each player can play with as many bingo cards as they want simultaneously, whether using printed cards or the digital Bingo Cards!! app. There are no limits!",
+    faq_q7: "Is the app suitable for all ages?",
+    faq_a7: "Yes! Our Bingo apps are family-friendly and perfect for players of all ages. The engaging voices and animations make it fun for everyone.",
+    faq_q8: "Do I need an internet connection to play?",
+    faq_a8: "No, once downloaded, you can play Bingo offline with family and friends in the same location. No internet connection required during gameplay.",
+  },
+
+  es: {
+    // SEO Meta Tags
+    meta_title: "Bingo!! - La Mejor App de Bingo para iOS y Android",
+    meta_description: "Bingo!! es la mejor app de bingo para iOS y Android. Juega al bingo en cualquier lugar con canto automático, verificación QR y hermosos cartones.",
+    meta_keywords: "app de bingo, cantar bingo, juego de bingo, cartones de bingo, máquina de bingo, jugar bingo, bingo iOS, bingo Android",
+    og_title: "Bingo!! - La Mejor App de Bingo",
+    og_description: "Juega al bingo en cualquier lugar con canto automático de números, verificación QR y hermosos cartones. Disponible en iOS y Android.",
+
+    // Header
+    title: "Bingo!! - ¡El mejor Bingo digital!",
+    headline: "¡El mejor Bingo digital!",
+    subtitle: "¡Disfruta las mejores noches de bingo en casa con tu familia y amigos!",
+
+    // Advantages Section
+    advantages_title: "6 ventajas",
+    advantage1_title: "Personaliza tu juego",
+    advantage1_desc: "Elige entre el modo de 90 o 75 bolas, la velocidad y diferentes voces o idiomas",
+    advantage2_title: "Cartones imprimibles o app",
+    advantage2_desc: "Imprime los cartones o descarga nuestra app de cartones para jugar con tu propio dispositivo. ¡Juega con tantos cartones como quieras!",
+    advantage3_title: "Escanea y verifica el cartón",
+    advantage3_desc: "Cada cartón tiene un código QR único para verificación instantánea. Escanea cualquier cartón para verificar al instante si es un BINGO ganador",
+    advantage4_title: "Soporte de pantalla externa",
+    advantage4_desc: "Puedes ver el tablero en televisión si tienes conexión Airplay o incluso por cable",
+    advantage5_title: "Voces reales",
+    advantage5_desc: "Nuestro amigo Adam hace bromas y rimas para que te diviertas mucho con tu familia o amigos",
+    advantage6_title: "Crea tus propias rimas",
+    advantage6_desc: "Si prefieres tu propia voz, graba los números y las rimas... ¡va a ser divertido!",
+
+    // QR Tutorial Section
+    qr_title: "Cómo funciona el código QR",
+    qr_subtitle: "Escanea códigos QR en tus cartones de bingo para verificación instantánea",
+    qr_step1_title: "1. Escanear código QR",
+    qr_step1_desc: "Apunta tu cámara al código QR de tu cartón de bingo",
+    qr_step2_title: "2. Aparece el cartón",
+    qr_step2_desc: "Tu cartón de bingo aparece automáticamente en la app",
+    qr_step3_title: "3. Verificación automática",
+    qr_step3_desc: "La app verifica automáticamente si tienes BINGO",
+
+    // Both Apps Section
+    apps_title: "Obtén ambas apps",
+    apps_subtitle: "Todo lo que necesitas para disfrutar el bingo en casa",
+    main_app_title: "Bingo!!",
+    main_app_desc: "El mejor bingo digital con voces, animaciones y personalización",
+
+    // Cards Section
+    cards_title: "Consigue tus cartones",
+    cards_app_title: "Cartones de Bingo!!",
+    cards_app_desc: "Obtén cartones de bingo digitales en tu dispositivo con nuestra app",
+
+    // Team Section
+    team_title: "Conoce nuestro equipo",
+    team_subtitle: "Los talentosos desarrolladores y diseñadores detrás de tu app de bingo favorita",
+    team_ios: "Desarrollador iOS",
+    team_android: "Desarrollador Android",
+    team_designer: "Diseñador UX/UI",
+    team_linkedin: "Perfil de LinkedIn →",
+
+    // Reviews Section
+    reviews_title: "Lo que dicen nuestros usuarios",
+    reviews_subtitle: "Reseñas reales de jugadores de Bingo satisfechos de todo el mundo",
+    review1_text: "¡Excelente app! 3 modos de vista diferentes, muestra todos los números cantados, los últimos 4 números están resaltados en caso de llamada tardía y muestra el número actual ampliado. Puedes grabar tus propias llamadas de números y cambiar la frecuencia. Horas de diversión",
+    review1_author: "RBukes",
+    review1_source: "App Store",
+    review2_text: "¡Un juego genial! Lo hemos conectado con la tele y se veía muy bien! Genera cartones con QR para poder comprobar las líneas y bingos fácilmente. ¡Muy buena tarde de bingo en familia! ¡Muy recomendable!",
+    review2_author: "LyJ!",
+    review2_source: "App Store",
+    review3_text: "Excelente app de bingo. Hace todo lo que necesitas excepto decirte cuántos números han sido cantados",
+    review3_author: "Koolkevin7",
+    review3_source: "App Store",
+    review4_text: "Mola tela, muy bien hecha y un diseño impecable.",
+    review4_author: "Alberto BG",
+    review4_source: "App Store",
+    review5_text: "Con la nueva opción de 2 segundos de tiempo de llamada, la app ahora es nuestra favorita",
+    review5_author: "dmaa670",
+    review5_source: "App Store",
+
+    // FAQ Section
+    faq_title: "Preguntas Frecuentes",
+    faq_subtitle: "Encuentra respuestas a preguntas comunes sobre nuestras apps de Bingo",
+    faq_q1: "¿Cómo juego Bingo con amigos y familia?",
+    faq_a1: "Descarga la app principal Bingo!! en un dispositivo para actuar como locutor. Todos los demás pueden usar cartones impresos o descargar la app Cartones de Bingo!! para obtener cartones digitales en sus teléfonos o tablets.",
+    faq_q2: "¿Cuál es la diferencia entre Bingo de 75 y 90 bolas?",
+    faq_a2: "El Bingo de 75 bolas usa números del 1-75 con cartones de 5x5, mientras que el Bingo de 90 bolas usa números del 1-90 con cartones de 9x3. Puedes elegir cualquier modo en la configuración de la app.",
+    faq_q3: "¿Puedo personalizar las voces y el idioma?",
+    faq_a3: "¡Sí! La app soporta español, inglés y francés con diferentes opciones de voz. También puedes grabar tu propia voz personalizada y rimas para una experiencia única.",
+    faq_q4: "¿Cómo funciona la verificación por código QR?",
+    faq_a4: "Cada cartón de bingo tiene un código QR único. Simplemente escanea el código con la cámara de la app principal para verificar instantáneamente si el cartón tiene un patrón BINGO ganador.",
+    faq_q5: "¿Puedo mostrar el juego en una TV o pantalla más grande?",
+    faq_a5: "¡Por supuesto! Puedes transmitir el tablero de bingo a una pantalla externa usando AirPlay (para dispositivos Apple) o conectar por cable para mostrar en cualquier TV o monitor.",
+    faq_q6: "¿Cuántos cartones puede tener cada jugador?",
+    faq_a6: "Cada jugador puede jugar con tantos cartones de bingo como quiera simultáneamente, ya sea usando cartones impresos o la app digital Cartones de Bingo!! ¡No hay límites!",
+    faq_q7: "¿Es la app adecuada para todas las edades?",
+    faq_a7: "¡Sí! Nuestras apps de Bingo son familiares y perfectas para jugadores de todas las edades. Las voces atractivas y animaciones lo hacen divertido para todos.",
+    faq_q8: "¿Necesito conexión a internet para jugar?",
+    faq_a8: "No, una vez descargada, puedes jugar Bingo sin conexión con familia y amigos en la misma ubicación. No se requiere conexión a internet durante el juego.",
+  },
+
+  fr: {
+    // SEO Meta Tags
+    meta_title: "Bingo!! - La Meilleure App de Bingo pour iOS et Android",
+    meta_description: "Bingo!! est la meilleure app de bingo pour iOS et Android. Jouez au bingo partout avec appel automatique, vérification QR et de beaux cartons.",
+    meta_keywords: "app bingo, appeler bingo, jeu de bingo, cartons de bingo, machine à bingo, jouer bingo, bingo iOS, bingo Android",
+    og_title: "Bingo!! - La Meilleure App de Bingo",
+    og_description: "Jouez au bingo partout avec appel automatique des numéros, vérification QR et de beaux cartons. Disponible sur iOS et Android.",
+
+    // Header
+    title: "Bingo!! - La meilleure machine à Bingo !",
+    headline: "La meilleure machine à Bingo !",
+    subtitle: "Vivez des soirées bingo mémorables à la maison en famille et entre amis!",
+
+    // Advantages Section
+    advantages_title: "6 avantages",
+    advantage1_title: "Personnalisez votre jeu",
+    advantage1_desc: "Choisissez entre le mode 90 ou 75 boules, la vitesse et différentes voix ou langues",
+    advantage2_title: "Cartons imprimables ou app",
+    advantage2_desc: "Imprimez les cartons ou téléchargez notre app de cartons pour jouer avec votre propre appareil. Jouez avec autant de cartons que vous voulez !",
+    advantage3_title: "Scannez et vérifiez le carton",
+    advantage3_desc: "Chaque carton a un code QR unique pour vérification instantanée. Scannez n'importe quel carton pour vérifier instantanément si c'est un BINGO gagnant",
+    advantage4_title: "Support écran externe",
+    advantage4_desc: "Vous pouvez voir le plateau à la télévision si vous avez une connexion Airplay ou même par câble",
+    advantage5_title: "Vraies voix",
+    advantage5_desc: "Notre ami Adam fait des blagues et des rimes pour que vous passiez un excellent moment en famille ou entre amis",
+    advantage6_title: "Créez vos propres rimes",
+    advantage6_desc: "Si vous préférez votre propre voix, enregistrez les numéros et les rimes... ça va être amusant !",
+
+    // QR Tutorial Section
+    qr_title: "Comment fonctionne le code QR",
+    qr_subtitle: "Scannez les codes QR sur vos cartons de bingo pour une gestion numérique instantanée et un jeu automatique",
+    qr_step1_title: "1. Scanner le code QR",
+    qr_step1_desc: "Dirigez votre appareil photo vers le code QR de votre carton de bingo",
+    qr_step2_title: "2. Le carton apparaît",
+    qr_step2_desc: "Votre carton de bingo apparaît automatiquement dans l'app",
+    qr_step3_title: "3. Jouer automatiquement",
+    qr_step3_desc: "Commencez à jouer avec marquage automatique des numéros",
+
+    // Both Apps Section
+    apps_title: "Obtenez les deux apps",
+    apps_subtitle: "Tout ce qu'il faut pour profiter du bingo à la maison",
+    main_app_title: "Bingo !!",
+    main_app_desc: "La meilleure machine à bingo avec voix, animations et personnalisation",
+
+    // Cards Section
+    cards_title: "Obtenez vos cartons",
+    cards_app_title: "Cartons de Bingo !!",
+    cards_app_desc: "Obtenez des cartons de bingo numériques sur votre appareil avec notre app complémentaire",
+
+    // Team Section
+    team_title: "Rencontrez notre équipe",
+    team_subtitle: "Les talentueux développeurs et designers derrière votre app de bingo préférée",
+    team_ios: "Développeur iOS",
+    team_android: "Développeur Android",
+    team_designer: "Designer UX/UI",
+    team_linkedin: "Profil LinkedIn →",
+
+    // Reviews Section
+    reviews_title: "Ce que disent nos utilisateurs",
+    reviews_subtitle: "Vraies critiques de joueurs de Bingo satisfaits du monde entier",
+    review1_text: "Excellente app ! 3 modes de vue différents, affiche tous les numéros tirés, les 4 derniers numéros appelés sont surlignés en cas d'appel tardif et affiche le numéro actuel agrandi. Peut enregistrer vos propres appels de numéros et changer la fréquence. Des heures de plaisir",
+    review1_author: "RBukes",
+    review1_source: "App Store",
+    review2_text: "Excellent jeu ! Nous l'avons connecté à la télé et c'était superbe ! Il génère des cartons avec codes QR pour vérifier facilement les lignes et bingos. Excellent après-midi bingo en famille ! Très recommandé !",
+    review2_author: "LyJ!",
+    review2_source: "App Store",
+    review3_text: "Excellente app de bingo. Fait tout ce dont vous avez besoin sauf vous dire combien de numéros ont été appelés",
+    review3_author: "Koolkevin7",
+    review3_source: "App Store",
+    review4_text: "Fantastique, très bien réalisée avec un design impeccable.",
+    review4_author: "Alberto BG",
+    review4_source: "App Store",
+    review5_text: "Avec la nouvelle option de 2 secondes de temps d'appel, l'app est maintenant notre préférée",
+    review5_author: "dmaa670",
+    review5_source: "App Store",
+
+    // FAQ Section
+    faq_title: "Questions Fréquemment Posées",
+    faq_subtitle: "Trouvez des réponses aux questions courantes sur nos apps Bingo",
+    faq_q1: "Comment jouer au Bingo avec mes amis et ma famille ?",
+    faq_a1: "Téléchargez l'app principale Bingo!! sur un appareil pour agir comme annonceur. Tous les autres peuvent utiliser des cartons imprimés ou télécharger l'app Cartons de Bingo!! pour obtenir des cartons numériques sur leurs téléphones ou tablettes.",
+    faq_q2: "Quelle est la différence entre le Bingo à 75 et 90 boules ?",
+    faq_a2: "Le Bingo à 75 boules utilise les numéros 1-75 avec des cartons 5x5, tandis que le Bingo à 90 boules utilise les numéros 1-90 avec des cartons 9x3. Vous pouvez choisir n'importe quel mode dans les paramètres de l'app.",
+    faq_q3: "Puis-je personnaliser les voix et la langue ?",
+    faq_a3: "Oui ! L'app supporte le français, l'anglais et l'espagnol avec différentes options de voix. Vous pouvez aussi enregistrer votre propre voix personnalisée et rimes pour une expérience unique.",
+    faq_q4: "Comment fonctionne la vérification par code QR ?",
+    faq_a4: "Chaque carton de bingo a un code QR unique. Scannez simplement le code avec l'appareil photo de l'app principale pour vérifier instantanément si le carton a un motif BINGO gagnant.",
+    faq_q5: "Puis-je afficher le jeu sur une TV ou un écran plus grand ?",
+    faq_a5: "Absolument ! Vous pouvez diffuser le plateau de bingo sur un écran externe en utilisant AirPlay (pour les appareils Apple) ou connecter par câble pour afficher sur n'importe quel TV ou moniteur.",
+    faq_q6: "Combien de cartons chaque joueur peut-il avoir ?",
+    faq_a6: "Chaque joueur peut jouer avec autant de cartons de bingo qu'il le souhaite simultanément, que ce soit en utilisant des cartons imprimés ou l'app numérique Cartons de Bingo!! Il n'y a pas de limites !",
+    faq_q7: "L'app convient-elle à tous les âges ?",
+    faq_a7: "Oui ! Nos apps Bingo sont familiales et parfaites pour les joueurs de tous âges. Les voix engageantes et animations le rendent amusant pour tout le monde.",
+    faq_q8: "Ai-je besoin d'une connexion internet pour jouer ?",
+    faq_a8: "Non, une fois téléchargée, vous pouvez jouer au Bingo hors ligne avec la famille et les amis au même endroit. Aucune connexion internet requise pendant le jeu.",
+  },
+
+  pt: {
+    // SEO Meta Tags
+    meta_title: "Bingo!! - O Melhor App de Bingo para iOS e Android",
+    meta_description: "Bingo!! é o melhor app de bingo para iOS e Android. Jogue bingo em qualquer lugar com sorteio automático de números, verificação por QR code e cartelas lindas.",
+    meta_keywords: "app de bingo, sorteador de bingo, jogo de bingo, cartelas de bingo, máquina de bingo, jogar bingo, bingo iOS, bingo Android",
+    og_title: "Bingo!! - O Melhor App de Bingo",
+    og_description: "Jogue bingo em qualquer lugar com sorteio automático de números, verificação por QR code e cartelas lindas. Disponível para iOS e Android.",
+
+    // Header
+    title: "Bingo!! - A melhor máquina de Bingo!",
+    headline: "A melhor máquina de Bingo!",
+    subtitle: "Crie noites de bingo inesquecíveis em casa com família e amigos!",
+
+    // Advantages Section
+    advantages_title: "6 vantagens",
+    advantage1_title: "Personalize seu jogo",
+    advantage1_desc: "Escolha entre o modo de 90 ou 75 bolas, a velocidade e diferentes vozes ou idiomas",
+    advantage2_title: "Cartelas impressas ou app",
+    advantage2_desc: "Imprima as cartelas ou baixe nosso app de cartelas para jogar com seu próprio dispositivo. Jogue com quantas cartelas quiser!",
+    advantage3_title: "Escaneie e verifique a cartela",
+    advantage3_desc: "Cada cartela tem um QR code único para verificação instantânea. Escaneie qualquer cartela para verificar instantaneamente se é um BINGO vencedor",
+    advantage4_title: "Suporte a tela externa",
+    advantage4_desc: "Você pode ver o painel na televisão se tiver conexão Airplay ou até mesmo por cabo",
+    advantage5_title: "Vozes reais",
+    advantage5_desc: "Nosso amigo Adam faz piadas e rimas para você se divertir muito com sua família ou amigos",
+    advantage6_title: "Crie suas próprias rimas",
+    advantage6_desc: "Se preferir sua própria voz, grave os números e as rimas... vai ser muito divertido!",
+
+    // QR Tutorial Section
+    qr_title: "Como o QR code funciona",
+    qr_subtitle: "Escaneie QR codes nas suas cartelas de bingo para gerenciamento digital instantâneo e jogo automático",
+    qr_step1_title: "1. Escanear QR code",
+    qr_step1_desc: "Aponte sua câmera para o QR code na sua cartela de bingo",
+    qr_step2_title: "2. Cartela aparece",
+    qr_step2_desc: "Sua cartela de bingo aparece automaticamente no app",
+    qr_step3_title: "3. Jogar automaticamente",
+    qr_step3_desc: "Comece a jogar com marcação automática dos números",
+
+    // Both Apps Section
+    apps_title: "Baixe os dois apps",
+    apps_subtitle: "Tudo que você precisa para a experiência perfeita de bingo em casa",
+    main_app_title: "Bingo!!",
+    main_app_desc: "A melhor máquina de bingo com vozes, animações e personalização",
+
+    // Cards Section
+    cards_title: "Obtenha suas cartelas",
+    cards_app_title: "Cartelas de Bingo!!",
+    cards_app_desc: "Obtenha cartelas de bingo digitais no seu dispositivo com nosso app complementar",
+
+    // Team Section
+    team_title: "Conheça nossa equipe",
+    team_subtitle: "Os talentosos desenvolvedores e designers por trás do seu app de bingo favorito",
+    team_ios: "Desenvolvedor iOS",
+    team_android: "Desenvolvedor Android",
+    team_designer: "Designer UX/UI",
+    team_linkedin: "Perfil LinkedIn →",
+
+    // Reviews Section
+    reviews_title: "O que nossos usuários dizem",
+    reviews_subtitle: "Avaliações reais de jogadores de Bingo satisfeitos ao redor do mundo",
+    review1_text: "App excelente! 3 modos de visualização diferentes, mostra todos os números sorteados, os últimos 4 números chamados são destacados em caso de chamada atrasada e mostra o número atual ampliado. Pode gravar suas próprias chamadas de números e alterar a frequência. Horas de diversão",
+    review1_author: "RBukes",
+    review1_source: "App Store",
+    review2_text: "Jogo ótimo! Conectamos à TV e ficou incrível! Gera cartelas com códigos QR para verificar facilmente linhas e bingos. Ótima tarde de bingo em família! Muito recomendado!",
+    review2_author: "LyJ!",
+    review2_source: "App Store",
+    review3_text: "Excelente app de bingo. Faz tudo que você precisa, exceto dizer quantos números foram chamados",
+    review3_author: "Koolkevin7",
+    review3_source: "App Store",
+    review4_text: "Incrível, muito bem feito com um design impecável.",
+    review4_author: "Alberto BG",
+    review4_source: "App Store",
+    review5_text: "Com a nova opção de tempo de chamada de 2 segundos, o app agora é nosso favorito",
+    review5_author: "dmaa670",
+    review5_source: "App Store",
+
+    // FAQ Section
+    faq_title: "Perguntas Frequentes",
+    faq_subtitle: "Encontre respostas para perguntas comuns sobre nossos apps de Bingo",
+    faq_q1: "Como jogo Bingo com amigos e família?",
+    faq_a1: "Baixe o app principal Bingo!! em um dispositivo para atuar como sorteador. Todos os outros podem usar cartelas impressas ou baixar o app Cartelas de Bingo!! para obter cartelas digitais em seus celulares ou tablets.",
+    faq_q2: "Qual a diferença entre Bingo de 75 e 90 bolas?",
+    faq_a2: "O Bingo de 75 bolas usa números de 1-75 com cartelas 5x5, enquanto o Bingo de 90 bolas usa números de 1-90 com cartelas 9x3. Você pode escolher qualquer modo nas configurações do app.",
+    faq_q3: "Posso personalizar as vozes e o idioma?",
+    faq_a3: "Sim! O app suporta português, inglês, espanhol e francês com diferentes opções de voz. Você também pode gravar sua própria voz personalizada e rimas para uma experiência única.",
+    faq_q4: "Como funciona a verificação por QR code?",
+    faq_a4: "Cada cartela de bingo tem um QR code único. Simplesmente escaneie o código com a câmera do app principal para verificar instantaneamente se a cartela tem um padrão BINGO vencedor.",
+    faq_q5: "Posso exibir o jogo em uma TV ou tela maior?",
+    faq_a5: "Com certeza! Você pode transmitir o painel de bingo para uma tela externa usando AirPlay (para dispositivos Apple) ou conectar por cabo para exibir em qualquer TV ou monitor.",
+    faq_q6: "Quantas cartelas cada jogador pode ter?",
+    faq_a6: "Cada jogador pode jogar com quantas cartelas de bingo quiser simultaneamente, seja usando cartelas impressas ou o app digital Cartelas de Bingo!! Não há limites!",
+    faq_q7: "O app é adequado para todas as idades?",
+    faq_a7: "Sim! Nossos apps de Bingo são para toda a família e perfeitos para jogadores de todas as idades. As vozes envolventes e animações tornam divertido para todos.",
+    faq_q8: "Preciso de conexão com a internet para jogar?",
+    faq_a8: "Não, uma vez baixado, você pode jogar Bingo offline com família e amigos no mesmo local. Não é necessária conexão com a internet durante o jogo.",
+  },
+
+  fil: {
+    // SEO Meta Tags
+    meta_title: "Bingo!! - Pinakamahusay na Bingo App para sa iOS at Android",
+    meta_description: "Ang Bingo!! ang pinakamahusay na bingo app para sa iOS at Android. Maglaro ng bingo kahit saan gamit ang awtomatikong pagtawag ng numero, QR verification, at magagandang card.",
+    meta_keywords: "bingo app, bingo caller, laro ng bingo, bingo cards, bingo machine, maglaro ng bingo, bingo iOS, bingo Android",
+    og_title: "Bingo!! - Pinakamahusay na Bingo App",
+    og_description: "Maglaro ng bingo kahit saan gamit ang awtomatikong pagtawag ng numero, QR verification, at magagandang card. Available sa iOS at Android.",
+
+    // Header
+    title: "Bingo!! - Pinakamahusay na Bingo machine!",
+    headline: "Pinakamahusay na Bingo machine!",
+    subtitle: "Lumikha ng hindi malilimutang bingo nights sa bahay kasama ang pamilya at mga kaibigan!",
+
+    // Advantages Section
+    advantages_title: "6 na benepisyo",
+    advantage1_title: "I-customize ang iyong laro",
+    advantage1_desc: "Pumili sa pagitan ng 90 o 75 balls mode, ang bilis at iba't ibang boses o wika",
+    advantage2_title: "Printable o cards app",
+    advantage2_desc: "I-print ang mga card o i-download ang aming cards app para maglaro gamit ang sarili mong device. Maglaro ng kahit ilang card ang gusto mo!",
+    advantage3_title: "I-scan ang card at i-check",
+    advantage3_desc: "Bawat card ay may natatanging QR code para sa instant verification. I-scan ang kahit anong card para agad na ma-check kung ito ay panalo na BINGO",
+    advantage4_title: "External screen support",
+    advantage4_desc: "Maaari mong tingnan ang board sa telebisyon kung may Airplay connection ka o kahit sa pamamagitan ng cable",
+    advantage5_title: "Tunay na mga boses",
+    advantage5_desc: "Ang aming kaibigang si Adam ay gumagawa ng mga biro at rhymes para tawanan mo kasama ang iyong pamilya o mga kaibigan",
+    advantage6_title: "Gumawa ng sarili mong rhymes",
+    advantage6_desc: "Kung mas gusto mo ang sarili mong boses, i-record ang mga numero at ang mga rhymes... magiging masaya ito!",
+
+    // QR Tutorial Section
+    qr_title: "Paano gumagana ang QR code",
+    qr_subtitle: "I-scan ang QR codes sa iyong bingo cards para sa instant digital card management at awtomatikong gameplay",
+    qr_step1_title: "1. I-scan ang QR code",
+    qr_step1_desc: "Itutok ang iyong camera sa QR code sa iyong bingo card",
+    qr_step2_title: "2. Lalabas ang card",
+    qr_step2_desc: "Awtomatikong lalabas ang iyong bingo card sa app",
+    qr_step3_title: "3. Maglaro nang awtomatiko",
+    qr_step3_desc: "Magsimulang maglaro na may awtomatikong pagmamarka ng numero",
+
+    // Both Apps Section
+    apps_title: "Kunin ang dalawang apps",
+    apps_subtitle: "Lahat ng kailangan mo para sa perpektong bingo experience sa bahay",
+    main_app_title: "Bingo!!",
+    main_app_desc: "Ang pinakamahusay na bingo caller machine na may mga boses, animations at customization",
+
+    // Cards Section
+    cards_title: "Kunin ang iyong mga card",
+    cards_app_title: "Bingo Cards!!",
+    cards_app_desc: "Kumuha ng digital bingo cards sa iyong device gamit ang aming companion app",
+
+    // Team Section
+    team_title: "Kilalanin ang aming team",
+    team_subtitle: "Ang mga mahuhusay na developers at designers sa likod ng iyong paboritong bingo app",
+    team_ios: "iOS Developer",
+    team_android: "Android Developer",
+    team_designer: "UX/UI Designer",
+    team_linkedin: "LinkedIn Profile →",
+
+    // Reviews Section
+    reviews_title: "Ano ang sinasabi ng aming mga user",
+    reviews_subtitle: "Tunay na mga review mula sa mga nasisiyahang Bingo players sa buong mundo",
+    review1_text: "Napakagandang app! 3 iba't ibang viewing modes, ipinapakita ang lahat ng numerong na-draw, ang huling 4 na numerong tinawag ay naka-highlight kung sakaling late ang tawag at ipinapakita ang kasalukuyang numero nang pinalaki. Maaaring i-record ang sarili mong number call-outs at baguhin ang frequency ng mga tawag. Oras ng kasiyahan",
+    review1_author: "RBukes",
+    review1_source: "App Store",
+    review2_text: "Magandang laro! Ikinonekta namin ito sa TV at napakaganda! Gumagawa ito ng mga card na may QR codes para madaling ma-check ang mga linya at bingo. Napakagandang family bingo afternoon! Highly recommended!",
+    review2_author: "LyJ!",
+    review2_source: "App Store",
+    review3_text: "Napakagandang bingo app. Ginagawa ang lahat ng kailangan mo maliban sa sabihin kung ilan na ang numerong tinawag",
+    review3_author: "Koolkevin7",
+    review3_source: "App Store",
+    review4_text: "Kamangha-mangha, napakagandang gawa na may walang kapintasang disenyo.",
+    review4_author: "Alberto BG",
+    review4_source: "App Store",
+    review5_text: "Sa bagong opsyon na 2 segundo call time, ang app na ito ay paborito na namin",
+    review5_author: "dmaa670",
+    review5_source: "App Store",
+
+    // FAQ Section
+    faq_title: "Mga Madalas Itanong",
+    faq_subtitle: "Maghanap ng mga sagot sa karaniwang mga tanong tungkol sa aming Bingo apps",
+    faq_q1: "Paano ako maglalaro ng Bingo kasama ang mga kaibigan at pamilya?",
+    faq_a1: "I-download ang pangunahing Bingo!! app sa isang device upang maging caller. Ang lahat ng iba ay maaaring gumamit ng printed cards o i-download ang Bingo Cards!! app upang makakuha ng digital cards sa kanilang mga telepono o tablets.",
+    faq_q2: "Ano ang pagkakaiba ng 75-ball at 90-ball Bingo?",
+    faq_a2: "Ang 75-ball Bingo ay gumagamit ng mga numerong 1-75 na may 5x5 cards, habang ang 90-ball Bingo ay gumagamit ng mga numerong 1-90 na may 9x3 cards. Maaari kang pumili ng alinmang mode sa app settings upang tumugma sa iyong kagustuhan.",
+    faq_q3: "Maaari ko bang i-customize ang mga boses at wika?",
+    faq_a3: "Oo! Ang app ay sumusuporta sa Filipino, English, Spanish, at French na may iba't ibang voice options. Maaari ka ring mag-record ng sarili mong custom na boses at rhymes para sa personalized na karanasan.",
+    faq_q4: "Paano gumagana ang QR code verification?",
+    faq_a4: "Bawat bingo card ay may natatanging QR code. I-scan lamang ang code gamit ang camera ng pangunahing app upang agad na ma-verify kung ang card ay may panalo na BINGO pattern.",
+    faq_q5: "Maaari ko bang ipakita ang laro sa TV o mas malaking screen?",
+    faq_a5: "Oo naman! Maaari mong i-cast ang bingo board sa external screen gamit ang AirPlay (para sa Apple devices) o ikonekta sa pamamagitan ng cable upang ipakita sa anumang TV o monitor.",
+    faq_q6: "Ilang cards ang maaaring magkaroon ang bawat player?",
+    faq_a6: "Bawat player ay maaaring maglaro ng kahit ilang bingo cards ang gusto nila nang sabay-sabay, gamit man ang printed cards o ang digital Bingo Cards!! app. Walang limitasyon!",
+    faq_q7: "Ang app ba ay angkop para sa lahat ng edad?",
+    faq_a7: "Oo! Ang aming Bingo apps ay family-friendly at perpekto para sa mga players ng lahat ng edad. Ang mga nakaka-enganyo na boses at animations ay nagpapasaya sa lahat.",
+    faq_q8: "Kailangan ko ba ng internet connection para maglaro?",
+    faq_a8: "Hindi, kapag na-download na, maaari kang maglaro ng Bingo offline kasama ang pamilya at mga kaibigan sa iisang lokasyon. Hindi kailangan ng internet connection habang naglalaro.",
+  },
+} as const;
