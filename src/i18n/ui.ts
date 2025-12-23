@@ -2,6 +2,8 @@ export const languages = {
   en: 'English',
   es: 'Español',
   fr: 'Français',
+  pt: 'Português',
+  fil: 'Filipino',
 } as const;
 
 export const defaultLang = 'en' as const;
@@ -12,12 +14,16 @@ export const appStoreBadges: Record<Language, string> = {
   en: 'https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1570838400',
   es: 'https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/es-es?size=250x83&releaseDate=1570838400',
   fr: 'https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/fr-fr?size=250x83&releaseDate=1570838400',
+  pt: 'https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/pt-br?size=250x83&releaseDate=1570838400',
+  fil: 'https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1570838400',
 };
 
 export const googlePlayBadges: Record<Language, string> = {
   en: 'https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png',
   es: 'https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png',
   fr: 'https://play.google.com/intl/en_us/badges/static/images/badges/fr_badge_web_generic.png',
+  pt: 'https://play.google.com/intl/en_us/badges/static/images/badges/pt-br_badge_web_generic.png',
+  fil: 'https://play.google.com/intl/en_us/badges/static/images/badges/fil_badge_web_generic.png',
 };
 
 export const ui = {
@@ -463,6 +469,302 @@ export const ui = {
     previous_review: "Avis précédent",
     next_review: "Avis suivant",
     customer_reviews: "Avis clients",
+  },
+
+  pt: {
+    // SEO Meta Tags
+    meta_title: "Bingo!! - O Melhor App de Bingo para iOS e Android",
+    meta_description: "Bingo!! é o melhor app de bingo para iOS e Android. Jogue bingo em qualquer lugar com sorteio automático de números, verificação por QR code e cartelas lindas.",
+    meta_keywords: "app de bingo, sorteador de bingo, jogo de bingo, cartelas de bingo, máquina de bingo, jogar bingo, bingo iOS, bingo Android",
+    og_title: "Bingo!! - O Melhor App de Bingo",
+    og_description: "Jogue bingo em qualquer lugar com sorteio automático de números, verificação por QR code e cartelas lindas. Disponível para iOS e Android.",
+
+    // Header
+    title: "Bingo!! - A melhor máquina de Bingo!",
+    headline: "A melhor máquina de Bingo!",
+    subtitle: "Crie noites de bingo inesquecíveis em casa com família e amigos!",
+
+    // Advantages Section
+    advantages_title: "6 vantagens",
+    advantage1_title: "Personalize seu jogo",
+    advantage1_desc: "Escolha entre o modo de 90 ou 75 bolas, a velocidade e diferentes vozes ou idiomas",
+    advantage2_title: "Cartelas impressas ou app",
+    advantage2_desc: "Imprima as cartelas ou baixe nosso app de cartelas para jogar com seu próprio dispositivo. Jogue com quantas cartelas quiser!",
+    advantage3_title: "Escaneie e verifique a cartela",
+    advantage3_desc: "Cada cartela tem um QR code único para verificação instantânea. Escaneie qualquer cartela para verificar instantaneamente se é um BINGO vencedor",
+    advantage4_title: "Suporte a tela externa",
+    advantage4_desc: "Você pode ver o painel na televisão se tiver conexão Airplay ou até mesmo por cabo",
+    advantage5_title: "Vozes reais",
+    advantage5_desc: "Nosso amigo Adam faz piadas e rimas para você se divertir muito com sua família ou amigos",
+    advantage6_title: "Crie suas próprias rimas",
+    advantage6_desc: "Se preferir sua própria voz, grave os números e as rimas... vai ser muito divertido!",
+
+    // QR Tutorial Section
+    qr_title: "Como o QR code funciona",
+    qr_subtitle: "Escaneie QR codes nas suas cartelas de bingo para gerenciamento digital instantâneo e jogo automático",
+    qr_step1_title: "1. Escanear QR code",
+    qr_step1_desc: "Aponte sua câmera para o QR code na sua cartela de bingo",
+    qr_step2_title: "2. Cartela aparece",
+    qr_step2_desc: "Sua cartela de bingo aparece automaticamente no app",
+    qr_step3_title: "3. Jogar automaticamente",
+    qr_step3_desc: "Comece a jogar com marcação automática dos números",
+
+    // Both Apps Section
+    apps_title: "Baixe os dois apps",
+    apps_subtitle: "Tudo que você precisa para a experiência perfeita de bingo em casa",
+    main_app_title: "Bingo!!",
+    main_app_desc: "A melhor máquina de bingo com vozes, animações e personalização",
+
+    // Cards Section
+    cards_title: "Obtenha suas cartelas",
+    cards_app_title: "Cartelas de Bingo!!",
+    cards_app_desc: "Obtenha cartelas de bingo digitais no seu dispositivo com nosso app complementar",
+
+    // Team Section
+    team_title: "Conheça nossa equipe",
+    team_subtitle: "Os talentosos desenvolvedores e designers por trás do seu app de bingo favorito",
+    team_ios: "Desenvolvedor iOS",
+    team_android: "Desenvolvedor Android",
+    team_designer: "Designer UX/UI",
+    team_linkedin: "Perfil LinkedIn →",
+
+    // Navigation
+    nav_apps: "Apps",
+    nav_advantages: "Vantagens",
+    nav_qr: "Tutorial QR",
+    nav_reviews: "Avaliações",
+    nav_faq: "FAQ",
+    nav_team: "Equipe",
+
+    // Footer
+    footer_rights: "© 2024 Wombat Apps. Todos os direitos reservados.",
+    footer_tagline: "A melhor máquina de Bingo!",
+
+    // Missing translations
+    guaranteed_fun: "Diversão garantida!",
+    download_free: "Baixe grátis!",
+    available_platforms: "Disponível em todas as plataformas",
+    downloads_count: "downloads",
+    privacy_policy_title: "Política de Privacidade",
+    privacy_policy_subtitle: "Política de Privacidade para os Apps Bingo!!",
+
+    // Privacy Policy Content
+    privacy_intro: "Álvaro Murillo del Puerto, José Balanza e Laura Abajo Díaz construíram e projetaram Bingo!!, Bingo!! Lite e Bingo!! Cards. Bingo!! é um app pago, mas Bingo!! Lite e Bingo!! Cards são compras dentro do aplicativo. Esta página é usada para informar os visitantes sobre nossas políticas quanto à coleta, uso e divulgação de Informações Pessoais se alguém decidir usar nosso Serviço. Se você optar por usar nosso Serviço, então concorda com a coleta e uso de informações em relação a esta política. As Informações Pessoais que coletamos são usadas para fornecer e melhorar o Serviço. Não usaremos ou compartilharemos suas informações com ninguém, exceto conforme descrito nesta Política de Privacidade.",
+    privacy_info_collection_title: "Coleta e Uso de Informações",
+    privacy_info_collection_content: "Para uma melhor experiência, ao usar nosso Serviço, podemos solicitar que você nos forneça certas informações de identificação pessoal, incluindo, mas não se limitando a ID DE PUBLICIDADE. As informações que solicitamos serão retidas por nós e usadas conforme descrito nesta política de privacidade. Os anúncios exibidos nos apps Bingo!!, Bingo!! Lite e Bingo!! Cards estão em conformidade com as Políticas de Anúncios da Apple Store e Privacidade de Dados do Usuário. Os apps usam serviços de terceiros que podem coletar informações usadas para identificá-lo. Link para a política de privacidade dos provedores de serviços de terceiros usados pelos apps:",
+    apple_privacy_policy: "Política de Privacidade da Apple",
+    privacy_log_data_title: "Dados de Registro",
+    privacy_log_data_content: "Queremos informá-lo que sempre que você usa nosso Serviço, em caso de erro nos apps, coletamos dados e informações (através de produtos de terceiros) em seu telefone chamados Dados de Registro. Esses Dados de Registro podem incluir informações como o endereço de Protocolo de Internet (\"IP\") do seu dispositivo, nome do dispositivo, versão do sistema operacional, a configuração do app ao utilizar nosso Serviço, a hora e data do seu uso do Serviço, e outras estatísticas.",
+    privacy_cookies_title: "Cookies",
+    privacy_cookies_content: "Cookies são arquivos com uma pequena quantidade de dados que são comumente usados como identificadores únicos anônimos. Eles são enviados para o seu navegador pelos sites que você visita e são armazenados na memória interna do seu dispositivo. Este Serviço não usa esses \"cookies\" explicitamente. No entanto, os apps podem usar código e bibliotecas de terceiros que usam \"cookies\" para coletar informações e melhorar seus serviços. Você tem a opção de aceitar ou recusar esses cookies e saber quando um cookie está sendo enviado ao seu dispositivo. Se você optar por recusar nossos cookies, pode não conseguir usar algumas partes deste Serviço.",
+    privacy_service_providers_title: "Provedores de Serviços",
+    privacy_service_providers_content: "Podemos empregar empresas e indivíduos terceirizados pelas seguintes razões: Para facilitar nosso Serviço; Para fornecer o Serviço em nosso nome; Para realizar serviços relacionados ao Serviço; Para nos ajudar a analisar como nosso Serviço é usado. Queremos informar os usuários deste Serviço que esses terceiros têm acesso às suas Informações Pessoais. O motivo é realizar as tarefas atribuídas a eles em nosso nome. No entanto, eles são obrigados a não divulgar ou usar as informações para qualquer outro fim.",
+    privacy_security_title: "Segurança",
+    privacy_security_content: "Valorizamos sua confiança em nos fornecer suas Informações Pessoais, por isso nos esforçamos para usar meios comercialmente aceitáveis de protegê-las. Mas lembre-se que nenhum método de transmissão pela internet, ou método de armazenamento eletrônico é 100% seguro e confiável, e não podemos garantir sua segurança absoluta.",
+    privacy_links_title: "Links para Outros Sites",
+    privacy_links_content: "Este Serviço pode conter links para outros sites. Se você clicar em um link de terceiros, será direcionado para esse site. Observe que esses sites externos não são operados por nós. Portanto, recomendamos fortemente que você revise a Política de Privacidade desses sites. Não temos controle sobre e não assumimos responsabilidade pelo conteúdo, políticas de privacidade ou práticas de sites ou serviços de terceiros.",
+    privacy_children_title: "Privacidade das Crianças",
+    privacy_children_content: "Estes Serviços não se dirigem a menores de 16 anos. Não coletamos intencionalmente informações de identificação pessoal de crianças menores de 16 anos. Caso descubramos que uma criança menor de 16 anos nos forneceu informações pessoais, excluímos imediatamente essas informações de nossos servidores. Se você é pai ou responsável e sabe que seu filho nos forneceu informações pessoais, entre em contato conosco para que possamos tomar as medidas necessárias.",
+    privacy_changes_title: "Alterações nesta Política de Privacidade",
+    privacy_changes_content: "Podemos atualizar nossa Política de Privacidade de tempos em tempos. Assim, você é aconselhado a revisar esta página periodicamente para quaisquer alterações. Notificaremos você sobre quaisquer alterações publicando a nova Política de Privacidade nesta página. Essas alterações entram em vigor imediatamente após serem publicadas nesta página.",
+    privacy_contact_title: "Entre em Contato",
+    privacy_contact_content: "Se você tiver alguma dúvida ou sugestão sobre nossa Política de Privacidade, não hesite em nos contatar.",
+    contact_email: "E-mail:",
+    contact_website: "Site:",
+
+    // Reviews Section
+    reviews_title: "O que nossos usuários dizem",
+    reviews_subtitle: "Avaliações reais de jogadores de Bingo satisfeitos ao redor do mundo",
+    review1_text: "App excelente! 3 modos de visualização diferentes, mostra todos os números sorteados, os últimos 4 números chamados são destacados em caso de chamada atrasada e mostra o número atual ampliado. Pode gravar suas próprias chamadas de números e alterar a frequência. Horas de diversão",
+    review1_author: "RBukes",
+    review1_source: "App Store",
+    review2_text: "Jogo ótimo! Conectamos à TV e ficou incrível! Gera cartelas com códigos QR para verificar facilmente linhas e bingos. Ótima tarde de bingo em família! Muito recomendado!",
+    review2_author: "LyJ!",
+    review2_source: "App Store",
+    review3_text: "Excelente app de bingo. Faz tudo que você precisa, exceto dizer quantos números foram chamados",
+    review3_author: "Koolkevin7",
+    review3_source: "App Store",
+    review4_text: "Incrível, muito bem feito com um design impecável.",
+    review4_author: "Alberto BG",
+    review4_source: "App Store",
+    review5_text: "Com a nova opção de tempo de chamada de 2 segundos, o app agora é nosso favorito",
+    review5_author: "dmaa670",
+    review5_source: "App Store",
+
+    // FAQ Section
+    faq_title: "Perguntas Frequentes",
+    faq_subtitle: "Encontre respostas para perguntas comuns sobre nossos apps de Bingo",
+    faq_q1: "Como jogo Bingo com amigos e família?",
+    faq_a1: "Baixe o app principal Bingo!! em um dispositivo para atuar como sorteador. Todos os outros podem usar cartelas impressas ou baixar o app Cartelas de Bingo!! para obter cartelas digitais em seus celulares ou tablets.",
+    faq_q2: "Qual a diferença entre Bingo de 75 e 90 bolas?",
+    faq_a2: "O Bingo de 75 bolas usa números de 1-75 com cartelas 5x5, enquanto o Bingo de 90 bolas usa números de 1-90 com cartelas 9x3. Você pode escolher qualquer modo nas configurações do app.",
+    faq_q3: "Posso personalizar as vozes e o idioma?",
+    faq_a3: "Sim! O app suporta português, inglês, espanhol e francês com diferentes opções de voz. Você também pode gravar sua própria voz personalizada e rimas para uma experiência única.",
+    faq_q4: "Como funciona a verificação por QR code?",
+    faq_a4: "Cada cartela de bingo tem um QR code único. Simplesmente escaneie o código com a câmera do app principal para verificar instantaneamente se a cartela tem um padrão BINGO vencedor.",
+    faq_q5: "Posso exibir o jogo em uma TV ou tela maior?",
+    faq_a5: "Com certeza! Você pode transmitir o painel de bingo para uma tela externa usando AirPlay (para dispositivos Apple) ou conectar por cabo para exibir em qualquer TV ou monitor.",
+    faq_q6: "Quantas cartelas cada jogador pode ter?",
+    faq_a6: "Cada jogador pode jogar com quantas cartelas de bingo quiser simultaneamente, seja usando cartelas impressas ou o app digital Cartelas de Bingo!! Não há limites!",
+    faq_q7: "O app é adequado para todas as idades?",
+    faq_a7: "Sim! Nossos apps de Bingo são para toda a família e perfeitos para jogadores de todas as idades. As vozes envolventes e animações tornam divertido para todos.",
+    faq_q8: "Preciso de conexão com a internet para jogar?",
+    faq_a8: "Não, uma vez baixado, você pode jogar Bingo offline com família e amigos no mesmo local. Não é necessária conexão com a internet durante o jogo.",
+
+    // Accessibility
+    skip_to_content: "Pular para o conteúdo principal",
+    toggle_menu: "Alternar menu de navegação",
+    previous_review: "Avaliação anterior",
+    next_review: "Próxima avaliação",
+    customer_reviews: "Avaliações de clientes",
+  },
+
+  fil: {
+    // SEO Meta Tags
+    meta_title: "Bingo!! - Pinakamahusay na Bingo App para sa iOS at Android",
+    meta_description: "Ang Bingo!! ang pinakamahusay na bingo app para sa iOS at Android. Maglaro ng bingo kahit saan gamit ang awtomatikong pagtawag ng numero, QR verification, at magagandang card.",
+    meta_keywords: "bingo app, bingo caller, laro ng bingo, bingo cards, bingo machine, maglaro ng bingo, bingo iOS, bingo Android",
+    og_title: "Bingo!! - Pinakamahusay na Bingo App",
+    og_description: "Maglaro ng bingo kahit saan gamit ang awtomatikong pagtawag ng numero, QR verification, at magagandang card. Available sa iOS at Android.",
+
+    // Header
+    title: "Bingo!! - Pinakamahusay na Bingo machine!",
+    headline: "Pinakamahusay na Bingo machine!",
+    subtitle: "Lumikha ng hindi malilimutang bingo nights sa bahay kasama ang pamilya at mga kaibigan!",
+
+    // Advantages Section
+    advantages_title: "6 na benepisyo",
+    advantage1_title: "I-customize ang iyong laro",
+    advantage1_desc: "Pumili sa pagitan ng 90 o 75 balls mode, ang bilis at iba't ibang boses o wika",
+    advantage2_title: "Printable o cards app",
+    advantage2_desc: "I-print ang mga card o i-download ang aming cards app para maglaro gamit ang sarili mong device. Maglaro ng kahit ilang card ang gusto mo!",
+    advantage3_title: "I-scan ang card at i-check",
+    advantage3_desc: "Bawat card ay may natatanging QR code para sa instant verification. I-scan ang kahit anong card para agad na ma-check kung ito ay panalo na BINGO",
+    advantage4_title: "External screen support",
+    advantage4_desc: "Maaari mong tingnan ang board sa telebisyon kung may Airplay connection ka o kahit sa pamamagitan ng cable",
+    advantage5_title: "Tunay na mga boses",
+    advantage5_desc: "Ang aming kaibigang si Adam ay gumagawa ng mga biro at rhymes para tawanan mo kasama ang iyong pamilya o mga kaibigan",
+    advantage6_title: "Gumawa ng sarili mong rhymes",
+    advantage6_desc: "Kung mas gusto mo ang sarili mong boses, i-record ang mga numero at ang mga rhymes... magiging masaya ito!",
+
+    // QR Tutorial Section
+    qr_title: "Paano gumagana ang QR code",
+    qr_subtitle: "I-scan ang QR codes sa iyong bingo cards para sa instant digital card management at awtomatikong gameplay",
+    qr_step1_title: "1. I-scan ang QR code",
+    qr_step1_desc: "Itutok ang iyong camera sa QR code sa iyong bingo card",
+    qr_step2_title: "2. Lalabas ang card",
+    qr_step2_desc: "Awtomatikong lalabas ang iyong bingo card sa app",
+    qr_step3_title: "3. Maglaro nang awtomatiko",
+    qr_step3_desc: "Magsimulang maglaro na may awtomatikong pagmamarka ng numero",
+
+    // Both Apps Section
+    apps_title: "Kunin ang dalawang apps",
+    apps_subtitle: "Lahat ng kailangan mo para sa perpektong bingo experience sa bahay",
+    main_app_title: "Bingo!!",
+    main_app_desc: "Ang pinakamahusay na bingo caller machine na may mga boses, animations at customization",
+
+    // Cards Section
+    cards_title: "Kunin ang iyong mga card",
+    cards_app_title: "Bingo Cards!!",
+    cards_app_desc: "Kumuha ng digital bingo cards sa iyong device gamit ang aming companion app",
+
+    // Team Section
+    team_title: "Kilalanin ang aming team",
+    team_subtitle: "Ang mga mahuhusay na developers at designers sa likod ng iyong paboritong bingo app",
+    team_ios: "iOS Developer",
+    team_android: "Android Developer",
+    team_designer: "UX/UI Designer",
+    team_linkedin: "LinkedIn Profile →",
+
+    // Navigation
+    nav_apps: "Apps",
+    nav_advantages: "Mga Benepisyo",
+    nav_qr: "QR Tutorial",
+    nav_reviews: "Mga Review",
+    nav_faq: "FAQ",
+    nav_team: "Team",
+
+    // Footer
+    footer_rights: "© 2024 Wombat Apps. Lahat ng karapatan ay nakalaan.",
+    footer_tagline: "Pinakamahusay na Bingo machine!",
+
+    // Missing translations
+    guaranteed_fun: "Garantisadong saya!",
+    download_free: "I-download nang libre!",
+    available_platforms: "Available sa lahat ng platforms",
+    downloads_count: "downloads",
+    privacy_policy_title: "Patakaran sa Privacy",
+    privacy_policy_subtitle: "Patakaran sa Privacy para sa Bingo!! Apps",
+
+    // Privacy Policy Content
+    privacy_intro: "Sina Álvaro Murillo del Puerto, José Balanza at Laura Abajo Díaz ang gumawa at nagdisenyo ng Bingo!!, Bingo!! Lite at Bingo!! Cards. Ang Bingo!! ay bayad na app ngunit ang Bingo!! Lite at Bingo!! Cards ay in-app purchase. Ang pahinang ito ay ginagamit upang ipaalam sa mga bisita ang aming mga patakaran tungkol sa pagkolekta, paggamit, at pagsisiwalat ng Personal na Impormasyon kung may magpasyang gumamit ng aming Serbisyo. Kung pipiliin mong gamitin ang aming Serbisyo, sumasang-ayon ka sa pagkolekta at paggamit ng impormasyon kaugnay ng patakarang ito. Ang Personal na Impormasyon na kinokolekta namin ay ginagamit para sa pagbibigay at pagpapabuti ng Serbisyo. Hindi namin gagamitin o ibabahagi ang iyong impormasyon sa sinuman maliban sa inilarawan sa Patakaran sa Privacy na ito.",
+    privacy_info_collection_title: "Pagkolekta at Paggamit ng Impormasyon",
+    privacy_info_collection_content: "Para sa mas magandang karanasan, habang ginagamit ang aming Serbisyo, maaari naming hilingin sa iyo na bigyan kami ng ilang personal na impormasyon, kabilang ngunit hindi limitado sa ADVERTISING ID. Ang impormasyong hinihiling namin ay papanatilihin namin at gagamitin ayon sa inilarawan sa patakarang ito sa privacy. Ang mga ad na ipinapakita sa Bingo!!, Bingo!! Lite at Bingo!! Cards apps ay sumusunod sa Apple Store Ads Policies at User Data Privacy. Ang mga apps ay gumagamit ng mga third party services na maaaring mangolekta ng impormasyong ginagamit upang kilalanin ka. Link sa patakaran sa privacy ng mga third party service providers na ginagamit ng mga apps:",
+    apple_privacy_policy: "Patakaran sa Privacy ng Apple",
+    privacy_log_data_title: "Log Data",
+    privacy_log_data_content: "Nais naming ipaalam sa iyo na sa tuwing gagamitin mo ang aming Serbisyo, sa kaso ng error sa mga apps, nangongolekta kami ng data at impormasyon (sa pamamagitan ng third party products) sa iyong telepono na tinatawag na Log Data. Ang Log Data na ito ay maaaring magsama ng impormasyon tulad ng Internet Protocol (\"IP\") address ng iyong device, pangalan ng device, bersyon ng operating system, configuration ng app kapag ginagamit ang aming Serbisyo, oras at petsa ng iyong paggamit ng Serbisyo, at iba pang statistics.",
+    privacy_cookies_title: "Cookies",
+    privacy_cookies_content: "Ang Cookies ay mga file na may maliit na dami ng data na karaniwang ginagamit bilang anonymous unique identifiers. Ipinapadala ang mga ito sa iyong browser mula sa mga website na binibisita mo at naka-store sa internal memory ng iyong device. Ang Serbisyong ito ay hindi tahasang gumagamit ng mga \"cookies\" na ito. Gayunpaman, ang mga apps ay maaaring gumamit ng third party code at libraries na gumagamit ng \"cookies\" upang mangolekta ng impormasyon at mapabuti ang kanilang mga serbisyo. May opsyon kang tanggapin o tanggihan ang mga cookies na ito at malaman kung kailan ipinapadala ang cookie sa iyong device. Kung pipiliin mong tanggihan ang aming mga cookies, maaaring hindi mo magamit ang ilang bahagi ng Serbisyong ito.",
+    privacy_service_providers_title: "Mga Service Providers",
+    privacy_service_providers_content: "Maaari kaming mag-employ ng third-party companies at individuals dahil sa mga sumusunod na dahilan: Upang mapadali ang aming Serbisyo; Upang ibigay ang Serbisyo sa aming ngalan; Upang magsagawa ng mga serbisyong kaugnay ng Serbisyo; Upang tulungan kaming suriin kung paano ginagamit ang aming Serbisyo. Nais naming ipaalam sa mga gumagamit ng Serbisyong ito na ang mga third party na ito ay may access sa iyong Personal na Impormasyon. Ang dahilan ay upang maisagawa ang mga gawaing itinalaga sa kanila sa aming ngalan. Gayunpaman, obligado silang huwag ibunyag o gamitin ang impormasyon para sa anumang iba pang layunin.",
+    privacy_security_title: "Seguridad",
+    privacy_security_content: "Pinahahalagahan namin ang iyong tiwala sa pagbibigay sa amin ng iyong Personal na Impormasyon, kaya nagsisikap kaming gumamit ng mga commercially acceptable na paraan ng pagprotekta nito. Ngunit tandaan na walang paraan ng transmission sa internet, o paraan ng electronic storage na 100% secure at reliable, at hindi namin magagarantiyahan ang absolute security nito.",
+    privacy_links_title: "Mga Link sa Ibang Sites",
+    privacy_links_content: "Ang Serbisyong ito ay maaaring maglaman ng mga link sa ibang sites. Kung mag-click ka sa third-party link, ididirekta ka sa site na iyon. Tandaan na ang mga external sites na ito ay hindi pinapatakbo namin. Samakatuwid, mahigpit naming pinapayo na suriin mo ang Patakaran sa Privacy ng mga website na ito. Wala kaming kontrol at walang pananagutan para sa nilalaman, mga patakaran sa privacy, o mga gawi ng anumang third-party sites o services.",
+    privacy_children_title: "Privacy ng mga Bata",
+    privacy_children_content: "Ang mga Serbisyong ito ay hindi nakatuon sa sinumang wala pang 16 taong gulang. Hindi kami sadyang nangongolekta ng personal na impormasyon mula sa mga batang wala pang 16. Sa kaso na matuklasan namin na ang isang batang wala pang 16 ay nagbigay sa amin ng personal na impormasyon, agad naming tinatanggal ito sa aming mga server. Kung ikaw ay magulang o tagapag-alaga at alam mong nagbigay sa amin ng personal na impormasyon ang iyong anak, mangyaring makipag-ugnayan sa amin upang magawa namin ang mga kinakailangang aksyon.",
+    privacy_changes_title: "Mga Pagbabago sa Patakaran sa Privacy na Ito",
+    privacy_changes_content: "Maaari naming i-update ang aming Patakaran sa Privacy paminsan-minsan. Kaya, pinapayuhan kang suriin ang pahinang ito pana-panahon para sa anumang mga pagbabago. Aabisuhan ka namin sa anumang mga pagbabago sa pamamagitan ng pag-post ng bagong Patakaran sa Privacy sa pahinang ito. Ang mga pagbabagong ito ay epektibo kaagad pagkatapos mai-post sa pahinang ito.",
+    privacy_contact_title: "Makipag-ugnayan sa Amin",
+    privacy_contact_content: "Kung mayroon kang anumang mga katanungan o mungkahi tungkol sa aming Patakaran sa Privacy, huwag mag-atubiling makipag-ugnayan sa amin.",
+    contact_email: "Email:",
+    contact_website: "Website:",
+
+    // Reviews Section
+    reviews_title: "Ano ang sinasabi ng aming mga user",
+    reviews_subtitle: "Tunay na mga review mula sa mga nasisiyahang Bingo players sa buong mundo",
+    review1_text: "Napakagandang app! 3 iba't ibang viewing modes, ipinapakita ang lahat ng numerong na-draw, ang huling 4 na numerong tinawag ay naka-highlight kung sakaling late ang tawag at ipinapakita ang kasalukuyang numero nang pinalaki. Maaaring i-record ang sarili mong number call-outs at baguhin ang frequency ng mga tawag. Oras ng kasiyahan",
+    review1_author: "RBukes",
+    review1_source: "App Store",
+    review2_text: "Magandang laro! Ikinonekta namin ito sa TV at napakaganda! Gumagawa ito ng mga card na may QR codes para madaling ma-check ang mga linya at bingo. Napakagandang family bingo afternoon! Highly recommended!",
+    review2_author: "LyJ!",
+    review2_source: "App Store",
+    review3_text: "Napakagandang bingo app. Ginagawa ang lahat ng kailangan mo maliban sa sabihin kung ilan na ang numerong tinawag",
+    review3_author: "Koolkevin7",
+    review3_source: "App Store",
+    review4_text: "Kamangha-mangha, napakagandang gawa na may walang kapintasang disenyo.",
+    review4_author: "Alberto BG",
+    review4_source: "App Store",
+    review5_text: "Sa bagong opsyon na 2 segundo call time, ang app na ito ay paborito na namin",
+    review5_author: "dmaa670",
+    review5_source: "App Store",
+
+    // FAQ Section
+    faq_title: "Mga Madalas Itanong",
+    faq_subtitle: "Maghanap ng mga sagot sa karaniwang mga tanong tungkol sa aming Bingo apps",
+    faq_q1: "Paano ako maglalaro ng Bingo kasama ang mga kaibigan at pamilya?",
+    faq_a1: "I-download ang pangunahing Bingo!! app sa isang device upang maging caller. Ang lahat ng iba ay maaaring gumamit ng printed cards o i-download ang Bingo Cards!! app upang makakuha ng digital cards sa kanilang mga telepono o tablets.",
+    faq_q2: "Ano ang pagkakaiba ng 75-ball at 90-ball Bingo?",
+    faq_a2: "Ang 75-ball Bingo ay gumagamit ng mga numerong 1-75 na may 5x5 cards, habang ang 90-ball Bingo ay gumagamit ng mga numerong 1-90 na may 9x3 cards. Maaari kang pumili ng alinmang mode sa app settings upang tumugma sa iyong kagustuhan.",
+    faq_q3: "Maaari ko bang i-customize ang mga boses at wika?",
+    faq_a3: "Oo! Ang app ay sumusuporta sa Filipino, English, Spanish, at French na may iba't ibang voice options. Maaari ka ring mag-record ng sarili mong custom na boses at rhymes para sa personalized na karanasan.",
+    faq_q4: "Paano gumagana ang QR code verification?",
+    faq_a4: "Bawat bingo card ay may natatanging QR code. I-scan lamang ang code gamit ang camera ng pangunahing app upang agad na ma-verify kung ang card ay may panalo na BINGO pattern.",
+    faq_q5: "Maaari ko bang ipakita ang laro sa TV o mas malaking screen?",
+    faq_a5: "Oo naman! Maaari mong i-cast ang bingo board sa external screen gamit ang AirPlay (para sa Apple devices) o ikonekta sa pamamagitan ng cable upang ipakita sa anumang TV o monitor.",
+    faq_q6: "Ilang cards ang maaaring magkaroon ang bawat player?",
+    faq_a6: "Bawat player ay maaaring maglaro ng kahit ilang bingo cards ang gusto nila nang sabay-sabay, gamit man ang printed cards o ang digital Bingo Cards!! app. Walang limitasyon!",
+    faq_q7: "Ang app ba ay angkop para sa lahat ng edad?",
+    faq_a7: "Oo! Ang aming Bingo apps ay family-friendly at perpekto para sa mga players ng lahat ng edad. Ang mga nakaka-enganyo na boses at animations ay nagpapasaya sa lahat.",
+    faq_q8: "Kailangan ko ba ng internet connection para maglaro?",
+    faq_a8: "Hindi, kapag na-download na, maaari kang maglaro ng Bingo offline kasama ang pamilya at mga kaibigan sa iisang lokasyon. Hindi kailangan ng internet connection habang naglalaro.",
+
+    // Accessibility
+    skip_to_content: "Pumunta sa pangunahing nilalaman",
+    toggle_menu: "I-toggle ang navigation menu",
+    previous_review: "Nakaraang review",
+    next_review: "Susunod na review",
+    customer_reviews: "Mga review ng customer",
   },
 } as const;
 
