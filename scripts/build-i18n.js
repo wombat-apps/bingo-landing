@@ -225,8 +225,10 @@ function localizeHTML(html, lang, translations, pagePath) {
     // Fix relative paths to go up one level
     result = result.replace(/href="\.\/assets\//g, 'href="../assets/');
     result = result.replace(/src="\.\/assets\//g, 'src="../assets/');
+    result = result.replace(/srcset="\.\/assets\//g, 'srcset="../assets/');
     result = result.replace(/href="\.\/images\//g, 'href="../images/');
     result = result.replace(/src="\.\/images\//g, 'src="../images/');
+    result = result.replace(/srcset="\.\/images\//g, 'srcset="../images/');
 
     // Fix privacy policy link
     result = result.replace(/href="\.\/privacy-policy\.html"/g, 'href="../privacy-policy.html"');
