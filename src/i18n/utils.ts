@@ -5,6 +5,8 @@ const ogLocaleMap: Record<Language, string> = {
   en: 'en_US',
   es: 'es_ES',
   fr: 'fr_FR',
+  pt: 'pt_BR',
+  fil: 'fil_PH',
 };
 
 export function toLanguage(locale: string | undefined): Language {
