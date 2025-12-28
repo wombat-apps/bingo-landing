@@ -12,26 +12,26 @@ const t = useTranslations(lang);
 const ogLocale = getOgLocale(lang);
 const alternateLocales = getAlternateLocales(lang);
 const canonicalBase = 'https://wombat-apps.com';
-const canonicalPath = lang === 'en' ? '/bingo/' : `/${lang}/bingo/`;
+const canonicalPath = lang === 'en' ? '/cards/' : `/${lang}/cards/`;
 const canonicalUrl = `${canonicalBase}${canonicalPath}`;
 const privacyPath = getLocalizedPath(lang, '/privacy-policy');
 const mainLandingPath = getLocalizedPath(lang, '/');
-const cardsLandingPath = getLocalizedPath(lang, '/cards/');
+const bingoLandingPath = getLocalizedPath(lang, '/bingo/');
 const appStoreBadge = getAppStoreBadge(lang);
 const googlePlayBadge = getGooglePlayBadge(lang);
 
-// App Store Links - iOS links to Bingo!! Lite, Android to Bingo!!
-const iosAppLink = "https://apps.apple.com/app/apple-store/id1505191957?ct=bingo-landing";
-const androidAppLink = "https://play.google.com/store/apps/details?id=com.wombat.bingoapp";
+// App Store Links - Bingo Cards!!
+const iosAppLink = "https://apps.apple.com/app/id1510582506?ct=cards-landing";
+const androidAppLink = "https://play.google.com/store/apps/details?id=com.wombat.bingocards";
 
 // Data arrays
 const advantages = [
-  { title: t('advantage1_title'), desc: t('advantage1_desc'), gradient: 'from-bingo-purple to-bingo-pink', icon: '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>' },
-  { title: t('advantage2_title'), desc: t('advantage2_desc'), gradient: 'from-bingo-blue to-bingo-purple', icon: '<path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>' },
-  { title: t('advantage3_title'), desc: t('advantage3_desc'), gradient: 'from-bingo-pink to-bingo-blue', icon: '<path d="M9.5 6.5v3h-3v-3h3M11 5H5v6h6V5zm-1.5 9.5v3h-3v-3h3M11 13H5v6h6v-6zm6.5-6.5v3h-3v-3h3M19 5h-6v6h6V5zm-6.5 9.5v3h-3v-3h3M13 13h-6v6h6v-6zm6.5 0v3h-3v-3h3M19 13h-6v6h6v-6z"/>' },
-  { title: t('advantage4_title'), desc: t('advantage4_desc'), gradient: 'from-bingo-purple to-bingo-pink', icon: '<path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zm-2-9H8v2h11V9z"/>' },
-  { title: t('advantage5_title'), desc: t('advantage5_desc'), gradient: 'from-bingo-blue to-bingo-purple', icon: '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>' },
-  { title: t('advantage6_title'), desc: t('advantage6_desc'), gradient: 'from-bingo-pink to-bingo-blue', icon: '<path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>' }
+  { title: t('cards_advantage1_title'), desc: t('cards_advantage1_desc'), gradient: 'from-bingo-purple to-bingo-pink', icon: '<path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>' },
+  { title: t('cards_advantage2_title'), desc: t('cards_advantage2_desc'), gradient: 'from-bingo-blue to-bingo-purple', icon: '<path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/><line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2"/>' },
+  { title: t('cards_advantage3_title'), desc: t('cards_advantage3_desc'), gradient: 'from-bingo-pink to-bingo-blue', icon: '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>' },
+  { title: t('cards_advantage4_title'), desc: t('cards_advantage4_desc'), gradient: 'from-bingo-purple to-bingo-pink', icon: '<path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>' },
+  { title: t('cards_advantage5_title'), desc: t('cards_advantage5_desc'), gradient: 'from-bingo-blue to-bingo-purple', icon: '<path d="M9.5 6.5v3h-3v-3h3M11 5H5v6h6V5zm-1.5 9.5v3h-3v-3h3M11 13H5v6h6v-6zm6.5-6.5v3h-3v-3h3M19 5h-6v6h6V5zm-6.5 9.5v3h-3v-3h3M13 13h-6v6h6v-6zm6.5 0v3h-3v-3h3M19 13h-6v6h6v-6z"/>' },
+  { title: t('cards_advantage6_title'), desc: t('cards_advantage6_desc'), gradient: 'from-bingo-pink to-bingo-blue', icon: '<path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>' }
 ];
 
 const reviews = [
@@ -45,16 +45,16 @@ const reviews = [
 const reviewBackgrounds = ['from-purple-50 to-pink-50', 'from-blue-50 to-purple-50', 'from-pink-50 to-blue-50', 'from-purple-50 to-pink-50', 'from-blue-50 to-purple-50'];
 
 const faqs = [
-  { q: t('bingo_faq_q1'), a: t('bingo_faq_a1'), gradient: 'from-purple-50 to-pink-50', border: 'border-purple-100', ring: 'ring-bingo-purple', bg: 'bg-bingo-purple' },
-  { q: t('bingo_faq_q2'), a: t('bingo_faq_a2'), gradient: 'from-blue-50 to-purple-50', border: 'border-blue-100', ring: 'ring-bingo-blue', bg: 'bg-bingo-blue' },
-  { q: t('bingo_faq_q3'), a: t('bingo_faq_a3'), gradient: 'from-pink-50 to-blue-50', border: 'border-pink-100', ring: 'ring-bingo-pink', bg: 'bg-bingo-pink' },
-  { q: t('bingo_faq_q4'), a: t('bingo_faq_a4'), gradient: 'from-purple-50 to-pink-50', border: 'border-purple-100', ring: 'ring-bingo-purple', bg: 'bg-bingo-purple' }
+  { q: t('cards_faq_q1'), a: t('cards_faq_a1'), gradient: 'from-purple-50 to-pink-50', border: 'border-purple-100', ring: 'ring-bingo-purple', bg: 'bg-bingo-purple' },
+  { q: t('cards_faq_q2'), a: t('cards_faq_a2'), gradient: 'from-blue-50 to-purple-50', border: 'border-blue-100', ring: 'ring-bingo-blue', bg: 'bg-bingo-blue' },
+  { q: t('cards_faq_q3'), a: t('cards_faq_a3'), gradient: 'from-pink-50 to-blue-50', border: 'border-pink-100', ring: 'ring-bingo-pink', bg: 'bg-bingo-pink' },
+  { q: t('cards_faq_q4'), a: t('cards_faq_a4'), gradient: 'from-purple-50 to-pink-50', border: 'border-purple-100', ring: 'ring-bingo-purple', bg: 'bg-bingo-purple' }
 ];
 
-// Language selector helper for /bingo/ routes
+// Language selector helper for /cards/ routes
 function getLanguageLink(targetLang: Language): string {
-  if (targetLang === defaultLang) return '/bingo/';
-  return `/${targetLang}/bingo/`;
+  if (targetLang === defaultLang) return '/cards/';
+  return `/${targetLang}/cards/`;
 }
 ---
 
@@ -63,10 +63,10 @@ function getLanguageLink(targetLang: Language): string {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{t('bingo_meta_title')}</title>
+    <title>{t('cards_meta_title')}</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content={t('bingo_meta_description')}>
+    <meta name="description" content={t('cards_meta_description')}>
     <meta name="robots" content="index, follow">
     <meta name="author" content="Wombat Apps">
     <meta name="theme-color" content="#822ad2">
@@ -75,12 +75,12 @@ function getLanguageLink(targetLang: Language): string {
     <link rel="canonical" href={canonicalUrl}>
 
     <!-- Open Graph -->
-    <meta property="og:title" content={t('bingo_og_title')}>
-    <meta property="og:description" content={t('bingo_og_description')}>
-    <meta property="og:image" content={`${canonicalBase}/images/bingo-logo.png`}>
+    <meta property="og:title" content={t('cards_og_title')}>
+    <meta property="og:description" content={t('cards_og_description')}>
+    <meta property="og:image" content={`${canonicalBase}/images/bingo-cards-app.png`}>
     <meta property="og:url" content={canonicalUrl}>
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Bingo!!">
+    <meta property="og:site_name" content="Bingo Cards!!">
     <meta property="og:locale" content={ogLocale}>
     {alternateLocales.map((locale) => (
         <meta property="og:locale:alternate" content={locale} />
@@ -88,16 +88,16 @@ function getLanguageLink(targetLang: Language): string {
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content={t('bingo_og_title')}>
-    <meta name="twitter:description" content={t('bingo_og_description')}>
-    <meta name="twitter:image" content={`${canonicalBase}/images/bingo-logo.png`}>
+    <meta name="twitter:title" content={t('cards_og_title')}>
+    <meta name="twitter:description" content={t('cards_og_description')}>
+    <meta name="twitter:image" content={`${canonicalBase}/images/bingo-cards-app.png`}>
 
     <!-- Hreflang -->
-    <link rel="alternate" hreflang="en" href={`${canonicalBase}/bingo/`}>
-    <link rel="alternate" hreflang="es" href={`${canonicalBase}/es/bingo/`}>
-    <link rel="alternate" hreflang="fr" href={`${canonicalBase}/fr/bingo/`}>
-    <link rel="alternate" hreflang="pt" href={`${canonicalBase}/pt/bingo/`}>
-    <link rel="alternate" hreflang="x-default" href={`${canonicalBase}/bingo/`}>
+    <link rel="alternate" hreflang="en" href={`${canonicalBase}/cards/`}>
+    <link rel="alternate" hreflang="es" href={`${canonicalBase}/es/cards/`}>
+    <link rel="alternate" hreflang="fr" href={`${canonicalBase}/fr/cards/`}>
+    <link rel="alternate" hreflang="pt" href={`${canonicalBase}/pt/cards/`}>
+    <link rel="alternate" hreflang="x-default" href={`${canonicalBase}/cards/`}>
 
     <!-- Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -115,11 +115,11 @@ function getLanguageLink(targetLang: Language): string {
     <script is:inline type="application/ld+json" set:html={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "Bingo!!",
+        "name": "Bingo Cards!!",
         "operatingSystem": "iOS, Android",
         "applicationCategory": "GameApplication",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "15000" }
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "10000" }
     })} />
     <script is:inline type="application/ld+json" set:html={JSON.stringify({
         "@context": "https://schema.org",
@@ -149,17 +149,17 @@ function getLanguageLink(targetLang: Language): string {
         <div class="container mx-auto px-4 py-4 relative z-10">
             <div class="text-center mb-6">
                 <h1 class="text-4xl md:text-5xl font-black text-white mb-3 leading-tight drop-shadow-2xl">
-                    {t('bingo_headline')}
+                    {t('cards_headline')}
                 </h1>
                 <p class="text-xl md:text-2xl text-white/90 font-bold drop-shadow-lg">
-                    {t('bingo_subtitle')}
+                    {t('cards_subtitle')}
                 </p>
             </div>
 
             <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
                 <div class="relative group">
                     <div class="absolute -inset-6 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 opacity-30 blur-2xl group-hover:opacity-50 transition-opacity rounded-3xl"></div>
-                    <img src="/images/app-screenshot-iphone.png" alt="Bingo App Screenshot" class="w-64 h-auto max-w-full relative z-10 drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-300">
+                    <img src="/images/bingo-cards-app.png" alt="Bingo Cards App Screenshot" class="w-64 h-auto max-w-full relative z-10 drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-300">
                 </div>
 
                 <div class="flex flex-col space-y-4 items-center">
@@ -181,7 +181,7 @@ function getLanguageLink(targetLang: Language): string {
                             </div>
                             <div class="w-px h-6 bg-white/30"></div>
                             <div>
-                                <span class="font-semibold">50K+</span> <span>{t('downloads_count')}</span>
+                                <span class="font-semibold">10K+</span> <span>{t('downloads_count')}</span>
                             </div>
                         </div>
                     </div>
@@ -201,19 +201,19 @@ function getLanguageLink(targetLang: Language): string {
                 </button>
 
                 <ul class="hidden md:flex flex-1 justify-center gap-8">
-                    <li><a href="#features" class="nav-link text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('bingo_nav_features')}</a></li>
-                    <li><a href="#reviews" class="nav-link text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('bingo_nav_reviews')}</a></li>
-                    <li><a href="#faq" class="nav-link text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('bingo_nav_faq')}</a></li>
-                    <li><a href="#cards" class="nav-link text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('bingo_nav_cards')}</a></li>
+                    <li><a href="#features" class="nav-link text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('cards_nav_features')}</a></li>
+                    <li><a href="#reviews" class="nav-link text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('cards_nav_reviews')}</a></li>
+                    <li><a href="#faq" class="nav-link text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('cards_nav_faq')}</a></li>
+                    <li><a href="#caller" class="nav-link text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('cards_nav_caller')}</a></li>
                 </ul>
             </div>
 
             <div id="mobileMenu" class="hidden md:hidden">
                 <ul class="flex flex-col space-y-2 pb-4">
-                    <li><a href="#features" class="nav-link block text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('bingo_nav_features')}</a></li>
-                    <li><a href="#reviews" class="nav-link block text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('bingo_nav_reviews')}</a></li>
-                    <li><a href="#faq" class="nav-link block text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('bingo_nav_faq')}</a></li>
-                    <li><a href="#cards" class="nav-link block text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('bingo_nav_cards')}</a></li>
+                    <li><a href="#features" class="nav-link block text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('cards_nav_features')}</a></li>
+                    <li><a href="#reviews" class="nav-link block text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('cards_nav_reviews')}</a></li>
+                    <li><a href="#faq" class="nav-link block text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('cards_nav_faq')}</a></li>
+                    <li><a href="#caller" class="nav-link block text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('cards_nav_caller')}</a></li>
                 </ul>
             </div>
         </div>
@@ -299,33 +299,33 @@ function getLanguageLink(targetLang: Language): string {
             </div>
         </section>
 
-        <!-- Bingo Cards Section -->
-        <section id="cards" class="py-20 bg-white">
+        <!-- Bingo Caller Section -->
+        <section id="caller" class="py-20 bg-white">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center">
                     <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                        {t('bingo_cards_section_title')}
+                        {t('cards_caller_section_title')}
                     </h2>
                     <p class="text-xl text-gray-600 mb-12">
-                        {t('bingo_cards_section_subtitle')}
+                        {t('cards_caller_section_subtitle')}
                     </p>
 
                     <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 shadow-lg mb-8">
                         <div class="flex flex-col md:flex-row items-center gap-8">
-                            <img src="/images/bingo-cards-app.png" alt="Bingo Cards!!" class="w-48 h-auto rounded-2xl shadow-md">
+                            <img src="/images/app-screenshot-iphone.png" alt="Bingo!!" class="w-48 h-auto rounded-2xl shadow-md">
                             <div class="text-left">
                                 <h3 class="text-2xl font-bold mb-4 text-gray-800">
-                                    {t('cards_app_title')}
+                                    Bingo!!
                                 </h3>
                                 <p class="text-gray-600 text-lg mb-4 leading-relaxed">
-                                    {t('bingo_cards_section_desc')}
+                                    {t('cards_caller_section_desc')}
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <a href={cardsLandingPath} class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-bingo-purple to-bingo-pink text-white font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105">
-                        {t('bingo_cards_section_cta')}
+                    <a href={bingoLandingPath} class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-bingo-purple to-bingo-pink text-white font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105">
+                        {t('cards_caller_section_cta')}
                         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
@@ -377,12 +377,12 @@ function getLanguageLink(targetLang: Language): string {
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4 text-center">
-            <img src="/images/bingo-logo.png" alt="Bingo!! Logo" class="h-16 mx-auto mb-6 opacity-80">
+            <img src="/images/bingo-cards-app.png" alt="Bingo Cards!! Logo" class="h-16 mx-auto mb-6 opacity-80">
             <p class="text-lg text-gray-300 mb-4">{t('footer_rights')}</p>
             <div class="mb-4 space-x-4">
                 <a href={privacyPath} class="text-gray-400 hover:text-white transition-colors underline">{t('privacy_policy_title')}</a>
                 <span class="text-gray-600">|</span>
-                <a href={mainLandingPath} class="text-gray-400 hover:text-white transition-colors underline">{t('bingo_view_all_apps')}</a>
+                <a href={mainLandingPath} class="text-gray-400 hover:text-white transition-colors underline">{t('cards_view_all_apps')}</a>
             </div>
             <p class="text-gray-400 mb-6">{t('footer_tagline')}</p>
 

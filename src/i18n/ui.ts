@@ -6,6 +6,7 @@
 import { shared } from './translations/shared';
 import { landing } from './translations/landing';
 import { bingo } from './translations/bingo';
+import { cards } from './translations/cards';
 import { privacy } from './translations/privacy';
 
 export const languages = {
@@ -13,7 +14,6 @@ export const languages = {
   es: 'Español',
   fr: 'Français',
   pt: 'Português',
-  fil: 'Filipino',
 } as const;
 
 export const defaultLang = 'en' as const;
@@ -25,7 +25,6 @@ export const appStoreBadges: Record<Language, string> = {
   es: 'https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/es-es?size=250x83&releaseDate=1570838400',
   fr: 'https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/fr-fr?size=250x83&releaseDate=1570838400',
   pt: 'https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/pt-br?size=250x83&releaseDate=1570838400',
-  fil: 'https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1570838400',
 };
 
 export const googlePlayBadges: Record<Language, string> = {
@@ -33,7 +32,6 @@ export const googlePlayBadges: Record<Language, string> = {
   es: 'https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png',
   fr: 'https://play.google.com/intl/en_us/badges/static/images/badges/fr_badge_web_generic.png',
   pt: 'https://play.google.com/intl/en_us/badges/static/images/badges/pt-br_badge_web_generic.png',
-  fil: 'https://play.google.com/intl/en_us/badges/static/images/badges/fil_badge_web_generic.png',
 };
 
 // Combine all translations for each language
@@ -42,31 +40,29 @@ export const ui = {
     ...shared.en,
     ...landing.en,
     ...bingo.en,
+    ...cards.en,
     ...privacy.en,
   },
   es: {
     ...shared.es,
     ...landing.es,
     ...bingo.es,
+    ...cards.es,
     ...privacy.es,
   },
   fr: {
     ...shared.fr,
     ...landing.fr,
     ...bingo.fr,
+    ...cards.fr,
     ...privacy.fr,
   },
   pt: {
     ...shared.pt,
     ...landing.pt,
     ...bingo.pt,
+    ...cards.pt,
     ...privacy.pt,
-  },
-  fil: {
-    ...shared.fil,
-    ...landing.fil,
-    ...bingo.fil,
-    ...privacy.fil,
   },
 } as const;
 

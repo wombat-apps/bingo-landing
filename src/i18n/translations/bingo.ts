@@ -151,41 +151,4 @@ export const bingo = {
     // Footer
     bingo_view_all_apps: "Ver todos os nossos apps de Bingo",
   },
-
-  fil: {
-    // SEO Meta Tags
-    bingo_meta_title: "Bingo!! - Pinakamahusay na Bingo App para sa iOS at Android",
-    bingo_meta_description: "Ang Bingo!! ang pinakamahusay na digital bingo machine. Awtomatikong pagtawag na may tunay na mga boses, external screen support, at custom rhymes. I-download nang libre!",
-    bingo_og_title: "Bingo!! - Pinakamahusay na Bingo Machine",
-    bingo_og_description: "Gawing kapana-panabik na bingo night ang anumang pagtitipon! Awtomatikong pagtawag, tunay na boses, TV support at marami pa.",
-
-    // Hero
-    bingo_headline: "Ang Pinakamahusay na Bingo Caller!",
-    bingo_subtitle: "Gawing kapana-panabik na bingo night ang anumang pagtitipon gamit ang pinaka-complete na caller app!",
-
-    // Navigation
-    bingo_nav_features: "Mga Feature",
-    bingo_nav_reviews: "Mga Review",
-    bingo_nav_faq: "FAQ",
-    bingo_nav_cards: "Mga Card",
-
-    // Bingo Cards Section
-    bingo_cards_section_title: "Kailangan ng Bingo Cards?",
-    bingo_cards_section_subtitle: "Kumuha ng digital bingo cards para sa lahat ng iyong players gamit ang aming companion app",
-    bingo_cards_section_desc: "Ang Bingo Cards!! ay nagbibigay ng unlimited digital bingo cards na gumagana nang perpekto sa Bingo!! caller. Bawat player ay gumagamit ng sarili nilang device - hindi na kailangang mag-print!",
-    bingo_cards_section_cta: "Alamin ang higit pa tungkol sa Bingo Cards!!",
-
-    // FAQ (specific to Bingo!! caller)
-    bingo_faq_q1: "Paano gumagana ang Bingo!! bilang caller?",
-    bingo_faq_a1: "Ang Bingo!! ay gumaganap bilang iyong digital bingo caller machine. Random na humuhugot ng mga numero, inihahayag ang mga ito gamit ang tunay na mga boses, at ipinapakita sa screen. Ikonekta sa TV para makita ng buong silid!",
-    bingo_faq_q2: "Maaari ko bang gamitin ang sarili kong boses?",
-    bingo_faq_a2: "Oo! Mag-record ng sarili mong mga number calls at custom rhymes para sa personalized na karanasan. Perpekto para sa mga tradisyon ng pamilya o espesyal na okasyon.",
-    bingo_faq_q3: "Ano ang pagkakaiba ng Bingo!! at Bingo!! Lite?",
-    bingo_faq_a3: "Ang Bingo!! ay isang one-time purchase na may lahat ng features na naka-unlock. Ang Bingo!! Lite ay libreng i-download na may optional in-app purchases para ma-unlock ang karagdagang features.",
-    bingo_faq_q4: "Gumagana ba ito offline?",
-    bingo_faq_a4: "Oo naman! Kapag na-download na, ang Bingo!! ay gumagana nang ganap na offline. Perpekto para sa kahit saang lugar - hindi kailangan ng internet habang naglalaro.",
-
-    // Footer
-    bingo_view_all_apps: "Tingnan ang lahat ng aming Bingo apps",
-  },
 } as const;

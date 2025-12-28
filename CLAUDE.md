@@ -34,11 +34,11 @@ npm run typecheck # Run Astro type checking
 - Breakpoints: `md:` (768px), `lg:` (1024px)
 
 ### Internationalization
-- **Supported languages**: English (default), Spanish, French
-- **URL routing**: `/` (en), `/es/`, `/fr/` - configured in `astro.config.mjs`
+- **Supported languages**: English (default), Spanish, French, Portuguese
+- **URL routing**: `/` (en), `/es/`, `/fr/`, `/pt/` - configured in `astro.config.mjs`
 - **Dynamic routes**: Non-default locales use `[locale]/` pattern for automatic generation
 - **Translation files**:
-  - `src/i18n/ui.ts`: All translation strings for en, es, fr
+  - `src/i18n/ui.ts`: All translation strings for en, es, fr, pt
   - `src/i18n/utils.ts`: Helper functions (`useTranslations`, `toLanguage`, `getLocalizedPath`, etc.)
 
 ### Page Structure
@@ -49,13 +49,13 @@ npm run typecheck # Run Astro type checking
 - **Routes**: File-based in `src/pages/`
   - `index.astro` → `/` (English only, has `enableAutoRedirect`)
   - `privacy-policy.astro` → `/privacy-policy` (English only)
-  - `[locale]/index.astro` → `/es/`, `/fr/` (dynamic route)
-  - `[locale]/privacy-policy.astro` → `/es/privacy-policy`, `/fr/privacy-policy`
+  - `[locale]/index.astro` → `/es/`, `/fr/`, `/pt/` (dynamic route)
+  - `[locale]/privacy-policy.astro` → `/es/privacy-policy`, `/fr/privacy-policy`, `/pt/privacy-policy`
 
 ## Key Development Notes
 
 ### Adding Translations
-1. Add keys to all three language objects in `src/i18n/ui.ts`
+1. Add keys to all four language objects in `src/i18n/ui.ts`
 2. Use in components: `const t = useTranslations(lang); t('your_key')`
 3. For localized links: `getLocalizedPath(lang, '/path')`
 

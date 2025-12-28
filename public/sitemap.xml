@@ -8,7 +8,6 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/"/>
         <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/"/>
-        <xhtml:link rel="alternate" hreflang="fil" href="https://wombat-apps.com/fil/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/"/>
         <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
@@ -22,7 +21,6 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/"/>
         <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/"/>
-        <xhtml:link rel="alternate" hreflang="fil" href="https://wombat-apps.com/fil/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/"/>
         <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
@@ -36,7 +34,6 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/"/>
         <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/"/>
-        <xhtml:link rel="alternate" hreflang="fil" href="https://wombat-apps.com/fil/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/"/>
         <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
@@ -50,21 +47,6 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/"/>
         <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/"/>
-        <xhtml:link rel="alternate" hreflang="fil" href="https://wombat-apps.com/fil/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/"/>
-        <lastmod>2025-12-23</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-    <!-- Home - Filipino -->
-    <url>
-        <loc>https://wombat-apps.com/fil/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/"/>
-        <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/"/>
-        <xhtml:link rel="alternate" hreflang="fil" href="https://wombat-apps.com/fil/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/"/>
         <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
@@ -78,7 +60,6 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/privacy-policy/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/privacy-policy/"/>
         <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/privacy-policy/"/>
-        <xhtml:link rel="alternate" hreflang="fil" href="https://wombat-apps.com/fil/privacy-policy/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/privacy-policy/"/>
         <lastmod>2025-12-19</lastmod>
         <changefreq>yearly</changefreq>
@@ -92,7 +73,6 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/privacy-policy/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/privacy-policy/"/>
         <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/privacy-policy/"/>
-        <xhtml:link rel="alternate" hreflang="fil" href="https://wombat-apps.com/fil/privacy-policy/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/privacy-policy/"/>
         <lastmod>2025-12-19</lastmod>
         <changefreq>yearly</changefreq>
@@ -106,7 +86,6 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/privacy-policy/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/privacy-policy/"/>
         <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/privacy-policy/"/>
-        <xhtml:link rel="alternate" hreflang="fil" href="https://wombat-apps.com/fil/privacy-policy/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/privacy-policy/"/>
         <lastmod>2025-12-19</lastmod>
         <changefreq>yearly</changefreq>
@@ -120,21 +99,6 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/privacy-policy/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/privacy-policy/"/>
         <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/privacy-policy/"/>
-        <xhtml:link rel="alternate" hreflang="fil" href="https://wombat-apps.com/fil/privacy-policy/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/privacy-policy/"/>
-        <lastmod>2025-12-19</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-
-    <!-- Privacy Policy - Filipino -->
-    <url>
-        <loc>https://wombat-apps.com/fil/privacy-policy/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/privacy-policy/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/privacy-policy/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/privacy-policy/"/>
-        <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/privacy-policy/"/>
-        <xhtml:link rel="alternate" hreflang="fil" href="https://wombat-apps.com/fil/privacy-policy/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/privacy-policy/"/>
         <lastmod>2025-12-19</lastmod>
         <changefreq>yearly</changefreq>
@@ -148,7 +112,6 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/bingo/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/bingo/"/>
         <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/bingo/"/>
-        <xhtml:link rel="alternate" hreflang="fil" href="https://wombat-apps.com/fil/bingo/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/bingo/"/>
         <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
@@ -162,7 +125,6 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/bingo/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/bingo/"/>
         <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/bingo/"/>
-        <xhtml:link rel="alternate" hreflang="fil" href="https://wombat-apps.com/fil/bingo/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/bingo/"/>
         <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
@@ -176,7 +138,6 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/bingo/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/bingo/"/>
         <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/bingo/"/>
-        <xhtml:link rel="alternate" hreflang="fil" href="https://wombat-apps.com/fil/bingo/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/bingo/"/>
         <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
@@ -190,22 +151,59 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/bingo/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/bingo/"/>
         <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/bingo/"/>
-        <xhtml:link rel="alternate" hreflang="fil" href="https://wombat-apps.com/fil/bingo/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/bingo/"/>
         <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
-    <!-- Bingo!! Landing - Filipino -->
+    <!-- Bingo Cards!! Landing - English -->
     <url>
-        <loc>https://wombat-apps.com/fil/bingo/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/bingo/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/bingo/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/bingo/"/>
-        <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/bingo/"/>
-        <xhtml:link rel="alternate" hreflang="fil" href="https://wombat-apps.com/fil/bingo/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/bingo/"/>
+        <loc>https://wombat-apps.com/cards/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/cards/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/cards/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/cards/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/cards/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/cards/"/>
+        <lastmod>2025-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Bingo Cards!! Landing - Spanish -->
+    <url>
+        <loc>https://wombat-apps.com/es/cards/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/cards/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/cards/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/cards/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/cards/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/cards/"/>
+        <lastmod>2025-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Bingo Cards!! Landing - French -->
+    <url>
+        <loc>https://wombat-apps.com/fr/cards/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/cards/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/cards/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/cards/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/cards/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/cards/"/>
+        <lastmod>2025-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Bingo Cards!! Landing - Portuguese -->
+    <url>
+        <loc>https://wombat-apps.com/pt/cards/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/cards/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/cards/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/cards/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/cards/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/cards/"/>
         <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>

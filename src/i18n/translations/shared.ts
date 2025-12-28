@@ -123,34 +123,4 @@ export const shared = {
     // Privacy Policy Link
     privacy_policy_title: "Política de Privacidade",
   },
-
-  fil: {
-    // Navigation
-    nav_apps: "Apps",
-    nav_advantages: "Mga Benepisyo",
-    nav_qr: "QR Tutorial",
-    nav_reviews: "Mga Review",
-    nav_faq: "FAQ",
-    nav_team: "Team",
-
-    // Footer
-    footer_rights: "© 2024 Wombat Apps. Lahat ng karapatan ay nakalaan.",
-    footer_tagline: "Pinakamahusay na Bingo machine!",
-
-    // Common UI
-    guaranteed_fun: "Garantisadong saya!",
-    download_free: "I-download nang libre!",
-    available_platforms: "Available sa lahat ng platforms",
-    downloads_count: "downloads",
-
-    // Accessibility
-    skip_to_content: "Pumunta sa pangunahing nilalaman",
-    toggle_menu: "I-toggle ang navigation menu",
-    previous_review: "Nakaraang review",
-    next_review: "Susunod na review",
-    customer_reviews: "Mga review ng customer",
-
-    // Privacy Policy Link
-    privacy_policy_title: "Patakaran sa Privacy",
-  },
 } as const;
