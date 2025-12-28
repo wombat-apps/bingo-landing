@@ -243,42 +243,62 @@ function getLanguageLink(targetLang: Language): string {
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">{t('apps_subtitle')}</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 text-center flex flex-col">
-                        <div class="h-80 flex items-center justify-center mb-8">
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-6 text-center flex flex-col">
+                        <div class="h-64 flex items-center justify-center mb-6">
                             <img src="/images/app-screenshot-iphone.png" alt="Bingo App Screenshot" class="max-w-full max-h-full w-auto h-auto rounded-2xl object-contain">
                         </div>
                         <div class="flex-grow flex flex-col justify-between">
                             <div>
-                                <h3 class="text-3xl font-bold mb-6 text-gray-800">{t('main_app_title')}</h3>
-                                <p class="text-xl text-gray-600 mb-8 leading-relaxed">{t('main_app_desc')}</p>
+                                <h3 class="text-2xl font-bold mb-4 text-gray-800">{t('main_app_title')}</h3>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">{t('main_app_desc')}</p>
                             </div>
-                            <div class="flex flex-col space-y-4 items-center">
+                            <div class="flex flex-col space-y-3 items-center">
                                 <a href="https://apps.apple.com/app/apple-store/id1505191957?ct=landing" class="block transform hover:scale-105 transition-transform">
-                                    <img src={appStoreBadge} class="h-16 w-auto" alt="Download on the App Store">
+                                    <img src={appStoreBadge} class="h-12 w-auto" alt="Download on the App Store">
                                 </a>
                                 <a href="https://play.google.com/store/apps/details?id=com.wombat.bingoapp" class="block transform hover:scale-105 transition-transform">
-                                    <img src={googlePlayBadge} class="h-20 w-auto" alt="Get it on Google Play">
+                                    <img src={googlePlayBadge} class="h-14 w-auto" alt="Get it on Google Play">
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 text-center flex flex-col">
-                        <div class="h-80 flex items-center justify-center mb-8">
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-6 text-center flex flex-col">
+                        <div class="h-64 flex items-center justify-center mb-6">
                             <img src="/images/bingo-cards-app.png" alt="Bingo Cards App" class="max-w-full max-h-full w-auto h-auto rounded-2xl object-contain">
                         </div>
                         <div class="flex-grow flex flex-col justify-between">
                             <div>
-                                <h3 class="text-3xl font-bold mb-6 text-gray-800">{t('cards_app_title')}</h3>
-                                <p class="text-xl text-gray-600 mb-8 leading-relaxed">{t('cards_app_desc')}</p>
+                                <h3 class="text-2xl font-bold mb-4 text-gray-800">{t('cards_app_title')}</h3>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">{t('cards_app_desc')}</p>
                             </div>
-                            <div class="flex flex-col space-y-4 items-center">
+                            <div class="flex flex-col space-y-3 items-center">
                                 <a href="https://apps.apple.com/app/id1510582506?ct=landing" class="block transform hover:scale-105 transition-transform">
-                                    <img src={appStoreBadge} class="h-16 w-auto" alt="Download on the App Store">
+                                    <img src={appStoreBadge} class="h-12 w-auto" alt="Download on the App Store">
                                 </a>
                                 <a href="https://play.google.com/store/apps/details?id=com.wombat.bingocards" class="block transform hover:scale-105 transition-transform">
-                                    <img src={googlePlayBadge} class="h-20 w-auto" alt="Get it on Google Play">
+                                    <img src={googlePlayBadge} class="h-14 w-auto" alt="Get it on Google Play">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-pink-50 to-blue-50 rounded-3xl p-6 text-center flex flex-col">
+                        <div class="h-64 flex items-center justify-center mb-6">
+                            <img src="/images/bingo-print-app.png" alt="Bingo Print App" class="max-w-full max-h-full w-auto h-auto rounded-2xl object-contain">
+                        </div>
+                        <div class="flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4 text-gray-800">{t('print_app_title')}</h3>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">{t('print_app_desc')}</p>
+                            </div>
+                            <div class="flex flex-col space-y-3 items-center">
+                                <a href="#" class="block transform hover:scale-105 transition-transform">
+                                    <img src={appStoreBadge} class="h-12 w-auto" alt="Download on the App Store">
+                                </a>
+                                <a href="#" class="block transform hover:scale-105 transition-transform">
+                                    <img src={googlePlayBadge} class="h-14 w-auto" alt="Get it on Google Play">
                                 </a>
                             </div>
                         </div>

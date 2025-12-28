@@ -208,4 +208,56 @@
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
+
+    <!-- Bingo!! Print Landing - English -->
+    <url>
+        <loc>https://wombat-apps.com/bingo-print/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/bingo-print/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/bingo-print/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/bingo-print/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/bingo-print/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/bingo-print/"/>
+        <lastmod>2025-12-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Bingo!! Print Landing - Spanish -->
+    <url>
+        <loc>https://wombat-apps.com/es/bingo-print/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/bingo-print/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/bingo-print/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/bingo-print/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/bingo-print/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/bingo-print/"/>
+        <lastmod>2025-12-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Bingo!! Print Landing - French -->
+    <url>
+        <loc>https://wombat-apps.com/fr/bingo-print/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/bingo-print/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/bingo-print/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/bingo-print/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/bingo-print/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/bingo-print/"/>
+        <lastmod>2025-12-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Bingo!! Print Landing - Portuguese -->
+    <url>
+        <loc>https://wombat-apps.com/pt/bingo-print/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wombat-apps.com/bingo-print/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://wombat-apps.com/es/bingo-print/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://wombat-apps.com/fr/bingo-print/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://wombat-apps.com/pt/bingo-print/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://wombat-apps.com/bingo-print/"/>
+        <lastmod>2025-12-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
 </urlset>

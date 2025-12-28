@@ -7,6 +7,7 @@ import { shared } from './translations/shared';
 import { landing } from './translations/landing';
 import { bingo } from './translations/bingo';
 import { cards } from './translations/cards';
+import { print } from './translations/print';
 import { privacy } from './translations/privacy';
 
 export const languages = {
@@ -41,6 +42,7 @@ export const ui = {
     ...landing.en,
     ...bingo.en,
     ...cards.en,
+    ...print.en,
     ...privacy.en,
   },
   es: {
@@ -48,6 +50,7 @@ export const ui = {
     ...landing.es,
     ...bingo.es,
     ...cards.es,
+    ...print.es,
     ...privacy.es,
   },
   fr: {
@@ -55,6 +58,7 @@ export const ui = {
     ...landing.fr,
     ...bingo.fr,
     ...cards.fr,
+    ...print.fr,
     ...privacy.fr,
   },
   pt: {
@@ -62,6 +66,7 @@ export const ui = {
     ...landing.pt,
     ...bingo.pt,
     ...cards.pt,
+    ...print.pt,
     ...privacy.pt,
   },
 } as const;

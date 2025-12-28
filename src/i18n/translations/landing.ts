@@ -53,6 +53,10 @@ export const landing = {
     cards_app_title: "Bingo Cards!!",
     cards_app_desc: "Get digital bingo cards on your device with our companion app",
 
+    // Print Section
+    print_app_title: "Bingo!! Print",
+    print_app_desc: "Generate, customize, and print professional bingo cards",
+
     // Team Section
     team_title: "Meet our team",
     team_subtitle: "The talented developers and designers behind your favorite bingo app",
@@ -149,6 +153,10 @@ export const landing = {
     cards_title: "Consigue tus cartones",
     cards_app_title: "Cartones de Bingo!!",
     cards_app_desc: "Obtén cartones de bingo digitales en tu dispositivo con nuestra app",
+
+    // Print Section
+    print_app_title: "Bingo!! Print",
+    print_app_desc: "Genera, personaliza e imprime cartones de bingo profesionales",
 
     // Team Section
     team_title: "Conoce nuestro equipo",
@@ -247,6 +255,10 @@ export const landing = {
     cards_app_title: "Cartons de Bingo !!",
     cards_app_desc: "Obtenez des cartons de bingo numériques sur votre appareil avec notre app complémentaire",
 
+    // Print Section
+    print_app_title: "Bingo!! Print",
+    print_app_desc: "Generez, personnalisez et imprimez des cartons de bingo professionnels",
+
     // Team Section
     team_title: "Rencontrez notre équipe",
     team_subtitle: "Les talentueux développeurs et designers derrière votre app de bingo préférée",
@@ -343,6 +355,10 @@ export const landing = {
     cards_title: "Obtenha suas cartelas",
     cards_app_title: "Cartelas de Bingo!!",
     cards_app_desc: "Obtenha cartelas de bingo digitais no seu dispositivo com nosso app complementar",
+
+    // Print Section
+    print_app_title: "Bingo!! Print",
+    print_app_desc: "Gere, personalize e imprima cartelas de bingo profissionais",
 
     // Team Section
     team_title: "Conheça nossa equipe",

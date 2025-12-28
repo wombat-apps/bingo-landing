@@ -1,0 +1,531 @@
+---
+import '../styles/global.css';
+import { useTranslations, getLocalizedPath, getAppStoreBadge, getGooglePlayBadge, getOgLocale, getAlternateLocales, toLanguage } from '../i18n/utils';
+import { languages, defaultLang, type Language } from '../i18n/ui';
+
+interface Props {
+  lang?: Language;
+}
+
+const { lang = toLanguage(Astro.currentLocale) } = Astro.props;
+const t = useTranslations(lang);
+const ogLocale = getOgLocale(lang);
+const alternateLocales = getAlternateLocales(lang);
+const canonicalBase = 'https://wombat-apps.com';
+const canonicalPath = lang === 'en' ? '/bingo-print/' : `/${lang}/bingo-print/`;
+const canonicalUrl = `${canonicalBase}${canonicalPath}`;
+const privacyPath = getLocalizedPath(lang, '/privacy-policy');
+const mainLandingPath = getLocalizedPath(lang, '/');
+const bingoLandingPath = getLocalizedPath(lang, '/bingo/');
+const cardsLandingPath = getLocalizedPath(lang, '/cards/');
+const appStoreBadge = getAppStoreBadge(lang);
+const googlePlayBadge = getGooglePlayBadge(lang);
+
+// App Store Links - Bingo!! Print (placeholder URLs - to be updated)
+const iosAppLink = "#";
+const androidAppLink = "#";
+
+// Bingo!! app links (for apps section)
+const bingoIosLink = "https://apps.apple.com/app/id1479535884?ct=print-landing";
+const bingoAndroidLink = "https://play.google.com/store/apps/details?id=com.wombat.bingo";
+
+// Bingo Cards!! app links
+const cardsIosLink = "https://apps.apple.com/app/id1510582506?ct=print-landing";
+const cardsAndroidLink = "https://play.google.com/store/apps/details?id=com.wombat.bingocards";
+
+// Data arrays
+const advantages = [
+  { title: t('print_advantage1_title'), desc: t('print_advantage1_desc'), gradient: 'from-bingo-purple to-bingo-pink', icon: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>' },
+  { title: t('print_advantage2_title'), desc: t('print_advantage2_desc'), gradient: 'from-bingo-blue to-bingo-purple', icon: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>' },
+  { title: t('print_advantage3_title'), desc: t('print_advantage3_desc'), gradient: 'from-bingo-pink to-bingo-blue', icon: '<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>' },
+  { title: t('print_advantage4_title'), desc: t('print_advantage4_desc'), gradient: 'from-bingo-purple to-bingo-pink', icon: '<line x1="17" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="17" y1="18" x2="3" y2="18"/>' },
+  { title: t('print_advantage5_title'), desc: t('print_advantage5_desc'), gradient: 'from-bingo-blue to-bingo-purple', icon: '<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>' },
+  { title: t('print_advantage6_title'), desc: t('print_advantage6_desc'), gradient: 'from-bingo-pink to-bingo-blue', icon: '<rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><rect x="7" y="7" width="3" height="3"/><rect x="14" y="7" width="3" height="3"/><rect x="7" y="14" width="3" height="3"/><rect x="14" y="14" width="3" height="3"/>' }
+];
+
+const useCases = [
+  { title: t('print_usecase1_title'), desc: t('print_usecase1_desc'), icon: '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>' },
+  { title: t('print_usecase2_title'), desc: t('print_usecase2_desc'), icon: '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>' },
+  { title: t('print_usecase3_title'), desc: t('print_usecase3_desc'), icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>' },
+  { title: t('print_usecase4_title'), desc: t('print_usecase4_desc'), icon: '<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>' },
+  { title: t('print_usecase5_title'), desc: t('print_usecase5_desc'), icon: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
+  { title: t('print_usecase6_title'), desc: t('print_usecase6_desc'), icon: '<rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>' }
+];
+
+const faqs = [
+  { q: t('print_faq_q1'), a: t('print_faq_a1'), gradient: 'from-purple-50 to-pink-50', border: 'border-purple-100', ring: 'ring-bingo-purple', bg: 'bg-bingo-purple' },
+  { q: t('print_faq_q2'), a: t('print_faq_a2'), gradient: 'from-blue-50 to-purple-50', border: 'border-blue-100', ring: 'ring-bingo-blue', bg: 'bg-bingo-blue' },
+  { q: t('print_faq_q3'), a: t('print_faq_a3'), gradient: 'from-pink-50 to-blue-50', border: 'border-pink-100', ring: 'ring-bingo-pink', bg: 'bg-bingo-pink' },
+  { q: t('print_faq_q4'), a: t('print_faq_a4'), gradient: 'from-purple-50 to-pink-50', border: 'border-purple-100', ring: 'ring-bingo-purple', bg: 'bg-bingo-purple' },
+  { q: t('print_faq_q5'), a: t('print_faq_a5'), gradient: 'from-blue-50 to-purple-50', border: 'border-blue-100', ring: 'ring-bingo-blue', bg: 'bg-bingo-blue' },
+  { q: t('print_faq_q6'), a: t('print_faq_a6'), gradient: 'from-pink-50 to-blue-50', border: 'border-pink-100', ring: 'ring-bingo-pink', bg: 'bg-bingo-pink' },
+  { q: t('print_faq_q7'), a: t('print_faq_a7'), gradient: 'from-purple-50 to-pink-50', border: 'border-purple-100', ring: 'ring-bingo-purple', bg: 'bg-bingo-purple' },
+  { q: t('print_faq_q8'), a: t('print_faq_a8'), gradient: 'from-blue-50 to-purple-50', border: 'border-blue-100', ring: 'ring-bingo-blue', bg: 'bg-bingo-blue' }
+];
+
+// Language selector helper for /bingo-print/ routes
+function getLanguageLink(targetLang: Language): string {
+  if (targetLang === defaultLang) return '/bingo-print/';
+  return `/${targetLang}/bingo-print/`;
+}
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{t('print_meta_title')}</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content={t('print_meta_description')}>
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Wombat Apps">
+    <meta name="theme-color" content="#822ad2">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="canonical" href={canonicalUrl}>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={t('print_og_title')}>
+    <meta property="og:description" content={t('print_og_description')}>
+    <meta property="og:image" content={`${canonicalBase}/images/bingo-print-app.png`}>
+    <meta property="og:url" content={canonicalUrl}>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Bingo!! Print">
+    <meta property="og:locale" content={ogLocale}>
+    {alternateLocales.map((locale) => (
+        <meta property="og:locale:alternate" content={locale} />
+    ))}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={t('print_og_title')}>
+    <meta name="twitter:description" content={t('print_og_description')}>
+    <meta name="twitter:image" content={`${canonicalBase}/images/bingo-print-app.png`}>
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href={`${canonicalBase}/bingo-print/`}>
+    <link rel="alternate" hreflang="es" href={`${canonicalBase}/es/bingo-print/`}>
+    <link rel="alternate" hreflang="fr" href={`${canonicalBase}/fr/bingo-print/`}>
+    <link rel="alternate" hreflang="pt" href={`${canonicalBase}/pt/bingo-print/`}>
+    <link rel="alternate" hreflang="x-default" href={`${canonicalBase}/bingo-print/`}>
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Wombat Apps",
+        "url": canonicalBase,
+        "logo": `${canonicalBase}/images/bingo-logo.png`
+    })} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Bingo!! Print",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1000" }
+    })} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+        }))
+    })} />
+</head>
+<body class="bg-white font-sans">
+    <!-- Skip Link -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-bingo-purple focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold">
+        {t('skip_to_content')}
+    </a>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-br from-bingo-purple via-bingo-blue to-bingo-pink flex items-center relative overflow-hidden py-4">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-32 h-32 bg-white rounded-full animate-pulse"></div>
+            <div class="absolute top-1/3 right-20 w-24 h-24 bg-yellow-300 rounded-full animate-bounce"></div>
+            <div class="absolute bottom-20 left-1/4 w-20 h-20 bg-white rounded-full animate-pulse"></div>
+            <div class="absolute bottom-1/3 right-1/3 w-16 h-16 bg-yellow-300 rounded-full animate-bounce"></div>
+        </div>
+
+        <div class="container mx-auto px-4 py-4 relative z-10">
+            <!-- Logo -->
+            <div class="flex justify-center mb-6">
+                <img src="/images/bingo-print-logo.png" alt="Bingo!! Print" class="h-10 w-auto" onerror="this.style.display='none'">
+            </div>
+
+            <div class="text-center mb-6">
+                <h1 class="text-4xl md:text-5xl font-black text-white mb-3 leading-tight drop-shadow-2xl">
+                    {t('print_headline')}
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 font-bold drop-shadow-lg max-w-3xl mx-auto">
+                    {t('print_subtitle')}
+                </p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+                <div class="relative group">
+                    <div class="absolute -inset-6 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 opacity-30 blur-2xl group-hover:opacity-50 transition-opacity rounded-3xl"></div>
+                    <img src="/images/bingo-print-app.png" alt="Bingo!! Print App Screenshot" class="w-64 h-auto max-w-full relative z-10 drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-300">
+                </div>
+
+                <div class="flex flex-col space-y-4 items-center">
+                    <div class="text-center mb-2">
+                        <h3 class="text-2xl font-bold text-white mb-1 drop-shadow-lg">{t('download_free')}</h3>
+                        <p class="text-lg text-white/90">{t('available_platforms')}</p>
+                    </div>
+                    <a href={iosAppLink} class="block transform hover:scale-110 transition-all duration-300 hover:drop-shadow-2xl">
+                        <img src={appStoreBadge} class="h-12 w-auto" alt="Download on the App Store">
+                    </a>
+                    <a href={androidAppLink} class="block transform hover:scale-110 transition-all duration-300 hover:drop-shadow-2xl">
+                        <img src={googlePlayBadge} class="h-14 w-auto" alt="Get it on Google Play">
+                    </a>
+                    <div class="mt-2 text-center">
+                        <div class="flex items-center justify-center space-x-4 text-white/80">
+                            <div class="flex items-center">
+                                <span class="text-2xl">⭐</span>
+                                <span class="ml-1 font-semibold">4.8</span>
+                            </div>
+                            <div class="w-px h-6 bg-white/30"></div>
+                            <div>
+                                <span class="font-semibold">1K+</span> <span>{t('downloads_count')}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <button id="mobileMenuBtn" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-bingo-purple hover:border-bingo-purple" aria-label={t('toggle_menu')} aria-expanded="false" aria-controls="mobileMenu">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                    </svg>
+                </button>
+
+                <ul class="hidden md:flex flex-1 justify-center gap-8">
+                    <li><a href="#features" class="nav-link text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('print_nav_features')}</a></li>
+                    <li><a href="#apps" class="nav-link text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('print_nav_apps')}</a></li>
+                    <li><a href="#usecases" class="nav-link text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('print_nav_usecases')}</a></li>
+                    <li><a href="#faq" class="nav-link text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('print_nav_faq')}</a></li>
+                </ul>
+            </div>
+
+            <div id="mobileMenu" class="hidden md:hidden">
+                <ul class="flex flex-col space-y-2 pb-4">
+                    <li><a href="#features" class="nav-link block text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('print_nav_features')}</a></li>
+                    <li><a href="#apps" class="nav-link block text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('print_nav_apps')}</a></li>
+                    <li><a href="#usecases" class="nav-link block text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('print_nav_usecases')}</a></li>
+                    <li><a href="#faq" class="nav-link block text-gray-700 hover:text-bingo-purple font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('print_nav_faq')}</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <!-- Features/Advantages Section -->
+        <section id="features" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">{t('print_features_title')}</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">{t('print_features_subtitle')}</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+                    {advantages.map((advantage) => (
+                        <div class="text-center group">
+                            <div class={`w-20 h-20 bg-gradient-to-br ${advantage.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform`}>
+                                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" set:html={advantage.icon} />
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-gray-800">{advantage.title}</h3>
+                            <p class="text-gray-600 text-lg leading-relaxed">{advantage.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- Apps Family Section -->
+        <section id="apps" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">{t('print_apps_title')}</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">{t('print_apps_subtitle')}</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Bingo!! -->
+                    <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="flex flex-col items-center text-center">
+                            <img src="/images/app-screenshot-iphone.png" alt="Bingo!!" class="w-32 h-auto mb-6 rounded-2xl shadow-md">
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800">bingo!!</h3>
+                            <p class="text-gray-600 mb-6">{t('main_app_desc')}</p>
+                            <div class="flex flex-col space-y-2 w-full">
+                                <a href={bingoIosLink} class="block">
+                                    <img src={appStoreBadge} class="h-10 w-auto mx-auto" alt="Download on the App Store">
+                                </a>
+                                <a href={bingoAndroidLink} class="block">
+                                    <img src={googlePlayBadge} class="h-12 w-auto mx-auto" alt="Get it on Google Play">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bingo Cards!! -->
+                    <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="flex flex-col items-center text-center">
+                            <img src="/images/bingo-cards-app.png" alt="Bingo Cards!!" class="w-32 h-auto mb-6 rounded-2xl shadow-md">
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800">bingo!! cards</h3>
+                            <p class="text-gray-600 mb-6">{t('cards_app_desc')}</p>
+                            <div class="flex flex-col space-y-2 w-full">
+                                <a href={cardsIosLink} class="block">
+                                    <img src={appStoreBadge} class="h-10 w-auto mx-auto" alt="Download on the App Store">
+                                </a>
+                                <a href={cardsAndroidLink} class="block">
+                                    <img src={googlePlayBadge} class="h-12 w-auto mx-auto" alt="Get it on Google Play">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bingo Print!! (current app) -->
+                    <div class="bg-gradient-to-br from-bingo-purple/10 to-bingo-pink/10 rounded-3xl p-8 shadow-lg ring-2 ring-bingo-purple/20">
+                        <div class="flex flex-col items-center text-center">
+                            <img src="/images/bingo-print-app.png" alt="Bingo!! Print" class="w-32 h-auto mb-6 rounded-2xl shadow-md">
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800">bingo!! print</h3>
+                            <p class="text-gray-600 mb-6">{t('print_app_desc')}</p>
+                            <div class="flex flex-col space-y-2 w-full">
+                                <a href={iosAppLink} class="block">
+                                    <img src={appStoreBadge} class="h-10 w-auto mx-auto" alt="Download on the App Store">
+                                </a>
+                                <a href={androidAppLink} class="block">
+                                    <img src={googlePlayBadge} class="h-12 w-auto mx-auto" alt="Get it on Google Play">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section id="usecases" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">{t('print_usecases_title')}</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">{t('print_usecases_subtitle')}</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {useCases.map((useCase, index) => {
+                        const gradients = ['from-purple-50 to-pink-50', 'from-blue-50 to-purple-50', 'from-pink-50 to-blue-50'];
+                        const iconColors = ['text-bingo-purple', 'text-bingo-blue', 'text-bingo-pink'];
+                        return (
+                            <div class={`bg-gradient-to-br ${gradients[index % 3]} rounded-3xl p-8 hover:shadow-lg transition-shadow`}>
+                                <div class={`w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-md`}>
+                                    <svg class={`w-8 h-8 ${iconColors[index % 3]}`} fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" set:html={useCase.icon} />
+                                </div>
+                                <h3 class="text-xl font-bold mb-3 text-gray-800">{useCase.title}</h3>
+                                <p class="text-gray-600 leading-relaxed">{useCase.desc}</p>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">{t('print_faq_title')}</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">{t('print_faq_subtitle')}</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="space-y-4">
+                        {faqs.map((faq, index) => (
+                            <div class={`bg-gradient-to-br ${faq.gradient} rounded-2xl border ${faq.border} overflow-hidden`}>
+                                <button class={`faq-button w-full text-left p-6 hover:bg-white/30 transition-colors focus:outline-none focus:ring-2 focus:${faq.ring} focus:ring-opacity-50`} data-faq={index + 1} aria-expanded="false" aria-controls={`faq-content-${index + 1}`}>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-4">
+                                            <div class={`w-8 h-8 ${faq.bg} rounded-full flex items-center justify-center flex-shrink-0`}>
+                                                <span class="text-white font-bold text-sm">Q</span>
+                                            </div>
+                                            <h3 class="text-xl font-bold text-gray-800">{faq.q}</h3>
+                                        </div>
+                                        <div class="faq-icon ml-4">
+                                            <svg class="w-6 h-6 text-gray-600 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </button>
+                                <div id={`faq-content-${index + 1}`} class="faq-content hidden px-6 pb-6">
+                                    <div class="pl-12">
+                                        <p class="text-gray-600 text-lg leading-relaxed">{faq.a}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div class="text-center mt-12">
+                        <p class="text-gray-600 mb-4">{t('print_faq_contact')}</p>
+                        <a href="mailto:support@wombat-apps.com" class="inline-flex items-center text-bingo-purple hover:text-bingo-pink font-semibold transition-colors">
+                            {t('print_faq_contact_link')}
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-br from-bingo-purple via-bingo-blue to-bingo-pink">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
+                        {t('print_cta_title')}
+                    </h2>
+                    <p class="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
+                        {t('print_cta_subtitle')}
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                        <a href={iosAppLink} class="block transform hover:scale-110 transition-all duration-300 hover:drop-shadow-2xl">
+                            <img src={appStoreBadge} class="h-14 w-auto" alt="Download on the App Store">
+                        </a>
+                        <a href={androidAppLink} class="block transform hover:scale-110 transition-all duration-300 hover:drop-shadow-2xl">
+                            <img src={googlePlayBadge} class="h-16 w-auto" alt="Get it on Google Play">
+                        </a>
+                    </div>
+
+                    <p class="text-white/80 mb-6">{t('print_cta_other_apps')}</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href={bingoLandingPath} class="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full font-semibold transition-colors">
+                            bingo!!
+                        </a>
+                        <a href={cardsLandingPath} class="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full font-semibold transition-colors">
+                            bingo!! cards
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <img src="/images/bingo-print-app.png" alt="Bingo!! Print Logo" class="h-16 mx-auto mb-6 opacity-80">
+            <p class="text-lg text-gray-300 mb-4">{t('footer_rights')}</p>
+            <div class="mb-4 space-x-4">
+                <a href={privacyPath} class="text-gray-400 hover:text-white transition-colors underline">{t('privacy_policy_title')}</a>
+                <span class="text-gray-600">|</span>
+                <a href={mainLandingPath} class="text-gray-400 hover:text-white transition-colors underline">{t('print_view_all_apps')}</a>
+            </div>
+            <p class="text-gray-400 mb-6">{t('footer_tagline')}</p>
+
+            <!-- Language Selector -->
+            <div class="flex justify-center space-x-4">
+                {Object.entries(languages).map(([code]) => (
+                    <a href={getLanguageLink(code as Language)} class={`language-link px-4 py-2 rounded-lg font-medium transition-colors ${code === lang ? 'bg-bingo-purple text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white'}`} aria-current={code === lang ? 'page' : undefined} data-lang={code}>
+                        {code.toUpperCase()}
+                    </a>
+                ))}
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+                mobileMenuBtn.setAttribute('aria-expanded', (!isExpanded).toString());
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        // Smooth scroll
+        document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = anchor.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // FAQ accordion
+        const faqButtons = document.querySelectorAll('.faq-button');
+
+        faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const faqNumber = button.getAttribute('data-faq');
+                const content = document.getElementById(`faq-content-${faqNumber}`);
+                const icon = button.querySelector('.faq-icon svg');
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                faqButtons.forEach(otherButton => {
+                    if (otherButton !== button) {
+                        const otherNumber = otherButton.getAttribute('data-faq');
+                        const otherContent = document.getElementById(`faq-content-${otherNumber}`);
+                        const otherIcon = otherButton.querySelector('.faq-icon svg');
+                        if (otherContent && otherIcon) {
+                            otherContent.classList.add('hidden');
+                            otherIcon.classList.remove('rotate-180');
+                            otherButton.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+                });
+
+                if (content && icon) {
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                    button.setAttribute('aria-expanded', (!isExpanded).toString());
+                }
+            });
+        });
+
+        // Language selector storage
+        document.querySelectorAll('.language-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const lang = link.getAttribute('data-lang') || 'en';
+                localStorage.setItem('bingo-language', lang);
+            });
+        });
+    </script>
+</body>
+</html>
