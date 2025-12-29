@@ -89,6 +89,9 @@ export const print = {
     print_cta_title: "Ready to Create Amazing Bingo Cards?",
     print_cta_subtitle: "Download Bingo!! Print today and start creating professional bingo cards in minutes. No credit card required.",
     print_cta_other_apps: "Also check out our other apps:",
+    print_cta_bingo_desc: "Bingo caller app",
+    print_cta_cards_desc: "Digital bingo card",
+    print_cta_wombat_desc: "Meet our team",
 
     // Footer
     print_view_all_apps: "View all our Bingo apps",
@@ -179,6 +182,9 @@ export const print = {
     print_cta_title: "Listo para Crear Cartones de Bingo Increibles?",
     print_cta_subtitle: "Descarga Bingo!! Print hoy y empieza a crear cartones de bingo profesionales en minutos. Sin tarjeta de credito.",
     print_cta_other_apps: "Tambien echa un vistazo a nuestras otras apps:",
+    print_cta_bingo_desc: "App cantador de bingo",
+    print_cta_cards_desc: "Carton de bingo digital",
+    print_cta_wombat_desc: "Conoce nuestro equipo",
 
     // Footer
     print_view_all_apps: "Ver todas nuestras apps de Bingo",
@@ -269,6 +275,9 @@ export const print = {
     print_cta_title: "Pret a Creer des Cartons de Bingo Incroyables?",
     print_cta_subtitle: "Telechargez Bingo!! Print aujourd'hui et commencez a creer des cartons de bingo professionnels en minutes. Sans carte de credit.",
     print_cta_other_apps: "Decouvrez aussi nos autres apps:",
+    print_cta_bingo_desc: "Application d'appel bingo",
+    print_cta_cards_desc: "Carton de bingo numerique",
+    print_cta_wombat_desc: "Rencontrez notre equipe",
 
     // Footer
     print_view_all_apps: "Voir toutes nos apps Bingo",
@@ -359,6 +368,9 @@ export const print = {
     print_cta_title: "Pronto para Criar Cartelas de Bingo Incriveis?",
     print_cta_subtitle: "Baixe Bingo!! Print hoje e comece a criar cartelas de bingo profissionais em minutos. Sem cartao de credito.",
     print_cta_other_apps: "Confira tambem nossos outros apps:",
+    print_cta_bingo_desc: "App de chamada de bingo",
+    print_cta_cards_desc: "Cartela de bingo digital",
+    print_cta_wombat_desc: "Conheca nossa equipe",
 
     // Footer
     print_view_all_apps: "Ver todos os nossos apps de Bingo",
