@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Multilingual marketing landing page for the Bingo!! mobile apps family (Bingo!!, Bingo!! Lite, and Bingo Cards!!). Built with Astro, Tailwind CSS v4, and TypeScript.
+Multilingual marketing landing page for the Bingo!! mobile apps family (Bingo!!, Bingo!! Cards, and Bingo!! Print). Built with Astro, Tailwind CSS v4, and TypeScript. Deploys to wombat-apps.com via GitHub Pages.
 
 ## Development Commands
 
@@ -26,6 +26,7 @@ npm run check:translations # Check for unused translation keys
 - **ESLint**: With `eslint-plugin-astro` for `.astro`, `.ts`, and `.js` files
 - Production build outputs to `dist/`
 - Deploys to GitHub Pages via `.github/workflows/deploy.yml` on push to main
+- Uses `patch-package` for dependency patches (runs automatically via `postinstall`)
 
 ### Styling
 - **Tailwind CSS v4**: CSS-first configuration via `@theme` directive in `src/styles/global.css`
@@ -90,6 +91,11 @@ When removing UI elements that use translations:
 - Each page includes meta tags, Open Graph, Twitter Card, and JSON-LD structured data
 - Hreflang links automatically generated for language alternates
 - Sitemap dynamically generated via `@astrojs/sitemap` integration (outputs to `dist/sitemap-index.xml` at build)
+- LLM documentation generated via `@4hse/astro-llms-txt` (`/llms.txt`, `/llms-full.txt`, `/llms-small.txt`)
+
+### Redirects
+Legacy routes are configured in `astro.config.mjs`:
+- `/bingo-print/` → `/print/` (all locales)
 
 ## Commit Messages
 - Use conventional commits: `type: description` (e.g., `feat: add dark mode`, `fix: resolve mobile layout`)

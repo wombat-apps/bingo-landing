@@ -1,0 +1,22 @@
+diff --git a/node_modules/@4hse/astro-llms-txt/src/index.ts b/node_modules/@4hse/astro-llms-txt/src/index.ts
+index c17584c..ecf25ac 100644
+--- a/node_modules/@4hse/astro-llms-txt/src/index.ts
++++ b/node_modules/@4hse/astro-llms-txt/src/index.ts
+@@ -104,9 +104,14 @@ async function processDocSet(args: {
+ 
+   const matches = pages
+     .map(p => p.pathname)
+-    .filter(pn =>
+-      set.include.some(pat => micromatch.isMatch(pn, pat))
+-    );
++    .filter(pn => {
++      // Handle empty pathname (root page) - include if '**/*' or '' pattern is used
++      if (pn === '' && (set.include.includes('**/*') || set.include.includes(''))) return true;
++      // Skip empty string for micromatch (causes error)
++      if (pn === '') return false;
++      // Filter out empty patterns before calling micromatch (empty string causes error)
++      return set.include.filter(pat => pat !== '').some(pat => micromatch.isMatch(pn, pat));
++    });
+ 
+   const sorted = matches.sort((a, b) => {
+     const pa = prioritizePathname(a, set.promote, set.demote);

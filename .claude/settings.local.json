@@ -30,7 +30,9 @@
       "mcp__plugin_figma_figma__get_design_context",
       "mcp__plugin_figma_figma__get_screenshot",
       "Bash(gh run list:*)",
-      "Bash(npm run check:translations:*)"
+      "Bash(npm run check:translations:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)"
     ],
     "deny": []
   }
