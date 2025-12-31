@@ -35,6 +35,9 @@ export const shared = {
     team_android: "Android Developer",
     team_designer: "UX/UI Designer",
     team_linkedin: "LinkedIn Profile →",
+
+    // Organization (JSON-LD)
+    shared_org_description: "We create fun and engaging bingo apps for the whole family.",
   },
 
   es: {
@@ -68,6 +71,9 @@ export const shared = {
     team_android: "Desarrollador Android",
     team_designer: "Diseñador UX/UI",
     team_linkedin: "Perfil de LinkedIn →",
+
+    // Organization (JSON-LD)
+    shared_org_description: "Creamos aplicaciones de bingo divertidas y atractivas para toda la familia.",
   },
 
   fr: {
@@ -101,6 +107,9 @@ export const shared = {
     team_android: "Développeur Android",
     team_designer: "Designer UX/UI",
     team_linkedin: "Profil LinkedIn →",
+
+    // Organization (JSON-LD)
+    shared_org_description: "Nous créons des applications de bingo amusantes et captivantes pour toute la famille.",
   },
 
   pt: {
@@ -134,5 +143,8 @@ export const shared = {
     team_android: "Desenvolvedor Android",
     team_designer: "Designer UX/UI",
     team_linkedin: "Perfil LinkedIn →",
+
+    // Organization (JSON-LD)
+    shared_org_description: "Criamos aplicativos de bingo divertidos e envolventes para toda a família.",
   },
 } as const;

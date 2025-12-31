@@ -112,7 +112,8 @@ function getLanguageLink(targetLang: Language): string {
         "@type": "Organization",
         "name": "Wombat Apps",
         "url": canonicalBase,
-        "logo": `${canonicalBase}/images/bingo-logo.png`
+        "logo": `${canonicalBase}/images/bingo-logo.png`,
+        "description": t('shared_org_description')
     })} />
     <script is:inline type="application/ld+json" set:html={JSON.stringify({
         "@context": "https://schema.org",
