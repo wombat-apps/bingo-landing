@@ -13,7 +13,6 @@ export const landing = {
     og_description: "Play bingo anywhere with automatic number calling, QR card verification, and beautiful cards. Available on iOS and Android.",
 
     // Header
-    title: "Bingo!! - Best Bingo caller machine",
     headline: "Best Bingo caller machine!",
     subtitle: "Create unforgettable bingo nights at home with family and friends!",
 
@@ -49,7 +48,6 @@ export const landing = {
     main_app_desc: "The best bingo caller machine with voices, animations and customization",
 
     // Cards Section
-    cards_title: "Get your cards",
     cards_app_title: "Bingo Cards!!",
     cards_app_desc: "Get digital bingo cards on your device with our companion app",
 
@@ -114,7 +112,6 @@ export const landing = {
     og_description: "Juega al bingo en cualquier lugar con canto automático de números, verificación QR y hermosos cartones. Disponible en iOS y Android.",
 
     // Header
-    title: "Bingo!! - ¡El mejor Bingo digital!",
     headline: "¡El mejor Bingo digital!",
     subtitle: "¡Disfruta las mejores noches de bingo en casa con tu familia y amigos!",
 
@@ -150,7 +147,6 @@ export const landing = {
     main_app_desc: "El mejor bingo digital con voces, animaciones y personalización",
 
     // Cards Section
-    cards_title: "Consigue tus cartones",
     cards_app_title: "Cartones de Bingo!!",
     cards_app_desc: "Obtén cartones de bingo digitales en tu dispositivo con nuestra app",
 
@@ -215,7 +211,6 @@ export const landing = {
     og_description: "Jouez au bingo partout avec appel automatique des numéros, vérification QR et de beaux cartons. Disponible sur iOS et Android.",
 
     // Header
-    title: "Bingo!! - La meilleure machine à Bingo !",
     headline: "La meilleure machine à Bingo !",
     subtitle: "Vivez des soirées bingo mémorables à la maison en famille et entre amis!",
 
@@ -251,7 +246,6 @@ export const landing = {
     main_app_desc: "La meilleure machine à bingo avec voix, animations et personnalisation",
 
     // Cards Section
-    cards_title: "Obtenez vos cartons",
     cards_app_title: "Cartons de Bingo !!",
     cards_app_desc: "Obtenez des cartons de bingo numériques sur votre appareil avec notre app complémentaire",
 
@@ -316,7 +310,6 @@ export const landing = {
     og_description: "Jogue bingo em qualquer lugar com sorteio automático de números, verificação por QR code e cartelas lindas. Disponível para iOS e Android.",
 
     // Header
-    title: "Bingo!! - A melhor máquina de Bingo!",
     headline: "A melhor máquina de Bingo!",
     subtitle: "Crie noites de bingo inesquecíveis em casa com família e amigos!",
 
@@ -352,7 +345,6 @@ export const landing = {
     main_app_desc: "A melhor máquina de bingo com vozes, animações e personalização",
 
     // Cards Section
-    cards_title: "Obtenha suas cartelas",
     cards_app_title: "Cartelas de Bingo!!",
     cards_app_desc: "Obtenha cartelas de bingo digitais no seu dispositivo com nosso app complementar",
 

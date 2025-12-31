@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
-    "typecheck": "astro check"
+    "typecheck": "astro check",
+    "check:translations": "node scripts/check-unused-translations.js"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",

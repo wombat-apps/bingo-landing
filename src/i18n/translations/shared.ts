@@ -18,7 +18,6 @@ export const shared = {
     footer_tagline: "Best Bingo caller machine!",
 
     // Common UI
-    guaranteed_fun: "Guaranteed fun!",
     download_free: "Download free!",
     available_platforms: "Available on all platforms",
     downloads_count: "downloads",
@@ -48,7 +47,6 @@ export const shared = {
     footer_tagline: "¡El mejor Bingo digital!",
 
     // Common UI
-    guaranteed_fun: "¡Diversión garantizada!",
     download_free: "¡Descarga gratis!",
     available_platforms: "Disponible en todas las plataformas",
     downloads_count: "descargas",
@@ -78,7 +76,6 @@ export const shared = {
     footer_tagline: "La meilleure machine à Bingo !",
 
     // Common UI
-    guaranteed_fun: "Plaisir garanti !",
     download_free: "Télécharger gratuitement !",
     available_platforms: "Disponible sur toutes les plateformes",
     downloads_count: "téléchargements",
@@ -108,7 +105,6 @@ export const shared = {
     footer_tagline: "A melhor máquina de Bingo!",
 
     // Common UI
-    guaranteed_fun: "Diversão garantida!",
     download_free: "Baixe grátis!",
     available_platforms: "Disponível em todas as plataformas",
     downloads_count: "downloads",

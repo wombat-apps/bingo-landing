@@ -25,7 +25,10 @@
       "Bash(gh issue edit:*)",
       "Bash(gh project item-add:*)",
       "Bash(gh project item-edit:*)",
-      "Bash(gh project list:*)"
+      "Bash(gh project list:*)",
+      "Bash(wc:*)",
+      "mcp__plugin_figma_figma__get_design_context",
+      "mcp__plugin_figma_figma__get_screenshot"
     ],
     "deny": []
   }

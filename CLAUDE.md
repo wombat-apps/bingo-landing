@@ -9,12 +9,13 @@ Multilingual marketing landing page for the Bingo!! mobile apps family (Bingo!!,
 ## Development Commands
 
 ```bash
-npm run dev       # Start Astro dev server with hot reload
-npm run build     # Build production assets to dist/
-npm run preview   # Preview production build locally
-npm run lint      # Run ESLint on src/
-npm run lint:fix  # Run ESLint with auto-fix
-npm run typecheck # Run Astro type checking
+npm run dev                # Start Astro dev server with hot reload
+npm run build              # Build production assets to dist/
+npm run preview            # Preview production build locally
+npm run lint               # Run ESLint on src/
+npm run lint:fix           # Run ESLint with auto-fix
+npm run typecheck          # Run Astro type checking
+npm run check:translations # Check for unused translation keys
 ```
 
 ## Architecture
@@ -58,6 +59,14 @@ npm run typecheck # Run Astro type checking
 1. Add keys to all four language objects in `src/i18n/ui.ts`
 2. Use in components: `const t = useTranslations(lang); t('your_key')`
 3. For localized links: `getLocalizedPath(lang, '/path')`
+4. Run `npm run check:translations` to verify no unused keys remain
+
+### Removing Translations
+When removing UI elements that use translations:
+1. Remove the usage from the component (e.g., `t('key_name')`)
+2. Remove the key from ALL four language objects in translation files
+3. Run `npm run check:translations` to verify cleanup is complete
+4. The CI/CD pipeline will fail if unused translation keys are detected
 
 ### Adding New Languages
 1. Add the language to `languages` object in `src/i18n/ui.ts`
