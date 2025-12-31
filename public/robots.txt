@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wombat-apps.com/sitemap.xml
+Sitemap: https://wombat-apps.com/sitemap-index.xml
