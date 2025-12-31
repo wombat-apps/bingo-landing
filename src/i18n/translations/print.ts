@@ -8,6 +8,7 @@ export const print = {
     // SEO Meta Tags
     print_meta_title: "Bingo!! Print - Print Free Bingo Cards",
     print_meta_description: "Design and print free bingo cards. Generate unlimited cards for events and celebrations.",
+    print_meta_keywords: "print bingo cards, bingo card PDF, free bingo cards printable, bingo card generator, custom bingo cards, printable bingo sheets, bingo card maker, 75 ball bingo cards, 90 ball bingo cards, free bingo card creator",
     print_og_title: "Bingo!! Print - Print Free Bingo Cards",
     print_og_description: "Design and print free bingo cards. Generate unlimited cards for events and celebrations.",
 
@@ -97,6 +98,7 @@ export const print = {
     // SEO Meta Tags
     print_meta_title: "Bingo!! Print - Imprimir Cartones de Bingo Gratis",
     print_meta_description: "Diseña e imprime cartones de bingo gratis. Genera cartones ilimitados para eventos y celebraciones.",
+    print_meta_keywords: "imprimir cartones de bingo gratis, generador de cartones bingo, cartones bingo PDF, bingo 90 bolas, bingo 75 bolas, cartones bingo personalizados, hojas bingo imprimibles, crear cartones bingo gratis",
     print_og_title: "Bingo!! Print - Imprime Cartones de Bingo Gratis",
     print_og_description: "Diseña e imprime cartones de bingo gratis. Genera cartones ilimitados para eventos y celebraciones.",
 
@@ -186,6 +188,7 @@ export const print = {
     // SEO Meta Tags
     print_meta_title: "Bingo!! Print - Imprimer des Cartons de Bingo Gratuits",
     print_meta_description: "Concevez et imprimez des cartons de bingo gratuits. Générez des cartons illimités pour événements et célébrations.",
+    print_meta_keywords: "imprimer cartons bingo, cartons bingo PDF, cartons bingo gratuits à imprimer, générateur cartons bingo, cartons bingo personnalisés, feuilles bingo imprimables, créer cartons bingo, bingo 90 boules, bingo 75 boules",
     print_og_title: "Bingo!! Print - Imprimez des Cartons de Bingo Gratuits",
     print_og_description: "Concevez et imprimez des cartons de bingo gratuits. Générez des cartons illimités pour événements et célébrations.",
 
@@ -275,6 +278,7 @@ export const print = {
     // SEO Meta Tags
     print_meta_title: "Bingo!! Print - Imprimir Cartelas de Bingo Grátis",
     print_meta_description: "Crie e imprima cartelas de bingo grátis. Gere cartelas ilimitadas para eventos e celebrações.",
+    print_meta_keywords: "imprimir cartelas bingo, cartelas bingo PDF, cartelas bingo grátis para imprimir, gerador cartelas bingo, cartelas bingo personalizadas, folhas bingo imprimíveis, criar cartelas bingo, bingo 90 bolas, bingo 75 bolas",
     print_og_title: "Bingo!! Print - Imprima Cartelas de Bingo Grátis",
     print_og_description: "Crie e imprima cartelas de bingo grátis. Gere cartelas ilimitadas para eventos e celebrações.",
 

@@ -7,9 +7,10 @@ export const bingo = {
   en: {
     // SEO Meta Tags
     bingo_meta_title: "Bingo!! - The Ultimate Bingo Caller App for iOS & Android",
-    bingo_meta_description: "Bingo!! is the best bingo caller machine app. Automatic number calling with real voices, external screen support, and custom rhymes. Download free!",
+    bingo_meta_description: "Bingo!! is the best bingo caller app for iOS, tvOS, and Android. Real voices, TV display via AirPlay or cable, and QR scanner to verify winners. Free!",
+    bingo_meta_keywords: "bingo caller app, bingo machine app, bingo number caller, automatic bingo caller, 90 ball bingo, 75 ball bingo, bingo app iOS, bingo app Android, QR bingo verification, TV bingo display, AirPlay bingo, family bingo night, free bingo app",
     bingo_og_title: "Bingo!! - The Ultimate Bingo Caller",
-    bingo_og_description: "Transform any gathering into an exciting bingo night! Automatic calling, real voices, TV support, and more.",
+    bingo_og_description: "The best bingo nights with family! Automatic bingo caller, TV connection, and instant card verification with QR.",
 
     // Hero
     bingo_headline: "The Ultimate Digital Bingo Caller!",
@@ -88,12 +89,13 @@ export const bingo = {
   es: {
     // SEO Meta Tags
     bingo_meta_title: "Bingo!! - La Mejor App de Bingo para iOS y Android",
-    bingo_meta_description: "Bingo!! es el mejor cantador de bingo digital. Canto automático con voces reales, soporte para pantalla externa y rimas personalizadas. ¡Descarga gratis!",
-    bingo_og_title: "Bingo!! - El Mejor Cantador de Bingo",
-    bingo_og_description: "¡Transforma cualquier reunión en una emocionante noche de bingo! Canto automático, voces reales, soporte TV y más.",
+    bingo_meta_description: "Bingo!! es la mejor app canta bolas para iOS, tvOS y Android. Voces reales, pantalla en TV por AirPlay o cable, y escáner QR para verificar ganadores. ¡Gratis!",
+    bingo_meta_keywords: "app canta bolas, bingo 90 bolas, bingo 75 bolas, cantador de bingo automático, app de bingo gratis, bingo iOS, bingo Android, verificación QR bingo, bingo en TV, bingo AirPlay, bingo en familia",
+    bingo_og_title: "Bingo!! - La Mejor App de Bingo para iOS y Android",
+    bingo_og_description: "¡Las mejores noches de bingo en familia! Canta bolas automático, conexión a TV y verifica cartones al instante con QR.",
 
     // Hero
-    bingo_headline: "¡El mejor Bingo digital canta bolas!",
+    bingo_headline: "¡El mejor Bingo digital!",
     bingo_subtitle: "¡Disfruta las mejores noches de bingo en casa con tu familia y amigos!",
     bingo_subtitle_cta: "¡Descarga gratis!",
     bingo_hero_tag_qr: "Códigos QR",
@@ -138,10 +140,10 @@ export const bingo = {
     // FAQ (specific to Bingo!! caller)
     bingo_faq_title: "Preguntas frecuentes",
     bingo_faq_subtitle: "Todo lo que necesitas saber sobre Bingo!!",
-    bingo_faq_q1: "¿Cómo funciona Bingo!! como cantador?",
+    bingo_faq_q1: "¿Cómo funciona Bingo!!?",
     bingo_faq_a1: "Bingo!! actúa como tu máquina de cantar bingo digital. Sortea números aleatoriamente, los anuncia con voces reales y los muestra en pantalla. ¡Conéctalo a la TV para que toda la sala lo vea!",
     bingo_faq_q2: "¿Puedo usar mi propia voz?",
-    bingo_faq_a2: "¡Sí! Graba tus propias llamadas de números y rimas personalizadas para una experiencia única. Perfecto para tradiciones familiares o eventos especiales.",
+    bingo_faq_a2: "¡Sí! Graba los números y rimas personalizadas para una experiencia única. Perfecto para tradiciones familiares o eventos especiales.",
     bingo_faq_q3: "¿Cuál es la diferencia entre Bingo!! y Bingo!! Lite?",
     bingo_faq_a3: "Bingo!! es una compra única con todas las funciones desbloqueadas. Bingo!! Lite es gratis con compras opcionales dentro de la app para desbloquear funciones adicionales.",
     bingo_faq_q4: "¿Funciona sin conexión?",
@@ -149,7 +151,7 @@ export const bingo = {
     bingo_faq_q5: "¿Puedo verificar cartones de bingo?",
     bingo_faq_a5: "¡Sí! Cada cartón tiene un código QR único. Simplemente escanéalo con la app para verificar instantáneamente si es un cartón ganador.",
     bingo_faq_q6: "¿Qué idiomas están disponibles?",
-    bingo_faq_a6: "Bingo!! soporta múltiples idiomas incluyendo español, inglés, francés, portugués y más. ¡Cada uno con voces nativas!",
+    bingo_faq_a6: "Bingo!! soporta múltiples idiomas incluyendo español, inglés, francés y portugués. ¡Cada uno con voces nativas!",
     bingo_faq_q7: "¿Puedo conectar a una TV o proyector?",
     bingo_faq_a7: "¡Por supuesto! Usa AirPlay, HDMI o duplicación de pantalla para mostrar el tablero de bingo en cualquier pantalla externa.",
     bingo_faq_contact: "¿Aún tienes preguntas? Contáctanos en",
@@ -169,9 +171,10 @@ export const bingo = {
   fr: {
     // SEO Meta Tags
     bingo_meta_title: "Bingo!! - La Meilleure App de Bingo pour iOS et Android",
-    bingo_meta_description: "Bingo!! est la meilleure machine à bingo numérique. Appel automatique avec vraies voix, support écran externe et rimes personnalisées. Téléchargez gratuitement!",
+    bingo_meta_description: "Bingo!! est la meilleure app de bingo pour iOS, tvOS et Android. Voix réelles, affichage TV via AirPlay ou câble, et scanner QR pour vérifier les gagnants. Gratuit!",
+    bingo_meta_keywords: "app bingo, machine à bingo, annonceur de bingo, bingo automatique, bingo 90 boules, bingo 75 boules, bingo iOS, bingo Android, vérification QR bingo, bingo sur TV, bingo AirPlay, soirée bingo famille, bingo gratuit",
     bingo_og_title: "Bingo!! - La Meilleure Machine à Bingo",
-    bingo_og_description: "Transformez toute réunion en une soirée bingo passionnante! Appel automatique, vraies voix, support TV et plus.",
+    bingo_og_description: "Les meilleures soirées bingo en famille! Annonceur automatique, connexion TV et vérification instantanée des cartons par QR.",
 
     // Hero
     bingo_headline: "Le meilleur appelant Bingo numérique!",
@@ -250,9 +253,10 @@ export const bingo = {
   pt: {
     // SEO Meta Tags
     bingo_meta_title: "Bingo!! - O Melhor App de Bingo para iOS e Android",
-    bingo_meta_description: "Bingo!! é a melhor máquina de bingo digital. Sorteio automático com vozes reais, suporte a tela externa e rimas personalizadas. Baixe grátis!",
+    bingo_meta_description: "Bingo!! é o melhor app de bingo para iOS, tvOS e Android. Vozes reais, tela na TV via AirPlay ou cabo, e scanner QR para verificar ganhadores. Grátis!",
+    bingo_meta_keywords: "app de bingo, máquina de bingo, sorteador de bingo, bingo automático, bingo 90 bolas, bingo 75 bolas, bingo iOS, bingo Android, verificação QR bingo, bingo na TV, bingo AirPlay, bingo em família, bingo grátis",
     bingo_og_title: "Bingo!! - A Melhor Máquina de Bingo",
-    bingo_og_description: "Transforme qualquer reunião em uma noite de bingo emocionante! Sorteio automático, vozes reais, suporte TV e mais.",
+    bingo_og_description: "As melhores noites de bingo em família! Cantador automático, conexão com TV e verificação instantânea de cartelas por QR.",
 
     // Hero
     bingo_headline: "O melhor cantador de Bingo digital!",

@@ -8,6 +8,7 @@ export const cards = {
     // SEO Meta Tags
     cards_meta_title: "Bingo!! Cards - Digital Bingo Cards App for iOS & Android",
     cards_meta_description: "Unlimited digital bingo cards on your phone or tablet. Free for iOS and Android. Easy to use, no paper, perfect for any occasion.",
+    cards_meta_keywords: "digital bingo cards, bingo cards app, virtual bingo cards, bingo card generator, free bingo cards, 90 ball bingo cards, 75 ball bingo cards, bingo cards iOS, bingo cards Android, online bingo cards, mobile bingo cards",
     cards_og_title: "Bingo!! Cards - Digital Bingo Cards App for iOS & Android",
     cards_og_description: "Unlimited digital bingo cards on your phone or tablet. Free for iOS and Android. Easy to use, no paper, perfect for any occasion.",
 
@@ -94,6 +95,7 @@ export const cards = {
     // SEO Meta Tags
     cards_meta_title: "Bingo!! Cards - App de Cartones Digitales para iOS y Android",
     cards_meta_description: "Cartones de bingo digitales ilimitados en tu móvil o tablet. Gratis para iOS y Android. Fácil de usar, sin papel y perfecta para cualquier ocasión.",
+    cards_meta_keywords: "cartones de bingo gratis, generador de cartones bingo, cartones bingo 90 bolas, cartones bingo 75 bolas, app cartones bingo, cartones bingo digitales, cartones bingo virtuales, cartones bingo iOS, cartones bingo Android, cartones bingo móvil",
     cards_og_title: "Bingo!! Cards - App de Cartones Digitales para iOS y Android",
     cards_og_description: "Cartones de bingo digitales ilimitados en tu móvil o tablet. Gratis para iOS y Android. Fácil de usar, sin papel y perfecta para cualquier ocasión.",
 
@@ -180,6 +182,7 @@ export const cards = {
     // SEO Meta Tags
     cards_meta_title: "Bingo!! Cards - App de Cartons Numériques pour iOS et Android",
     cards_meta_description: "Cartons de bingo numériques illimités sur votre téléphone ou tablette. Gratuit pour iOS et Android. Facile à utiliser, sans papier et parfait pour toute occasion.",
+    cards_meta_keywords: "cartons bingo numériques, app cartons bingo, cartons bingo virtuels, générateur cartons bingo, cartons bingo gratuits, cartons bingo 90 boules, cartons bingo 75 boules, cartons bingo iOS, cartons bingo Android, cartons bingo mobile",
     cards_og_title: "Bingo!! Cards - App de Cartons Numériques pour iOS et Android",
     cards_og_description: "Cartons de bingo numériques illimités sur votre téléphone ou tablette. Gratuit pour iOS et Android. Facile à utiliser, sans papier et parfait pour toute occasion.",
 
@@ -266,6 +269,7 @@ export const cards = {
     // SEO Meta Tags
     cards_meta_title: "Bingo!! Cards - App de Cartelas Digitais para iOS e Android",
     cards_meta_description: "Cartelas de bingo digitais ilimitadas no seu celular ou tablet. Grátis para iOS e Android. Fácil de usar, sem papel e perfeito para qualquer ocasião.",
+    cards_meta_keywords: "cartelas de bingo digitais, app cartelas bingo, cartelas bingo virtuais, gerador cartelas bingo, cartelas bingo grátis, cartelas bingo 90 bolas, cartelas bingo 75 bolas, cartelas bingo iOS, cartelas bingo Android, cartelas bingo celular",
     cards_og_title: "Bingo!! Cards - App de Cartelas Digitais para iOS e Android",
     cards_og_description: "Cartelas de bingo digitais ilimitadas no seu celular ou tablet. Grátis para iOS e Android. Fácil de usar, sem papel e perfeito para qualquer ocasião.",
 
