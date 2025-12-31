@@ -14,8 +14,8 @@ export const print = {
     // Hero
     print_headline: "Design and Print Unlimited Bingo Cards",
     print_subtitle: "Generate, customize, and print professional bingo cards. Perfect for events and celebrations.",
-    print_download_75: "75-Ball Cards PDF",
-    print_download_90: "90-Ball Cards PDF",
+    print_download_75: "Sample 75-Ball",
+    print_download_90: "Sample 90-Ball",
     print_coming_soon: "Coming Soon",
 
     // Navigation
@@ -107,8 +107,8 @@ export const print = {
     // Hero
     print_headline: "Diseña e Imprime Cartones de Bingo Ilimitados",
     print_subtitle: "Genera, personaliza e imprime cartones de bingo profesionales. Perfecto para eventos y celebraciones.",
-    print_download_75: "PDF Cartones 75",
-    print_download_90: "PDF Cartones 90",
+    print_download_75: "Ejemplo 75 bolas",
+    print_download_90: "Ejemplo 90 bolas",
     print_coming_soon: "Próximamente",
 
     // Navigation
@@ -200,8 +200,8 @@ export const print = {
     // Hero
     print_headline: "Concevez et Imprimez des Cartons de Bingo Illimités",
     print_subtitle: "Générez, personnalisez et imprimez des cartons de bingo professionnels. Parfait pour événements et célébrations.",
-    print_download_75: "PDF Grilles 75",
-    print_download_90: "PDF Grilles 90",
+    print_download_75: "Exemple 75 boules",
+    print_download_90: "Exemple 90 boules",
     print_coming_soon: "Bientôt disponible",
 
     // Navigation
@@ -293,8 +293,8 @@ export const print = {
     // Hero
     print_headline: "Crie e Imprima Cartelas de Bingo Ilimitadas",
     print_subtitle: "Gere, personalize e imprima cartelas de bingo profissionais. Perfeito para eventos e celebrações.",
-    print_download_75: "PDF Cartelas 75",
-    print_download_90: "PDF Cartelas 90",
+    print_download_75: "Exemplo 75 bolas",
+    print_download_90: "Exemplo 90 bolas",
     print_coming_soon: "Em breve",
 
     // Navigation
