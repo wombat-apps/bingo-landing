@@ -42,10 +42,6 @@ export const print = {
     print_advantage6_title: "Smart QR Integration",
     print_advantage6_desc: "Add a unique QR code to each card. Use the Bingo!! app to scan and verify plays.",
 
-    // Apps Family Section
-    print_apps_title: "The Complete Bingo!! Family",
-    print_apps_subtitle: "Three apps that work together to give you the best Bingo experience",
-
     // Use Cases Section
     print_usecases_title: "Perfect for Every Occasion",
     print_usecases_subtitle: "Used by educators, event planners, and organizations worldwide",
@@ -134,10 +130,6 @@ export const print = {
     print_advantage5_desc: "Opción de incluir números de serie únicos en las hojas para una mejor organización.",
     print_advantage6_title: "Integración Inteligente con QR",
     print_advantage6_desc: "Añade un código QR único a cada cartón. Utiliza la app Bingo!! para escanear y comprobar la partida.",
-
-    // Apps Family Section
-    print_apps_title: "La Familia Bingo!! al Completo",
-    print_apps_subtitle: "Tres apps que trabajan juntas para ofrecerte la mejor experiencia de Bingo",
 
     // Use Cases Section
     print_usecases_title: "Perfecto para Cada Ocasión",
@@ -228,10 +220,6 @@ export const print = {
     print_advantage6_title: "Intégration QR Intelligente",
     print_advantage6_desc: "Ajoutez un code QR unique à chaque carton. Utilisez l'app Bingo!! pour scanner et vérifier la partie.",
 
-    // Apps Family Section
-    print_apps_title: "La Famille Bingo!! au Complet",
-    print_apps_subtitle: "Trois apps qui travaillent ensemble pour vous offrir la meilleure expérience de Bingo",
-
     // Use Cases Section
     print_usecases_title: "Parfait pour Chaque Occasion",
     print_usecases_subtitle: "Utilisé par des éducateurs, organisateurs d'événements et organisations du monde entier",
@@ -320,10 +308,6 @@ export const print = {
     print_advantage5_desc: "Opção de incluir números de série únicos nas folhas para melhor organização.",
     print_advantage6_title: "Integração QR Inteligente",
     print_advantage6_desc: "Adicione um código QR único a cada cartela. Use o app Bingo!! para escanear e verificar a partida.",
-
-    // Apps Family Section
-    print_apps_title: "A Família Bingo!! Completa",
-    print_apps_subtitle: "Três apps que trabalham juntos para oferecer a melhor experiência de Bingo",
 
     // Use Cases Section
     print_usecases_title: "Perfeito para Cada Ocasião",

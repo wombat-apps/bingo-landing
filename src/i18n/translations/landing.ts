@@ -41,20 +41,6 @@ export const landing = {
     qr_step3_title: "3. Play automatically",
     qr_step3_desc: "Start playing with automatic number marking",
 
-    // Both Apps Section
-    apps_title: "Get both apps",
-    apps_subtitle: "Everything you need for the perfect home bingo experience",
-    main_app_title: "Bingo!!",
-    main_app_desc: "The best bingo caller machine with voices, animations and customization",
-
-    // Cards Section
-    cards_app_title: "Bingo Cards!!",
-    cards_app_desc: "Get digital bingo cards on your device with our companion app",
-
-    // Print Section
-    print_app_title: "Bingo!! Print",
-    print_app_desc: "Generate, customize, and print professional bingo cards",
-
     // Team Section
     team_title: "Meet our team",
     team_subtitle: "The talented developers and designers behind your favorite bingo app",
@@ -139,20 +125,6 @@ export const landing = {
     qr_step2_desc: "Tu cartón de bingo aparece automáticamente en la app",
     qr_step3_title: "3. Verificación automática",
     qr_step3_desc: "La app verifica automáticamente si tienes BINGO",
-
-    // Both Apps Section
-    apps_title: "Obtén ambas apps",
-    apps_subtitle: "Todo lo que necesitas para disfrutar el bingo en casa",
-    main_app_title: "Bingo!!",
-    main_app_desc: "El mejor bingo digital con voces, animaciones y personalización",
-
-    // Cards Section
-    cards_app_title: "Cartones de Bingo!!",
-    cards_app_desc: "Obtén cartones de bingo digitales en tu dispositivo con nuestra app",
-
-    // Print Section
-    print_app_title: "Bingo!! Print",
-    print_app_desc: "Genera, personaliza e imprime cartones de bingo profesionales",
 
     // Team Section
     team_title: "Conoce nuestro equipo",
@@ -239,20 +211,6 @@ export const landing = {
     qr_step3_title: "3. Jouer automatiquement",
     qr_step3_desc: "Commencez à jouer avec marquage automatique des numéros",
 
-    // Both Apps Section
-    apps_title: "Obtenez les deux apps",
-    apps_subtitle: "Tout ce qu'il faut pour profiter du bingo à la maison",
-    main_app_title: "Bingo !!",
-    main_app_desc: "La meilleure machine à bingo avec voix, animations et personnalisation",
-
-    // Cards Section
-    cards_app_title: "Cartons de Bingo !!",
-    cards_app_desc: "Obtenez des cartons de bingo numériques sur votre appareil avec notre app complémentaire",
-
-    // Print Section
-    print_app_title: "Bingo!! Print",
-    print_app_desc: "Generez, personnalisez et imprimez des cartons de bingo professionnels",
-
     // Team Section
     team_title: "Rencontrez notre équipe",
     team_subtitle: "Les talentueux développeurs et designers derrière votre app de bingo préférée",
@@ -337,20 +295,6 @@ export const landing = {
     qr_step2_desc: "Sua cartela de bingo aparece automaticamente no app",
     qr_step3_title: "3. Jogar automaticamente",
     qr_step3_desc: "Comece a jogar com marcação automática dos números",
-
-    // Both Apps Section
-    apps_title: "Baixe os dois apps",
-    apps_subtitle: "Tudo que você precisa para a experiência perfeita de bingo em casa",
-    main_app_title: "Bingo!!",
-    main_app_desc: "A melhor máquina de bingo com vozes, animações e personalização",
-
-    // Cards Section
-    cards_app_title: "Cartelas de Bingo!!",
-    cards_app_desc: "Obtenha cartelas de bingo digitais no seu dispositivo com nosso app complementar",
-
-    // Print Section
-    print_app_title: "Bingo!! Print",
-    print_app_desc: "Gere, personalize e imprima cartelas de bingo profissionais",
 
     // Team Section
     team_title: "Conheça nossa equipe",

@@ -38,13 +38,6 @@ export const bingo = {
     bingo_feature5_title: "Create Your Own Rhymes",
     bingo_feature5_desc: "If you prefer your own voice, record the numbers and rhymes... it's going to be fun!",
 
-    // Apps Family Section
-    bingo_apps_title: "The Complete Bingo!! Family",
-    bingo_apps_subtitle: "Everything you need for perfect bingo nights at home",
-    bingo_app_bingo_desc: "Bingo caller app",
-    bingo_app_cards_desc: "Digital bingo card",
-    bingo_app_print_desc: "Print your cards",
-
     // Use Cases Section
     bingo_usecases_title: "Perfect for Every Occasion",
     bingo_usecases_subtitle: "Trusted by educators, event planners, and organizations worldwide",
@@ -125,13 +118,6 @@ export const bingo = {
     bingo_feature4_desc: "Nuestro amigo Adam hace bromas y rimas para que te diviertas mucho con tu familia o amigos",
     bingo_feature5_title: "Crea tus propias rimas",
     bingo_feature5_desc: "Si prefieres tu propia voz, graba los números y las rimas... ¡va a ser divertido!",
-
-    // Apps Family Section
-    bingo_apps_title: "La familia bingo!! al completo",
-    bingo_apps_subtitle: "Todo lo que necesitas para disfrutar noches de bingo en casa",
-    bingo_app_bingo_desc: "App cantador de bingo",
-    bingo_app_cards_desc: "Cartón digital de bingo",
-    bingo_app_print_desc: "Imprime tus cartones",
 
     // Use Cases Section
     bingo_usecases_title: "Perfecto para cada ocasión",
@@ -214,13 +200,6 @@ export const bingo = {
     bingo_feature5_title: "Créez vos propres rimes",
     bingo_feature5_desc: "Si vous préférez votre propre voix, enregistrez les numéros et les rimes... ça va être amusant!",
 
-    // Apps Family Section
-    bingo_apps_title: "La famille bingo!! complète",
-    bingo_apps_subtitle: "Tout ce dont vous avez besoin pour des soirées bingo parfaites à la maison",
-    bingo_app_bingo_desc: "App appelant bingo",
-    bingo_app_cards_desc: "Carton de bingo numérique",
-    bingo_app_print_desc: "Imprimez vos cartons",
-
     // Use Cases Section
     bingo_usecases_title: "Parfait pour chaque occasion",
     bingo_usecases_subtitle: "Utilisé par les éducateurs, organisateurs d'événements et organisations du monde entier",
@@ -301,13 +280,6 @@ export const bingo = {
     bingo_feature4_desc: "Nosso amigo Adam faz piadas e rimas para você se divertir muito com sua família ou amigos",
     bingo_feature5_title: "Crie suas próprias rimas",
     bingo_feature5_desc: "Se você preferir sua própria voz, grave os números e as rimas... vai ser divertido!",
-
-    // Apps Family Section
-    bingo_apps_title: "A família bingo!! completa",
-    bingo_apps_subtitle: "Tudo o que você precisa para noites de bingo perfeitas em casa",
-    bingo_app_bingo_desc: "App cantador de bingo",
-    bingo_app_cards_desc: "Cartela de bingo digital",
-    bingo_app_print_desc: "Imprima suas cartelas",
 
     // Use Cases Section
     bingo_usecases_title: "Perfeito para cada ocasião",

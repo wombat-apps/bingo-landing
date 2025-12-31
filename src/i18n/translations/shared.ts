@@ -31,6 +31,13 @@ export const shared = {
 
     // Privacy Policy Link
     privacy_policy_title: "Privacy Policy",
+
+    // Apps Family Section
+    apps_family_title: "The complete bingo!! family",
+    apps_family_subtitle: "Three apps that complement each other for the best bingo experience",
+    bingo_app_desc: "The best bingo caller machine with voices, animations and customization",
+    cards_app_desc: "Get digital bingo cards on your device with our companion app",
+    print_app_desc: "Generate, customize, and print professional bingo cards",
   },
 
   es: {
@@ -60,6 +67,13 @@ export const shared = {
 
     // Privacy Policy Link
     privacy_policy_title: "Política de Privacidad",
+
+    // Apps Family Section
+    apps_family_title: "La familia bingo!! al completo",
+    apps_family_subtitle: "Tres apps que se complementan para la mejor experiencia de bingo",
+    bingo_app_desc: "El mejor bingo digital con voces, animaciones y personalización",
+    cards_app_desc: "Obtén cartones de bingo digitales en tu dispositivo con nuestra app",
+    print_app_desc: "Genera, personaliza e imprime cartones de bingo profesionales",
   },
 
   fr: {
@@ -89,6 +103,13 @@ export const shared = {
 
     // Privacy Policy Link
     privacy_policy_title: "Politique de Confidentialité",
+
+    // Apps Family Section
+    apps_family_title: "La famille bingo!! au complet",
+    apps_family_subtitle: "Trois apps qui se complètent pour la meilleure expérience de bingo",
+    bingo_app_desc: "La meilleure machine à bingo avec voix, animations et personnalisation",
+    cards_app_desc: "Obtenez des cartons de bingo numériques sur votre appareil avec notre app complémentaire",
+    print_app_desc: "Générez, personnalisez et imprimez des cartons de bingo professionnels",
   },
 
   pt: {
@@ -118,5 +139,12 @@ export const shared = {
 
     // Privacy Policy Link
     privacy_policy_title: "Política de Privacidade",
+
+    // Apps Family Section
+    apps_family_title: "A família bingo!! completa",
+    apps_family_subtitle: "Três apps que se complementam para a melhor experiência de bingo",
+    bingo_app_desc: "A melhor máquina de bingo com vozes, animações e personalização",
+    cards_app_desc: "Obtenha cartelas de bingo digitais no seu dispositivo com nosso app complementar",
+    print_app_desc: "Gere, personalize e imprima cartelas de bingo profissionais",
   },
 } as const;

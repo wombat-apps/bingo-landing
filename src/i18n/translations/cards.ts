@@ -42,10 +42,6 @@ export const cards = {
     cards_advantage6_title: "Smart QR Integration",
     cards_advantage6_desc: "Add a unique QR code to each card. Use the Bingo!! app to scan and verify the play.",
 
-    // Apps Family Section
-    cards_apps_title: "The complete bingo!! family",
-    cards_apps_subtitle: "Three apps that complement each other for the best bingo experience",
-
     // Use Cases Section
     cards_usecases_title: "Perfect for Every Occasion",
     cards_usecases_subtitle: "Trusted by educators, event planners, and organizations worldwide",
@@ -131,10 +127,6 @@ export const cards = {
     cards_advantage5_desc: "Abre la app, elige tu cartón y empieza a jugar al instante.",
     cards_advantage6_title: "Integración inteligente con QR",
     cards_advantage6_desc: "Añade un código QR único a cada cartón. Utiliza la app Bingo!! para escanear y comprobar la jugada.",
-
-    // Apps Family Section
-    cards_apps_title: "La familia bingo!! al completo",
-    cards_apps_subtitle: "Tres apps que se complementan para la mejor experiencia de bingo",
 
     // Use Cases Section
     cards_usecases_title: "Perfecto para cada ocasión",
@@ -222,10 +214,6 @@ export const cards = {
     cards_advantage6_title: "Intégration intelligente QR",
     cards_advantage6_desc: "Ajoutez un code QR unique à chaque carton. Utilisez l'app Bingo!! pour scanner et vérifier le jeu.",
 
-    // Apps Family Section
-    cards_apps_title: "La famille bingo!! au complet",
-    cards_apps_subtitle: "Trois apps qui se complètent pour la meilleure expérience de bingo",
-
     // Use Cases Section
     cards_usecases_title: "Parfait pour chaque occasion",
     cards_usecases_subtitle: "Utilisé par les éducateurs, organisateurs d'événements et organisations du monde entier",
@@ -311,10 +299,6 @@ export const cards = {
     cards_advantage5_desc: "Abra o app, escolha sua cartela e comece a jogar instantaneamente.",
     cards_advantage6_title: "Integração inteligente com QR",
     cards_advantage6_desc: "Adicione um código QR único a cada cartela. Use o app Bingo!! para escanear e verificar a jogada.",
-
-    // Apps Family Section
-    cards_apps_title: "A família bingo!! completa",
-    cards_apps_subtitle: "Três apps que se complementam para a melhor experiência de bingo",
 
     // Use Cases Section
     cards_usecases_title: "Perfeito para cada ocasião",

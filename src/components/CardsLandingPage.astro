@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
-import { useTranslations, getLocalizedPath, getOgLocale, getAlternateLocales, toLanguage } from '../i18n/utils';
+import { useTranslations, getLocalizedPath, getOgLocale, getAlternateLocales, toLanguage, getAppStoreBadge, getGooglePlayBadge } from '../i18n/utils';
+import AppsFamilySection from './AppsFamilySection.astro';
 import { languages, defaultLang, type Language } from '../i18n/ui';
 
 interface Props {
@@ -22,6 +23,14 @@ const printLandingPath = getLocalizedPath(lang, '/bingo-print/');
 // App Store Links - Bingo Cards!!
 const iosAppLink = "https://apps.apple.com/app/id1510582506?ct=cards-landing";
 const androidAppLink = "https://play.google.com/store/apps/details?id=com.wombat.bingocards";
+const appStoreBadge = getAppStoreBadge(lang);
+const googlePlayBadge = getGooglePlayBadge(lang);
+
+// App Store Links for other apps in the family
+const bingoIosLink = "https://apps.apple.com/app/apple-store/id1505191957?ct=cards-landing";
+const bingoAndroidLink = "https://play.google.com/store/apps/details?id=com.wombat.bingoapp";
+const printIosLink = "https://apps.apple.com/app/id6740032513?ct=cards-landing";
+const printAndroidLink = "https://play.google.com/store/apps/details?id=com.wombat.bingoprint";
 
 // Data arrays
 const advantages = [
@@ -279,43 +288,7 @@ function getLanguageLink(targetLang: Language): string {
         </section>
 
         <!-- Apps Family Section -->
-        <section id="apps" class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-[#101828] mb-4">{t('cards_apps_title')}</h2>
-                    <p class="text-xl text-[#4a5565] max-w-3xl mx-auto">{t('cards_apps_subtitle')}</p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <!-- Bingo!! -->
-                    <a href={bingoLandingPath} class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100">
-                        <div class="flex flex-col items-center text-center">
-                            <img src="/images/bingo-app-screenshot.png" alt="Bingo!!" class="w-24 h-auto mb-6 rounded-2xl shadow-md">
-                            <h3 class="text-2xl font-bold mb-2 text-[#101828]">bingo!!</h3>
-                            <p class="text-[#4a5565]">{t('cards_cta_bingo_desc')}</p>
-                        </div>
-                    </a>
-
-                    <!-- Bingo Cards!! (current app - highlighted) -->
-                    <div class="bg-gradient-to-br from-[#417cee]/10 to-[#2663db]/10 rounded-3xl p-8 shadow-lg ring-2 ring-[#417cee]/30">
-                        <div class="flex flex-col items-center text-center">
-                            <img src="/images/bingo-cards-app-screenshot.png" alt="Bingo Cards!!" class="w-24 h-auto mb-6 rounded-2xl shadow-md">
-                            <h3 class="text-2xl font-bold mb-2 text-[#101828]">bingo!! cards</h3>
-                            <p class="text-[#4a5565]">{t('cards_cta_print_desc')}</p>
-                        </div>
-                    </div>
-
-                    <!-- Bingo Print!! -->
-                    <a href={printLandingPath} class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100">
-                        <div class="flex flex-col items-center text-center">
-                            <img src="/images/bingo-print-app-screenshot.png" alt="Bingo!! Print" class="w-24 h-auto mb-6 rounded-2xl shadow-md">
-                            <h3 class="text-2xl font-bold mb-2 text-[#101828]">bingo!! print</h3>
-                            <p class="text-[#4a5565]">{t('cards_cta_print_desc')}</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
+        <AppsFamilySection lang={lang} />
 
         <!-- Use Cases Section -->
         <section id="usecases" class="py-20 bg-gradient-to-r from-[#558ffd] to-[#2663db]">
