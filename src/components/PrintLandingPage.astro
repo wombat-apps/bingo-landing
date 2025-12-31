@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { useTranslations, getLocalizedPath, getOgLocale, getAlternateLocales, toLanguage, getAppStoreBadge, getGooglePlayBadge } from '../i18n/utils';
+import { useTranslations, getLocalizedPath, getOgLocale, getAlternateLocales, toLanguage } from '../i18n/utils';
 import AppsFamilySection from './AppsFamilySection.astro';
 import { languages, defaultLang, type Language } from '../i18n/ui';
 
@@ -19,16 +19,6 @@ const privacyPath = getLocalizedPath(lang, '/privacy-policy');
 const mainLandingPath = getLocalizedPath(lang, '/');
 const bingoLandingPath = getLocalizedPath(lang, '/bingo/');
 const cardsLandingPath = getLocalizedPath(lang, '/cards/');
-const appStoreBadge = getAppStoreBadge(lang);
-const googlePlayBadge = getGooglePlayBadge(lang);
-
-// App Store Links
-const printIosLink = "https://apps.apple.com/app/id6740032513?ct=print-landing";
-const printAndroidLink = "https://play.google.com/store/apps/details?id=com.wombat.bingoprint";
-const bingoIosLink = "https://apps.apple.com/app/apple-store/id1505191957?ct=print-landing";
-const bingoAndroidLink = "https://play.google.com/store/apps/details?id=com.wombat.bingoapp";
-const cardsIosLink = "https://apps.apple.com/app/id1510582506?ct=print-landing";
-const cardsAndroidLink = "https://play.google.com/store/apps/details?id=com.wombat.bingocards";
 
 // Data arrays
 const advantages = [

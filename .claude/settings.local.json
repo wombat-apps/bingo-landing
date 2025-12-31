@@ -28,7 +28,8 @@
       "Bash(gh project list:*)",
       "Bash(wc:*)",
       "mcp__plugin_figma_figma__get_design_context",
-      "mcp__plugin_figma_figma__get_screenshot"
+      "mcp__plugin_figma_figma__get_screenshot",
+      "Bash(gh run list:*)"
     ],
     "deny": []
   }

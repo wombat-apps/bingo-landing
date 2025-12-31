@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { useTranslations, getLocalizedPath, getOgLocale, getAlternateLocales, toLanguage, getAppStoreBadge, getGooglePlayBadge } from '../i18n/utils';
+import { useTranslations, getLocalizedPath, getOgLocale, getAlternateLocales, toLanguage } from '../i18n/utils';
 import AppsFamilySection from './AppsFamilySection.astro';
 import { languages, defaultLang, type Language } from '../i18n/ui';
 
@@ -23,14 +23,6 @@ const printLandingPath = getLocalizedPath(lang, '/bingo-print/');
 // App Store Links - Bingo Cards!!
 const iosAppLink = "https://apps.apple.com/app/id1510582506?ct=cards-landing";
 const androidAppLink = "https://play.google.com/store/apps/details?id=com.wombat.bingocards";
-const appStoreBadge = getAppStoreBadge(lang);
-const googlePlayBadge = getGooglePlayBadge(lang);
-
-// App Store Links for other apps in the family
-const bingoIosLink = "https://apps.apple.com/app/apple-store/id1505191957?ct=cards-landing";
-const bingoAndroidLink = "https://play.google.com/store/apps/details?id=com.wombat.bingoapp";
-const printIosLink = "https://apps.apple.com/app/id6740032513?ct=cards-landing";
-const printAndroidLink = "https://play.google.com/store/apps/details?id=com.wombat.bingoprint";
 
 // Data arrays
 const advantages = [
