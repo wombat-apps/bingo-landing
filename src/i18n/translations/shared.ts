@@ -11,6 +11,8 @@ export const shared = {
 
     // Common UI
     download_free: "Download free!",
+    download_on_appstore: "Download on the",
+    get_it_on_google: "Get it on",
 
     // Accessibility
     skip_to_content: "Skip to main content",
@@ -42,6 +44,8 @@ export const shared = {
 
     // Common UI
     download_free: "¡Descarga gratis!",
+    download_on_appstore: "Descargar en",
+    get_it_on_google: "Disponible en",
 
     // Accessibility
     skip_to_content: "Saltar al contenido principal",
@@ -73,6 +77,8 @@ export const shared = {
 
     // Common UI
     download_free: "Télécharger gratuitement !",
+    download_on_appstore: "Télécharger sur",
+    get_it_on_google: "Disponible sur",
 
     // Accessibility
     skip_to_content: "Passer au contenu principal",
@@ -104,6 +110,8 @@ export const shared = {
 
     // Common UI
     download_free: "Baixe grátis!",
+    download_on_appstore: "Baixar na",
+    get_it_on_google: "Disponível no",
 
     // Accessibility
     skip_to_content: "Pular para o conteúdo principal",
