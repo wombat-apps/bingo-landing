@@ -192,7 +192,7 @@ function getLanguageLink(targetLang: Language): string {
         document.querySelectorAll('.language-link').forEach(link => {
             link.addEventListener('click', () => {
                 const lang = link.getAttribute('data-lang') || 'en';
-                localStorage.setItem('bingo-language', lang);
+                localStorage.setItem('preferred-language', lang);
             });
         });
     </script>

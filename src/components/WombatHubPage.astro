@@ -1,0 +1,201 @@
+---
+import '../styles/global.css';
+import { useTranslations, getLocalizedPath, getOgLocale, getAlternateLocales, toLanguage } from '../i18n/utils';
+import { languages, defaultLang, type Language } from '../i18n/ui';
+import AppsFamilySection from './AppsFamilySection.astro';
+
+interface Props {
+  lang?: Language;
+  enableAutoRedirect?: boolean;
+}
+
+const { lang = toLanguage(Astro.currentLocale), enableAutoRedirect = false } = Astro.props;
+const t = useTranslations(lang);
+const ogLocale = getOgLocale(lang);
+const alternateLocales = getAlternateLocales(lang);
+const canonicalBase = 'https://wombat-apps.com';
+const canonicalPath = lang === 'en' ? '/' : `/${lang}/`;
+const canonicalUrl = `${canonicalBase}${canonicalPath}`;
+const privacyPath = getLocalizedPath(lang, '/privacy-policy');
+
+const team = [
+  { name: 'Álvaro Murillo', role: t('team_ios'), image: '/images/team-alvaro-murillo.png', imageWebp: '/images/team-alvaro-murillo.webp', linkedin: 'https://es.linkedin.com/in/alvaromurillop/' },
+  { name: 'José Balanza', role: t('team_android'), image: '/images/team-jose-balanza.png', imageWebp: '/images/team-jose-balanza.webp', linkedin: 'https://es.linkedin.com/in/jose-luis-balanza-b9246950/' },
+  { name: 'Laura Abajo', role: t('team_designer'), image: '/images/team-laura-abajo.png', imageWebp: '/images/team-laura-abajo.webp', linkedin: 'https://es.linkedin.com/in/lauraabajo' }
+];
+
+function getLanguageLink(targetLang: Language): string {
+  if (targetLang === defaultLang) return '/';
+  return `/${targetLang}/`;
+}
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{t('hub_meta_title')}</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content={t('hub_meta_description')}>
+    <meta name="keywords" content={t('hub_meta_keywords')}>
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Wombat Apps">
+    <meta name="theme-color" content="#822ad2">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="canonical" href={canonicalUrl}>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={t('hub_og_title')}>
+    <meta property="og:description" content={t('hub_og_description')}>
+    <meta property="og:image" content={`${canonicalBase}/images/og-home.png`}>
+    <meta property="og:url" content={canonicalUrl}>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Wombat Apps">
+    <meta property="og:locale" content={ogLocale}>
+    {alternateLocales.map((locale) => (
+        <meta property="og:locale:alternate" content={locale} />
+    ))}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={t('hub_og_title')}>
+    <meta name="twitter:description" content={t('hub_og_description')}>
+    <meta name="twitter:image" content={`${canonicalBase}/images/og-home.png`}>
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href={`${canonicalBase}/`}>
+    <link rel="alternate" hreflang="es" href={`${canonicalBase}/es/`}>
+    <link rel="alternate" hreflang="fr" href={`${canonicalBase}/fr/`}>
+    <link rel="alternate" hreflang="pt" href={`${canonicalBase}/pt/`}>
+    <link rel="alternate" hreflang="x-default" href={`${canonicalBase}/`}>
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Wombat Apps",
+        "url": canonicalBase,
+        "logo": `${canonicalBase}/images/bingo-logo.png`,
+        "description": "We create fun and engaging bingo apps for the whole family."
+    })} />
+</head>
+<body class="bg-white font-sans">
+    <!-- Skip Link -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-bingo-purple focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold">
+        {t('skip_to_content')}
+    </a>
+
+    <!-- Header / Hero -->
+    <header class="bg-gradient-to-r from-[#7424d5] to-[#d34dbc] relative overflow-hidden py-16 md:py-24">
+        <!-- Decorative circles with blur -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-[15%] left-[40%] w-36 h-36 bg-[#ffdf20] rounded-full opacity-30 blur-[55px]"></div>
+            <div class="absolute top-[45%] left-[35%] w-36 h-36 bg-[#fda5d5] rounded-full opacity-30 blur-[55px]"></div>
+            <div class="absolute bottom-[10%] right-[5%] w-36 h-36 bg-[#fda5d5] rounded-full opacity-30 blur-[55px]"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center">
+                <img src="/images/bingo-logo.png" alt="Wombat Apps Logo" class="h-24 md:h-32 mx-auto mb-8 drop-shadow-2xl">
+                <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight drop-shadow-2xl">
+                    {t('hub_headline')}
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 font-medium drop-shadow-lg max-w-3xl mx-auto">
+                    {t('hub_subtitle')}
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- Apps Section -->
+        <AppsFamilySection lang={lang} />
+
+        <!-- Team Section -->
+        <section id="team" class="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">{t('team_title')}</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">{t('team_subtitle')}</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-12 max-w-4xl mx-auto">
+                    {team.map((member) => (
+                        <div class="bg-white rounded-3xl p-8 text-center shadow-lg">
+                            <picture>
+                                <source srcset={member.imageWebp} type="image/webp">
+                                <img src={member.image} alt={member.name} loading="lazy" decoding="async" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
+                            </picture>
+                            <h3 class="text-2xl font-bold mb-2 text-gray-800">{member.name}</h3>
+                            <p class="text-bingo-purple font-semibold mb-4">{member.role}</p>
+                            <a href={member.linkedin} class="text-bingo-blue hover:text-bingo-purple transition-colors font-medium" target="_blank" rel="noopener noreferrer">{t('team_linkedin')}</a>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <img src="/images/bingo-logo.png" alt="Wombat Apps Logo" class="h-16 mx-auto mb-6 opacity-80">
+            <p class="text-lg text-gray-300 mb-4">{t('footer_rights')}</p>
+            <div class="mb-4">
+                <a href={privacyPath} class="text-gray-400 hover:text-white transition-colors underline">{t('privacy_policy_title')}</a>
+            </div>
+            <p class="text-gray-400 mb-6">{t('footer_tagline')}</p>
+
+            <!-- Language Selector -->
+            <div class="flex justify-center space-x-4">
+                {Object.entries(languages).map(([code]) => (
+                    <a href={getLanguageLink(code as Language)} class={`language-link px-4 py-2 rounded-lg font-medium transition-colors ${code === lang ? 'bg-bingo-purple text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white'}`} aria-current={code === lang ? 'page' : undefined} data-lang={code}>
+                        {code.toUpperCase()}
+                    </a>
+                ))}
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Language selector storage
+        document.querySelectorAll('.language-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const lang = link.getAttribute('data-lang') || 'en';
+                localStorage.setItem('preferred-language', lang);
+            });
+        });
+    </script>
+
+    {enableAutoRedirect && (
+        <script is:inline>
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                const noRedirect = new URLSearchParams(window.location.search).has('noredirect');
+                const hasStoredLang = localStorage.getItem('preferred-language');
+
+                if (!noRedirect && !hasStoredLang) {
+                    const browserLang = navigator.language.split('-')[0];
+                    if (browserLang === 'es') {
+                        window.location.href = '/es/';
+                    } else if (browserLang === 'fr') {
+                        window.location.href = '/fr/';
+                    } else if (browserLang === 'pt') {
+                        window.location.href = '/pt/';
+                    }
+                }
+            }
+        </script>
+    )}
+</body>
+</html>

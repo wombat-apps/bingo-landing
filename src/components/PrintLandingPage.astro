@@ -6,14 +6,15 @@ import { languages, defaultLang, type Language } from '../i18n/ui';
 
 interface Props {
   lang?: Language;
+  enableAutoRedirect?: boolean;
 }
 
-const { lang = toLanguage(Astro.currentLocale) } = Astro.props;
+const { lang = toLanguage(Astro.currentLocale), enableAutoRedirect = false } = Astro.props;
 const t = useTranslations(lang);
 const ogLocale = getOgLocale(lang);
 const alternateLocales = getAlternateLocales(lang);
 const canonicalBase = 'https://wombat-apps.com';
-const canonicalPath = lang === 'en' ? '/bingo-print/' : `/${lang}/bingo-print/`;
+const canonicalPath = lang === 'en' ? '/print/' : `/${lang}/print/`;
 const canonicalUrl = `${canonicalBase}${canonicalPath}`;
 const privacyPath = getLocalizedPath(lang, '/privacy-policy');
 const mainLandingPath = getLocalizedPath(lang, '/');
@@ -49,10 +50,10 @@ const faqs = [
   { q: t('print_faq_q7'), a: t('print_faq_a7') }
 ];
 
-// Language selector helper for /bingo-print/ routes
+// Language selector helper for /print/ routes
 function getLanguageLink(targetLang: Language): string {
-  if (targetLang === defaultLang) return '/bingo-print/';
-  return `/${targetLang}/bingo-print/`;
+  if (targetLang === defaultLang) return '/print/';
+  return `/${targetLang}/print/`;
 }
 ---
 
@@ -94,11 +95,11 @@ function getLanguageLink(targetLang: Language): string {
     <meta name="twitter:image" content={`${canonicalBase}/images/og-print.png`}>
 
     <!-- Hreflang -->
-    <link rel="alternate" hreflang="en" href={`${canonicalBase}/bingo-print/`}>
-    <link rel="alternate" hreflang="es" href={`${canonicalBase}/es/bingo-print/`}>
-    <link rel="alternate" hreflang="fr" href={`${canonicalBase}/fr/bingo-print/`}>
-    <link rel="alternate" hreflang="pt" href={`${canonicalBase}/pt/bingo-print/`}>
-    <link rel="alternate" hreflang="x-default" href={`${canonicalBase}/bingo-print/`}>
+    <link rel="alternate" hreflang="en" href={`${canonicalBase}/print/`}>
+    <link rel="alternate" hreflang="es" href={`${canonicalBase}/es/print/`}>
+    <link rel="alternate" hreflang="fr" href={`${canonicalBase}/fr/print/`}>
+    <link rel="alternate" hreflang="pt" href={`${canonicalBase}/pt/print/`}>
+    <link rel="alternate" hreflang="x-default" href={`${canonicalBase}/print/`}>
 
     <!-- Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -526,9 +527,29 @@ function getLanguageLink(targetLang: Language): string {
         document.querySelectorAll('.language-link').forEach(link => {
             link.addEventListener('click', () => {
                 const lang = link.getAttribute('data-lang') || 'en';
-                localStorage.setItem('bingo-language', lang);
+                localStorage.setItem('preferred-language', lang);
             });
         });
     </script>
+
+    {enableAutoRedirect && (
+        <script is:inline>
+            if (window.location.pathname === '/print/' || window.location.pathname === '/print/index.html') {
+                const noRedirect = new URLSearchParams(window.location.search).has('noredirect');
+                const hasStoredLang = localStorage.getItem('preferred-language');
+
+                if (!noRedirect && !hasStoredLang) {
+                    const browserLang = navigator.language.split('-')[0];
+                    if (browserLang === 'es') {
+                        window.location.href = '/es/print/';
+                    } else if (browserLang === 'fr') {
+                        window.location.href = '/fr/print/';
+                    } else if (browserLang === 'pt') {
+                        window.location.href = '/pt/print/';
+                    }
+                }
+            }
+        </script>
+    )}
 </body>
 </html>

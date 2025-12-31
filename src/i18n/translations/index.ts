@@ -4,6 +4,8 @@
  */
 
 export { shared } from './shared';
-export { landing } from './landing';
 export { bingo } from './bingo';
+export { cards } from './cards';
+export { print } from './print';
+export { hub } from './hub';
 export { privacy } from './privacy';

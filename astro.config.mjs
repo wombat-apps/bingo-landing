@@ -4,6 +4,12 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://wombat-apps.com',
+  redirects: {
+    '/bingo-print/': '/print/',
+    '/es/bingo-print/': '/es/print/',
+    '/fr/bingo-print/': '/fr/print/',
+    '/pt/bingo-print/': '/pt/print/',
+  },
   i18n: {
     locales: ['en', 'es', 'fr', 'pt'],
     defaultLocale: 'en',
@@ -29,7 +35,7 @@ export default defineConfig({
         if (item.url.includes('/privacy-policy')) {
           item.priority = 0.3;
           item.changefreq = 'yearly';
-        } else if (item.url.includes('/bingo/') || item.url.includes('/cards/') || item.url.includes('/bingo-print/')) {
+        } else if (item.url.includes('/bingo/') || item.url.includes('/cards/') || item.url.includes('/print/')) {
           item.priority = 0.9;
         } else {
           // Home pages (/, /es/, /fr/, /pt/)

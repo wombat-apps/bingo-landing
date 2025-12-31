@@ -6,9 +6,10 @@ import AppsFamilySection from './AppsFamilySection.astro';
 
 interface Props {
   lang?: Language;
+  enableAutoRedirect?: boolean;
 }
 
-const { lang = toLanguage(Astro.currentLocale) } = Astro.props;
+const { lang = toLanguage(Astro.currentLocale), enableAutoRedirect = false } = Astro.props;
 const t = useTranslations(lang);
 const ogLocale = getOgLocale(lang);
 const alternateLocales = getAlternateLocales(lang);
@@ -18,7 +19,7 @@ const canonicalUrl = `${canonicalBase}${canonicalPath}`;
 const privacyPath = getLocalizedPath(lang, '/privacy-policy');
 const mainLandingPath = getLocalizedPath(lang, '/');
 const cardsLandingPath = getLocalizedPath(lang, '/cards/');
-const printLandingPath = getLocalizedPath(lang, '/bingo-print/');
+const printLandingPath = getLocalizedPath(lang, '/print/');
 
 // App Store Links - iOS links to Bingo!! Lite, Android to Bingo!!
 const iosAppLink = "https://apps.apple.com/app/apple-store/id1505191957?ct=bingo-landing";
@@ -553,5 +554,25 @@ function getLanguageLink(targetLang: Language): string {
             });
         });
     </script>
+
+    {enableAutoRedirect && (
+        <script is:inline>
+            if (window.location.pathname === '/bingo/' || window.location.pathname === '/bingo/index.html') {
+                const noRedirect = new URLSearchParams(window.location.search).has('noredirect');
+                const hasStoredLang = localStorage.getItem('preferred-language');
+
+                if (!noRedirect && !hasStoredLang) {
+                    const browserLang = navigator.language.split('-')[0];
+                    if (browserLang === 'es') {
+                        window.location.href = '/es/bingo/';
+                    } else if (browserLang === 'fr') {
+                        window.location.href = '/fr/bingo/';
+                    } else if (browserLang === 'pt') {
+                        window.location.href = '/pt/bingo/';
+                    }
+                }
+            }
+        </script>
+    )}
 </body>
 </html>

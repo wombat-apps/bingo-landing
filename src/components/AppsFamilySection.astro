@@ -1,5 +1,5 @@
 ---
-import { useTranslations, toLanguage } from '../i18n/utils';
+import { useTranslations, toLanguage, getLocalizedPath } from '../i18n/utils';
 import type { Language } from '../i18n/ui';
 
 interface Props {
@@ -8,6 +8,11 @@ interface Props {
 
 const { lang = toLanguage(Astro.currentLocale) } = Astro.props;
 const t = useTranslations(lang);
+
+// Landing page links
+const bingoLandingLink = getLocalizedPath(lang, '/bingo/');
+const cardsLandingLink = getLocalizedPath(lang, '/cards/');
+const printLandingLink = getLocalizedPath(lang, '/print/');
 
 // App Store Links
 const bingoIosLink = "https://apps.apple.com/app/apple-store/id1505191957?ct=landing";
@@ -28,8 +33,12 @@ const printAndroidLink = "https://play.google.com/store/apps/details?id=com.womb
         <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <!-- Bingo!! -->
             <div class="bg-white/40 border border-[#eee] rounded-2xl p-3 flex flex-col items-center">
-                <img src="/images/bingo-app-screenshot.png" alt="Bingo!!" class="w-52 h-auto mb-6">
-                <h3 class="text-xl font-medium text-[#101828] mb-2">bingo!!</h3>
+                <a href={bingoLandingLink} class="block hover:opacity-80 transition-opacity">
+                    <img src="/images/bingo-app-screenshot.png" alt="Bingo!!" class="w-52 h-auto mb-6">
+                </a>
+                <a href={bingoLandingLink} class="hover:text-bingo-purple transition-colors">
+                    <h3 class="text-xl font-medium text-[#101828] mb-2">bingo!!</h3>
+                </a>
                 <p class="text-base text-[#4a5565] text-center leading-6 mb-6 px-3">{t('bingo_app_desc')}</p>
                 <div class="flex gap-3 justify-center mb-3">
                     <a href={bingoIosLink} class="flex items-center bg-black text-white px-3 py-2 rounded-xl hover:bg-gray-800 transition-colors">
@@ -55,8 +64,12 @@ const printAndroidLink = "https://play.google.com/store/apps/details?id=com.womb
 
             <!-- Bingo Cards!! -->
             <div class="bg-white/40 border border-[#eee] rounded-2xl p-3 flex flex-col items-center">
-                <img src="/images/bingo-cards-app-screenshot.png" alt="Bingo Cards!!" class="w-52 h-auto mb-6">
-                <h3 class="text-xl font-medium text-[#101828] mb-2">bingo!! cards</h3>
+                <a href={cardsLandingLink} class="block hover:opacity-80 transition-opacity">
+                    <img src="/images/bingo-cards-app-screenshot.png" alt="Bingo Cards!!" class="w-52 h-auto mb-6">
+                </a>
+                <a href={cardsLandingLink} class="hover:text-bingo-purple transition-colors">
+                    <h3 class="text-xl font-medium text-[#101828] mb-2">bingo!! cards</h3>
+                </a>
                 <p class="text-base text-[#4a5565] text-center leading-6 mb-6 px-3">{t('cards_app_desc')}</p>
                 <div class="flex gap-3 justify-center mb-3">
                     <a href={cardsIosLink} class="flex items-center bg-black text-white px-3 py-2 rounded-xl hover:bg-gray-800 transition-colors">
@@ -82,8 +95,12 @@ const printAndroidLink = "https://play.google.com/store/apps/details?id=com.womb
 
             <!-- Bingo Print!! -->
             <div class="bg-white/40 border border-[#eee] rounded-2xl p-3 flex flex-col items-center">
-                <img src="/images/bingo-print-app-screenshot.png" alt="Bingo Print!!" class="w-52 h-auto mb-6">
-                <h3 class="text-xl font-medium text-[#101828] mb-2">bingo!! print</h3>
+                <a href={printLandingLink} class="block hover:opacity-80 transition-opacity">
+                    <img src="/images/bingo-print-app-screenshot.png" alt="Bingo Print!!" class="w-52 h-auto mb-6">
+                </a>
+                <a href={printLandingLink} class="hover:text-bingo-purple transition-colors">
+                    <h3 class="text-xl font-medium text-[#101828] mb-2">bingo!! print</h3>
+                </a>
                 <p class="text-base text-[#4a5565] text-center leading-6 mb-6 px-3">{t('print_app_desc')}</p>
                 <div class="flex gap-3 justify-center mb-3">
                     <a href={printIosLink} class="flex items-center bg-black text-white px-3 py-2 rounded-xl hover:bg-gray-800 transition-colors">

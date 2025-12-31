@@ -4,10 +4,10 @@
  */
 
 import { shared } from './translations/shared';
-import { landing } from './translations/landing';
 import { bingo } from './translations/bingo';
 import { cards } from './translations/cards';
 import { print } from './translations/print';
+import { hub } from './translations/hub';
 import { privacy } from './translations/privacy';
 
 export const languages = {
@@ -39,34 +39,34 @@ export const googlePlayBadges: Record<Language, string> = {
 export const ui = {
   en: {
     ...shared.en,
-    ...landing.en,
     ...bingo.en,
     ...cards.en,
     ...print.en,
+    ...hub.en,
     ...privacy.en,
   },
   es: {
     ...shared.es,
-    ...landing.es,
     ...bingo.es,
     ...cards.es,
     ...print.es,
+    ...hub.es,
     ...privacy.es,
   },
   fr: {
     ...shared.fr,
-    ...landing.fr,
     ...bingo.fr,
     ...cards.fr,
     ...print.fr,
+    ...hub.fr,
     ...privacy.fr,
   },
   pt: {
     ...shared.pt,
-    ...landing.pt,
     ...bingo.pt,
     ...cards.pt,
     ...print.pt,
+    ...hub.pt,
     ...privacy.pt,
   },
 } as const;

@@ -44,14 +44,22 @@ npm run check:translations # Check for unused translation keys
 
 ### Page Structure
 - **Components**: Reusable templates in `src/components/`
-  - `LandingPage.astro`: Main homepage template (renders all sections)
+  - `WombatHubPage.astro`: Main hub page (apps showcase, team, footer)
+  - `BingoLandingPage.astro`: Bingo!! app landing page
+  - `CardsLandingPage.astro`: Bingo!! Cards app landing page
+  - `PrintLandingPage.astro`: Bingo!! Print app landing page
   - `PrivacyPage.astro`: Privacy policy template
+  - `AppsFamilySection.astro`: Reusable apps showcase section
   - Components use `Astro.currentLocale` via `toLanguage()` helper
 - **Routes**: File-based in `src/pages/`
-  - `index.astro` → `/` (English only, has `enableAutoRedirect`)
-  - `privacy-policy.astro` → `/privacy-policy` (English only)
-  - `[locale]/index.astro` → `/es/`, `/fr/`, `/pt/` (dynamic route)
-  - `[locale]/privacy-policy.astro` → `/es/privacy-policy`, `/fr/privacy-policy`, `/pt/privacy-policy`
+  - `index.astro` → `/` (Wombat Apps hub, has `enableAutoRedirect`)
+  - `bingo/index.astro` → `/bingo` (Bingo!! landing)
+  - `cards/index.astro` → `/cards` (Bingo!! Cards landing)
+  - `print/index.astro` → `/print` (Bingo!! Print landing)
+  - `privacy-policy.astro` → `/privacy-policy`
+  - `[locale]/index.astro` → `/es/`, `/fr/`, `/pt/` (hub dynamic route)
+  - `[locale]/bingo/`, `[locale]/cards/`, `[locale]/print/` → app landings per locale
+  - `[locale]/privacy-policy.astro` → privacy policy per locale
 
 ## Key Development Notes
 
@@ -81,7 +89,7 @@ When removing UI elements that use translations:
 ### SEO
 - Each page includes meta tags, Open Graph, Twitter Card, and JSON-LD structured data
 - Hreflang links automatically generated for language alternates
-- Sitemap at `public/sitemap.xml`
+- Sitemap dynamically generated via `@astrojs/sitemap` integration (outputs to `dist/sitemap-index.xml` at build)
 
 ## Commit Messages
 - Use conventional commits: `type: description` (e.g., `feat: add dark mode`, `fix: resolve mobile layout`)

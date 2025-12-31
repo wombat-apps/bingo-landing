@@ -1,33 +1,20 @@
 /**
  * Shared translations used across multiple pages
- * Includes: navigation, footer, accessibility, common UI elements
+ * Includes: footer, accessibility, common UI elements
  */
 
 export const shared = {
   en: {
-    // Navigation
-    nav_apps: "Apps",
-    nav_advantages: "Advantages",
-    nav_qr: "QR Tutorial",
-    nav_reviews: "Reviews",
-    nav_faq: "FAQ",
-    nav_team: "Team",
-
     // Footer
-    footer_rights: "© 2024 Wombat Apps. All rights reserved.",
+    footer_rights: "© 2026 Wombat Apps. All rights reserved.",
     footer_tagline: "Best Bingo caller machine!",
 
     // Common UI
     download_free: "Download free!",
-    available_platforms: "Available on all platforms",
-    downloads_count: "downloads",
 
     // Accessibility
     skip_to_content: "Skip to main content",
     toggle_menu: "Toggle navigation menu",
-    previous_review: "Previous review",
-    next_review: "Next review",
-    customer_reviews: "Customer reviews",
 
     // Privacy Policy Link
     privacy_policy_title: "Privacy Policy",
@@ -38,32 +25,27 @@ export const shared = {
     bingo_app_desc: "The best bingo caller machine with voices, animations and customization",
     cards_app_desc: "Get digital bingo cards on your device with our companion app",
     print_app_desc: "Generate, customize, and print professional bingo cards",
+
+    // Team Section
+    team_title: "Meet our team",
+    team_subtitle: "The talented developers and designers behind your favorite bingo app",
+    team_ios: "iOS Developer",
+    team_android: "Android Developer",
+    team_designer: "UX/UI Designer",
+    team_linkedin: "LinkedIn Profile →",
   },
 
   es: {
-    // Navigation
-    nav_apps: "Apps",
-    nav_advantages: "Ventajas",
-    nav_qr: "Tutorial QR",
-    nav_reviews: "Reseñas",
-    nav_faq: "Preguntas",
-    nav_team: "Equipo",
-
     // Footer
-    footer_rights: "© 2024 Wombat Apps. Todos los derechos reservados.",
+    footer_rights: "© 2026 Wombat Apps. Todos los derechos reservados.",
     footer_tagline: "¡El mejor Bingo digital!",
 
     // Common UI
     download_free: "¡Descarga gratis!",
-    available_platforms: "Disponible en todas las plataformas",
-    downloads_count: "descargas",
 
     // Accessibility
     skip_to_content: "Saltar al contenido principal",
     toggle_menu: "Alternar menú de navegación",
-    previous_review: "Reseña anterior",
-    next_review: "Siguiente reseña",
-    customer_reviews: "Reseñas de clientes",
 
     // Privacy Policy Link
     privacy_policy_title: "Política de Privacidad",
@@ -74,32 +56,27 @@ export const shared = {
     bingo_app_desc: "El mejor bingo digital con voces, animaciones y personalización",
     cards_app_desc: "Obtén cartones de bingo digitales en tu dispositivo con nuestra app",
     print_app_desc: "Genera, personaliza e imprime cartones de bingo profesionales",
+
+    // Team Section
+    team_title: "Conoce nuestro equipo",
+    team_subtitle: "Los talentosos desarrolladores y diseñadores detrás de tu app de bingo favorita",
+    team_ios: "Desarrollador iOS",
+    team_android: "Desarrollador Android",
+    team_designer: "Diseñador UX/UI",
+    team_linkedin: "Perfil de LinkedIn →",
   },
 
   fr: {
-    // Navigation
-    nav_apps: "Apps",
-    nav_advantages: "Avantages",
-    nav_qr: "Tutoriel QR",
-    nav_reviews: "Avis",
-    nav_faq: "FAQ",
-    nav_team: "Équipe",
-
     // Footer
-    footer_rights: "© 2024 Wombat Apps. Tous droits réservés.",
+    footer_rights: "© 2026 Wombat Apps. Tous droits réservés.",
     footer_tagline: "La meilleure machine à Bingo !",
 
     // Common UI
     download_free: "Télécharger gratuitement !",
-    available_platforms: "Disponible sur toutes les plateformes",
-    downloads_count: "téléchargements",
 
     // Accessibility
     skip_to_content: "Passer au contenu principal",
     toggle_menu: "Basculer le menu de navigation",
-    previous_review: "Avis précédent",
-    next_review: "Avis suivant",
-    customer_reviews: "Avis clients",
 
     // Privacy Policy Link
     privacy_policy_title: "Politique de Confidentialité",
@@ -110,32 +87,27 @@ export const shared = {
     bingo_app_desc: "La meilleure machine à bingo avec voix, animations et personnalisation",
     cards_app_desc: "Obtenez des cartons de bingo numériques sur votre appareil avec notre app complémentaire",
     print_app_desc: "Générez, personnalisez et imprimez des cartons de bingo professionnels",
+
+    // Team Section
+    team_title: "Rencontrez notre équipe",
+    team_subtitle: "Les talentueux développeurs et designers derrière votre app de bingo préférée",
+    team_ios: "Développeur iOS",
+    team_android: "Développeur Android",
+    team_designer: "Designer UX/UI",
+    team_linkedin: "Profil LinkedIn →",
   },
 
   pt: {
-    // Navigation
-    nav_apps: "Apps",
-    nav_advantages: "Vantagens",
-    nav_qr: "Tutorial QR",
-    nav_reviews: "Avaliações",
-    nav_faq: "FAQ",
-    nav_team: "Equipe",
-
     // Footer
-    footer_rights: "© 2024 Wombat Apps. Todos os direitos reservados.",
+    footer_rights: "© 2026 Wombat Apps. Todos os direitos reservados.",
     footer_tagline: "A melhor máquina de Bingo!",
 
     // Common UI
     download_free: "Baixe grátis!",
-    available_platforms: "Disponível em todas as plataformas",
-    downloads_count: "downloads",
 
     // Accessibility
     skip_to_content: "Pular para o conteúdo principal",
     toggle_menu: "Alternar menu de navegação",
-    previous_review: "Avaliação anterior",
-    next_review: "Próxima avaliação",
-    customer_reviews: "Avaliações de clientes",
 
     // Privacy Policy Link
     privacy_policy_title: "Política de Privacidade",
@@ -146,5 +118,13 @@ export const shared = {
     bingo_app_desc: "A melhor máquina de bingo com vozes, animações e personalização",
     cards_app_desc: "Obtenha cartelas de bingo digitais no seu dispositivo com nosso app complementar",
     print_app_desc: "Gere, personalize e imprima cartelas de bingo profissionais",
+
+    // Team Section
+    team_title: "Conheça nossa equipe",
+    team_subtitle: "Os talentosos desenvolvedores e designers por trás do seu app de bingo favorito",
+    team_ios: "Desenvolvedor iOS",
+    team_android: "Desenvolvedor Android",
+    team_designer: "Designer UX/UI",
+    team_linkedin: "Perfil LinkedIn →",
   },
 } as const;
