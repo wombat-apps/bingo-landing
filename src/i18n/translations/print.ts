@@ -15,6 +15,7 @@ export const print = {
     print_headline: "Design and Print Unlimited Bingo Cards",
     print_subtitle: "Generate, customize, and print professional bingo cards. Perfect for events and celebrations.",
     print_download_sample: "Download sample PDF",
+    print_coming_soon: "Coming Soon",
 
     // Navigation
     print_nav_features: "Features",
@@ -106,6 +107,7 @@ export const print = {
     print_headline: "Diseña e Imprime Cartones de Bingo Ilimitados",
     print_subtitle: "Genera, personaliza e imprime cartones de bingo profesionales. Perfecto para eventos y celebraciones.",
     print_download_sample: "Descarga PDF de prueba",
+    print_coming_soon: "Próximamente",
 
     // Navigation
     print_nav_features: "Características",
@@ -197,6 +199,7 @@ export const print = {
     print_headline: "Concevez et Imprimez des Cartons de Bingo Illimités",
     print_subtitle: "Générez, personnalisez et imprimez des cartons de bingo professionnels. Parfait pour événements et célébrations.",
     print_download_sample: "Télécharger un PDF exemple",
+    print_coming_soon: "Bientôt disponible",
 
     // Navigation
     print_nav_features: "Fonctionnalités",
@@ -288,6 +291,7 @@ export const print = {
     print_headline: "Crie e Imprima Cartelas de Bingo Ilimitadas",
     print_subtitle: "Gere, personalize e imprima cartelas de bingo profissionais. Perfeito para eventos e celebrações.",
     print_download_sample: "Baixar PDF de exemplo",
+    print_coming_soon: "Em breve",
 
     // Navigation
     print_nav_features: "Recursos",
