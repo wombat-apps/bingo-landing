@@ -70,14 +70,16 @@ function getLanguageLink(targetLang: Language): string {
     <meta name="robots" content="index, follow">
     <meta name="author" content="Wombat Apps">
     <meta name="theme-color" content="#822ad2">
-    <link rel="icon" type="image/png" href="/images/favicon.png">
-    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="canonical" href={canonicalUrl}>
 
     <!-- Open Graph -->
     <meta property="og:title" content={t('bingo_og_title')}>
     <meta property="og:description" content={t('bingo_og_description')}>
-    <meta property="og:image" content={`${canonicalBase}/images/bingo-logo.png`}>
+    <meta property="og:image" content={`${canonicalBase}/images/og-bingo.png`}>
     <meta property="og:url" content={canonicalUrl}>
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Bingo!!">
@@ -90,7 +92,7 @@ function getLanguageLink(targetLang: Language): string {
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content={t('bingo_og_title')}>
     <meta name="twitter:description" content={t('bingo_og_description')}>
-    <meta name="twitter:image" content={`${canonicalBase}/images/bingo-logo.png`}>
+    <meta name="twitter:image" content={`${canonicalBase}/images/og-bingo.png`}>
 
     <!-- Hreflang -->
     <link rel="alternate" hreflang="en" href={`${canonicalBase}/bingo/`}>
