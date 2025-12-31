@@ -21,7 +21,11 @@
       "Bash(npm run lint:*)",
       "Bash(npm outdated:*)",
       "Bash(npm view:*)",
-      "Bash(git -C /Volumes/Developer/bingo-landing show f956e5e --stat)"
+      "Bash(git -C /Volumes/Developer/bingo-landing show f956e5e --stat)",
+      "Bash(gh issue edit:*)",
+      "Bash(gh project item-add:*)",
+      "Bash(gh project item-edit:*)",
+      "Bash(gh project list:*)"
     ],
     "deny": []
   }
