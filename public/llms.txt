@@ -1,0 +1,18 @@
+# Wombat Apps
+
+> Wombat Apps creates the best bingo experience for iOS and Android. Three apps that work together: Bingo!! (caller), Bingo!! Cards (digital cards), and Bingo!! Print (printable cards).
+
+## Pages
+
+- [Home](https://wombat-apps.com/): Main hub with overview of all three bingo apps
+- [Bingo!!](https://wombat-apps.com/bingo/): The ultimate digital bingo caller with voices, animations, and customization
+- [Bingo!! Cards](https://wombat-apps.com/cards/): Digital bingo cards companion app
+- [Bingo!! Print](https://wombat-apps.com/print/): Design and print unlimited custom bingo cards
+- [Privacy Policy](https://wombat-apps.com/privacy-policy/): Privacy policy for all Wombat Apps
+
+## App Store Links
+
+- [Bingo!! on App Store](https://apps.apple.com/app/id1505191957)
+- [Bingo!! on Google Play](https://play.google.com/store/apps/details?id=com.wombat.bingoapp)
+- [Bingo!! Cards on App Store](https://apps.apple.com/app/id1510582506)
+- [Bingo!! Cards on Google Play](https://play.google.com/store/apps/details?id=com.wombat.bingocards)

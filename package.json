@@ -27,7 +27,6 @@
     "typescript-eslint": "^8.50.0"
   },
   "dependencies": {
-    "@4hse/astro-llms-txt": "^1.0.4",
     "@astrojs/sitemap": "^3.6.0"
   }
 }
