@@ -70,15 +70,16 @@ const appNames = {
                 const name = appNames[appItem.app];
 
                 return (
-                    <div class="bg-white/40 border border-[#eee] rounded-2xl p-3 flex flex-col items-center">
-                        <a href={links.landing} class="block hover:opacity-80 transition-opacity">
+                    <div class="relative bg-white/40 border border-[#eee] rounded-2xl p-3 flex flex-col items-center hover:border-bingo-purple/30 hover:shadow-lg transition-all group">
+                        <a href={links.landing} class="absolute inset-0 z-0 rounded-2xl" aria-label={`Ver más sobre ${name}`}></a>
+                        <div class="relative z-[1] group-hover:opacity-80 transition-opacity pointer-events-none">
                             <img src={image.src} alt={image.alt} class="w-52 h-auto mb-6">
-                        </a>
-                        <a href={links.landing} class="hover:text-bingo-purple transition-colors">
-                            <h3 class="text-xl font-medium text-[#101828] mb-2">{name}</h3>
-                        </a>
-                        <p class="text-base text-[#4a5565] text-center leading-6 mb-6 px-3">{appItem.description}</p>
-                        <div class="flex gap-3 justify-center mb-3">
+                        </div>
+                        <div class="relative z-[1] group-hover:text-bingo-purple transition-colors pointer-events-none">
+                            <h3 class="text-xl font-medium text-[#101828] mb-2 group-hover:text-bingo-purple">{name}</h3>
+                        </div>
+                        <p class="relative z-[1] text-base text-[#4a5565] text-center leading-6 mb-6 px-3 pointer-events-none">{appItem.description}</p>
+                        <div class="relative z-10 flex gap-3 justify-center mb-3">
                             <a href={links.ios} class="flex items-center bg-black text-white px-3 py-2 rounded-xl hover:bg-gray-800 transition-colors">
                                 <svg class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>

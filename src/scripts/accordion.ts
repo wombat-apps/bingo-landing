@@ -3,21 +3,19 @@
  */
 
 export function initFaqAccordion(): void {
-  const faqButtons = document.querySelectorAll('.faq-button');
+  const faqButtons = document.querySelectorAll('.faq-btn');
 
   faqButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const faqNumber = button.getAttribute('data-faq');
-      const content = document.getElementById(`faq-content-${faqNumber}`);
-      const icon = button.querySelector('.faq-icon svg');
+      const content = button.nextElementSibling as HTMLElement;
+      const icon = button.querySelector('.faq-icon');
       const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
       // Close all other FAQs
       faqButtons.forEach(otherButton => {
         if (otherButton !== button) {
-          const otherNumber = otherButton.getAttribute('data-faq');
-          const otherContent = document.getElementById(`faq-content-${otherNumber}`);
-          const otherIcon = otherButton.querySelector('.faq-icon svg');
+          const otherContent = otherButton.nextElementSibling as HTMLElement;
+          const otherIcon = otherButton.querySelector('.faq-icon');
           if (otherContent && otherIcon) {
             otherContent.classList.add('hidden');
             otherIcon.classList.remove('rotate-180');
