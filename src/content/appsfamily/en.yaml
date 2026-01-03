@@ -1,0 +1,10 @@
+locale: en
+title: "The complete bingo!! family"
+subtitle: "Three apps that complement each other for the best bingo experience"
+apps:
+  - app: bingo
+    description: "The best bingo caller machine with voices, animations and customization"
+  - app: cards
+    description: "Get digital bingo cards on your device with our companion app"
+  - app: print
+    description: "Generate, customize, and print professional bingo cards"

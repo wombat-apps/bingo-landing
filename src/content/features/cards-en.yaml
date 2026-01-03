@@ -1,0 +1,28 @@
+app: cards
+locale: en
+title: Powerful Features for Every Need
+subtitle: Everything you need to create, customize, and manage professional bingo cards
+items:
+  - title: Digital bingo cards
+    description: Forget about paper. Use digital cards you mark with a simple tap.
+    icon: grid
+
+  - title: From any device
+    description: Perfect for playing at home, on video calls, at bars, or at in-person events.
+    icon: mobile
+
+  - title: Clear and visible numbers
+    description: Clean and legible design so you don't miss any number.
+    icon: visible
+
+  - title: Less distractions, more game
+    description: Simple interface, designed for all ages.
+    icon: fun
+
+  - title: Ready in seconds
+    description: Open the app, choose your card and start playing instantly.
+    icon: fast
+
+  - title: Smart QR Integration
+    description: Add a unique QR code to each card. Use the Bingo!! app to scan and verify the play.
+    icon: qr

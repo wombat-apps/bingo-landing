@@ -1,8 +1,9 @@
 ---
 import '../styles/global.css';
-import { useTranslations, getLocalizedPath, getOgLocale, getAlternateLocales, toLanguage } from '../i18n/utils';
+import { getLocalizedPath, getOgLocale, getAlternateLocales, toLanguage } from '../i18n/utils';
 import { languages, defaultLang, type Language } from '../i18n/ui';
 import AppsFamilySection from './AppsFamilySection.astro';
+import { getSeo, getHero, getTeam, getFooter, getUi } from '../content/helpers';
 
 interface Props {
   lang?: Language;
@@ -10,7 +11,6 @@ interface Props {
 }
 
 const { lang = toLanguage(Astro.currentLocale), enableAutoRedirect = false } = Astro.props;
-const t = useTranslations(lang);
 const ogLocale = getOgLocale(lang);
 const alternateLocales = getAlternateLocales(lang);
 const canonicalBase = 'https://wombat-apps.com';
@@ -18,10 +18,21 @@ const canonicalPath = lang === 'en' ? '/' : `/${lang}/`;
 const canonicalUrl = `${canonicalBase}${canonicalPath}`;
 const privacyPath = getLocalizedPath(lang, '/privacy-policy');
 
+// Load content from collections
+const seo = await getSeo('hub', lang);
+const hero = await getHero('hub', lang);
+const teamContent = await getTeam(lang);
+const footer = await getFooter(lang);
+const ui = await getUi(lang);
+
+if (!seo || !hero || !teamContent || !footer || !ui) {
+  throw new Error(`Missing content for hub page in ${lang}`);
+}
+
 const team = [
-  { name: 'Álvaro Murillo', role: t('team_ios'), image: '/images/team-alvaro-murillo.png', imageWebp: '/images/team-alvaro-murillo.webp', linkedin: 'https://es.linkedin.com/in/alvaromurillop/' },
-  { name: 'José Balanza', role: t('team_android'), image: '/images/team-jose-balanza.png', imageWebp: '/images/team-jose-balanza.webp', linkedin: 'https://es.linkedin.com/in/jose-luis-balanza-b9246950/' },
-  { name: 'Laura Abajo', role: t('team_designer'), image: '/images/team-laura-abajo.png', imageWebp: '/images/team-laura-abajo.webp', linkedin: 'https://es.linkedin.com/in/lauraabajo' }
+  { name: 'Álvaro Murillo', role: teamContent.roles.ios, image: '/images/team-alvaro-murillo.png', imageWebp: '/images/team-alvaro-murillo.webp', linkedin: 'https://es.linkedin.com/in/alvaromurillop/' },
+  { name: 'José Balanza', role: teamContent.roles.android, image: '/images/team-jose-balanza.png', imageWebp: '/images/team-jose-balanza.webp', linkedin: 'https://es.linkedin.com/in/jose-luis-balanza-b9246950/' },
+  { name: 'Laura Abajo', role: teamContent.roles.designer, image: '/images/team-laura-abajo.png', imageWebp: '/images/team-laura-abajo.webp', linkedin: 'https://es.linkedin.com/in/lauraabajo' }
 ];
 
 function getLanguageLink(targetLang: Language): string {
@@ -35,11 +46,11 @@ function getLanguageLink(targetLang: Language): string {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{t('hub_meta_title')}</title>
+    <title>{seo.meta.title}</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content={t('hub_meta_description')}>
-    <meta name="keywords" content={t('hub_meta_keywords')}>
+    <meta name="description" content={seo.meta.description}>
+    <meta name="keywords" content={seo.meta.keywords}>
     <meta name="robots" content="index, follow">
     <meta name="author" content="Wombat Apps">
     <meta name="theme-color" content="#822ad2">
@@ -50,8 +61,8 @@ function getLanguageLink(targetLang: Language): string {
     <link rel="canonical" href={canonicalUrl}>
 
     <!-- Open Graph -->
-    <meta property="og:title" content={t('hub_og_title')}>
-    <meta property="og:description" content={t('hub_og_description')}>
+    <meta property="og:title" content={seo.og.title}>
+    <meta property="og:description" content={seo.og.description}>
     <meta property="og:image" content={`${canonicalBase}/images/og-home.png`}>
     <meta property="og:url" content={canonicalUrl}>
     <meta property="og:type" content="website">
@@ -63,8 +74,8 @@ function getLanguageLink(targetLang: Language): string {
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content={t('hub_og_title')}>
-    <meta name="twitter:description" content={t('hub_og_description')}>
+    <meta name="twitter:title" content={seo.og.title}>
+    <meta name="twitter:description" content={seo.og.description}>
     <meta name="twitter:image" content={`${canonicalBase}/images/og-home.png`}>
 
     <!-- Hreflang -->
@@ -86,13 +97,13 @@ function getLanguageLink(targetLang: Language): string {
         "name": "Wombat Apps",
         "url": canonicalBase,
         "logo": `${canonicalBase}/images/bingo-logo.png`,
-        "description": t('shared_org_description')
+        "description": seo.meta.description
     })} />
 </head>
 <body class="bg-white font-sans">
     <!-- Skip Link -->
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-bingo-purple focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold">
-        {t('skip_to_content')}
+        {ui.accessibility.skipToContent}
     </a>
 
     <!-- Header / Hero -->
@@ -108,10 +119,10 @@ function getLanguageLink(targetLang: Language): string {
             <div class="text-center">
                 <img src="/images/bingo-logo.png" alt="Wombat Apps Logo" class="h-24 md:h-32 mx-auto mb-8 drop-shadow-2xl">
                 <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight drop-shadow-2xl">
-                    {t('hub_headline')}
+                    {hero.headline}
                 </h1>
                 <p class="text-xl md:text-2xl text-white/90 font-medium drop-shadow-lg max-w-3xl mx-auto">
-                    {t('hub_subtitle')}
+                    {hero.subtitle}
                 </p>
             </div>
         </div>
@@ -125,8 +136,8 @@ function getLanguageLink(targetLang: Language): string {
         <section id="team" class="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">{t('team_title')}</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">{t('team_subtitle')}</p>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">{teamContent.title}</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">{teamContent.subtitle}</p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-12 max-w-4xl mx-auto">
@@ -138,7 +149,7 @@ function getLanguageLink(targetLang: Language): string {
                             </picture>
                             <h3 class="text-2xl font-bold mb-2 text-gray-800">{member.name}</h3>
                             <p class="text-bingo-purple font-semibold mb-4">{member.role}</p>
-                            <a href={member.linkedin} class="text-bingo-blue hover:text-bingo-purple transition-colors font-medium" target="_blank" rel="noopener noreferrer">{t('team_linkedin')}</a>
+                            <a href={member.linkedin} class="text-bingo-blue hover:text-bingo-purple transition-colors font-medium" target="_blank" rel="noopener noreferrer">{teamContent.linkedinLabel}</a>
                         </div>
                     ))}
                 </div>
@@ -150,11 +161,11 @@ function getLanguageLink(targetLang: Language): string {
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4 text-center">
             <img src="/images/bingo-logo.png" alt="Wombat Apps Logo" class="h-16 mx-auto mb-6 opacity-80">
-            <p class="text-lg text-gray-300 mb-4">{t('footer_rights')}</p>
+            <p class="text-lg text-gray-300 mb-4">{footer.rights}</p>
             <div class="mb-4">
-                <a href={privacyPath} class="text-gray-400 hover:text-white transition-colors underline">{t('privacy_policy_title')}</a>
+                <a href={privacyPath} class="text-gray-400 hover:text-white transition-colors underline">{footer.privacyPolicy}</a>
             </div>
-            <p class="text-gray-400 mb-6">{t('footer_tagline')}</p>
+            <p class="text-gray-400 mb-6">{footer.tagline}</p>
 
             <!-- Language Selector -->
             <div class="flex justify-center space-x-4">

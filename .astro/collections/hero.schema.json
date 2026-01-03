@@ -1,0 +1,63 @@
+{
+  "$ref": "#/definitions/hero",
+  "definitions": {
+    "hero": {
+      "type": "object",
+      "properties": {
+        "app": {
+          "type": "string",
+          "enum": [
+            "bingo",
+            "cards",
+            "print",
+            "hub"
+          ]
+        },
+        "locale": {
+          "type": "string",
+          "enum": [
+            "en",
+            "es",
+            "fr",
+            "pt"
+          ]
+        },
+        "headline": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "subtitleCta": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "app",
+        "locale",
+        "headline",
+        "subtitle"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

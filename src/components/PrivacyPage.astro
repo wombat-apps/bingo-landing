@@ -1,19 +1,28 @@
 ---
 import '../styles/global.css';
-import { useTranslations, getLocalizedPath, getOgLocale, toLanguage } from '../i18n/utils';
+import { getLocalizedPath, getOgLocale, toLanguage } from '../i18n/utils';
 import { languages, defaultLang, type Language } from '../i18n/ui';
+import { getPrivacy, getFooter, getUi } from '../content/helpers';
 
 interface Props {
   lang?: Language;
 }
 
 const { lang = toLanguage(Astro.currentLocale) } = Astro.props;
-const t = useTranslations(lang);
 const ogLocale = getOgLocale(lang);
 const canonicalBase = 'https://wombat-apps.com';
 const canonicalPath = lang === 'en' ? '/privacy-policy' : `/${lang}/privacy-policy`;
 const canonicalUrl = `${canonicalBase}${canonicalPath}`;
 const homePath = getLocalizedPath(lang, '/');
+
+// Load content from collections
+const privacy = await getPrivacy(lang);
+const footer = await getFooter(lang);
+const ui = await getUi(lang);
+
+if (!privacy || !footer || !ui) {
+  throw new Error(`Missing content for privacy page in ${lang}`);
+}
 
 // Language selector helper for privacy pages
 function getLanguageLink(targetLang: Language): string {
@@ -27,10 +36,10 @@ function getLanguageLink(targetLang: Language): string {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{t('privacy_policy_title')} - Bingo!!</title>
+    <title>{privacy.title} - Bingo!!</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content={t('privacy_policy_subtitle')}>
+    <meta name="description" content={privacy.subtitle}>
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#822ad2">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -40,8 +49,8 @@ function getLanguageLink(targetLang: Language): string {
     <link rel="canonical" href={canonicalUrl}>
 
     <!-- Open Graph -->
-    <meta property="og:title" content={`${t('privacy_policy_title')} - Bingo!!`}>
-    <meta property="og:description" content={t('privacy_policy_subtitle')}>
+    <meta property="og:title" content={`${privacy.title} - Bingo!!`}>
+    <meta property="og:description" content={privacy.subtitle}>
     <meta property="og:url" content={canonicalUrl}>
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Bingo!!">
@@ -62,7 +71,7 @@ function getLanguageLink(targetLang: Language): string {
 <body class="bg-white font-sans">
     <!-- Skip Link -->
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-bingo-purple focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold">
-        {t('skip_to_content')}
+        {ui.accessibility.skipToContent}
     </a>
 
     <!-- Header -->
@@ -73,10 +82,10 @@ function getLanguageLink(targetLang: Language): string {
                     <img src="/images/bingo-logo.png" alt="Bingo!! Logo" class="h-16 mx-auto">
                 </a>
                 <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                    {t('privacy_policy_title')}
+                    {privacy.title}
                 </h1>
                 <p class="text-xl text-gray-600">
-                    {t('privacy_policy_subtitle')}
+                    {privacy.subtitle}
                 </p>
             </div>
         </div>
@@ -88,78 +97,29 @@ function getLanguageLink(targetLang: Language): string {
             <div class="prose prose-lg mx-auto">
                 <section class="mb-12">
                     <p class="text-gray-600 leading-relaxed mb-8">
-                        {t('privacy_intro')}
+                        {privacy.intro}
                     </p>
                 </section>
 
-                <section class="mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">{t('privacy_info_collection_title')}</h2>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        {t('privacy_info_collection_content')}
-                    </p>
-                    <ul class="text-gray-600 leading-relaxed space-y-2 mb-4">
-                        <li>• <a href="https://www.apple.com/legal/privacy/en/" class="text-bingo-purple hover:text-bingo-pink transition-colors" target="_blank" rel="noopener noreferrer">{t('apple_privacy_policy')}</a></li>
-                    </ul>
-                </section>
+                {privacy.sections.map((section: { key: string; title: string; content: string }) => (
+                    <section class="mb-12">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">{section.title}</h2>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            {section.content}
+                        </p>
+                        {section.key === 'infoCollection' && (
+                            <ul class="text-gray-600 leading-relaxed space-y-2 mb-4">
+                                <li>• <a href="https://www.apple.com/legal/privacy/en/" class="text-bingo-purple hover:text-bingo-pink transition-colors" target="_blank" rel="noopener noreferrer">{privacy.applePrivacyPolicy}</a></li>
+                            </ul>
+                        )}
+                    </section>
+                ))}
 
                 <section class="mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">{t('privacy_log_data_title')}</h2>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        {t('privacy_log_data_content')}
-                    </p>
-                </section>
-
-                <section class="mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">{t('privacy_cookies_title')}</h2>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        {t('privacy_cookies_content')}
-                    </p>
-                </section>
-
-                <section class="mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">{t('privacy_service_providers_title')}</h2>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        {t('privacy_service_providers_content')}
-                    </p>
-                </section>
-
-                <section class="mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">{t('privacy_security_title')}</h2>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        {t('privacy_security_content')}
-                    </p>
-                </section>
-
-                <section class="mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">{t('privacy_links_title')}</h2>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        {t('privacy_links_content')}
-                    </p>
-                </section>
-
-                <section class="mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">{t('privacy_children_title')}</h2>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        {t('privacy_children_content')}
-                    </p>
-                </section>
-
-                <section class="mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">{t('privacy_changes_title')}</h2>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        {t('privacy_changes_content')}
-                    </p>
-                </section>
-
-                <section class="mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">{t('privacy_contact_title')}</h2>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        {t('privacy_contact_content')}
-                    </p>
                     <div class="bg-gray-50 rounded-lg p-6">
                         <p class="text-gray-600 font-semibold">
-                            <strong>{t('contact_email')}</strong> <a href="mailto:support@wombat-apps.com" class="text-bingo-purple hover:text-bingo-pink transition-colors">support@wombat-apps.com</a><br>
-                            <strong>{t('contact_website')}</strong> <a href="http://wombat-apps.com" class="text-bingo-purple hover:text-bingo-pink transition-colors">http://wombat-apps.com</a>
+                            <strong>{privacy.contact.emailLabel}</strong> <a href="mailto:support@wombat-apps.com" class="text-bingo-purple hover:text-bingo-pink transition-colors">support@wombat-apps.com</a><br>
+                            <strong>{privacy.contact.websiteLabel}</strong> <a href="http://wombat-apps.com" class="text-bingo-purple hover:text-bingo-pink transition-colors">http://wombat-apps.com</a>
                         </p>
                     </div>
                 </section>
@@ -173,8 +133,8 @@ function getLanguageLink(targetLang: Language): string {
             <a href={homePath} class="inline-block mb-6">
                 <img src="/images/bingo-logo.png" alt="Bingo!! Logo" class="h-16 mx-auto opacity-80">
             </a>
-            <p class="text-lg text-gray-300 mb-4">{t('footer_rights')}</p>
-            <p class="text-gray-400 mb-6">{t('footer_tagline')}</p>
+            <p class="text-lg text-gray-300 mb-4">{footer.rights}</p>
+            <p class="text-gray-400 mb-6">{footer.tagline}</p>
 
             <!-- Language Selector -->
             <div class="flex justify-center space-x-4">

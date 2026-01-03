@@ -1,0 +1,12 @@
+app: cards
+locale: fr
+title: "Téléchargez bingo!! cards et commencez à jouer aujourd'hui"
+subtitle: "Obtenez l'app gratuitement et profitez de cartons de bingo numériques illimités sur votre appareil."
+otherAppsLabel: "Découvrez également nos autres apps:"
+otherApps:
+  - app: bingo
+    description: "App annonceur de bingo"
+  - app: print
+    description: "Imprimez des cartons de bingo"
+  - app: wombat
+    description: "Rencontrez notre équipe"

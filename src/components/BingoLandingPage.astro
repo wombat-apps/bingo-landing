@@ -1,8 +1,16 @@
 ---
-import '../styles/global.css';
-import { useTranslations, getLocalizedPath, getOgLocale, getAlternateLocales, toLanguage } from '../i18n/utils';
-import { languages, defaultLang, type Language } from '../i18n/ui';
+import LandingPageLayout from '../layouts/LandingPageLayout.astro';
+import { toLanguage } from '../i18n/utils';
+import { type Language } from '../i18n/ui';
+import { apps } from '../config/apps';
 import AppsFamilySection from './AppsFamilySection.astro';
+import CtaSection from './CtaSection.astro';
+import FaqSection from './FaqSection.astro';
+import FeaturesSection from './FeaturesSection.astro';
+import FooterSection from './FooterSection.astro';
+import UseCasesSection from './UseCasesSection.astro';
+import { getFaqs, getSeo, getHero, getNavigation, getUi } from '../content/helpers';
+import type { FaqItem, HeroTag } from '../types';
 
 interface Props {
   lang?: Language;
@@ -10,570 +18,102 @@ interface Props {
 }
 
 const { lang = toLanguage(Astro.currentLocale), enableAutoRedirect = false } = Astro.props;
-const t = useTranslations(lang);
-const ogLocale = getOgLocale(lang);
-const alternateLocales = getAlternateLocales(lang);
-const canonicalBase = 'https://wombat-apps.com';
-const canonicalPath = lang === 'en' ? '/bingo/' : `/${lang}/bingo/`;
-const canonicalUrl = `${canonicalBase}${canonicalPath}`;
-const privacyPath = getLocalizedPath(lang, '/privacy-policy');
-const mainLandingPath = getLocalizedPath(lang, '/');
-const cardsLandingPath = getLocalizedPath(lang, '/cards/');
-const printLandingPath = getLocalizedPath(lang, '/print/');
+const appConfig = apps.bingo;
 
-// App Store Links - iOS links to Bingo!! Lite, Android to Bingo!!
-const iosAppLink = "https://apps.apple.com/app/apple-store/id1505191957?ct=bingo-landing";
-const androidAppLink = "https://play.google.com/store/apps/details?id=com.wombat.bingoapp";
+// Load content from collections
+const seo = await getSeo('bingo', lang);
+const hero = await getHero('bingo', lang);
+const navigation = await getNavigation('bingo', lang);
+const ui = await getUi(lang);
+const faqData = await getFaqs('bingo', lang);
 
-// Data arrays
-const features = [
-  { title: t('bingo_feature1_title'), desc: t('bingo_feature1_desc'), icon: 'balls' },
-  { title: t('bingo_feature2_title'), desc: t('bingo_feature2_desc'), icon: 'qr' },
-  { title: t('bingo_feature3_title'), desc: t('bingo_feature3_desc'), icon: 'tv' },
-  { title: t('bingo_feature4_title'), desc: t('bingo_feature4_desc'), icon: 'voice' },
-  { title: t('bingo_feature5_title'), desc: t('bingo_feature5_desc'), icon: 'mic' }
-];
-
-const useCases = [
-  { title: t('bingo_usecase1_title'), desc: t('bingo_usecase1_desc'), icon: '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>' },
-  { title: t('bingo_usecase2_title'), desc: t('bingo_usecase2_desc'), icon: '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>' },
-  { title: t('bingo_usecase3_title'), desc: t('bingo_usecase3_desc'), icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>' },
-  { title: t('bingo_usecase4_title'), desc: t('bingo_usecase4_desc'), icon: '<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>' },
-  { title: t('bingo_usecase5_title'), desc: t('bingo_usecase5_desc'), icon: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
-  { title: t('bingo_usecase6_title'), desc: t('bingo_usecase6_desc'), icon: '<rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>' }
-];
-
-const faqs = [
-  { q: t('bingo_faq_q1'), a: t('bingo_faq_a1') },
-  { q: t('bingo_faq_q2'), a: t('bingo_faq_a2') },
-  { q: t('bingo_faq_q3'), a: t('bingo_faq_a3') },
-  { q: t('bingo_faq_q4'), a: t('bingo_faq_a4') },
-  { q: t('bingo_faq_q5'), a: t('bingo_faq_a5') },
-  { q: t('bingo_faq_q6'), a: t('bingo_faq_a6') },
-  { q: t('bingo_faq_q7'), a: t('bingo_faq_a7') }
-];
-
-// Language selector helper for /bingo/ routes
-function getLanguageLink(targetLang: Language): string {
-  if (targetLang === defaultLang) return '/bingo/';
-  return `/${targetLang}/bingo/`;
+if (!seo || !hero || !navigation || !ui) {
+  throw new Error(`Missing content for bingo landing page in ${lang}`);
 }
+
+const faqs: FaqItem[] = faqData?.items ?? [];
 ---
 
-<!DOCTYPE html>
-<html lang={lang}>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{t('bingo_meta_title')}</title>
+<LandingPageLayout
+  app="bingo"
+  lang={lang}
+  seo={seo}
+  navigation={navigation}
+  ui={ui}
+  faqs={faqs}
+  enableAutoRedirect={enableAutoRedirect}
+>
+  <Fragment slot="hero-content">
+    <!-- Headline -->
+    <h1 class="text-4xl md:text-5xl lg:text-[49px] font-bold text-white mb-6 leading-tight">
+      {hero.headline}
+    </h1>
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content={t('bingo_meta_description')}>
-    <meta name="keywords" content={t('bingo_meta_keywords')}>
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Wombat Apps">
-    <meta name="theme-color" content="#7424d5">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="canonical" href={canonicalUrl}>
-
-    <!-- Open Graph -->
-    <meta property="og:title" content={t('bingo_og_title')}>
-    <meta property="og:description" content={t('bingo_og_description')}>
-    <meta property="og:image" content={`${canonicalBase}/images/og-bingo.png`}>
-    <meta property="og:url" content={canonicalUrl}>
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Bingo!!">
-    <meta property="og:locale" content={ogLocale}>
-    {alternateLocales.map((locale) => (
-        <meta property="og:locale:alternate" content={locale} />
-    ))}
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content={t('bingo_og_title')}>
-    <meta name="twitter:description" content={t('bingo_og_description')}>
-    <meta name="twitter:image" content={`${canonicalBase}/images/og-bingo.png`}>
-
-    <!-- Hreflang -->
-    <link rel="alternate" hreflang="en" href={`${canonicalBase}/bingo/`}>
-    <link rel="alternate" hreflang="es" href={`${canonicalBase}/es/bingo/`}>
-    <link rel="alternate" hreflang="fr" href={`${canonicalBase}/fr/bingo/`}>
-    <link rel="alternate" hreflang="pt" href={`${canonicalBase}/pt/bingo/`}>
-    <link rel="alternate" hreflang="x-default" href={`${canonicalBase}/bingo/`}>
-
-    <!-- Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Structured Data -->
-    <script is:inline type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Wombat Apps",
-        "url": canonicalBase,
-        "logo": `${canonicalBase}/images/bingo-logo.png`,
-        "description": t('shared_org_description')
-    })} />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Bingo!!",
-        "operatingSystem": "iOS, Android",
-        "applicationCategory": "GameApplication",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "15000" }
-    })} />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.q,
-            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
-        }))
-    })} />
-</head>
-<body class="bg-white font-sans">
-    <!-- Skip Link -->
-    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-[#7424d5] focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold">
-        {t('skip_to_content')}
-    </a>
-
-    <!-- Hero Section -->
-    <header class="bg-gradient-to-r from-[#7424d5] to-[#d34dbc] relative overflow-hidden min-h-[600px] lg:min-h-[678px]">
-        <!-- Decorative circles with blur -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-[15%] left-[40%] w-36 h-36 bg-[#ffdf20] rounded-full opacity-30 blur-[55px]"></div>
-            <div class="absolute top-[45%] left-[35%] w-36 h-36 bg-[#fda5d5] rounded-full opacity-30 blur-[55px]"></div>
-            <div class="absolute bottom-[10%] right-[5%] w-36 h-36 bg-[#fda5d5] rounded-full opacity-30 blur-[55px]"></div>
-        </div>
-
-        <div class="container mx-auto px-4 py-12 lg:py-16 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
-                <!-- Left column - Text content -->
-                <div class="lg:w-1/2 text-center lg:text-left">
-                    <!-- Logo -->
-                    <div class="mb-8">
-                        <img src="/images/bingo-logo.png" alt="Bingo!!" class="h-12 lg:h-16 w-auto mx-auto lg:mx-0">
-                    </div>
-
-                    <!-- Headline -->
-                    <h1 class="text-4xl md:text-5xl lg:text-[49px] font-bold text-white mb-6 leading-tight">
-                        {t('bingo_headline')}
-                    </h1>
-
-                    <!-- Subtitle -->
-                    <p class="text-lg md:text-xl text-[#f3e8ff] mb-2 leading-relaxed">
-                        {t('bingo_subtitle')}
-                    </p>
-                    <p class="text-xl md:text-2xl text-[#f3e8ff] font-bold mb-6">
-                        {t('bingo_subtitle_cta')}
-                    </p>
-
-                    <!-- Download buttons -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6">
-                        <a href={iosAppLink} class="flex items-center bg-black text-white px-4 py-3 rounded-xl hover:bg-gray-800 transition-colors min-w-[172px]">
-                            <svg class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                            </svg>
-                            <div class="text-left">
-                                <div class="text-xs opacity-80">{t('download_on_appstore')}</div>
-                                <div class="text-lg font-semibold -mt-1">App Store</div>
-                            </div>
-                        </a>
-                        <a href={androidAppLink} class="flex items-center bg-black text-white px-4 py-3 rounded-xl hover:bg-gray-800 transition-colors min-w-[188px]">
-                            <svg class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
-                            </svg>
-                            <div class="text-left">
-                                <div class="text-xs opacity-80">{t('get_it_on_google')}</div>
-                                <div class="text-lg font-semibold -mt-1">Google Play</div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Feature tags -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3">
-                        <div class="flex items-center bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium">
-                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-width="2"/>
-                                <rect x="7" y="7" width="3" height="3" stroke-width="2"/>
-                                <rect x="14" y="7" width="3" height="3" stroke-width="2"/>
-                                <rect x="7" y="14" width="3" height="3" stroke-width="2"/>
-                                <rect x="14" y="14" width="3" height="3" stroke-width="2"/>
-                            </svg>
-                            {t('bingo_hero_tag_qr')}
-                        </div>
-                        <div class="flex items-center bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium">
-                            {t('bingo_hero_tag_balls')}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right column - App screenshots -->
-                <div class="lg:w-1/2 relative">
-                    <div class="relative w-full max-w-lg mx-auto lg:max-w-none">
-                        <img
-                            src="/images/bigo-hero.png"
-                            alt="Bingo!! App Screenshots"
-                            class="w-full h-auto max-w-[450px] mx-auto drop-shadow-2xl"
-                            loading="eager"
-                        >
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <button id="mobileMenuBtn" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-500 border-gray-400 hover:text-[#7424d5] hover:border-[#7424d5]" aria-label={t('toggle_menu')} aria-expanded="false" aria-controls="mobileMenu">
-                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-                    </svg>
-                </button>
-
-                <ul class="hidden md:flex flex-1 justify-center gap-8">
-                    <li><a href="#features" class="nav-link text-gray-700 hover:text-[#7424d5] font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('bingo_nav_features')}</a></li>
-                    <li><a href="#apps" class="nav-link text-gray-700 hover:text-[#7424d5] font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('bingo_nav_apps')}</a></li>
-                    <li><a href="#usecases" class="nav-link text-gray-700 hover:text-[#7424d5] font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('bingo_nav_usecases')}</a></li>
-                    <li><a href="#faq" class="nav-link text-gray-700 hover:text-[#7424d5] font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('bingo_nav_faq')}</a></li>
-                </ul>
-            </div>
-
-            <div id="mobileMenu" class="hidden md:hidden">
-                <ul class="flex flex-col space-y-2 pb-4">
-                    <li><a href="#features" class="nav-link block text-gray-700 hover:text-[#7424d5] font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('bingo_nav_features')}</a></li>
-                    <li><a href="#apps" class="nav-link block text-gray-700 hover:text-[#7424d5] font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('bingo_nav_apps')}</a></li>
-                    <li><a href="#usecases" class="nav-link block text-gray-700 hover:text-[#7424d5] font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('bingo_nav_usecases')}</a></li>
-                    <li><a href="#faq" class="nav-link block text-gray-700 hover:text-[#7424d5] font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">{t('bingo_nav_faq')}</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <main id="main">
-        <!-- Features Section -->
-        <section id="features" class="py-20 bg-[#f9fafb]">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-[#101828] mb-4">{t('bingo_features_title')}</h2>
-                    <p class="text-xl text-[#4a5565] max-w-3xl mx-auto">{t('bingo_features_subtitle')}</p>
-                </div>
-
-                <!-- First row: 3 cards -->
-                <div class="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto mb-6 lg:mb-8">
-                    {features.slice(0, 3).map((feature) => (
-                        <div class="bg-white rounded-2xl p-6 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_-1px_rgba(0,0,0,0.1)] hover:shadow-lg transition-shadow">
-                            <div class="w-16 h-16 bg-gradient-to-br from-[#7424d5] to-[#d34dbc] rounded-xl flex items-center justify-center mb-5">
-                                {feature.icon === 'balls' && (
-                                    <div class="flex gap-1">
-                                        <div class="w-4 h-4 bg-white rounded-full"></div>
-                                        <div class="w-4 h-4 bg-white rounded-full"></div>
-                                    </div>
-                                )}
-                                {feature.icon === 'qr' && (
-                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                        <rect x="3" y="3" width="7" height="7" rx="1"/>
-                                        <rect x="14" y="3" width="7" height="7" rx="1"/>
-                                        <rect x="3" y="14" width="7" height="7" rx="1"/>
-                                        <rect x="14" y="14" width="7" height="7" rx="1"/>
-                                    </svg>
-                                )}
-                                {feature.icon === 'tv' && (
-                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                        <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/>
-                                        <polyline points="17 2 12 7 7 2"/>
-                                    </svg>
-                                )}
-                            </div>
-                            <h3 class="text-lg font-semibold text-[#101828] mb-3">{feature.title}</h3>
-                            <p class="text-[#4a5565] leading-relaxed">{feature.desc}</p>
-                        </div>
-                    ))}
-                </div>
-
-                <!-- Second row: 2 centered cards -->
-                <div class="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
-                    {features.slice(3, 5).map((feature) => (
-                        <div class="bg-white rounded-2xl p-6 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_-1px_rgba(0,0,0,0.1)] hover:shadow-lg transition-shadow">
-                            <div class="w-16 h-16 bg-gradient-to-br from-[#7424d5] to-[#d34dbc] rounded-xl flex items-center justify-center mb-5">
-                                {feature.icon === 'voice' && (
-                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-                                    </svg>
-                                )}
-                                {feature.icon === 'mic' && (
-                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
-                                    </svg>
-                                )}
-                            </div>
-                            <h3 class="text-lg font-semibold text-[#101828] mb-3">{feature.title}</h3>
-                            <p class="text-[#4a5565] leading-relaxed">{feature.desc}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-
-        <!-- Apps Family Section -->
-        <AppsFamilySection lang={lang} />
-
-        <!-- Use Cases Section -->
-        <section id="usecases" class="py-20 bg-gradient-to-r from-[#7424d5] to-[#d34dbc]">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">{t('bingo_usecases_title')}</h2>
-                    <p class="text-xl text-[#f3e8ff] max-w-3xl mx-auto">{t('bingo_usecases_subtitle')}</p>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-                    {useCases.map((useCase) => (
-                        <div class="bg-white/10 rounded-2xl p-8 hover:bg-white/15 transition-colors">
-                            <div class="w-14 h-14 bg-white/15 rounded-xl flex items-center justify-center mb-5">
-                                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" set:html={useCase.icon} />
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-3">{useCase.title}</h3>
-                            <p class="text-[#f3e8ff] leading-relaxed">{useCase.desc}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section id="faq" class="py-20 bg-[#f9fafb]">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-[#101828] mb-4">{t('bingo_faq_title')}</h2>
-                    <p class="text-xl text-[#4a5565] max-w-3xl mx-auto">{t('bingo_faq_subtitle')}</p>
-                </div>
-
-                <div class="max-w-3xl mx-auto space-y-4">
-                    {faqs.map((faq, index) => (
-                        <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden">
-                            <button
-                                class="faq-btn w-full px-6 py-5 flex justify-between items-center text-left hover:bg-gray-50 transition-colors"
-                                data-index={index}
-                                aria-expanded="false"
-                            >
-                                <span class="font-semibold text-[#101828] pr-4">{faq.q}</span>
-                                <svg class="faq-icon w-5 h-5 text-[#7424d5] flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                                </svg>
-                            </button>
-                            <div class="faq-content hidden px-6 pb-5">
-                                <p class="text-[#4a5565] leading-relaxed">{faq.a}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                <div class="text-center mt-10">
-                    <p class="text-[#4a5565]">
-                        {t('bingo_faq_contact')} <a href="mailto:support@wombat-apps.com" class="text-[#7424d5] font-semibold hover:underline">support@wombat-apps.com</a>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="py-20 bg-gradient-to-r from-[#7424d5] to-[#d34dbc] relative overflow-hidden">
-            <div class="container mx-auto px-4 relative z-10">
-                <div class="text-center">
-                    <!-- Icon -->
-                    <div class="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-8">
-                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
-                    </div>
-
-                    <!-- Title -->
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 max-w-4xl mx-auto leading-tight">
-                        {t('bingo_cta_title')}
-                    </h2>
-
-                    <!-- Subtitle -->
-                    <p class="text-lg md:text-xl text-[#f3e8ff] mb-10 max-w-2xl mx-auto">
-                        {t('bingo_cta_subtitle')}
-                    </p>
-
-                    <!-- Download buttons -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-                        <a href={iosAppLink} class="flex items-center bg-white text-[#7424d5] px-6 py-4 rounded-xl hover:bg-gray-100 transition-colors min-w-[195px]">
-                            <svg class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                            </svg>
-                            <div class="text-left">
-                                <div class="text-xs opacity-70">{t('download_on_appstore')}</div>
-                                <div class="text-lg font-semibold -mt-1">App Store</div>
-                            </div>
-                        </a>
-                        <a href={androidAppLink} class="flex items-center bg-white text-[#7424d5] px-6 py-4 rounded-xl hover:bg-gray-100 transition-colors min-w-[212px]">
-                            <svg class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
-                            </svg>
-                            <div class="text-left">
-                                <div class="text-xs opacity-70">{t('get_it_on_google')}</div>
-                                <div class="text-lg font-semibold -mt-1">Google Play</div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Other apps links -->
-                    <div class="text-center">
-                        <p class="text-[#f3e8ff] mb-6">{t('bingo_cta_also_check')}</p>
-                        <div class="flex flex-wrap items-center justify-center gap-6">
-                            <a href={cardsLandingPath} class="bg-white/10 hover:bg-white/20 rounded-2xl px-6 py-4 transition-colors">
-                                <p class="text-white font-bold">bingo!! cards</p>
-                                <p class="text-[#f3e8ff] text-sm">{t('bingo_cta_cards_desc')}</p>
-                            </a>
-                            <a href={printLandingPath} class="bg-white/10 hover:bg-white/20 rounded-2xl px-6 py-4 transition-colors">
-                                <p class="text-white font-bold">bingo!! print</p>
-                                <p class="text-[#f3e8ff] text-sm">{t('bingo_cta_print_desc')}</p>
-                            </a>
-                            <a href={mainLandingPath} class="bg-white/10 hover:bg-white/20 rounded-2xl px-6 py-4 transition-colors">
-                                <p class="text-white font-bold">Wombat Apps</p>
-                                <p class="text-[#f3e8ff] text-sm">{t('bingo_cta_wombat_desc')}</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 py-12">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-                <div class="flex items-center gap-4">
-                    <img src="/images/bingo-logo.png" alt="Bingo!!" class="h-8 w-auto">
-                </div>
-
-                <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-600">
-                    <span>&copy; {new Date().getFullYear()} Wombat Apps</span>
-                    <a href={privacyPath} class="hover:text-[#7424d5] transition-colors">{t('privacy_policy_title')}</a>
-                    <a href={mainLandingPath} class="hover:text-[#7424d5] transition-colors">{t('bingo_view_all_apps')}</a>
-                </div>
-
-                <!-- Language Selector -->
-                <div class="flex items-center gap-2">
-                    {Object.keys(languages).map((code) => (
-                        <a
-                            href={getLanguageLink(code as Language)}
-                            class={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
-                                lang === code
-                                    ? 'bg-[#7424d5] text-white'
-                                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                            }`}
-                            data-lang={code}
-                        >
-                            {code.toUpperCase()}
-                        </a>
-                    ))}
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        mobileMenuBtn?.addEventListener('click', () => {
-            const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
-            mobileMenuBtn.setAttribute('aria-expanded', (!isExpanded).toString());
-            mobileMenu?.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when clicking a nav link
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu?.classList.add('hidden');
-                mobileMenuBtn?.setAttribute('aria-expanded', 'false');
-            });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(this: HTMLAnchorElement, e: Event) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId && targetId !== '#') {
-                    const target = document.querySelector(targetId);
-                    target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // FAQ Accordion
-        const faqBtns = document.querySelectorAll('.faq-btn');
-        faqBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const faqItem = btn.closest('.faq-item');
-                const content = faqItem?.querySelector('.faq-content');
-                const icon = btn.querySelector('.faq-icon');
-                const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-
-                // Close all other FAQs
-                faqBtns.forEach(otherBtn => {
-                    if (otherBtn !== btn) {
-                        const otherItem = otherBtn.closest('.faq-item');
-                        const otherContent = otherItem?.querySelector('.faq-content');
-                        const otherIcon = otherBtn.querySelector('.faq-icon');
-                        otherBtn.setAttribute('aria-expanded', 'false');
-                        otherContent?.classList.add('hidden');
-                        otherIcon?.classList.remove('rotate-180');
-                    }
-                });
-
-                // Toggle current FAQ
-                btn.setAttribute('aria-expanded', (!isExpanded).toString());
-                content?.classList.toggle('hidden');
-                icon?.classList.toggle('rotate-180');
-            });
-        });
-
-        // Language preference storage
-        const langButtons = document.querySelectorAll('[data-lang]');
-        langButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const lang = btn.getAttribute('data-lang');
-                if (lang) {
-                    localStorage.setItem('preferred-language', lang);
-                }
-            });
-        });
-    </script>
-
-    {enableAutoRedirect && (
-        <script is:inline>
-            if (window.location.pathname === '/bingo/' || window.location.pathname === '/bingo/index.html') {
-                const noRedirect = new URLSearchParams(window.location.search).has('noredirect');
-                const hasStoredLang = localStorage.getItem('preferred-language');
-
-                if (!noRedirect && !hasStoredLang) {
-                    const browserLang = navigator.language.split('-')[0];
-                    if (browserLang === 'es') {
-                        window.location.href = '/es/bingo/';
-                    } else if (browserLang === 'fr') {
-                        window.location.href = '/fr/bingo/';
-                    } else if (browserLang === 'pt') {
-                        window.location.href = '/pt/bingo/';
-                    }
-                }
-            }
-        </script>
+    <!-- Subtitle -->
+    <p class="text-lg md:text-xl text-[#f3e8ff] mb-2 leading-relaxed">
+      {hero.subtitle}
+    </p>
+    {hero.subtitleCta && (
+      <p class="text-xl md:text-2xl text-[#f3e8ff] font-bold mb-6">
+        {hero.subtitleCta}
+      </p>
     )}
-</body>
-</html>
+
+    <!-- Download buttons -->
+    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6">
+      <a href={appConfig.stores.ios} class="flex items-center bg-black text-white px-4 py-3 rounded-xl hover:bg-gray-800 transition-colors min-w-[172px]">
+        <svg class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        <div class="text-left">
+          <div class="text-xs opacity-80">{ui.buttons.downloadOnAppstore}</div>
+          <div class="text-lg font-semibold -mt-1">App Store</div>
+        </div>
+      </a>
+      <a href={appConfig.stores.android} class="flex items-center bg-black text-white px-4 py-3 rounded-xl hover:bg-gray-800 transition-colors min-w-[188px]">
+        <svg class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+        </svg>
+        <div class="text-left">
+          <div class="text-xs opacity-80">{ui.buttons.getItOnGoogle}</div>
+          <div class="text-lg font-semibold -mt-1">Google Play</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Feature tags -->
+    {hero.tags && hero.tags.length > 0 && (
+      <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+        {hero.tags.map((tag: HeroTag, index: number) => (
+          <div class="flex items-center bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium">
+            {index === 0 && (
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-width="2"/>
+                <rect x="7" y="7" width="3" height="3" stroke-width="2"/>
+                <rect x="14" y="7" width="3" height="3" stroke-width="2"/>
+                <rect x="7" y="14" width="3" height="3" stroke-width="2"/>
+                <rect x="14" y="14" width="3" height="3" stroke-width="2"/>
+              </svg>
+            )}
+            {tag.label}
+          </div>
+        ))}
+      </div>
+    )}
+  </Fragment>
+
+  <!-- Main content sections -->
+  <FeaturesSection app="bingo" lang={lang} gradientFrom={appConfig.colors.gradientFrom} gradientTo={appConfig.colors.gradientTo} />
+  <AppsFamilySection lang={lang} />
+  <UseCasesSection app="bingo" lang={lang} gradientFrom={appConfig.colors.gradientFrom} gradientTo={appConfig.colors.gradientTo} />
+  <FaqSection app="bingo" lang={lang} />
+  <CtaSection
+    app="bingo"
+    lang={lang}
+    gradientFrom={appConfig.colors.gradientFrom}
+    gradientTo={appConfig.colors.gradientTo}
+    iosLink={appConfig.stores.ios}
+    androidLink={appConfig.stores.android}
+  />
+  <FooterSection app="bingo" lang={lang} />
+</LandingPageLayout>

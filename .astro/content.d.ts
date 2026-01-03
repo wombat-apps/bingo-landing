@@ -162,7 +162,103 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		
+		"appsfamily": Record<string, {
+  id: string;
+  body?: string;
+  collection: "appsfamily";
+  data: InferEntrySchema<"appsfamily">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"cta": Record<string, {
+  id: string;
+  body?: string;
+  collection: "cta";
+  data: InferEntrySchema<"cta">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"faqs": Record<string, {
+  id: string;
+  body?: string;
+  collection: "faqs";
+  data: InferEntrySchema<"faqs">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"features": Record<string, {
+  id: string;
+  body?: string;
+  collection: "features";
+  data: InferEntrySchema<"features">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"footer": Record<string, {
+  id: string;
+  body?: string;
+  collection: "footer";
+  data: InferEntrySchema<"footer">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"hero": Record<string, {
+  id: string;
+  body?: string;
+  collection: "hero";
+  data: InferEntrySchema<"hero">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"navigation": Record<string, {
+  id: string;
+  body?: string;
+  collection: "navigation";
+  data: InferEntrySchema<"navigation">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"privacy": Record<string, {
+  id: string;
+  body?: string;
+  collection: "privacy";
+  data: InferEntrySchema<"privacy">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"seo": Record<string, {
+  id: string;
+  body?: string;
+  collection: "seo";
+  data: InferEntrySchema<"seo">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"team": Record<string, {
+  id: string;
+  body?: string;
+  collection: "team";
+  data: InferEntrySchema<"team">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"ui": Record<string, {
+  id: string;
+  body?: string;
+  collection: "ui";
+  data: InferEntrySchema<"ui">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"usecases": Record<string, {
+  id: string;
+  body?: string;
+  collection: "usecases";
+  data: InferEntrySchema<"usecases">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
@@ -194,6 +290,6 @@ declare module 'astro:content' {
 		LiveContentConfig['collections'][C]['loader']
 	>;
 
-	export type ContentConfig = typeof import("../src/content.config.mjs");
+	export type ContentConfig = typeof import("../src/content/config.js");
 	export type LiveContentConfig = never;
 }

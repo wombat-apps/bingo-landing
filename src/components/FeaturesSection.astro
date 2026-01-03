@@ -1,0 +1,63 @@
+---
+import { getFeatures } from '../content/helpers';
+import type { Language, FeatureItem, AppName } from '../types';
+import FeatureCard from './FeatureCard.astro';
+
+interface Props {
+  app: AppName;
+  lang: Language;
+  gradientFrom: string;
+  gradientTo: string;
+}
+
+const { app, lang, gradientFrom, gradientTo } = Astro.props;
+const data = await getFeatures(app, lang);
+
+if (!data) {
+  throw new Error(`Features data not found for app: ${app}, lang: ${lang}`);
+}
+
+const { title, subtitle, items } = data;
+
+// Bingo has 5 items with a 3+2 layout, Cards/Print have 6 items with a 3x2 grid
+const isBingo = app === 'bingo';
+const firstRowItems = isBingo ? items.slice(0, 3) : items;
+const secondRowItems = isBingo ? items.slice(3, 5) : [];
+
+// Icon background gradient (same for all apps, different colors passed via props)
+const iconBgStyle = `background: linear-gradient(to right, ${gradientFrom}, ${gradientTo})`;
+---
+
+<section id="features" class="py-20 bg-[#f9fafb]">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-[#101828] mb-4">{title}</h2>
+      <p class="text-xl text-[#4a5565] max-w-3xl mx-auto">{subtitle}</p>
+    </div>
+
+    {isBingo ? (
+      <>
+        {/* Bingo: First row with 3 cards */}
+        <div class="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto mb-6 lg:mb-8">
+          {firstRowItems.map((feature: FeatureItem) => (
+            <FeatureCard feature={feature} iconBgStyle={iconBgStyle} />
+          ))}
+        </div>
+
+        {/* Bingo: Second row with 2 centered cards */}
+        <div class="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+          {secondRowItems.map((feature: FeatureItem) => (
+            <FeatureCard feature={feature} iconBgStyle={iconBgStyle} />
+          ))}
+        </div>
+      </>
+    ) : (
+      /* Cards/Print: Standard 3-column grid */
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        {items.map((feature: FeatureItem) => (
+          <FeatureCard feature={feature} iconBgStyle={iconBgStyle} />
+        ))}
+      </div>
+    )}
+  </div>
+</section>

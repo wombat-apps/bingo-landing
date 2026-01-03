@@ -1,0 +1,28 @@
+app: bingo
+locale: en
+title: Frequently Asked Questions
+subtitle: Everything you need to know about Bingo!!
+contactText: Still have questions?
+contactLink: Contact Support
+
+items:
+  - question: How does Bingo!! work as a caller?
+    answer: Bingo!! acts as your digital bingo caller machine. It randomly draws numbers, announces them with real voices, and displays them on screen. Connect to a TV for the whole room to see!
+
+  - question: Can I use my own voice?
+    answer: Yes! Record your own number calls and custom rhymes for a personalized experience. Perfect for family traditions or special events.
+
+  - question: What's the difference between Bingo!! and Bingo!! Lite?
+    answer: Bingo!! is a one-time purchase with all features unlocked. Bingo!! Lite is free to download with optional in-app purchases to unlock additional features.
+
+  - question: Does it work offline?
+    answer: Absolutely! Once downloaded, Bingo!! works completely offline. Perfect for any location - no internet connection required during gameplay.
+
+  - question: Can I verify bingo cards?
+    answer: Yes! Each card has a unique QR code. Simply scan it with the app to instantly verify if it's a winning card.
+
+  - question: What languages are supported?
+    answer: Bingo!! supports multiple languages including English, Spanish, French, Portuguese, and more. Each with native voice callers!
+
+  - question: Can I connect to a TV or projector?
+    answer: Absolutely! Use AirPlay, HDMI, or screen mirroring to display the bingo board on any external screen.

@@ -1,0 +1,24 @@
+app: bingo
+locale: es
+title: Funciones potentes para cada necesidad
+subtitle: Todo lo que necesitas para organizar la partida de bingo perfecta
+items:
+  - title: Personaliza tu juego
+    description: Elige entre el modo de 90 o 75 bolas, la velocidad y diferentes voces o idiomas
+    icon: balls
+
+  - title: Escanea y verifica el cartón
+    description: Escanea el QR de cualquier cartón para verificar al instante si es un BINGO ganador
+    icon: qr
+
+  - title: Soporte de pantalla externa
+    description: Puedes ver el tablero en televisión si tienes conexión Airplay o incluso por cable
+    icon: tv
+
+  - title: Voces reales
+    description: Nuestro amigo Adam hace bromas y rimas para que te diviertas mucho con tu familia o amigos
+    icon: voice
+
+  - title: Crea tus propias rimas
+    description: Si prefieres tu propia voz, graba los números y las rimas... ¡va a ser divertido!
+    icon: mic

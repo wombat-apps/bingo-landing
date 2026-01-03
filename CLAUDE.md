@@ -15,7 +15,7 @@ npm run preview            # Preview production build locally
 npm run lint               # Run ESLint on src/
 npm run lint:fix           # Run ESLint with auto-fix
 npm run typecheck          # Run Astro type checking
-npm run check:translations # Check for unused translation keys
+npm run check:collections  # Validate content collections exist
 ```
 
 ## Architecture
@@ -39,48 +39,74 @@ npm run check:translations # Check for unused translation keys
 - **Supported languages**: English (default), Spanish, French, Portuguese
 - **URL routing**: `/` (en), `/es/`, `/fr/`, `/pt/` - configured in `astro.config.mjs`
 - **Dynamic routes**: Non-default locales use `[locale]/` pattern for automatic generation
-- **Translation files**:
-  - `src/i18n/ui.ts`: All translation strings for en, es, fr, pt
-  - `src/i18n/utils.ts`: Helper functions (`useTranslations`, `toLanguage`, `getLocalizedPath`, etc.)
+- **Language utilities** (`src/i18n/`):
+  - `ui.ts`: Language definitions, `Language` type, and app store badge URLs
+  - `utils.ts`: Helper functions (`toLanguage`, `getLocalizedPath`, `getAppStoreBadge`, etc.)
+
+### Content Collections (Primary Content System)
+All translatable content lives in `src/content/` as YAML files with Zod schemas in `src/content/config.ts`.
+
+**App-specific collections** (named `{app}-{locale}.yaml`):
+- `faqs/`: FAQ sections with questions/answers
+- `features/`: Feature highlights with icons
+- `usecases/`: Use case cards with icons
+- `seo/`: Meta tags, Open Graph data (supports `hub`)
+- `hero/`: Headlines, subtitles, tags (supports `hub`)
+- `navigation/`: Navigation menu items (supports `hub`)
+- `cta/`: Call-to-action sections
+
+**Locale-only collections** (named `{locale}.yaml`):
+- `appsfamily/`: Apps showcase section
+- `team/`: Team member info
+- `footer/`: Footer links and text
+- `privacy/`: Privacy policy content
+- `ui/`: UI strings (buttons, accessibility labels)
+
+**Helpers** in `src/content/helpers.ts`:
+```typescript
+// App + locale helpers
+getFaqs(app, locale), getFeatures(app, locale), getUseCases(app, locale)
+getCta(app, locale), getSeo(app, locale), getHero(app, locale), getNavigation(app, locale)
+
+// Locale-only helpers
+getAppsFamily(locale), getTeam(locale), getFooter(locale), getPrivacy(locale), getUi(locale)
+```
+
+### App Configuration
+Centralized app config in `src/config/apps.ts`:
+- Store URLs, colors, logos, paths for each app (bingo, cards, print)
+- Use `getAppConfig(app)` and `getAppPath(app, lang)` helpers
 
 ### Page Structure
 - **Components**: Reusable templates in `src/components/`
-  - `WombatHubPage.astro`: Main hub page (apps showcase, team, footer)
-  - `BingoLandingPage.astro`: Bingo!! app landing page
-  - `CardsLandingPage.astro`: Bingo!! Cards app landing page
-  - `PrintLandingPage.astro`: Bingo!! Print app landing page
+  - `WombatHubPage.astro`: Main hub page
+  - `BingoLandingPage.astro`, `CardsLandingPage.astro`, `PrintLandingPage.astro`: App landing pages
   - `PrivacyPage.astro`: Privacy policy template
-  - `AppsFamilySection.astro`: Reusable apps showcase section
   - Components use `Astro.currentLocale` via `toLanguage()` helper
 - **Routes**: File-based in `src/pages/`
-  - `index.astro` → `/` (Wombat Apps hub, has `enableAutoRedirect`)
-  - `bingo/index.astro` → `/bingo` (Bingo!! landing)
-  - `cards/index.astro` → `/cards` (Bingo!! Cards landing)
-  - `print/index.astro` → `/print` (Bingo!! Print landing)
-  - `privacy-policy.astro` → `/privacy-policy`
-  - `[locale]/index.astro` → `/es/`, `/fr/`, `/pt/` (hub dynamic route)
-  - `[locale]/bingo/`, `[locale]/cards/`, `[locale]/print/` → app landings per locale
-  - `[locale]/privacy-policy.astro` → privacy policy per locale
+  - `index.astro` → `/` (hub, has `enableAutoRedirect`)
+  - `bingo/`, `cards/`, `print/` → app landing pages
+  - `[locale]/` → dynamic routes for non-English locales
+
+### Types
+Centralized types in `src/types/index.ts`:
+- `AppName`: `'bingo' | 'cards' | 'print'`
+- `AppNameWithHub`: `AppName | 'hub'`
+- Interfaces for content structures (FaqItem, FeatureItem, etc.)
 
 ## Key Development Notes
 
-### Adding Translations
-1. Add keys to all four language objects in `src/i18n/ui.ts`
-2. Use in components: `const t = useTranslations(lang); t('your_key')`
-3. For localized links: `getLocalizedPath(lang, '/path')`
-4. Run `npm run check:translations` to verify no unused keys remain
-
-### Removing Translations
-When removing UI elements that use translations:
-1. Remove the usage from the component (e.g., `t('key_name')`)
-2. Remove the key from ALL four language objects in translation files
-3. Run `npm run check:translations` to verify cleanup is complete
-4. The CI/CD pipeline will fail if unused translation keys are detected
+### Adding/Editing Content
+1. Edit YAML files in `src/content/{collection}/`
+2. Follow schema in `src/content/config.ts`
+3. Run `npm run build` to validate schemas (Zod validates at build time)
+4. Run `npm run check:collections` to verify all required files exist
 
 ### Adding New Languages
-1. Add the language to `languages` object in `src/i18n/ui.ts`
-2. Add all translation keys for the new language
-3. Dynamic routes (`[locale]/`) will automatically generate pages for the new language
+1. Add language to `languages` object in `src/i18n/ui.ts`
+2. Add to `locales` array in `astro.config.mjs`
+3. Create YAML files for all content collections with the new locale
+4. Dynamic routes (`[locale]/`) will automatically generate pages
 
 ### Adding New Pages
 1. Create English page: `src/pages/new-page.astro`
@@ -90,11 +116,11 @@ When removing UI elements that use translations:
 ### SEO
 - Each page includes meta tags, Open Graph, Twitter Card, and JSON-LD structured data
 - Hreflang links automatically generated for language alternates
-- Sitemap dynamically generated via `@astrojs/sitemap` integration (outputs to `dist/sitemap-index.xml` at build)
-- LLM documentation generated via `@4hse/astro-llms-txt` (`/llms.txt`, `/llms-full.txt`, `/llms-small.txt`)
+- Sitemap dynamically generated via `@astrojs/sitemap` integration
+- Static LLM documentation at `public/llms.txt`
 
 ### Redirects
-Legacy routes are configured in `astro.config.mjs`:
+Legacy routes configured in `astro.config.mjs`:
 - `/bingo-print/` → `/print/` (all locales)
 
 ## Commit Messages

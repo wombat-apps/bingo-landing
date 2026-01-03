@@ -1,0 +1,9 @@
+app: bingo
+locale: fr
+meta:
+  title: "Bingo!! - La Meilleure App de Bingo pour iOS et Android"
+  description: "Bingo!! est la meilleure app de bingo pour iOS, tvOS et Android. Voix réelles, affichage TV via AirPlay ou câble, et scanner QR pour vérifier les gagnants. Gratuit!"
+  keywords: "app bingo, machine à bingo, annonceur de bingo, bingo automatique, bingo 90 boules, bingo 75 boules, bingo iOS, bingo Android, vérification QR bingo, bingo sur TV, bingo AirPlay, soirée bingo famille, bingo gratuit"
+og:
+  title: "Bingo!! - La Meilleure Machine à Bingo"
+  description: "Les meilleures soirées bingo en famille! Annonceur automatique, connexion TV et vérification instantanée des cartons par QR."

@@ -1,0 +1,9 @@
+app: hub
+locale: fr
+meta:
+  title: "Wombat Apps - Applications de Bingo pour iOS et Android"
+  description: "Wombat Apps crée la meilleure expérience de bingo pour iOS et Android. Découvrez notre famille d'apps : Bingo!! annonceur, cartons numériques et cartons imprimables."
+  keywords: "wombat apps, apps bingo, annonceur bingo, cartons bingo, imprimer bingo, apps iOS, apps Android"
+og:
+  title: "Wombat Apps - L'Expérience Bingo Complète"
+  description: "Découvrez notre famille d'apps de bingo : Bingo!! annonceur, cartons numériques et cartons imprimables. Disponible sur iOS et Android."

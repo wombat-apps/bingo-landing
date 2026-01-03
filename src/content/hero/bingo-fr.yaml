@@ -1,0 +1,8 @@
+app: bingo
+locale: fr
+headline: "Le meilleur appelant Bingo numérique!"
+subtitle: "Profitez des meilleures soirées bingo à la maison avec votre famille et vos amis!"
+subtitleCta: "Téléchargement gratuit!"
+tags:
+  - label: "Codes QR"
+  - label: "90 et 75 Boules"

@@ -1,0 +1,118 @@
+---
+import { getLocalizedPath } from '../i18n/utils';
+import { type Language } from '../i18n/ui';
+import AppleIcon from './icons/AppleIcon.astro';
+import GooglePlayIcon from './icons/GooglePlayIcon.astro';
+import { getCta, getUi } from '../content/helpers';
+
+interface Props {
+  app: 'bingo' | 'cards' | 'print';
+  lang: Language;
+  gradientFrom: string;
+  gradientTo: string;
+  iosLink?: string;
+  androidLink?: string;
+}
+
+const { app, lang, gradientFrom, gradientTo, iosLink, androidLink } = Astro.props;
+
+// Load content from collections
+const cta = await getCta(app, lang);
+const ui = await getUi(lang);
+
+if (!cta || !ui) {
+  throw new Error(`Missing CTA content for ${app} in ${lang}`);
+}
+
+const mainLandingPath = getLocalizedPath(lang, '/');
+const bingoLandingPath = getLocalizedPath(lang, '/bingo/');
+const cardsLandingPath = getLocalizedPath(lang, '/cards/');
+const printLandingPath = getLocalizedPath(lang, '/print/');
+
+// Map app names to paths and display names
+const appPaths: Record<string, string> = {
+  bingo: bingoLandingPath,
+  cards: cardsLandingPath,
+  print: printLandingPath,
+  wombat: mainLandingPath,
+};
+
+const appDisplayNames: Record<string, string> = {
+  bingo: 'bingo!!',
+  cards: 'bingo!! cards',
+  print: 'bingo!! print',
+  wombat: 'Wombat Apps',
+};
+---
+
+<section class="py-20 relative overflow-hidden" style={`background: linear-gradient(to right, ${gradientFrom}, ${gradientTo})`}>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center flex flex-col items-center gap-[38px]">
+            <!-- Mobile icon -->
+            <div class="w-20 h-20 bg-white/20 rounded-3xl flex items-center justify-center mx-auto">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke-width="2"/>
+                    <line x1="12" y1="18" x2="12" y2="18" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+
+            <h2 class="text-5xl font-bold text-white leading-[48px] tracking-tight">
+                {cta.title}
+            </h2>
+            <p class="text-xl leading-7 max-w-2xl mx-auto" style="color: #f3e8ff">
+                {cta.subtitle}
+            </p>
+
+            <!-- Store buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                {iosLink ? (
+                    <a href={iosLink} class="flex items-center gap-3 bg-white text-gray-900 px-6 h-[76px] rounded-[14px] hover:bg-gray-100 transition-colors min-w-[200px] shadow-lg">
+                        <AppleIcon />
+                        <div class="text-left">
+                            <div class="text-xs opacity-75">{ui.buttons.downloadOnAppstore}</div>
+                            <div class="text-xl -mt-0.5">App Store</div>
+                        </div>
+                    </a>
+                ) : (
+                    <div class="flex items-center gap-3 bg-white/20 text-white/70 px-6 h-[76px] rounded-[14px] min-w-[200px] cursor-not-allowed">
+                        <AppleIcon class="w-8 h-8 opacity-60" />
+                        <div class="text-left">
+                            <div class="text-xs opacity-60">App Store</div>
+                            <div class="text-xl -mt-0.5">{ui.buttons.comingSoon}</div>
+                        </div>
+                    </div>
+                )}
+                {androidLink ? (
+                    <a href={androidLink} class="flex items-center gap-3 bg-white text-gray-900 px-6 h-[76px] rounded-[14px] hover:bg-gray-100 transition-colors min-w-[200px] shadow-lg">
+                        <GooglePlayIcon />
+                        <div class="text-left">
+                            <div class="text-xs opacity-75">{ui.buttons.getItOnGoogle}</div>
+                            <div class="text-xl -mt-0.5">Google Play</div>
+                        </div>
+                    </a>
+                ) : (
+                    <div class="flex items-center gap-3 bg-white/20 text-white/70 px-6 h-[76px] rounded-[14px] min-w-[200px] cursor-not-allowed">
+                        <GooglePlayIcon class="w-8 h-8 opacity-60" />
+                        <div class="text-left">
+                            <div class="text-xs opacity-60">Google Play</div>
+                            <div class="text-xl -mt-0.5">{ui.buttons.comingSoon}</div>
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            <!-- Other apps links -->
+            <div class="border-t border-white/20 pt-12 w-full">
+                <p class="text-base mb-6" style="color: #e9d4ff">{cta.otherAppsLabel}</p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    {cta.otherApps.map((otherApp: { app: string; description: string }) => (
+                        <a href={appPaths[otherApp.app]} class="bg-white/10 hover:bg-white/20 text-white pt-4 pb-4 px-6 rounded-[14px] transition-colors text-center min-w-[160px]">
+                            <div class="font-semibold text-base">{appDisplayNames[otherApp.app]}</div>
+                            <div class="text-sm" style="color: #e9d4ff">{otherApp.description}</div>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

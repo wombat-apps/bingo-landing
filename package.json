@@ -10,7 +10,7 @@
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
     "typecheck": "astro check",
-    "check:translations": "node scripts/check-unused-translations.js",
+    "check:collections": "node scripts/check-content-collections.js",
     "postinstall": "patch-package"
   },
   "devDependencies": {

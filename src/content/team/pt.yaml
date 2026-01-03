@@ -1,0 +1,8 @@
+locale: pt
+title: "Conheça nossa equipe"
+subtitle: "Os talentosos desenvolvedores e designers por trás do seu app de bingo favorito"
+roles:
+  ios: "Desenvolvedor iOS"
+  android: "Desenvolvedor Android"
+  designer: "Designer UX/UI"
+linkedinLabel: "Perfil LinkedIn →"

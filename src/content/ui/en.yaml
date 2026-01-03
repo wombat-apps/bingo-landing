@@ -1,0 +1,13 @@
+locale: en
+accessibility:
+  skipToContent: "Skip to main content"
+  toggleMenu: "Toggle navigation menu"
+buttons:
+  downloadFree: "Download free!"
+  downloadOnAppstore: "Download on the"
+  getItOnGoogle: "Get it on"
+  comingSoon: "Coming Soon"
+downloadSamples:
+  sample75: "Sample 75-Ball"
+  sample90: "Sample 90-Ball"
+orgDescription: "We create fun and engaging bingo apps for the whole family."

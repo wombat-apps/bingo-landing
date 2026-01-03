@@ -1,0 +1,12 @@
+app: print
+locale: es
+title: "¿Listo para Crear Cartones de Bingo Increíbles?"
+subtitle: "Descarga Bingo!! Print hoy y empieza a crear cartones de bingo profesionales en minutos. Sin tarjeta de crédito."
+otherAppsLabel: "Echa un vistazo a nuestras otras apps:"
+otherApps:
+  - app: bingo
+    description: "App cantador de bingo"
+  - app: cards
+    description: "Cartón de bingo digital"
+  - app: wombat
+    description: "Conoce nuestro equipo"

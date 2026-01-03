@@ -1,0 +1,12 @@
+app: cards
+locale: pt
+title: "Baixe bingo!! cards e comece a jogar hoje"
+subtitle: "Obtenha o app de graça e aproveite cartelas de bingo digitais ilimitadas no seu dispositivo."
+otherAppsLabel: "Confira também nossos outros apps:"
+otherApps:
+  - app: bingo
+    description: "App sorteador de bingo"
+  - app: print
+    description: "Imprima cartelas de bingo"
+  - app: wombat
+    description: "Conheça nossa equipe"

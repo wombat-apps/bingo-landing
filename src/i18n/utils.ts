@@ -1,5 +1,5 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
-import { ui, defaultLang, type Language, type TranslationKey, appStoreBadges, googlePlayBadges } from './ui';
+import { defaultLang, type Language, appStoreBadges, googlePlayBadges, languages } from './ui';
 
 const ogLocaleMap: Record<Language, string> = {
   en: 'en_US',
@@ -9,14 +9,8 @@ const ogLocaleMap: Record<Language, string> = {
 };
 
 export function toLanguage(locale: string | undefined): Language {
-  if (locale && locale in ui) return locale as Language;
+  if (locale && locale in languages) return locale as Language;
   return defaultLang;
-}
-
-export function useTranslations(lang: Language) {
-  return function t(key: TranslationKey): string {
-    return ui[lang][key] || ui[defaultLang][key];
-  };
 }
 
 export function getLocalizedPath(lang: Language, path: string): string {

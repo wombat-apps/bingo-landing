@@ -1,0 +1,228 @@
+---
+/**
+ * Shared layout for all app landing pages (Bingo!!, Cards, Print).
+ * Eliminates ~500 lines of duplicated HTML across landing page components.
+ */
+import '../styles/global.css';
+import { getOgLocale, getAlternateLocales } from '../i18n/utils';
+import { type Language } from '../i18n/ui';
+import { type AppName, apps, CANONICAL_BASE, getAppPath } from '../config/apps';
+import type { SeoData, NavigationData, UiData, FaqItem } from '../types';
+
+interface Props {
+  app: AppName;
+  lang: Language;
+  seo: SeoData;
+  navigation: NavigationData;
+  ui: UiData;
+  faqs: FaqItem[];
+  enableAutoRedirect?: boolean;
+}
+
+const { app, lang, seo, navigation, ui, faqs, enableAutoRedirect = false } = Astro.props;
+
+const appConfig = apps[app];
+const ogLocale = getOgLocale(lang);
+const alternateLocales = getAlternateLocales(lang);
+const canonicalPath = getAppPath(app, lang);
+const canonicalUrl = `${CANONICAL_BASE}${canonicalPath}`;
+
+// Prepare FAQ JSON-LD data
+const faqJsonLd = faqs.map(faq => ({
+  q: faq.question,
+  a: faq.answer,
+}));
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{seo.meta.title}</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content={seo.meta.description}>
+    <meta name="keywords" content={seo.meta.keywords}>
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Wombat Apps">
+    <meta name="theme-color" content={appConfig.colors.themeColor}>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="canonical" href={canonicalUrl}>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={seo.og.title}>
+    <meta property="og:description" content={seo.og.description}>
+    <meta property="og:image" content={`${CANONICAL_BASE}${appConfig.ogImage}`}>
+    <meta property="og:url" content={canonicalUrl}>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content={appConfig.name}>
+    <meta property="og:locale" content={ogLocale}>
+    {alternateLocales.map((locale) => (
+        <meta property="og:locale:alternate" content={locale} />
+    ))}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={seo.og.title}>
+    <meta name="twitter:description" content={seo.og.description}>
+    <meta name="twitter:image" content={`${CANONICAL_BASE}${appConfig.ogImage}`}>
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href={`${CANONICAL_BASE}${appConfig.path}/`}>
+    <link rel="alternate" hreflang="es" href={`${CANONICAL_BASE}/es${appConfig.path}/`}>
+    <link rel="alternate" hreflang="fr" href={`${CANONICAL_BASE}/fr${appConfig.path}/`}>
+    <link rel="alternate" hreflang="pt" href={`${CANONICAL_BASE}/pt${appConfig.path}/`}>
+    <link rel="alternate" hreflang="x-default" href={`${CANONICAL_BASE}${appConfig.path}/`}>
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Wombat Apps",
+        "url": CANONICAL_BASE,
+        "logo": `${CANONICAL_BASE}/images/bingo-logo.png`,
+        "description": ui.orgDescription
+    })} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": appConfig.name,
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": appConfig.applicationCategory,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": appConfig.ratingCount }
+    })} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqJsonLd.map((faq) => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+        }))
+    })} />
+</head>
+<body class="bg-white font-sans">
+    <!-- Skip Link -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold" style={`color: ${appConfig.colors.themeColor}`}>
+        {ui.accessibility.skipToContent}
+    </a>
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden min-h-[600px] lg:min-h-[678px]" style={`background: linear-gradient(to right, ${appConfig.colors.gradientFrom}, ${appConfig.colors.gradientTo})`}>
+        <!-- Decorative circles with blur -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-[15%] left-[40%] w-36 h-36 rounded-full opacity-30 blur-[55px]" style={`background-color: ${appConfig.colors.decorativeColors.accent}`}></div>
+            <div class="absolute top-[45%] left-[35%] w-36 h-36 rounded-full opacity-30 blur-[55px]" style={`background-color: ${appConfig.colors.decorativeColors.secondary}`}></div>
+            <div class="absolute bottom-[10%] right-[5%] w-36 h-36 rounded-full opacity-30 blur-[55px]" style={`background-color: ${appConfig.colors.decorativeColors.secondary}`}></div>
+        </div>
+
+        <div class="container mx-auto px-4 py-12 lg:py-16 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
+                <!-- Left column - Text content -->
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <!-- Logo -->
+                    <div class="mb-8">
+                        <img src={appConfig.logo} alt={appConfig.name} class="h-12 lg:h-16 w-auto mx-auto lg:mx-0">
+                    </div>
+
+                    <!-- Hero content slot -->
+                    <slot name="hero-content" />
+                </div>
+
+                <!-- Right column - App screenshots -->
+                <div class="lg:w-1/2 relative">
+                    <div class="relative w-full max-w-lg mx-auto lg:max-w-none">
+                        <img
+                            src={appConfig.heroImage}
+                            alt={`${appConfig.name} App Screenshots`}
+                            class="w-full h-auto max-w-[450px] mx-auto drop-shadow-2xl"
+                            loading="eager"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <button id="mobileMenuBtn" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-500 border-gray-400" style={`--hover-color: ${appConfig.colors.themeColor}`} aria-label={ui.accessibility.toggleMenu} aria-expanded="false" aria-controls="mobileMenu">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                    </svg>
+                </button>
+
+                <ul class="hidden md:flex flex-1 justify-center gap-8">
+                    {navigation.items.map((item: { key: string; label: string }) => (
+                        <li><a href={`#${item.key}`} class={`nav-link text-gray-700 font-medium transition-colors duration-200 px-3 py-2 rounded-lg ${appConfig.colors.hoverBgClass}`} style={`--hover-color: ${appConfig.colors.themeColor}`}>{item.label}</a></li>
+                    ))}
+                </ul>
+            </div>
+
+            <div id="mobileMenu" class="hidden md:hidden">
+                <ul class="flex flex-col space-y-2 pb-4">
+                    {navigation.items.map((item: { key: string; label: string }) => (
+                        <li><a href={`#${item.key}`} class={`nav-link block text-gray-700 font-medium transition-colors duration-200 px-3 py-2 rounded-lg ${appConfig.colors.hoverBgClass}`} style={`--hover-color: ${appConfig.colors.themeColor}`}>{item.label}</a></li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <slot />
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        import { initNavigation } from '../scripts/navigation';
+        import { initFaqAccordion } from '../scripts/accordion';
+
+        initNavigation();
+        initFaqAccordion();
+    </script>
+
+    {enableAutoRedirect && (
+        <script is:inline define:vars={{ basePath: appConfig.path }}>
+            const currentPath = window.location.pathname;
+            const expectedPaths = [`${basePath}/`, `${basePath}/index.html`];
+
+            if (expectedPaths.includes(currentPath)) {
+                const noRedirect = new URLSearchParams(window.location.search).has('noredirect');
+                const hasStoredLang = localStorage.getItem('preferred-language');
+
+                if (!noRedirect && !hasStoredLang) {
+                    const browserLang = navigator.language.split('-')[0];
+                    const supportedLangs = ['es', 'fr', 'pt'];
+
+                    if (supportedLangs.includes(browserLang)) {
+                        window.location.href = `/${browserLang}${basePath}/`;
+                    }
+                }
+            }
+        </script>
+    )}
+</body>
+</html>
+
+<style>
+    .nav-link:hover {
+        color: var(--hover-color);
+    }
+    #mobileMenuBtn:hover {
+        color: var(--hover-color);
+        border-color: var(--hover-color);
+    }
+</style>

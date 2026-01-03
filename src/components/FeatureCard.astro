@@ -1,0 +1,22 @@
+---
+import type { FeatureItem } from '../types';
+
+interface Props {
+  feature: FeatureItem;
+  iconBgStyle: string;
+}
+
+const { feature, iconBgStyle } = Astro.props;
+---
+
+<div class="bg-white rounded-2xl p-6 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_-1px_rgba(0,0,0,0.1)] hover:shadow-lg transition-shadow">
+  <div class="w-16 h-16 rounded-[14px] flex items-center justify-center mb-5" style={iconBgStyle}>
+    <img
+      src={`/icons/features/${feature.icon}.svg`}
+      alt=""
+      class="max-w-8 max-h-8"
+    />
+  </div>
+  <h3 class="text-lg font-semibold text-[#101828] mb-3">{feature.title}</h3>
+  <p class="text-[#4a5565] leading-relaxed">{feature.description}</p>
+</div>

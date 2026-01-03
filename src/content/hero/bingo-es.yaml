@@ -1,0 +1,8 @@
+app: bingo
+locale: es
+headline: "¡El mejor Bingo digital!"
+subtitle: "¡Disfruta las mejores noches de bingo en casa con tu familia y amigos!"
+subtitleCta: "¡Descarga gratis!"
+tags:
+  - label: "Códigos QR"
+  - label: "90 y 75 Bolas"

@@ -1,0 +1,8 @@
+app: cards
+locale: pt
+headline: "Sua cartela de bingo, agora digital"
+subtitle: "Jogue bingo do seu celular. Cartelas digitais que você marca com um simples toque, compatíveis com bingo de 90 e 75 bolas."
+tags:
+  - label: "Códigos QR"
+  - label: "90 e 75 Bolas"
+  - label: "Toque para marcar"

@@ -1,0 +1,28 @@
+app: bingo
+locale: fr
+title: Questions fréquentes
+subtitle: Tout ce que vous devez savoir sur Bingo!!
+contactText: Vous avez encore des questions?
+contactLink: Contacter le support
+
+items:
+  - question: Comment fonctionne Bingo!! comme annonceur?
+    answer: Bingo!! agit comme votre machine à bingo numérique. Il tire des numéros aléatoirement, les annonce avec de vraies voix et les affiche à l'écran. Connectez à la TV pour que toute la salle puisse voir!
+
+  - question: Puis-je utiliser ma propre voix?
+    answer: Oui! Enregistrez vos propres appels de numéros et rimes personnalisées pour une expérience unique. Parfait pour les traditions familiales ou événements spéciaux.
+
+  - question: Quelle est la différence entre Bingo!! et Bingo!! Lite?
+    answer: Bingo!! est un achat unique avec toutes les fonctionnalités débloquées. Bingo!! Lite est gratuit avec des achats optionnels dans l'app pour débloquer des fonctionnalités supplémentaires.
+
+  - question: Fonctionne-t-il hors ligne?
+    answer: Absolument! Une fois téléchargé, Bingo!! fonctionne complètement hors ligne. Parfait pour n'importe quel endroit - aucune connexion internet requise pendant le jeu.
+
+  - question: Puis-je vérifier les cartons de bingo?
+    answer: Oui! Chaque carton a un code QR unique. Scannez-le simplement avec l'app pour vérifier instantanément s'il s'agit d'un carton gagnant.
+
+  - question: Quelles langues sont disponibles?
+    answer: Bingo!! prend en charge plusieurs langues dont le français, l'anglais, l'espagnol, le portugais et plus. Chacune avec des voix natives!
+
+  - question: Puis-je connecter à une TV ou un projecteur?
+    answer: Absolument! Utilisez AirPlay, HDMI ou la duplication d'écran pour afficher le tableau de bingo sur n'importe quel écran externe.

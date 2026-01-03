@@ -1,0 +1,68 @@
+{
+  "$ref": "#/definitions/cta",
+  "definitions": {
+    "cta": {
+      "type": "object",
+      "properties": {
+        "app": {
+          "type": "string",
+          "enum": [
+            "bingo",
+            "cards",
+            "print"
+          ]
+        },
+        "locale": {
+          "type": "string",
+          "enum": [
+            "en",
+            "es",
+            "fr",
+            "pt"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "otherAppsLabel": {
+          "type": "string"
+        },
+        "otherApps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "app": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "app",
+              "description"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "app",
+        "locale",
+        "title",
+        "subtitle",
+        "otherAppsLabel",
+        "otherApps"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

@@ -1,0 +1,28 @@
+app: cards
+locale: es
+title: Funciones potentes para cada necesidad
+subtitle: Todo lo que necesitas para crear, personalizar y gestionar cartones de bingo profesionales
+items:
+  - title: Cartones de bingo digitales
+    description: Olvídate del papel. Usa cartones digitales que marcas con un simple toque.
+    icon: grid
+
+  - title: Desde cualquier dispositivo
+    description: Perfecto para jugar en casa, en videollamadas, en bares o en eventos presenciales.
+    icon: mobile
+
+  - title: Números claros y bien visibles
+    description: Diseño limpio y legible para que no se te escape ningún número.
+    icon: visible
+
+  - title: Menos distracciones, más juego
+    description: Interfaz sencilla, pensada para todas las edades.
+    icon: fun
+
+  - title: Listo en segundos
+    description: Abre la app, elige tu cartón y empieza a jugar al instante.
+    icon: fast
+
+  - title: Integración inteligente con QR
+    description: Añade un código QR único a cada cartón. Utiliza la app Bingo!! para escanear y comprobar la jugada.
+    icon: qr

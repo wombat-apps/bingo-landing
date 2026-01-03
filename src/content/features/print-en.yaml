@@ -1,0 +1,28 @@
+app: print
+locale: en
+title: Powerful Features for Every Need
+subtitle: Everything you need to create and customize professional bingo cards
+items:
+  - title: Unlimited PDF Generator
+    description: Create as many cards as you need. No limits, no restrictions.
+    icon: pdf
+
+  - title: Versatile Game Modes
+    description: Choose between classic 90-ball Bingo or American-style 75-ball Bingo.
+    icon: modes
+
+  - title: Full Customization
+    description: Choose card colors to match your party theme.
+    icon: colors
+
+  - title: Add Your Text
+    description: Add custom titles (e.g., "Ana's Birthday" or "Christmas Raffle") to each card.
+    icon: customize
+
+  - title: Security & Control
+    description: Option to include unique serial numbers on sheets for better organization.
+    icon: secure
+
+  - title: Smart QR Integration
+    description: Add a unique QR code to each card. Use the Bingo!! app to scan and verify plays.
+    icon: qr

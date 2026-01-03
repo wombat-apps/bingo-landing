@@ -1,0 +1,8 @@
+app: cards
+locale: fr
+headline: "Votre carton de bingo, maintenant numérique"
+subtitle: "Jouez au bingo depuis votre téléphone. Cartons numériques que vous marquez d'un simple toucher, compatibles avec le bingo à 90 et 75 boules."
+tags:
+  - label: "Codes QR"
+  - label: "90 et 75 Boules"
+  - label: "Touchez pour marquer"

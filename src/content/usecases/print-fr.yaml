@@ -1,0 +1,28 @@
+app: print
+locale: fr
+title: Parfait pour Chaque Occasion
+subtitle: Utilisé par des éducateurs, organisateurs d'événements et organisations du monde entier
+items:
+  - title: Éducation
+    description: Parfait pour les classes, écoles et événements éducatifs. Rendez l'apprentissage amusant et interactif.
+    icon: education
+
+  - title: Événements et Fêtes
+    description: Fêtes d'anniversaire, baby showers, réceptions de mariage. Ajoutez de l'excitation à toute célébration.
+    icon: events
+
+  - title: Événements d'Entreprise
+    description: Activités de team building, formations corporatives et événements d'entreprise. Stimulez l'engagement.
+    icon: corporate
+
+  - title: Tombolas et Collectes
+    description: Événements d'église, tombolas caritatives, rassemblements communautaires. Collectez des fonds en vous amusant.
+    icon: fundraisers
+
+  - title: Centres Communautaires
+    description: Centres pour seniors, centres de loisirs, groupes de jeunes. Parfait pour l'engagement communautaire.
+    icon: community
+
+  - title: Usage Professionnel
+    description: Organisateurs d'événements, sociétés de divertissement et entreprises d'hôtellerie.
+    icon: professional

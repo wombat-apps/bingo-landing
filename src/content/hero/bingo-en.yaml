@@ -1,0 +1,8 @@
+app: bingo
+locale: en
+headline: "The Ultimate Digital Bingo Caller!"
+subtitle: "Enjoy the best bingo nights at home with your family and friends!"
+subtitleCta: "Download free!"
+tags:
+  - label: "QR Codes"
+  - label: "90 & 75 Balls"

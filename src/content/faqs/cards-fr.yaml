@@ -1,0 +1,28 @@
+app: cards
+locale: fr
+title: Questions fréquemment posées
+subtitle: Tout ce que vous devez savoir sur bingo!! cards
+contactText: Vous avez encore des questions?
+contactLink: Contacter le support
+
+items:
+  - question: Combien de cartons puis-je avoir?
+    answer: Vous pouvez générer des cartons de bingo illimités! Chaque carton est unique et aléatoire. Parfait pour des fêtes de toute taille.
+
+  - question: Les cartons fonctionnent-ils hors ligne?
+    answer: Oui! Une fois vos cartons générés, ils fonctionnent complètement hors ligne. Jouez partout sans connexion internet.
+
+  - question: Puis-je utiliser ces cartons avec n'importe quel annonceur?
+    answer: Absolument! Bien qu'ils fonctionnent parfaitement avec notre app Bingo!!, vous pouvez les utiliser avec n'importe quel annonceur - même une cage de bingo physique!
+
+  - question: Cartons de Bingo!! est-il gratuit?
+    answer: Cartons de Bingo!! est gratuit à télécharger avec des achats optionnels dans l'app pour débloquer des fonctionnalités supplémentaires et supprimer les publicités.
+
+  - question: Quelles variantes de bingo sont supportées?
+    answer: L'app supporte le bingo à 75 boules (américain) et à 90 boules (britannique/européen).
+
+  - question: Puis-je personnaliser les couleurs du carton?
+    answer: Oui! Choisissez parmi diverses couleurs de cartons pour correspondre au thème de votre événement ou à votre préférence personnelle.
+
+  - question: Y a-t-il une limite au nombre de joueurs pouvant utiliser l'app?
+    answer: Aucune limite! Chaque joueur peut avoir son propre carton unique sur son propre appareil. Parfait pour des groupes de toute taille.

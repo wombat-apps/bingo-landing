@@ -1,0 +1,28 @@
+app: print
+locale: pt
+title: Perfeito para Cada Ocasião
+subtitle: Utilizado por educadores, organizadores de eventos e organizações em todo o mundo
+items:
+  - title: Educação
+    description: Perfeito para salas de aula, escolas e eventos educacionais. Torne o aprendizado divertido e interativo.
+    icon: education
+
+  - title: Eventos e Festas
+    description: Festas de aniversário, chás de bebê, recepções de casamento. Adicione emoção a qualquer celebração.
+    icon: events
+
+  - title: Eventos Corporativos
+    description: Atividades de team building, treinamentos corporativos e eventos de empresa. Aumente o engajamento.
+    icon: corporate
+
+  - title: Rifas e Beneficentes
+    description: Eventos de igreja, rifas beneficentes, encontros comunitários. Arrecade fundos enquanto se diverte.
+    icon: fundraisers
+
+  - title: Centros Comunitários
+    description: Centros para idosos, centros de recreação, grupos de jovens. Perfeito para engajamento comunitário.
+    icon: community
+
+  - title: Uso Profissional
+    description: Organizadores de eventos, empresas de entretenimento e negócios de hotelaria.
+    icon: professional

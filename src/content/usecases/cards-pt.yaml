@@ -1,0 +1,28 @@
+app: cards
+locale: pt
+title: Perfeito para cada ocasião
+subtitle: Usado por educadores, organizadores de eventos e organizações em todo o mundo
+items:
+  - title: Educação
+    description: Perfeito para salas de aula, escolas e eventos educacionais. Torne o aprendizado divertido e interativo.
+    icon: education
+
+  - title: Eventos e festas
+    description: Aniversários, chá de bebê, recepções de casamento. Adicione emoção a qualquer celebração.
+    icon: events
+
+  - title: Eventos corporativos
+    description: Team building, treinamentos corporativos e eventos de empresa. Aumente o engajamento.
+    icon: corporate
+
+  - title: Arrecadação de fundos
+    description: Eventos de igreja, eventos beneficentes, encontros comunitários. Arrecade dinheiro enquanto se diverte.
+    icon: fundraisers
+
+  - title: Centros comunitários
+    description: Centros de idosos, centros recreativos, grupos de jovens. Perfeito para engajamento comunitário.
+    icon: community
+
+  - title: Uso profissional
+    description: Organizadores de eventos, empresas de entretenimento e negócios de hospitalidade.
+    icon: professional

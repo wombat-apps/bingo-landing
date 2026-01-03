@@ -1,0 +1,5 @@
+# Hub page has no navigation items - the navigation bar shows the logo only.
+# This empty array is intentional to maintain schema consistency with other apps.
+app: hub
+locale: en
+items: []

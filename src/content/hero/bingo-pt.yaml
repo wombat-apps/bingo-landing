@@ -1,0 +1,8 @@
+app: bingo
+locale: pt
+headline: "O melhor cantador de Bingo digital!"
+subtitle: "Aproveite as melhores noites de bingo em casa com sua família e amigos!"
+subtitleCta: "Baixe grátis!"
+tags:
+  - label: "Códigos QR"
+  - label: "90 e 75 Bolas"

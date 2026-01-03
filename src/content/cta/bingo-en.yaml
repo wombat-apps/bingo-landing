@@ -1,0 +1,12 @@
+app: bingo
+locale: en
+title: "Download Bingo!! and start playing today"
+subtitle: "Join thousands of families enjoying bingo nights together. Free to download!"
+otherAppsLabel: "Also check out our other apps:"
+otherApps:
+  - app: cards
+    description: "Digital bingo card"
+  - app: print
+    description: "Print your cards"
+  - app: wombat
+    description: "Meet our team"

@@ -1,0 +1,13 @@
+locale: pt
+accessibility:
+  skipToContent: "Pular para o conteúdo principal"
+  toggleMenu: "Alternar menu de navegação"
+buttons:
+  downloadFree: "Baixe grátis!"
+  downloadOnAppstore: "Baixar na"
+  getItOnGoogle: "Disponível no"
+  comingSoon: "Em breve"
+downloadSamples:
+  sample75: "Exemplo 75 bolas"
+  sample90: "Exemplo 90 bolas"
+orgDescription: "Criamos aplicativos de bingo divertidos e envolventes para toda a família."

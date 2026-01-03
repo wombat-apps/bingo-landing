@@ -1,0 +1,11 @@
+app: cards
+locale: en
+items:
+  - key: features
+    label: "Features"
+  - key: apps
+    label: "Apps"
+  - key: usecases
+    label: "Use Cases"
+  - key: faq
+    label: "FAQ"

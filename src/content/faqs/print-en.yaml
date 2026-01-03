@@ -1,0 +1,28 @@
+app: print
+locale: en
+title: Frequently Asked Questions
+subtitle: Everything you need to know about Bingo!! Print
+contactText: Still have questions?
+contactLink: Contact Support
+
+items:
+  - question: How many bingo cards can I create?
+    answer: You can create unlimited bingo cards! Generate as many as you need for events of any size - from small gatherings to large raffles with hundreds of participants.
+
+  - question: Do I need an internet connection to use the app?
+    answer: No! Bingo!! Print works completely offline. Generate, download, and print your cards anytime.
+
+  - question: What formats can I export to?
+    answer: Cards are exported as high-quality PDF files, perfect for printing at home or at a professional print shop. The PDFs are optimized for standard paper sizes.
+
+  - question: How does the QR code verification work?
+    answer: Each card can include a unique QR code. When someone calls BINGO, use the Bingo!! app to scan the code and instantly verify if the card is a winner.
+
+  - question: Can I customize the colors and design?
+    answer: Absolutely! You have full freedom to choose any color and add custom text to each batch. This way you can easily differentiate cards from each game or round.
+
+  - question: What other apps work with Bingo!! Print?
+    answer: Bingo!! Print works perfectly with our Bingo!! app for calling numbers and verifying winners, and Bingo!! Cards for playing with digital cards.
+
+  - question: Is my data secure?
+    answer: Yes! Since it works offline, all generation happens on your device. No servers involved, ensuring total privacy.

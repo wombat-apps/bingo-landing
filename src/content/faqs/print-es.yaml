@@ -1,0 +1,28 @@
+app: print
+locale: es
+title: Preguntas Frecuentes
+subtitle: Todo lo que necesitas saber sobre Bingo!! Print
+contactText: ¿Aún tienes preguntas?
+contactLink: Contacta con Soporte
+
+items:
+  - question: ¿Cuántos cartones de bingo puedo crear?
+    answer: ¡Puedes crear cartones de bingo ilimitados! Genera tantos como necesites para eventos de cualquier tamaño - desde pequeñas reuniones hasta grandes rifas con cientos de participantes.
+
+  - question: ¿Necesito conexión a internet para usar la app?
+    answer: ¡No! Bingo!! Print funciona completamente sin conexión a internet. Genera, descarga e imprime tus cartones en cualquier momento.
+
+  - question: ¿A qué formatos puedo exportar?
+    answer: Los cartones se exportan como archivos PDF de alta calidad, perfectos para imprimir en casa o en una imprenta profesional. Los PDFs están optimizados para tamaños de papel estándar.
+
+  - question: ¿Cómo funciona la verificación con código QR?
+    answer: Cada cartón puede incluir un código QR único. Cuando alguien canta BINGO, usa la app Bingo!! para escanear el código y verificar instantáneamente si el cartón es ganador.
+
+  - question: ¿Puedo personalizar los colores y el diseño?
+    answer: ¡Por supuesto! Tienes total libertad para elegir cualquier color y añadir textos personalizados a cada lote. Así puedes diferenciar fácilmente los cartones de cada partida o ronda.
+
+  - question: ¿Qué otras apps funcionan con Bingo!! Print?
+    answer: Bingo!! Print funciona perfectamente con nuestra app Bingo!! para cantar números y verificar ganadores, y Bingo!! Cards para jugar con cartones digitales.
+
+  - question: ¿Están mis datos seguros?
+    answer: ¡Sí! Al funcionar sin internet, toda la generación ocurre en tu dispositivo. No hay servidores involucrados, garantizando total privacidad.

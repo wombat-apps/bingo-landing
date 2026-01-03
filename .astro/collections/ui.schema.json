@@ -1,0 +1,90 @@
+{
+  "$ref": "#/definitions/ui",
+  "definitions": {
+    "ui": {
+      "type": "object",
+      "properties": {
+        "locale": {
+          "type": "string",
+          "enum": [
+            "en",
+            "es",
+            "fr",
+            "pt"
+          ]
+        },
+        "accessibility": {
+          "type": "object",
+          "properties": {
+            "skipToContent": {
+              "type": "string"
+            },
+            "toggleMenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "skipToContent",
+            "toggleMenu"
+          ],
+          "additionalProperties": false
+        },
+        "buttons": {
+          "type": "object",
+          "properties": {
+            "downloadFree": {
+              "type": "string"
+            },
+            "downloadOnAppstore": {
+              "type": "string"
+            },
+            "getItOnGoogle": {
+              "type": "string"
+            },
+            "comingSoon": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "downloadFree",
+            "downloadOnAppstore",
+            "getItOnGoogle",
+            "comingSoon"
+          ],
+          "additionalProperties": false
+        },
+        "downloadSamples": {
+          "type": "object",
+          "properties": {
+            "sample75": {
+              "type": "string"
+            },
+            "sample90": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "sample75",
+            "sample90"
+          ],
+          "additionalProperties": false
+        },
+        "orgDescription": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "locale",
+        "accessibility",
+        "buttons",
+        "downloadSamples",
+        "orgDescription"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

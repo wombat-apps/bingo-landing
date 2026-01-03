@@ -1,0 +1,52 @@
+---
+import { getFaqs } from '../content/helpers';
+import type { Language, FaqItem, AppName } from '../types';
+
+interface Props {
+  app: AppName;
+  lang: Language;
+}
+
+const { app, lang } = Astro.props;
+const faqData = await getFaqs(app, lang);
+
+if (!faqData) {
+  throw new Error(`FAQ data not found for app: ${app}, lang: ${lang}`);
+}
+
+const { title, subtitle, contactText, contactLink, items } = faqData;
+---
+
+<section id="faq" class="py-20 bg-[#f9fafb]">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col items-center gap-4 mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-[#101828] text-center leading-tight">{title}</h2>
+      <p class="text-xl text-[#4a5565] text-center tracking-[-0.45px]">{subtitle}</p>
+    </div>
+
+    <div class="max-w-[998px] mx-auto flex flex-col gap-4">
+      {items.map((faq: FaqItem, index: number) => (
+        <div class="faq-item bg-white rounded-2xl shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_-1px_rgba(0,0,0,0.1)] overflow-hidden">
+          <button
+            class="faq-btn w-full px-6 h-[72px] flex justify-between items-center text-left hover:bg-gray-50 transition-colors"
+            data-index={index}
+            aria-expanded="false"
+          >
+            <span class="font-semibold text-[#101828] text-base tracking-[-0.31px]">{faq.question}</span>
+            <svg class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-5">
+            <p class="text-[#4a5565] leading-relaxed">{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="flex flex-col items-center gap-4 mt-16">
+      <p class="text-base text-[#4a5565] tracking-[-0.31px]">{contactText}</p>
+      <a href="mailto:support@wombat-apps.com" class="text-base text-[#6146e9] font-semibold tracking-[-0.31px] hover:underline">{contactLink}</a>
+    </div>
+  </div>
+</section>

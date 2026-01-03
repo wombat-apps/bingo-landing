@@ -1,0 +1,12 @@
+app: print
+locale: en
+title: "Ready to Create Amazing Bingo Cards?"
+subtitle: "Download Bingo!! Print today and start creating professional bingo cards in minutes. No credit card required."
+otherAppsLabel: "Also check out our other apps:"
+otherApps:
+  - app: bingo
+    description: "Bingo caller app"
+  - app: cards
+    description: "Digital bingo card"
+  - app: wombat
+    description: "Meet our team"

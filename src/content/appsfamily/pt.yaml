@@ -1,0 +1,10 @@
+locale: pt
+title: "A família bingo!! completa"
+subtitle: "Três apps que se complementam para a melhor experiência de bingo"
+apps:
+  - app: bingo
+    description: "A melhor máquina de bingo com vozes, animações e personalização"
+  - app: cards
+    description: "Obtenha cartelas de bingo digitais no seu dispositivo com nosso app complementar"
+  - app: print
+    description: "Gere, personalize e imprima cartelas de bingo profissionais"

@@ -1,0 +1,28 @@
+app: bingo
+locale: pt
+title: Perfeito para cada ocasião
+subtitle: Usado por educadores, organizadores de eventos e organizações em todo o mundo
+items:
+  - title: Educação
+    description: Perfeito para salas de aula, escolas e eventos educacionais. Torne o aprendizado divertido e interativo.
+    icon: education
+
+  - title: Eventos e festas
+    description: Aniversários, chás de bebê, recepções de casamento. Adicione emoção a qualquer celebração.
+    icon: events
+
+  - title: Eventos corporativos
+    description: Atividades de team building, treinamentos corporativos e eventos de empresa. Aumente o engajamento.
+    icon: corporate
+
+  - title: Arrecadação de fundos
+    description: Eventos paroquiais, beneficentes e reuniões comunitárias. Arrecade dinheiro enquanto se diverte.
+    icon: fundraisers
+
+  - title: Centros comunitários
+    description: Centros para idosos, centros de recreação, grupos de jovens. Perfeito para engajamento comunitário.
+    icon: community
+
+  - title: Uso profissional
+    description: Organizadores de eventos, empresas de entretenimento e hotelaria.
+    icon: professional

@@ -1,0 +1,9 @@
+app: hub
+locale: en
+meta:
+  title: "Wombat Apps - Bingo Apps for iOS & Android"
+  description: "Wombat Apps creates the best bingo experience for iOS and Android. Discover our family of apps: Bingo!! caller, digital cards, and printable cards."
+  keywords: "wombat apps, bingo apps, bingo caller, bingo cards, bingo print, iOS apps, Android apps"
+og:
+  title: "Wombat Apps - The Complete Bingo Experience"
+  description: "Discover our family of bingo apps: Bingo!! caller machine, digital cards, and printable cards. Available on iOS and Android."

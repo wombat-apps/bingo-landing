@@ -1,0 +1,28 @@
+app: cards
+locale: en
+title: Perfect for Every Occasion
+subtitle: Trusted by educators, event planners, and organizations worldwide
+items:
+  - title: Education
+    description: Perfect for classrooms, schools, and educational events. Make learning fun and interactive.
+    icon: education
+
+  - title: Events & Parties
+    description: Birthday parties, baby showers, wedding receptions. Add excitement to any celebration.
+    icon: events
+
+  - title: Corporate Events
+    description: Team building activities, corporate trainings, and company events. Boost engagement.
+    icon: corporate
+
+  - title: Fundraisers
+    description: Church events, charity fundraisers, community gatherings. Raise money while having fun.
+    icon: fundraisers
+
+  - title: Community Centers
+    description: Senior centers, recreation centers, youth groups. Perfect for community engagement.
+    icon: community
+
+  - title: Professional Use
+    description: Event planners, entertainment companies, and hospitality businesses.
+    icon: professional

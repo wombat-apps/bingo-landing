@@ -1,0 +1,28 @@
+app: cards
+locale: pt
+title: Recursos poderosos para cada necessidade
+subtitle: Tudo o que você precisa para criar, personalizar e gerenciar cartelas de bingo profissionais
+items:
+  - title: Cartelas de bingo digitais
+    description: Esqueça o papel. Use cartelas digitais que você marca com um simples toque.
+    icon: grid
+
+  - title: De qualquer dispositivo
+    description: Perfeito para jogar em casa, em videochamadas, em bares ou em eventos presenciais.
+    icon: mobile
+
+  - title: Números claros e bem visíveis
+    description: Design limpo e legível para não perder nenhum número.
+    icon: visible
+
+  - title: Menos distrações, mais jogo
+    description: Interface simples, pensada para todas as idades.
+    icon: fun
+
+  - title: Pronto em segundos
+    description: Abra o app, escolha sua cartela e comece a jogar instantaneamente.
+    icon: fast
+
+  - title: Integração inteligente com QR
+    description: Adicione um código QR único a cada cartela. Use o app Bingo!! para escanear e verificar a jogada.
+    icon: qr

@@ -1,0 +1,8 @@
+app: cards
+locale: es
+headline: "Tu cartón de bingo, ahora en digital"
+subtitle: "Juega al bingo desde tu móvil. Cartones digitales que marcas con un simple toque, compatibles con bingo de 90 y 75 bolas."
+tags:
+  - label: "Códigos QR"
+  - label: "90 y 75 Bolas"
+  - label: "Pulsa y tacha"

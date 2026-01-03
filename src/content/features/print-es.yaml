@@ -1,0 +1,28 @@
+app: print
+locale: es
+title: Funciones Potentes para Cada Necesidad
+subtitle: Todo lo que necesitas para crear y personalizar cartones de bingo profesionales
+items:
+  - title: Generador PDF Ilimitado
+    description: Crea tantos cartones como necesites. Sin límites, sin restricciones.
+    icon: pdf
+
+  - title: Modos de Juego Versátiles
+    description: Elige entre el clásico Bingo de 90 bolas o el estilo americano de 75 bolas.
+    icon: modes
+
+  - title: Personalización Total
+    description: Elige el color de los cartones para que coincidan con la temática de tu fiesta.
+    icon: colors
+
+  - title: Añade tu Texto
+    description: Introduce títulos personalizados (ej. "Cumpleaños de Ana" o "Sorteo de Navidad") en cada cartón.
+    icon: customize
+
+  - title: Seguridad y Control
+    description: Opción de incluir números de serie únicos en las hojas para una mejor organización.
+    icon: secure
+
+  - title: Integración Inteligente con QR
+    description: Añade un código QR único a cada cartón. Utiliza la app Bingo!! para escanear y comprobar la partida.
+    icon: qr

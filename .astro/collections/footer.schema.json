@@ -1,0 +1,43 @@
+{
+  "$ref": "#/definitions/footer",
+  "definitions": {
+    "footer": {
+      "type": "object",
+      "properties": {
+        "locale": {
+          "type": "string",
+          "enum": [
+            "en",
+            "es",
+            "fr",
+            "pt"
+          ]
+        },
+        "rights": {
+          "type": "string"
+        },
+        "tagline": {
+          "type": "string"
+        },
+        "privacyPolicy": {
+          "type": "string"
+        },
+        "viewAllApps": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "locale",
+        "rights",
+        "tagline",
+        "privacyPolicy",
+        "viewAllApps"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

@@ -1,0 +1,28 @@
+app: print
+locale: pt
+title: Recursos Poderosos para Cada Necessidade
+subtitle: Tudo o que você precisa para criar e personalizar cartelas de bingo profissionais
+items:
+  - title: Gerador PDF Ilimitado
+    description: Crie quantas cartelas precisar. Sem limites, sem restrições.
+    icon: pdf
+
+  - title: Modos de Jogo Versáteis
+    description: Escolha entre o Bingo clássico de 90 bolas ou o estilo americano de 75 bolas.
+    icon: modes
+
+  - title: Personalização Total
+    description: Escolha a cor das cartelas para combinar com o tema da sua festa.
+    icon: colors
+
+  - title: Adicione Seu Texto
+    description: Adicione títulos personalizados (ex. "Aniversário da Ana" ou "Rifa de Natal") em cada cartela.
+    icon: customize
+
+  - title: Segurança e Controle
+    description: Opção de incluir números de série únicos nas folhas para melhor organização.
+    icon: secure
+
+  - title: Integração QR Inteligente
+    description: Adicione um código QR único a cada cartela. Use o app Bingo!! para escanear e verificar a partida.
+    icon: qr

@@ -1,0 +1,76 @@
+{
+  "$ref": "#/definitions/privacy",
+  "definitions": {
+    "privacy": {
+      "type": "object",
+      "properties": {
+        "locale": {
+          "type": "string",
+          "enum": [
+            "en",
+            "es",
+            "fr",
+            "pt"
+          ]
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "intro": {
+          "type": "string"
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "content"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "contact": {
+          "type": "object",
+          "properties": {
+            "emailLabel": {
+              "type": "string"
+            },
+            "websiteLabel": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "emailLabel",
+            "websiteLabel"
+          ],
+          "additionalProperties": false
+        },
+        "applePrivacyPolicy": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "locale",
+        "subtitle",
+        "intro",
+        "sections",
+        "contact",
+        "applePrivacyPolicy"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

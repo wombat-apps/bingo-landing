@@ -1,0 +1,28 @@
+app: print
+locale: pt
+title: Perguntas Frequentes
+subtitle: Tudo o que você precisa saber sobre Bingo!! Print
+contactText: Ainda tem perguntas?
+contactLink: Contatar Suporte
+
+items:
+  - question: Quantas cartelas de bingo posso criar?
+    answer: Você pode criar cartelas de bingo ilimitadas! Gere quantas precisar para eventos de qualquer tamanho - desde pequenas reuniões até grandes rifas com centenas de participantes.
+
+  - question: Preciso de conexão com a internet para usar o app?
+    answer: Não! Bingo!! Print funciona completamente offline. Gere, baixe e imprima suas cartelas a qualquer momento.
+
+  - question: Para quais formatos posso exportar?
+    answer: As cartelas são exportadas como arquivos PDF de alta qualidade, perfeitos para imprimir em casa ou em uma gráfica profissional. Os PDFs são otimizados para tamanhos de papel padrão.
+
+  - question: Como funciona a verificação por código QR?
+    answer: Cada cartela pode incluir um código QR único. Quando alguém gritar BINGO, use o app Bingo!! para escanear o código e verificar instantaneamente se a cartela é vencedora.
+
+  - question: Posso personalizar as cores e o design?
+    answer: Claro! Você tem total liberdade para escolher qualquer cor e adicionar textos personalizados a cada lote. Assim você pode diferenciar facilmente as cartelas de cada partida ou rodada.
+
+  - question: Quais outros apps funcionam com Bingo!! Print?
+    answer: Bingo!! Print funciona perfeitamente com nosso app Bingo!! para sortear números e verificar vencedores, e Bingo!! Cards para jogar com cartelas digitais.
+
+  - question: Meus dados estão seguros?
+    answer: Sim! Como funciona offline, toda a geração acontece no seu dispositivo. Nenhum servidor envolvido, garantindo total privacidade.

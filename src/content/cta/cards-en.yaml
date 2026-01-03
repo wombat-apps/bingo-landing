@@ -1,0 +1,12 @@
+app: cards
+locale: en
+title: "Download bingo!! cards and start playing today"
+subtitle: "Get the app for free and enjoy unlimited digital bingo cards on your device."
+otherAppsLabel: "Also check out our other apps:"
+otherApps:
+  - app: bingo
+    description: "Bingo caller app"
+  - app: print
+    description: "Print bingo cards"
+  - app: wombat
+    description: "Meet our team"

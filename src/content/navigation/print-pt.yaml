@@ -1,0 +1,11 @@
+app: print
+locale: pt
+items:
+  - key: features
+    label: "Recursos"
+  - key: apps
+    label: "Nossos Apps"
+  - key: usecases
+    label: "Usos"
+  - key: faq
+    label: "FAQ"

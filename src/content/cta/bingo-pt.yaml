@@ -1,0 +1,12 @@
+app: bingo
+locale: pt
+title: "Baixe o bingo!! e comece a jogar hoje"
+subtitle: "Junte-se a milhares de famílias aproveitando noites de bingo juntos. Download gratuito!"
+otherAppsLabel: "Confira também nossos outros apps:"
+otherApps:
+  - app: cards
+    description: "Cartela de bingo digital"
+  - app: print
+    description: "Imprima suas cartelas"
+  - app: wombat
+    description: "Conheça nossa equipe"

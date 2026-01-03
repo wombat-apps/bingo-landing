@@ -1,0 +1,9 @@
+app: bingo
+locale: en
+meta:
+  title: "Bingo!! - The Ultimate Bingo Caller App for iOS & Android"
+  description: "Bingo!! is the best bingo caller app for iOS, tvOS, and Android. Real voices, TV display via AirPlay or cable, and QR scanner to verify winners. Free!"
+  keywords: "bingo caller app, bingo machine app, bingo number caller, automatic bingo caller, 90 ball bingo, 75 ball bingo, bingo app iOS, bingo app Android, QR bingo verification, TV bingo display, AirPlay bingo, family bingo night, free bingo app"
+og:
+  title: "Bingo!! - The Ultimate Bingo Caller"
+  description: "The best bingo nights with family! Automatic bingo caller, TV connection, and instant card verification with QR."

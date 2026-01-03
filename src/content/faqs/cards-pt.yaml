@@ -1,0 +1,28 @@
+app: cards
+locale: pt
+title: Perguntas frequentes
+subtitle: Tudo o que você precisa saber sobre bingo!! cards
+contactText: Ainda tem perguntas?
+contactLink: Contatar suporte
+
+items:
+  - question: Quantas cartelas posso ter?
+    answer: Você pode gerar cartelas de bingo ilimitadas! Cada cartela é única e aleatória. Perfeito para festas de qualquer tamanho.
+
+  - question: As cartelas funcionam offline?
+    answer: Sim! Uma vez que você gera suas cartelas, elas funcionam completamente offline. Jogue em qualquer lugar sem internet.
+
+  - question: Posso usar estas cartelas com qualquer sorteador de bingo?
+    answer: Com certeza! Embora funcionem perfeitamente com nosso app Bingo!!, você pode usá-las com qualquer sorteador - até mesmo um globo de bingo físico!
+
+  - question: Cartelas de Bingo!! é grátis?
+    answer: Cartelas de Bingo!! é grátis para baixar com compras opcionais dentro do app para desbloquear recursos adicionais e remover anúncios.
+
+  - question: Quais variantes de bingo são suportadas?
+    answer: O app suporta tanto bingo de 75 bolas (americano) quanto de 90 bolas (britânico/europeu).
+
+  - question: Posso personalizar as cores da cartela?
+    answer: Sim! Escolha entre várias cores de cartela para combinar com o tema do seu evento ou preferência pessoal.
+
+  - question: Há limite de jogadores que podem usar o app?
+    answer: Sem limite! Cada jogador pode ter sua própria cartela única em seu próprio dispositivo. Perfeito para grupos de qualquer tamanho.

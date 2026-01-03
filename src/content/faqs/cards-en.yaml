@@ -1,0 +1,28 @@
+app: cards
+locale: en
+title: Frequently Asked Questions
+subtitle: Everything you need to know about bingo!! cards
+contactText: Still have questions?
+contactLink: Contact Support
+
+items:
+  - question: How many cards can I have?
+    answer: You can generate unlimited bingo cards! Each card is unique and random. Perfect for parties of any size.
+
+  - question: Do the cards work offline?
+    answer: Yes! Once you generate your cards, they work completely offline. Play anywhere without internet connection.
+
+  - question: Can I use these cards with any bingo caller?
+    answer: Absolutely! While they work perfectly with our Bingo!! app, you can use them with any bingo caller - even a physical bingo cage!
+
+  - question: Is Bingo Cards!! free?
+    answer: Bingo Cards!! is free to download with optional in-app purchases to unlock additional features and remove ads.
+
+  - question: What bingo variants are supported?
+    answer: The app supports both 75-ball (American) and 90-ball (British/European) bingo formats.
+
+  - question: Can I customize the card colors?
+    answer: Yes! Choose from various card colors to match your event theme or personal preference.
+
+  - question: Is there a limit to how many players can use the app?
+    answer: No limit! Each player can have their own unique card on their own device. Perfect for groups of any size.

@@ -1,14 +1,10 @@
 /**
- * Main UI translations file
- * Combines all translation modules into a single export
+ * UI configuration file
+ * Contains language definitions and app store badge URLs
+ *
+ * Note: All translation content has been migrated to Astro Content Collections
+ * See src/content/ for YAML-based content
  */
-
-import { shared } from './translations/shared';
-import { bingo } from './translations/bingo';
-import { cards } from './translations/cards';
-import { print } from './translations/print';
-import { hub } from './translations/hub';
-import { privacy } from './translations/privacy';
 
 export const languages = {
   en: 'English',
@@ -34,41 +30,3 @@ export const googlePlayBadges: Record<Language, string> = {
   fr: 'https://play.google.com/intl/en_us/badges/static/images/badges/fr_badge_web_generic.png',
   pt: 'https://play.google.com/intl/en_us/badges/static/images/badges/pt-br_badge_web_generic.png',
 };
-
-// Combine all translations for each language
-export const ui = {
-  en: {
-    ...shared.en,
-    ...bingo.en,
-    ...cards.en,
-    ...print.en,
-    ...hub.en,
-    ...privacy.en,
-  },
-  es: {
-    ...shared.es,
-    ...bingo.es,
-    ...cards.es,
-    ...print.es,
-    ...hub.es,
-    ...privacy.es,
-  },
-  fr: {
-    ...shared.fr,
-    ...bingo.fr,
-    ...cards.fr,
-    ...print.fr,
-    ...hub.fr,
-    ...privacy.fr,
-  },
-  pt: {
-    ...shared.pt,
-    ...bingo.pt,
-    ...cards.pt,
-    ...print.pt,
-    ...hub.pt,
-    ...privacy.pt,
-  },
-} as const;
-
-export type TranslationKey = keyof typeof ui.en;

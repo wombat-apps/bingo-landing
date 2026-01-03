@@ -1,0 +1,11 @@
+app: bingo
+locale: es
+items:
+  - key: features
+    label: "Características"
+  - key: apps
+    label: "Apps"
+  - key: usecases
+    label: "Usos"
+  - key: faq
+    label: "FAQ"

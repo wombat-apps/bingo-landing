@@ -1,0 +1,8 @@
+app: cards
+locale: en
+headline: "Your bingo card, now digital"
+subtitle: "Play bingo from your phone. Digital cards you mark with a simple tap, compatible with 90-ball and 75-ball bingo."
+tags:
+  - label: "QR Codes"
+  - label: "90 & 75 Balls"
+  - label: "Tap to mark"

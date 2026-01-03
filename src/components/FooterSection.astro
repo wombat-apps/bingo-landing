@@ -1,0 +1,97 @@
+---
+import { getLocalizedPath } from '../i18n/utils';
+import { languages, defaultLang, type Language } from '../i18n/ui';
+import { getFooter } from '../content/helpers';
+
+interface Props {
+  app: 'bingo' | 'cards' | 'print';
+  lang: Language;
+}
+
+const { app, lang } = Astro.props;
+
+// Load content from collections
+const footer = await getFooter(lang);
+
+if (!footer) {
+  throw new Error(`Missing footer content for ${lang}`);
+}
+
+const privacyPath = getLocalizedPath(lang, '/privacy-policy');
+const mainLandingPath = getLocalizedPath(lang, '/');
+
+// App-specific configuration
+const config = {
+  bingo: {
+    logo: '/images/bingo-logo.png',
+    logoAlt: 'Bingo!!',
+    accentColor: '#7424d5',
+  },
+  cards: {
+    logo: '/images/bingo-cards-logo.png',
+    logoAlt: 'Bingo Cards!!',
+    accentColor: '#417cee',
+  },
+  print: {
+    logo: '/images/bingo-print-logo.png',
+    logoAlt: 'Bingo!! Print',
+    accentColor: '#417cee',
+  },
+};
+
+const { logo, logoAlt, accentColor } = config[app];
+
+// Language selector helper
+function getLanguageLink(targetLang: Language): string {
+  const basePath = app === 'bingo' ? '/bingo/' : app === 'cards' ? '/cards/' : '/print/';
+  if (targetLang === defaultLang) return basePath;
+  return `/${targetLang}${basePath}`;
+}
+---
+
+<footer class="bg-[#101828] text-white py-12">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+            <!-- Logo and links -->
+            <div class="text-center md:text-left">
+                <div class="mb-4">
+                    <img src={logo} alt={logoAlt} class="h-8 w-auto">
+                </div>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-gray-400">
+                    <a href={privacyPath} class="hover:text-white transition-colors">{footer.privacyPolicy}</a>
+                    <span>|</span>
+                    <a href={mainLandingPath} class="hover:text-white transition-colors">{footer.viewAllApps}</a>
+                </div>
+            </div>
+
+            <!-- Language selector -->
+            <div class="flex gap-2">
+                {Object.entries(languages).map(([code]) => (
+                    <a
+                        href={getLanguageLink(code as Language)}
+                        class={`language-link px-4 py-2 rounded-lg font-medium transition-colors ${code === lang ? `text-white` : 'bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white'}`}
+                        style={code === lang ? `background-color: ${accentColor}` : ''}
+                        aria-current={code === lang ? 'page' : undefined}
+                        data-lang={code}
+                    >
+                        {code.toUpperCase()}
+                    </a>
+                ))}
+            </div>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+            <p>{footer.rights}</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Language selector storage
+    document.querySelectorAll('.language-link').forEach(link => {
+        link.addEventListener('click', () => {
+            const lang = link.getAttribute('data-lang') || 'en';
+            localStorage.setItem('preferred-language', lang);
+        });
+    });
+</script>
