@@ -1,0 +1,272 @@
+---
+/**
+ * Landing page for Bingo Voice Generator - a macOS desktop app for generating
+ * bingo number voice files using ElevenLabs AI.
+ */
+import '../styles/global.css';
+import { getOgLocale } from '../i18n/utils';
+import { apps, CANONICAL_BASE } from '../config/apps';
+import FeaturesSection from './FeaturesSection.astro';
+import { getSeo, getHero, getNavigation, getFeatures } from '../content/helpers';
+import type { Language } from '../i18n/ui';
+
+interface Props {
+  lang?: Language;
+}
+
+const { lang = 'en' } = Astro.props;
+const appConfig = apps['voice-generator'];
+
+// Load content from collections
+const seo = await getSeo('voice-generator', lang);
+const hero = await getHero('voice-generator', lang);
+const navigation = await getNavigation('voice-generator', lang);
+const features = await getFeatures('voice-generator', lang);
+
+if (!seo || !hero || !navigation || !features) {
+  throw new Error(`Missing content for voice-generator landing page in ${lang}`);
+}
+
+const ogLocale = getOgLocale(lang);
+const canonicalUrl = `${CANONICAL_BASE}${appConfig.path}/`;
+const downloadUrl = 'https://github.com/wombat-apps/bingo-voice-generator/releases/latest/download/BingoVoiceGenerator.zip';
+const githubRepoUrl = appConfig.stores.github!;
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{seo.meta.title}</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content={seo.meta.description}>
+    <meta name="keywords" content={seo.meta.keywords}>
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Wombat Apps">
+    <meta name="theme-color" content={appConfig.colors.themeColor}>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="canonical" href={canonicalUrl}>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={seo.og.title}>
+    <meta property="og:description" content={seo.og.description}>
+    <meta property="og:image" content={`${CANONICAL_BASE}${appConfig.ogImage}`}>
+    <meta property="og:url" content={canonicalUrl}>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content={appConfig.name}>
+    <meta property="og:locale" content={ogLocale}>
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={seo.og.title}>
+    <meta name="twitter:description" content={seo.og.description}>
+    <meta name="twitter:image" content={`${CANONICAL_BASE}${appConfig.ogImage}`}>
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": appConfig.name,
+        "operatingSystem": "macOS",
+        "applicationCategory": appConfig.applicationCategory,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "downloadUrl": appConfig.stores.github
+    })} />
+</head>
+<body class="bg-white font-sans">
+    <!-- Skip Link -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold" style={`color: ${appConfig.colors.themeColor}`}>
+        Skip to content
+    </a>
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden min-h-[600px] lg:min-h-[700px]" style={`background: linear-gradient(135deg, ${appConfig.colors.gradientFrom}, ${appConfig.colors.gradientTo})`}>
+        <!-- Decorative circles with blur -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-[15%] left-[40%] w-36 h-36 rounded-full opacity-30 blur-[55px]" style={`background-color: ${appConfig.colors.decorativeColors.accent}`}></div>
+            <div class="absolute top-[45%] left-[35%] w-36 h-36 rounded-full opacity-30 blur-[55px]" style={`background-color: ${appConfig.colors.decorativeColors.secondary}`}></div>
+            <div class="absolute bottom-[10%] right-[5%] w-36 h-36 rounded-full opacity-30 blur-[55px]" style={`background-color: ${appConfig.colors.decorativeColors.secondary}`}></div>
+        </div>
+
+        <div class="container mx-auto px-4 py-12 lg:py-16 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
+                <!-- Left column - Text content -->
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <!-- Logo -->
+                    <div class="mb-8">
+                        <img src={appConfig.logo} alt={appConfig.name} class="h-12 lg:h-16 w-auto mx-auto lg:mx-0">
+                    </div>
+
+                    <!-- Headline -->
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+                        {hero.headline}
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
+                        {hero.subtitle}
+                    </p>
+
+                    <!-- Download Button -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
+                        <a
+                            href={downloadUrl}
+                            class="flex items-center bg-white text-gray-900 px-6 py-4 rounded-xl hover:bg-gray-100 transition-colors font-semibold shadow-lg"
+                        >
+                            <!-- GitHub icon -->
+                            <svg class="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            Download for macOS
+                            <!-- macOS icon -->
+                            <svg class="w-5 h-5 ml-3 opacity-60" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Feature Tags -->
+                    {hero.tags && hero.tags.length > 0 && (
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-3">
+                            {hero.tags.map((tag: { label: string }) => (
+                                <span class="px-4 py-2 rounded-full text-sm font-medium bg-white/20 text-white backdrop-blur-sm">
+                                    {tag.label}
+                                </span>
+                            ))}
+                        </div>
+                    )}
+                </div>
+
+                <!-- Right column - App screenshot -->
+                <div class="lg:w-1/2 relative">
+                    <div class="relative w-full max-w-2xl mx-auto">
+                        <img
+                            src={appConfig.heroImage}
+                            alt={`${appConfig.name} Screenshot`}
+                            class="w-full h-auto rounded-xl shadow-2xl"
+                            loading="eager"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <button id="mobileMenuBtn" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-500 border-gray-400" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                    </svg>
+                </button>
+
+                <ul class="hidden md:flex flex-1 justify-center gap-8">
+                    {navigation.items.map((item: { key: string; label: string }) => (
+                        <li><a href={`#${item.key}`} class="nav-link text-gray-700 font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-blue-600">{item.label}</a></li>
+                    ))}
+                    <li><a href={githubRepoUrl} target="_blank" rel="noopener noreferrer" class="nav-link text-gray-700 font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-blue-600">GitHub</a></li>
+                </ul>
+            </div>
+
+            <div id="mobileMenu" class="hidden md:hidden">
+                <ul class="flex flex-col space-y-2 pb-4">
+                    {navigation.items.map((item: { key: string; label: string }) => (
+                        <li><a href={`#${item.key}`} class="nav-link block text-gray-700 font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-slate-50">{item.label}</a></li>
+                    ))}
+                    <li><a href={githubRepoUrl} target="_blank" rel="noopener noreferrer" class="nav-link block text-gray-700 font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-slate-50">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <!-- Features Section -->
+        <FeaturesSection app="voice-generator" lang={lang} gradientFrom={appConfig.colors.gradientFrom} gradientTo={appConfig.colors.gradientTo} />
+
+        <!-- Download CTA Section -->
+        <section id="download" class="py-20" style={`background: linear-gradient(135deg, ${appConfig.colors.gradientFrom}, ${appConfig.colors.gradientTo})`}>
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Generate Voice Files?</h2>
+                <p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+                    Download Bingo Voice Generator for free from GitHub. Requires macOS 14+ and an ElevenLabs API key.
+                </p>
+                <a
+                    href={downloadUrl}
+                    class="inline-flex items-center bg-white text-gray-900 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors font-semibold shadow-lg text-lg"
+                >
+                    <svg class="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                    </svg>
+                    Download for macOS
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="bg-[#101828] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <!-- Logo and links -->
+                <div class="text-center md:text-left">
+                    <div class="mb-4">
+                        <img src={appConfig.logo} alt={appConfig.name} class="h-8 w-auto">
+                    </div>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-gray-400">
+                        <a href="/privacy-policy/" class="hover:text-white transition-colors">Privacy Policy</a>
+                        <span>|</span>
+                        <a href="/" class="hover:text-white transition-colors">View All Apps</a>
+                        <span>|</span>
+                        <a href={githubRepoUrl} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Requirements badge -->
+                <div class="text-center md:text-right text-sm text-gray-400">
+                    <p>Requires macOS 14 or later</p>
+                    <p class="mt-1">MIT License - Open Source</p>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 Wombat Apps. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+                mobileMenuBtn.setAttribute('aria-expanded', String(!isExpanded));
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+    </script>
+</body>
+</html>

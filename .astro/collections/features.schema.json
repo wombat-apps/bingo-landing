@@ -9,7 +9,8 @@
           "enum": [
             "bingo",
             "cards",
-            "print"
+            "print",
+            "voice-generator"
           ]
         },
         "locale": {

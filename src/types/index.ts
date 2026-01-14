@@ -8,7 +8,7 @@ import type { Language } from '../i18n/ui';
 export type { Language };
 
 /** App names for the Bingo!! family */
-export type AppName = 'bingo' | 'cards' | 'print';
+export type AppName = 'bingo' | 'cards' | 'print' | 'voice-generator';
 export type AppNameWithHub = AppName | 'hub';
 
 /** FAQ item structure */

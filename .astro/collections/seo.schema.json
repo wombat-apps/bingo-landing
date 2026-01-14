@@ -10,7 +10,8 @@
             "bingo",
             "cards",
             "print",
-            "hub"
+            "hub",
+            "voice-generator"
           ]
         },
         "locale": {

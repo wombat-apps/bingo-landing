@@ -3,7 +3,7 @@
  * This eliminates hardcoded values scattered across components.
  */
 
-export type AppName = 'bingo' | 'cards' | 'print';
+export type AppName = 'bingo' | 'cards' | 'print' | 'voice-generator';
 export type AppNameWithHub = AppName | 'hub';
 
 export interface AppColors {
@@ -23,8 +23,9 @@ export interface AppColors {
 }
 
 export interface AppStoreLinks {
-  ios: string;
+  ios?: string;
   android?: string;
+  github?: string;
 }
 
 export interface AppConfig {
@@ -107,6 +108,28 @@ export const apps: Record<AppName, AppConfig> = {
     },
     applicationCategory: 'UtilitiesApplication',
     ratingCount: '1000',
+  },
+  'voice-generator': {
+    name: 'Bingo Voice Generator',
+    path: '/voice-generator',
+    logo: '/images/bingo-logo.png',
+    heroImage: '/images/bingo-voice-generator-screenshot.png',
+    ogImage: '/images/bingo-voice-generator-screenshot.png',
+    colors: {
+      gradientFrom: '#1a1a2e',
+      gradientTo: '#16213e',
+      themeColor: '#1a1a2e',
+      decorativeColors: {
+        accent: '#3b82f6',
+        secondary: '#60a5fa',
+      },
+      hoverBgClass: 'hover:bg-slate-50',
+    },
+    stores: {
+      github: 'https://github.com/wombat-apps/bingo-voice-generator/releases',
+    },
+    applicationCategory: 'DeveloperApplication',
+    ratingCount: '0',
   },
 } as const;
 

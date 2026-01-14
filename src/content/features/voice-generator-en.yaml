@@ -1,0 +1,23 @@
+app: voice-generator
+locale: en
+title: Features
+subtitle: Everything you need to create professional bingo voice files
+items:
+  - title: Bingo 75 & 90 Support
+    description: Generate audio for both American (75-ball with B-I-N-G-O letters) and European (90-ball) bingo formats.
+    icon: modes
+  - title: ElevenLabs Integration
+    description: Use high-quality AI voices from ElevenLabs with customizable settings for stability, style, and speed.
+    icon: mic
+  - title: Batch Processing
+    description: Generate all numbers at once with progress tracking. Process complete voice sets efficiently.
+    icon: fast
+  - title: Waveform Visualization
+    description: Preview audio with built-in waveform display and playback controls before exporting.
+    icon: voice
+  - title: Voice Management
+    description: Import, export, and organize voice configurations as ZIP archives. Star your favorite voices.
+    icon: customize
+  - title: Automatic Processing
+    description: Built-in silence removal via ffmpeg ensures clean, consistent audio output for all files.
+    icon: secure

@@ -39,7 +39,7 @@ const usecasesCollection = defineCollection({
 const featuresCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    app: z.enum(['bingo', 'cards', 'print']),
+    app: z.enum(['bingo', 'cards', 'print', 'voice-generator']),
     locale: z.enum(['en', 'es', 'fr', 'pt']),
     title: z.string(),
     subtitle: z.string(),
@@ -58,7 +58,7 @@ const featuresCollection = defineCollection({
 const seoCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    app: z.enum(['bingo', 'cards', 'print', 'hub']),
+    app: z.enum(['bingo', 'cards', 'print', 'hub', 'voice-generator']),
     locale: z.enum(['en', 'es', 'fr', 'pt']),
     meta: z.object({
       title: z.string(),
@@ -75,7 +75,7 @@ const seoCollection = defineCollection({
 const heroCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    app: z.enum(['bingo', 'cards', 'print', 'hub']),
+    app: z.enum(['bingo', 'cards', 'print', 'hub', 'voice-generator']),
     locale: z.enum(['en', 'es', 'fr', 'pt']),
     headline: z.string(),
     subtitle: z.string(),
@@ -93,7 +93,7 @@ const heroCollection = defineCollection({
 const navigationCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    app: z.enum(['bingo', 'cards', 'print', 'hub']),
+    app: z.enum(['bingo', 'cards', 'print', 'hub', 'voice-generator']),
     locale: z.enum(['en', 'es', 'fr', 'pt']),
     items: z.array(
       z.object({

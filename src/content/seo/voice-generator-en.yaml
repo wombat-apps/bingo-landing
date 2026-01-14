@@ -1,0 +1,9 @@
+app: voice-generator
+locale: en
+meta:
+  title: Bingo Voice Generator - Generate Bingo Number Audio Files
+  description: A macOS app for generating professional bingo number voice files using ElevenLabs AI. Supports Bingo 75 and Bingo 90 formats with batch processing.
+  keywords: bingo voice generator, bingo audio, elevenlabs, text to speech, bingo 75, bingo 90, macos app
+og:
+  title: Bingo Voice Generator for macOS
+  description: Generate professional bingo number voice files with ElevenLabs AI. Free and open source.

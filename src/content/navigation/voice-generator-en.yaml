@@ -1,0 +1,7 @@
+app: voice-generator
+locale: en
+items:
+  - key: features
+    label: Features
+  - key: download
+    label: Download
