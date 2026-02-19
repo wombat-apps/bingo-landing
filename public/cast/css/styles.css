@@ -1,0 +1,27 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #000; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; overflow: hidden; width: 100vw; height: 100vh; }
+.hidden { display: none !important; }
+#idle-screen { display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh; }
+.idle-content { text-align: center; }
+.idle-content h1 { font-size: 6rem; font-weight: 800; color: #A479E8; margin-bottom: 1rem; }
+.idle-content p { font-size: 2rem; color: rgba(255, 255, 255, 0.5); }
+#game-screen { display: flex; width: 100vw; height: 100vh; padding: 2vh; gap: 2vh; }
+#board-container { flex: 3; display: flex; align-items: center; justify-content: center; }
+#board { display: grid; gap: 3px; width: 100%; height: 100%; }
+#board.mode75 { grid-template-columns: repeat(16, 1fr); grid-template-rows: repeat(5, 1fr); }
+#board.mode90 { grid-template-columns: repeat(10, 1fr); grid-template-rows: repeat(9, 1fr); }
+.board-cell { display: flex; align-items: center; justify-content: center; border-radius: 4px; font-weight: 700; font-size: 1.8vw; transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; }
+.board-cell.header { background: transparent; color: rgba(255, 255, 255, 0.4); font-size: 2vw; font-weight: 800; }
+.board-cell.pending { background: #232323; color: rgba(255, 255, 255, 0.25); }
+.board-cell.called { background: rgba(255, 255, 255, 0.9); color: #000; }
+.board-cell.recent { background: #C586DF; color: #fff; }
+.board-cell.last { background: #A479E8; color: #fff; transform: scale(1.05); font-weight: 800; }
+#side-panel { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3vh; }
+#current-ball { width: min(20vw, 30vh); height: min(20vw, 30vh); border-radius: 50%; background: radial-gradient(circle at 35% 35%, #C586DF, #A479E8 50%, #7B52B5); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 0 40px rgba(164, 121, 232, 0.4); transition: transform 0.3s ease; }
+#current-ball.active { animation: ballPop 0.4s ease-out; }
+@keyframes ballPop { 0% { transform: scale(0.8); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+#ball-letter { font-size: 3vw; font-weight: 800; color: rgba(255, 255, 255, 0.8); line-height: 1; }
+#ball-number { font-size: 6vw; font-weight: 800; color: #fff; line-height: 1; }
+#ball-counter { font-size: 2vw; color: rgba(255, 255, 255, 0.5); font-weight: 600; }
+#game-screen.paused #board { opacity: 0.5; }
+#game-screen.paused #current-ball { opacity: 0.5; }
