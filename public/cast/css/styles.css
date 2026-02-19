@@ -1,27 +1,114 @@
+/* Bingo Cast Receiver — Light Mode */
+/* Tokens from DSTokens.bingo (light mode) */
+:root {
+    --primary: #681FD9;
+    --on-primary: #FFFFFF;
+    --secondary: #9E36CA;
+    --on-secondary: #FFFFFF;
+    --surface: #FFFFFF;
+    --on-surface: #000000;
+    --on-surface-secondary: #797979;
+    --background: #EEEEEE;
+    --outline: #DDDDDD;
+    --gradient1: #7424D5;
+    --gradient2: #D34DBC;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #000; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; overflow: hidden; width: 100vw; height: 100vh; }
+body {
+    background: var(--background);
+    color: var(--on-surface);
+    font-family: 'Arial Rounded MT Bold', ui-rounded, 'SF Pro Rounded', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
 .hidden { display: none !important; }
+
+/* ── Idle Screen ── */
 #idle-screen { display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh; }
 .idle-content { text-align: center; }
-.idle-content h1 { font-size: 6rem; font-weight: 800; color: #A479E8; margin-bottom: 1rem; }
-.idle-content p { font-size: 2rem; color: rgba(255, 255, 255, 0.5); }
+.idle-content h1 { font-size: 6rem; font-weight: 800; color: var(--primary); margin-bottom: 1rem; }
+.idle-content p { font-size: 2rem; color: var(--on-surface-secondary); }
+
+/* ── Game Screen ── */
 #game-screen { display: flex; width: 100vw; height: 100vh; padding: 2vh; gap: 2vh; }
 #board-container { flex: 3; display: flex; align-items: center; justify-content: center; }
 #board { display: grid; gap: 3px; width: 100%; height: 100%; }
 #board.mode75 { grid-template-columns: repeat(16, 1fr); grid-template-rows: repeat(5, 1fr); }
 #board.mode90 { grid-template-columns: repeat(10, 1fr); grid-template-rows: repeat(9, 1fr); }
-.board-cell { display: flex; align-items: center; justify-content: center; border-radius: 4px; font-weight: 700; font-size: 1.8vw; transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; }
-.board-cell.header { background: transparent; color: rgba(255, 255, 255, 0.4); font-size: 2vw; font-weight: 800; }
-.board-cell.pending { background: #232323; color: rgba(255, 255, 255, 0.25); }
-.board-cell.called { background: rgba(255, 255, 255, 0.9); color: #000; }
-.board-cell.recent { background: #C586DF; color: #fff; }
-.board-cell.last { background: #A479E8; color: #fff; transform: scale(1.05); font-weight: 800; }
+
+/* ── Board Cells ── */
+.board-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1.8vw;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+/* Header (B-I-N-G-O letters) */
+.board-cell.header {
+    background: rgba(158, 54, 202, 0.1);
+    color: var(--secondary);
+    font-size: 2vw;
+    font-weight: 800;
+}
+
+/* Pending — not yet called */
+.board-cell.pending {
+    background: var(--surface);
+    color: var(--outline);
+}
+
+/* Called — previously called number */
+.board-cell.called {
+    background: var(--surface);
+    color: var(--on-surface);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* Recent — last 5 called numbers */
+.board-cell.recent {
+    background: var(--secondary);
+    color: var(--on-primary);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Last — most recently called number */
+.board-cell.last {
+    background: var(--primary);
+    color: var(--on-primary);
+    transform: scale(1.05);
+    font-weight: 800;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Side Panel ── */
 #side-panel { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3vh; }
-#current-ball { width: min(20vw, 30vh); height: min(20vw, 30vh); border-radius: 50%; background: radial-gradient(circle at 35% 35%, #C586DF, #A479E8 50%, #7B52B5); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 0 40px rgba(164, 121, 232, 0.4); transition: transform 0.3s ease; }
+
+/* Ball — dark base with purple gradient (matches app ballLastImg) */
+#current-ball {
+    width: min(20vw, 30vh);
+    height: min(20vw, 30vh);
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--gradient2), var(--gradient1) 50%, #1a0a2e);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(104, 31, 217, 0.35);
+    transition: transform 0.3s ease;
+}
 #current-ball.active { animation: ballPop 0.4s ease-out; }
 @keyframes ballPop { 0% { transform: scale(0.8); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
 #ball-letter { font-size: 3vw; font-weight: 800; color: rgba(255, 255, 255, 0.8); line-height: 1; }
 #ball-number { font-size: 6vw; font-weight: 800; color: #fff; line-height: 1; }
-#ball-counter { font-size: 2vw; color: rgba(255, 255, 255, 0.5); font-weight: 600; }
+#ball-counter { font-size: 2vw; color: var(--on-surface-secondary); font-weight: 600; }
+
+/* ── Paused State ── */
 #game-screen.paused #board { opacity: 0.5; }
 #game-screen.paused #current-ball { opacity: 0.5; }
