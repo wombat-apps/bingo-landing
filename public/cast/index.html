@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo Cast Receiver</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="idle-screen">
+            <div class="idle-content">
+                <h1>bingo!!</h1>
+                <p>Waiting for game...</p>
+            </div>
+        </div>
+        <div id="game-screen" class="hidden">
+            <div id="board-container">
+                <div id="board"></div>
+            </div>
+            <div id="side-panel">
+                <div id="current-ball">
+                    <div id="ball-letter"></div>
+                    <div id="ball-number"></div>
+                </div>
+                <div id="ball-counter"></div>
+            </div>
+        </div>
+    </div>
+    <script src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
+    <script src="js/receiver.js"></script>
+</body>
+</html>
