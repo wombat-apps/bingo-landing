@@ -105,6 +105,7 @@ export const apps: Record<AppName, AppConfig> = {
     },
     stores: {
       ios: 'https://apps.apple.com/app/id6757099784?ct=print-landing',
+      android: 'https://play.google.com/store/apps/details?id=com.wombat.bingoprint',
     },
     applicationCategory: 'UtilitiesApplication',
     ratingCount: '1000',

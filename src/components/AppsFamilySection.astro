@@ -2,6 +2,7 @@
 import { toLanguage, getLocalizedPath } from '../i18n/utils';
 import type { Language } from '../i18n/ui';
 import { getAppsFamily, getUi } from '../content/helpers';
+import { apps } from '../config/apps';
 
 interface Props {
   lang?: Language;
@@ -28,19 +29,11 @@ const bingoLandingLink = getLocalizedPath(lang, '/bingo/');
 const cardsLandingLink = getLocalizedPath(lang, '/cards/');
 const printLandingLink = getLocalizedPath(lang, '/print/');
 
-// App Store Links
-const bingoIosLink = "https://apps.apple.com/app/apple-store/id1505191957?ct=landing";
-const bingoAndroidLink = "https://play.google.com/store/apps/details?id=com.wombat.bingoapp";
-const cardsIosLink = "https://apps.apple.com/app/id1510582506?ct=landing";
-const cardsAndroidLink = "https://play.google.com/store/apps/details?id=com.wombat.bingocards";
-// Print app - iOS available, Android coming soon
-const printIosLink = "https://apps.apple.com/app/id6757099784?ct=landing";
-
 // Map app to its landing page link and store links
 const appLinks = {
-  bingo: { landing: bingoLandingLink, ios: bingoIosLink, android: bingoAndroidLink },
-  cards: { landing: cardsLandingLink, ios: cardsIosLink, android: cardsAndroidLink },
-  print: { landing: printLandingLink, ios: printIosLink, android: null },
+  bingo: { landing: bingoLandingLink, ios: apps.bingo.stores.ios, android: apps.bingo.stores.android },
+  cards: { landing: cardsLandingLink, ios: apps.cards.stores.ios, android: apps.cards.stores.android },
+  print: { landing: printLandingLink, ios: apps.print.stores.ios, android: apps.print.stores.android },
 };
 
 const appImages = {
